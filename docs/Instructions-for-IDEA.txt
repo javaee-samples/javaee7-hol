@@ -1,0 +1,41 @@
+1. Clone the repository from either git@github.com:arun-gupta/javaee7-hol.git or https://github.com/arun-gupta/javaee7-hol.git.
+
+2. Change to the cloned project directoryÕs ãstarting-template/movieplex7/ã folder.
+
+3. In the command shell run, just to make sure that everything is set up correctly:
+> mvn idea:idea
+> mvn clean package
+
+You will now find an IntelliJ IDEA project in the that folder, along with a packaged .WAR in the ãtarget/ã-folder.
+
+4. Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with ãConvertÒ.
+Screenshot: javaee7-hol-IDEA-ConvertProject.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-ConvertProject.png)
+
+5. Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on ãConfigureÒ.
+Screenshot: javaee7-hol-IDEA-Configure-JPA.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-Configure-JPA.png)
+
+6. In the dialog box that shows up make sure the only detected file in there says ãpersistence.xmlÒ and is checked and confirm  it with ãOkÒ.
+Screenshot: javaee7-hol-IDEA-Configure-JPA-DialogBox.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-Configure-JPA-DialogBox.png)
+
+7. As a next step we need to build the project. Open the ãMaven ProjectsÒ pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with ãYesÒ.
+Screenshot: javaee7-hol-IDEA-Open-MavenProjects-Pane.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-Open-MavenProjects-Pane.png)
+
+8. When the project is reloaded go to the ãMaven ProjectsÒ pane again and have Maven build and package the project by selecting ãJava EE 7 Hands-on Lab > Lifecycle > packageÒ and clicking on the green ãplayÒ arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on ãEnable Auto-ImportÒ if a green hint pops up.
+Screenshot: javaee7-hol-IDEA-MavenProjects-Run-package-command.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-MavenProjects-Run-package-command.png)
+
+9. In the menu click on ãRun > Edit ConfigurationsÉÒ.
+
+10. In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry ã(17 more items)Ò. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for ãGlassFish ServerÒ should show up.
+Screenshot: javaee7-hol-IDEA-Add-GlassFish-Server-Configuration.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-Add-GlassFish-Server-Configuration.png)
+
+11. Pick ãLocalÒ and in the upcoming dialog box enter a name (e.g. ãGlassFish Server 4.0.0Ò - depending on your GlassFish Server version) and uncheck ãAfter launchÒ so the browser doesnÕt get opened after each redeploy. In the textfield for ãServer DomainÒ enter ãdomain1Ò as the name of the domain. Leave the ãUsernameÒ field at ãadminÒ and the ãPasswordÒ field empty. Then click ãConfigureÉÒ next to the ãApplication serverÒ drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.
+Screenshot: javaee7-hol-IDEA-Edit-GlassFish-Server-Configuration-ServerTab.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-Edit-GlassFish-Server-Configuration-ServerTab.png)
+
+12. Now click on the ãDeploymentÒ tab, then click on the Plus-sign underneath the large empty white area labeled ãÒDeploy at the server startup and choose ãArtifactÉÒ. Choose the entry ãmovieplex7:warÒ and click ãOkÒ. Click ãOkÒ again to close the entire configuration dialog. WeÕre now done.
+Screenshot: javaee7-hol-IDEA-Edit-GlassFish-Server-Configuration-DeploymentTab.png (https://dl.dropboxusercontent.com/u/30672069/javaee7-hol-IDEA-Edit-GlassFish-Server-Configuration-DeploymentTab.png)
+
+13. As a final step we need to start the database. For NetBeans users this happens automagically but weÕll have to do that manually when using IDEA. Just go to your GlassFish Server installation folderÕs ãbin/ã-directory and enter the following command ãasadmin start-databaseÒ, or for Mac/Linux users: ã./asadmin start-databaseÒ and youÕre good to go.
+
+13. In the menu now choose ãRun > Run GlassFish Server 4.0.0Ò (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
+
+14. Open http://localhost:8080/movieplex7-1.0-SNAPSHOT/ in your browser to see the (mostly empty) starter template.
