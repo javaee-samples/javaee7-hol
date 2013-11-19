@@ -1,4 +1,4 @@
-image:javaee7-hol%202_html_961f24f1.gif[image]Java EE 7 Hands-on Lab
+image:961f24f1.gif[image]Java EE 7 Hands-on Lab
 using GlassFish 4
 
 *Java EE 7 Hands-on Lab*
@@ -29,8 +29,8 @@ Marian Muller (Serli)
 
 Software Engineer, @mullermarian
 
-image:javaee7-hol%202_html_81780481.png[image]
-image:javaee7-hol%202_html_be841a67.png[image] +
+image:81780481.png[image]
+image:be841a67.png[image] +
 
  +
 
@@ -140,7 +140,7 @@ using the following Java EE 7 technologies:
  +
 
 Together these APIs will allow you
-timage:javaee7-hol%202_html_df8fc7a1.gif[image]image:javaee7-hol%202_html_d4a56512.gif[image]o
+timage:df8fc7a1.gif[image]image:d4a56512.gif[image]o
 be more productive by simplifying enterprise development.
 
  +
@@ -1380,7 +1380,7 @@ connection with the endpoint is established.
  +
  +
 
-image:javaee7-hol%202_html_2174e272.png[image]
+image:2174e272.png[image]
 
  +
 
@@ -1400,7 +1400,7 @@ browser and click “Join”.
 
  +
 
-image:javaee7-hol%202_html_de9fa492.png[image]
+image:de9fa492.png[image]
 
  +
 
@@ -1417,7 +1417,7 @@ like as shown.
 
  +
 
-image:javaee7-hol%202_html_db88e0ea.png[image]
+image:db88e0ea.png[image]
 
  +
 
@@ -1458,7 +1458,7 @@ jobs.
 
  +
 
-image:javaee7-hol%202_html_6c45bd3.png[image] +
+image:6c45bd3.png[image] +
  +
 
  +
@@ -1910,7 +1910,7 @@ Resolve the imports.
 
  +
 
-image:javaee7-hol%202_html_367190ee.png[image]
+image:367190ee.png[image]
 
  +
 
@@ -2050,7 +2050,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/batch/sales.xht
 
  +
 
-image:javaee7-hol%202_html_67ec6198.png[image]
+image:67ec6198.png[image]
 
  +
 
@@ -2064,7 +2064,7 @@ Notice, a new “Sales” entry is displayed in the left navigation bar.
 
  +
 
-image:javaee7-hol%202_html_f9b585c2.png[image]
+image:f9b585c2.png[image]
 
  +
 
@@ -2081,7 +2081,7 @@ click on “Refresh” button to see the updated output as shown.
 
  +
 
-image:javaee7-hol%202_html_81e229f6.png[image]
+image:81e229f6.png[image]
 
  +
 
@@ -2153,7 +2153,7 @@ javax.enterprise.context.RequestScoped class.
 
  +
 
-image:javaee7-hol%202_html_778b4c7c.png[image]
+image:778b4c7c.png[image]
 
  +
 
@@ -2299,7 +2299,7 @@ and f: prefixes.
 
  +
 
-image:javaee7-hol%202_html_74a78a6d.png[image] +
+image:74a78a6d.png[image] +
  +
 
  +
@@ -2353,7 +2353,7 @@ in the left navigation bar shows the output as shown.
 
  +
 
-image:javaee7-hol%202_html_135a5b98.png[image] +
+image:135a5b98.png[image] +
  +
 
 The list of all the movies with a radio button next to them is
@@ -2481,7 +2481,7 @@ output as shown.
 
  +
 
-image:javaee7-hol%202_html_2cea1ecd.png[image]
+image:2cea1ecd.png[image]
 
  +
 
@@ -2546,7 +2546,7 @@ Running the project shows the output shown.
 
  +
 
-image:javaee7-hol%202_html_485d57a5.png[image] +
+image:485d57a5.png[image] +
  +
 
 Select a movie and click on Delete button. This deletes the movie from
@@ -2646,7 +2646,7 @@ image:javaee7-hol%202_html_4b68287c.png[image] +
 
  +
 
-image:javaee7-hol%202_html_a46c1db5.png[image]
+image:a46c1db5.png[image]
 
  +
 
@@ -2772,7 +2772,7 @@ Resolve the imports as shown.
 
  +
 
-image:javaee7-hol%202_html_2191d56f.png[image] +
+image:2191d56f.png[image] +
  +
 
  +
@@ -2781,7 +2781,7 @@ image:javaee7-hol%202_html_2191d56f.png[image] +
 
  +
 
-image:javaee7-hol%202_html_1599de3.png[image]
+image:1599de3.png[image]
 
  +
 
@@ -2943,7 +2943,7 @@ prefix/URI mapping as shown.
 
  +
 
-image:javaee7-hol%202_html_d2089e14.png[image]
+image:d2089e14.png[image]
 
  +
 
@@ -3016,7 +3016,7 @@ Resolve the imports as shown
 
  +
 
-image:javaee7-hol%202_html_97086271.png[image]
+image:97086271.png[image]
 
  +
 
@@ -3026,7 +3026,7 @@ image:javaee7-hol%202_html_97086271.png[image]
 
  +
 
-image:javaee7-hol%202_html_25affc8f.png[image] +
+image:25affc8f.png[image] +
  +
 
 A new movie can be added by clicking on “New Movie” button.
@@ -3039,7 +3039,7 @@ A new movie can be added by clicking on “New Movie” button.
 
  +
 
-image:javaee7-hol%202_html_3c303481.png[image] +
+image:3c303481.png[image] +
  +
 
  +
@@ -3055,7 +3055,7 @@ The updated page looks like as shown
 
  +
 
-image:javaee7-hol%202_html_67a043bb.png[image]
+image:67a043bb.png[image]
 
  +
 
@@ -3128,7 +3128,7 @@ passivated with the request.
 
 Resolve the imports.
 
-image:javaee7-hol%202_html_5802f08b.png[image]
+image:5802f08b.png[image]
 
  +
 
@@ -3476,7 +3476,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/points/points.x
 
  +
 
-image:javaee7-hol%202_html_ebf0adef.png[image]
+image:ebf0adef.png[image]
 
  +
 
@@ -3484,7 +3484,7 @@ Click on “Points” to see the output as:
 
  +
 
-image:javaee7-hol%202_html_5207ab50.png[image]
+image:5207ab50.png[image]
 
  +
 
@@ -3493,7 +3493,7 @@ in the text box and click on “Send Message” to see the output as shown.
 
  +
 
-image:javaee7-hol%202_html_2c518642.png[image]
+image:2c518642.png[image]
 
  +
 
@@ -3507,14 +3507,14 @@ button to see the output as:
 
  +
 
-image:javaee7-hol%202_html_4a5be2ba.png[image]
+image:4a5be2ba.png[image]
 
 The updated count now shows that there is 1 message in the queue. Click
 on “Receive Message” button to see output as:
 
  +
 
-image:javaee7-hol%202_html_f95c49ad.png[image]
+image:f95c49ad.png[image]
 
  +
 
@@ -3529,14 +3529,14 @@ Click on “Send Message” 4 times to see the output as:
 
  +
 
-image:javaee7-hol%202_html_592372b6.png[image]
+image:592372b6.png[image]
 
 The updated count now shows that the queue has 4 messages. Click on
 “Receive Message” 2 times to see the output as:
 
  +
 
-image:javaee7-hol%202_html_ab504531.png[image]
+image:ab504531.png[image]
 
  +
 
@@ -3663,7 +3663,7 @@ add namespace prefix. Do the same for f: prefix as shown.
 
  +
 
-image:javaee7-hol%202_html_1933fe7a.png[image]
+image:1933fe7a.png[image]
 
  +
 
@@ -4084,7 +4084,7 @@ which defines the flow of the pages.
 
  +
 
-image:javaee7-hol%202_html_d4317123.png[image]
+image:d4317123.png[image]
 
  +
 
@@ -4092,7 +4092,7 @@ Click on “Book a movie” to see the page as shown.
 
  +
 
-image:javaee7-hol%202_html_3ab805a7.png[image]
+image:3ab805a7.png[image]
 
  +
 
@@ -4103,17 +4103,17 @@ page output as shown.
 
  +
 
-image:javaee7-hol%202_html_710cafd8.png[image]
+image:710cafd8.png[image]
 
  +
 
 Pick a time slot, say “04:00”, click
-oimage:javaee7-hol%202_html_293e7bcd.png[image]image:javaee7-hol%202_html_10d00070.gif[image]n
+oimage:293e7bcd.png[image]image:10d00070.gif[image]n
 “Confirm” to see the output as shown.
 
  +
 
-image:javaee7-hol%202_html_a15a427b.png[image]
+image:a15a427b.png[image]
 
  +
 
@@ -4121,7 +4121,7 @@ Click on “Book” to confirm and see the output as:
 
  +
 
-image:javaee7-hol%202_html_a9238694.png[image]
+image:a9238694.png[image]
 
  +
 
@@ -4163,7 +4163,7 @@ and demonstrated the following features of the platform:
 ** Injecting JMSContext
 ** Synchronous message send and receive
 * JavaServer
-Facesimage:javaee7-hol%202_html_faaa1f11.png[image]image:javaee7-hol%202_html_785d8d3.gif[image]
+Facesimage:faaa1f11.png[image]image:785d8d3.gif[image]
 2.2 (JSR 344)
 ** Faces Flow
 * Contexts and Dependency Injection 1.1 (JSR 346)
@@ -4315,7 +4315,7 @@ Appendix A: Configure GlassFish 4 in NetBeans IDE
 
 A.1 In NetBeans, click on the “Services” tab.
 
-image:javaee7-hol%202_html_d0442332.png[image] +
+image:d0442332.png[image] +
  +
 
 A.2 Right-click on Servers, choose “Add Server...” in the pop-up menu.
