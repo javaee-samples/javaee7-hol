@@ -1,5 +1,4 @@
-image:961f24f1.gif[image]Java EE 7 Hands-on Lab
-using GlassFish 4
+Java EE 7 Hands-on Lab using GlassFish 4
 
 *Java EE 7 Hands-on Lab*
 
@@ -8,41 +7,22 @@ using GlassFish 4
  +
 
 Arun Gupta (Red Hat)
-
 Director, Developer Advocacy, @arungupta
 
  +
 
 Antonio Goncalves (Independent)
-
 Java EE EG Member, Consultant, Java Champion, @agoncal
 
  +
 
 David Delabassee (Oracle)
-
 GlassFish Product Manager, @delabassee
 
  +
 
 Marian Muller (Serli)
-
 Software Engineer, @mullermarian
-
-image:81780481.png[image]
-image:be841a67.png[image] +
-
- +
-
- +
-
- +
-
- +
-
- +
-
- +
 
  +
 
@@ -139,9 +119,7 @@ using the following Java EE 7 technologies:
 
  +
 
-Together these APIs will allow you
-timage:df8fc7a1.gif[image]image:d4a56512.gif[image]o
-be more productive by simplifying enterprise development.
+Together these APIs will allow you to be more productive by simplifying enterprise development.
 
  +
 
@@ -169,7 +147,7 @@ preview of the downloads page is shown and highlights the exact
 
  +
 
-image:javaee7-hol%202_html_5900738f.png[image]
+image:1.1-netbeans-download.png[image]
 
 * GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to
 be downloaded explicitly. But if you want to download GlassFish 4 then
@@ -200,7 +178,7 @@ existing movies. Customers can discuss the movie in a chat room. Total
 sales from each showing are calculated at the end of the day. Customers
 also accrue points for watching movies.
 
-image:javaee7-hol%202_html_1b319c06.png[image]
+image:2.0-problem-statement.png[image]
 
  +
 
@@ -219,7 +197,7 @@ flows.
 
  +
 
-image:javaee7-hol%202_html_9f52a305.png[image]
+image:2.0-technologies.png[image]
 
 The table below details the components and the selected technology used
 in its’ implementation.
@@ -324,7 +302,7 @@ and selecting “Format” as shown.
 
  +
 
-image:javaee7-hol%202_html_ddb270c3.png[image]
+image:2.1-format.png[image]
 
  +
 
@@ -360,7 +338,7 @@ import statement by clicking on the yellow bulb shown in the side bar.
 
  +
 
-image:javaee7-hol%202_html_50b1b718.png[image]
+image:2.1-server-endpoint.png[image]
 
  +
 
@@ -369,7 +347,7 @@ editor pane and selecting "Fix Imports" as shown.
 
  +
 
-image:javaee7-hol%202_html_77c15c51.png[image]
+image:2.1-fix-imports.png[image]
 
 This functionality is also accessible using the following keyboard
 shortcuts:
@@ -514,12 +492,12 @@ is shown.
 
  +
 
-image:javaee7-hol%202_html_1facf390.png[image] +
+image:3.2-project-structure.png[image] +
  +
 
  +
 
-image:javaee7-hol%202_html_7f86b25a.png[image] +
+image:3.2-persistence-xml.png[image] +
 
  +
 
@@ -689,7 +667,7 @@ the error shown below:
 
  +
 
-image:javaee7-hol%202_html_1bad94b0.png[image]
+image:3.4-missing-server.png[image]
 
  +
 
@@ -775,7 +753,7 @@ through the SQL scripts. The database schema is shown.
 
  +
 
-image:javaee7-hol%202_html_4aafed40.png[image]
+image:3.5-schema.png[image]
 
  +
 
@@ -809,7 +787,7 @@ same as the JPA entity class name.
 
 The mapping between JPA entity classes, EJB classes, and the URI of the
 corresponding REST
-endimage:javaee7-hol%202_html_4d2c4337.png[image]point is shown.
+endimage:3.6-glassfish-server.png[image]point is shown.
 
  +
 
@@ -908,7 +886,7 @@ The output looks like as shown.
 
  +
 
-image:javaee7-hol%202_html_ef6e216c.png[image]
+image:3.80-first-page.png[image]
 
  +
 
@@ -1042,7 +1020,7 @@ Make sure to pick java.websocket.Session for resolving imports.
 
  +
 
-image:javaee7-hol%202_html_63c71e43.png[image]
+image:4.2-imports.png[image]
 
  +
 
@@ -1068,7 +1046,7 @@ code.
 
  +
 
-image:javaee7-hol%202_html_8574dd19.png[image]
+image:4.4-template.png[image]
 
  +
 
@@ -1324,7 +1302,7 @@ WebSocket connection is terminated
 Any relevant data is passed along as parameter to the function. Each
 method prints the status on the browser using writeToScreen utility
 method. The join method sends a
-mimage:javaee7-hol%202_html_a52b8bb1.png[image]essage to the endpoint
+mimage:4.6-chatroom.png[image]essage to the endpoint
 that a particular user has joined. The endpoint then broadcasts the
 message to all the listening clients. The send_message method appends
 the logged in user name and the value of the text field and broadcasts
@@ -1380,7 +1358,7 @@ connection with the endpoint is established.
  +
  +
 
-image:2174e272.png[image]
+image:4.8-chatroom.png[image]
 
  +
 
@@ -1400,7 +1378,7 @@ browser and click “Join”.
 
  +
 
-image:de9fa492.png[image]
+image:4.8-chatroom-joined.png[image]
 
  +
 
@@ -1417,7 +1395,7 @@ like as shown.
 
  +
 
-image:db88e0ea.png[image]
+image:4.8-chatroom-two-browsers.png[image]
 
  +
 
@@ -1458,7 +1436,7 @@ jobs.
 
  +
 
-image:6c45bd3.png[image] +
+image:5.0-batch-intro.png[image] +
  +
 
  +
@@ -1910,7 +1888,7 @@ Resolve the imports.
 
  +
 
-image:367190ee.png[image]
+image:5.10-imports.png[image]
 
  +
 
@@ -2050,7 +2028,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/batch/sales.xht
 
  +
 
-image:67ec6198.png[image]
+image:5.14-sales.png[image]
 
  +
 
@@ -2064,7 +2042,7 @@ Notice, a new “Sales” entry is displayed in the left navigation bar.
 
  +
 
-image:f9b585c2.png[image]
+image:5.15-sales.png[image]
 
  +
 
@@ -2081,7 +2059,7 @@ click on “Refresh” button to see the updated output as shown.
 
  +
 
-image:81e229f6.png[image]
+image:5.16-sales-output.png[image]
 
  +
 
@@ -2153,7 +2131,7 @@ javax.enterprise.context.RequestScoped class.
 
  +
 
-image:778b4c7c.png[image]
+image:6.2-imports.png[image]
 
  +
 
@@ -2299,7 +2277,7 @@ and f: prefixes.
 
  +
 
-image:74a78a6d.png[image] +
+image:6.6-imports.png[image] +
  +
 
  +
@@ -2353,7 +2331,7 @@ in the left navigation bar shows the output as shown.
 
  +
 
-image:135a5b98.png[image] +
+image:6.8-output.png[image] +
  +
 
 The list of all the movies with a radio button next to them is
@@ -2481,7 +2459,7 @@ output as shown.
 
  +
 
-image:2cea1ecd.png[image]
+image:6.12-output.png[image]
 
  +
 
@@ -2546,7 +2524,7 @@ Running the project shows the output shown.
 
  +
 
-image:485d57a5.png[image] +
+image:6.14-output.png[image] +
  +
 
 Select a movie and click on Delete button. This deletes the movie from
@@ -2637,7 +2615,7 @@ Make sure to resolve imports from the appropriate package as shown.
 
  +
 
-image:javaee7-hol%202_html_4b68287c.png[image] +
+image:7.2-imports.png[image] +
  +
 
  +
@@ -2646,7 +2624,7 @@ image:javaee7-hol%202_html_4b68287c.png[image] +
 
  +
 
-image:a46c1db5.png[image]
+image:7.3-implements.png[image]
 
  +
 
@@ -2772,7 +2750,7 @@ Resolve the imports as shown.
 
  +
 
-image:2191d56f.png[image] +
+image:7.6-imports.png[image] +
  +
 
  +
@@ -2781,7 +2759,7 @@ image:2191d56f.png[image] +
 
  +
 
-image:1599de3.png[image]
+image:7.7-implements.png[image]
 
  +
 
@@ -2943,7 +2921,7 @@ prefix/URI mapping as shown.
 
  +
 
-image:d2089e14.png[image]
+image:7.11-imports.png[image]
 
  +
 
@@ -3016,7 +2994,7 @@ Resolve the imports as shown
 
  +
 
-image:97086271.png[image]
+image:7.14-imports.png[image]
 
  +
 
@@ -3026,7 +3004,7 @@ image:97086271.png[image]
 
  +
 
-image:25affc8f.png[image] +
+image:7.15-output.png[image] +
  +
 
 A new movie can be added by clicking on “New Movie” button.
@@ -3039,7 +3017,7 @@ A new movie can be added by clicking on “New Movie” button.
 
  +
 
-image:3c303481.png[image] +
+image:7.16-output.png.png[image] +
  +
 
  +
@@ -3055,7 +3033,7 @@ The updated page looks like as shown
 
  +
 
-image:67a043bb.png[image]
+image:7.16-output2.png[image]
 
  +
 
@@ -3128,7 +3106,7 @@ passivated with the request.
 
 Resolve the imports.
 
-image:5802f08b.png[image]
+image:8.2-imports.png[image]
 
  +
 
@@ -3476,7 +3454,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/points/points.x
 
  +
 
-image:ebf0adef.png[image]
+image:8.10-output.png[image]
 
  +
 
@@ -3484,7 +3462,7 @@ Click on “Points” to see the output as:
 
  +
 
-image:5207ab50.png[image]
+image:8.10-output2.png[image]
 
  +
 
@@ -3493,7 +3471,7 @@ in the text box and click on “Send Message” to see the output as shown.
 
  +
 
-image:2c518642.png[image]
+image:8.10-output3.png[image]
 
  +
 
@@ -3507,14 +3485,14 @@ button to see the output as:
 
  +
 
-image:4a5be2ba.png[image]
+image:8.10-output4.png[image]
 
 The updated count now shows that there is 1 message in the queue. Click
 on “Receive Message” button to see output as:
 
  +
 
-image:f95c49ad.png[image]
+image:8.10-output5.png[image]
 
  +
 
@@ -3529,14 +3507,14 @@ Click on “Send Message” 4 times to see the output as:
 
  +
 
-image:592372b6.png[image]
+image:8.10-output6.png[image]
 
 The updated count now shows that the queue has 4 messages. Click on
 “Receive Message” 2 times to see the output as:
 
  +
 
-image:ab504531.png[image]
+image:8.10-output7.png[image]
 
  +
 
@@ -3663,7 +3641,7 @@ add namespace prefix. Do the same for f: prefix as shown.
 
  +
 
-image:1933fe7a.png[image]
+image:9.3-imports.png[image]
 
  +
 
@@ -4084,7 +4062,7 @@ which defines the flow of the pages.
 
  +
 
-image:d4317123.png[image]
+image:9.11-output.png[image]
 
  +
 
@@ -4092,7 +4070,7 @@ Click on “Book a movie” to see the page as shown.
 
  +
 
-image:3ab805a7.png[image]
+image:9.11-output2.png[image]
 
  +
 
@@ -4103,17 +4081,16 @@ page output as shown.
 
  +
 
-image:710cafd8.png[image]
+image:9.11-output3.png[image]
 
  +
 
 Pick a time slot, say “04:00”, click
-oimage:293e7bcd.png[image]image:10d00070.gif[image]n
-“Confirm” to see the output as shown.
+on “Confirm” to see the output as shown.
 
  +
 
-image:a15a427b.png[image]
+image:9.11-output4.png[image]
 
  +
 
@@ -4121,7 +4098,7 @@ Click on “Book” to confirm and see the output as:
 
  +
 
-image:a9238694.png[image]
+image:9.11-output5.png[image]
 
  +
 
@@ -4163,7 +4140,7 @@ and demonstrated the following features of the platform:
 ** Injecting JMSContext
 ** Synchronous message send and receive
 * JavaServer
-Facesimage:faaa1f11.png[image]image:785d8d3.gif[image]
+Facesimage:add-server-instance.png[image]
 2.2 (JSR 344)
 ** Faces Flow
 * Contexts and Dependency Injection 1.1 (JSR 346)
@@ -4216,6 +4193,8 @@ Console”.
 
 *11.2* I accidentally closed the GlassFish output log window. How do I
 bring it back ?
+
+image:netbeans-view-log.png[image]
 
 In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
 node, and select “View Domain Server Log”.
@@ -4315,7 +4294,7 @@ Appendix A: Configure GlassFish 4 in NetBeans IDE
 
 A.1 In NetBeans, click on the “Services” tab.
 
-image:d0442332.png[image] +
+image:netbeans-addserver.png[image] +
  +
 
 A.2 Right-click on Servers, choose “Add Server...” in the pop-up menu.
