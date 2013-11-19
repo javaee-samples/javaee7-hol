@@ -7,9 +7,9 @@ using GlassFish 4
 
  +
 
-Arun Gupta (Oracle)
+Arun Gupta (Red Hat)
 
-Java EE & GlassFish Guy, @arungupta
+Director, Developer Advocacy, @arungupta
 
  +
 
@@ -146,7 +146,7 @@ be more productive by simplifying enterprise development.
  +
 
 The latest version of this document can be downloaded from
-http://glassfish.org/hol/javaee7-hol.pdf[glassfish.org/hol/javaee7-hol.pdf].
+https://github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf[github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf].
 
  +
 
