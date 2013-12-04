@@ -1,7 +1,6 @@
 [[websocket]]
 == Chat Room (Java API for WebSocket)
 
-
 *Purpose*: Build a chat room for viewers. In doing so several new
 features of Java API for WebSocket 1.0 will be introduced and
 demonstrated by using them in the application.
@@ -29,317 +28,243 @@ provides support for:
 
 This section will build a chat room for movie viewers.
 
-*4.1* Right-click on “Source Packages”, select “New”, “Java Class…”.
-Give the class name as “ChatServer”, package as
-“org.glassfish.movieplex7.chat”, and click on “Finish”.
+*4.1* Right-click on "Source Packages", select "New", "Java Class…".
+Give the class name as "ChatServer", package as
+`org.glassfish.movieplex7.chat`, and click on "Finish".
 
 *4.2* Change the class such that it looks like:
 
+[source,java]
+----
 @ServerEndpoint("/websocket")
+public class ChatServer {
+    private static final Set<Session> peers =
+               Collections.synchronizedSet(new HashSet<Session>());
 
-public class ChatServer \{
+    @OnOpen
+    public void onOpen(Session peer) {
+        peers.add(peer);
+    }
 
-private static final Set<Session> peers =
-Collections.synchronizedSet(new HashSet<Session>());
+    @OnClose
+    public void onClose(Session peer) {
+        peers.remove(peer);
+    }
 
-@OnOpen
-
-public void onOpen(Session peer) \{
-
-peers.add(peer);
-
+    @OnMessage
+    public void message(String message, Session client)
+           throws IOException, EncodeException {
+        for (Session peer : peers) {
+            peer.getBasicRemote().sendObject(message);
+        }
+    }
 }
-
-@OnClose
-
-public void onClose(Session peer) \{
-
-peers.remove(peer);
-
-}
-
-@OnMessage
-
-public void message(String message, Session client) throws IOException,
-EncodeException \{
-
-for (Session peer : peers) \{
-
-peer.getBasicRemote().sendObject(message);
-
-}
-
-}
-
-}
+----
 
 In this code:
 
-* @ServerEndpoint decorates the class to be a WebSocket endpoint. The
+* `@ServerEndpoint` decorates the class to be a WebSocket endpoint. The
 value defines the URI where this endpoint is published.
-* @OnOpen and @OnClose decorate the methods that must be called when
+* `@OnOpen` and `@OnClose` decorate the methods that must be called when
 WebSocket session is opened or closed. The peer parameter defines the
 client requesting connection initiation and termination.
-* @OnMessage decorates the message that receives the incoming WebSocket
+* `@OnMessage` decorates the message that receives the incoming WebSocket
 message. The first parameter, message, is the payload of the message.
 The second parameter, client, defines the other end of the WebSocket
 connection. The method implementation transmits the received message to
 all clients connected to this endpoint.
 
-Resolve the imports by right-clicking in the editor and selecting “Fix
-Imports” or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
+Resolve the imports by right-clicking in the editor and selecting "Fix
+Imports" or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
 Windows).
 
-Make sure to pick java.websocket.Session for resolving imports.
+WARNING: Make sure to pick `java.websocket.Session` for resolving imports.
 
 image:images/4.2-imports.png[image]
 
-Right-click again in the editor pane and select “Format” to format your
+Right-click again in the editor pane and select "Format" to format your
 code.
 
-*4.3* In “Web Pages”, select “New”, “Folder…”, give the folder name as
-“chat” and click on “Finish”.
+*4.3* In "Web Pages", select "New", "Folder…", give the folder name as
+"chat" and click on "Finish".
 
-*4.4* Right-click on the newly created folder, select “New”, "Other...",
-"Java Server Faces", “Facelets Template Client”, give the File Name as
-“chatroom”. Click on “Browse…” next to “Template:”, expand “Web Pages”,
-“WEB-INF”, select “template.xhtml”, and click on “Select File”. Click on
-“Finish”.
+*4.4* Right-click on the newly created folder, select "New", "Other...",
+"Java Server Faces", "Facelets Template Client", give the File Name as
+"chatroom". Click on "Browse…" next to "Template:", expand "Web Pages",
+"WEB-INF", select "template.xhtml", and click on "Select File". Click on
+"Finish".
 
 image:images/4.4-template.png[image]
 
 In this file, remove <ui:define> sections where name attribute value is
-“top” and “left”. These sections are inherited from the template.
+"top" and "left". These sections are inherited from the template.
 
-Replace <ui:define> section with “content” name such that it looks like:
+Replace `<ui:define>` section with "content" name such that it looks like:
 
+[source,xml]
 <ui:define name="content">
-
-<form action="">
-
-<table>
-
-<tr>
-
-<td>
-
-Chat Log<br/>
-
-<textarea readonly="true" rows="6" cols="50" id="chatlog"></textarea>
-
-</td>
-
-<td>
-
-Users<br/>
-
-<textarea readonly="true" rows="6" cols="20" id="users"></textarea>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2">
-
-<input id="textField" name="name" value="Duke" type="text"/>
-
-<input onclick="join();" value="Join" type="button"/>
-
-<input onclick="send_message();" value="Send" type="button"/><p/>
-
-<input onclick="disconnect();" value="Disconnect" type="button"/>
-
-</td>
-
-</tr>
-
-</table>
-
-</form>
-
-<div id="output"></div>
-
-<script language="javascript" type="text/javascript"
-src="$\{facesContext.externalContext.requestContextPath}/chat/websocket.js"></script>
-
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    Chat Log<br/>
+                    <textarea readonly="true" rows="6" cols="50" id="chatlog"></textarea>
+                </td>
+                <td>
+                    Users<br/>
+                    <textarea readonly="true" rows="6" cols="20" id="users"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="textField" name="name" value="Duke" type="text"/>
+                    <input onclick="join();" value="Join" type="button"/>
+                    <input onclick="send_message();" value="Send" type="button"/><p/>
+                    <input onclick="disconnect();" value="Disconnect" type="button"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="output"></div>
+        <script language="javascript" type="text/javascript"
+            src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"></script>
 </ui:define>
 
 The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
-Clicking on “Join” button takes the value as user name and clicking on
-“Send” takes the value as chat message. JavaScript methods are invoked
+Clicking on "Join" button takes the value as user name and clicking on
+"Send" takes the value as chat message. JavaScript methods are invoked
 when these buttons are clicked and these are explained in the next
 section. The chat messages are sent and received as WebSocket payloads.
 There is an explicit button to disconnect the WebSocket connection.
-“output” div is the placeholder for status messages. The WebSocket
-initialization occurs in “websocket.js” included at the bottom of the
+"output" div is the placeholder for status messages. The WebSocket
+initialization occurs in "websocket.js" included at the bottom of the
 fragment.
 
-*4.5* Right-click on “chat” in “Web Pages”, select “New”, "Other...",
-“Web”, “JavaScript File”.
+*4.5* Right-click on "chat" in "Web Pages", select "New", "Other...",
+"Web", "JavaScript File".
 
-Give the name as “websocket” and click on “Finish”.
+Give the name as "websocket" and click on "Finish".
 
-*4.6* Edit the contents of “websocket.js” such that it looks like:
+*4.6* Edit the contents of "websocket.js" such that it looks like:
 
+[source,javascript]
+----
 var wsUri = 'ws://' + document.location.host
-
-+ document.location.pathname.substr(0,
-
-document.location.pathname.indexOf("/faces"))
-
-+ '/websocket';
-
+            + document.location.pathname.substr(0,
+              document.location.pathname.indexOf("/faces")) + 
+              '/websocket';
 console.log(wsUri);
 
 var websocket = new WebSocket(wsUri);
-
 var textField = document.getElementById("textField");
-
 var users = document.getElementById("users");
-
 var chatlog = document.getElementById("chatlog");
-
 var username;
 
 websocket.onopen = function(evt) \{ onOpen(evt); };
-
 websocket.onmessage = function(evt) \{ onMessage(evt); };
-
 websocket.onerror = function(evt) \{ onError(evt); };
-
 websocket.onclose = function(evt) \{ onClose(evt); };
 
 var output = document.getElementById("output");
 
 function join() \{
-
-username = textField.value;
-
-websocket.send(username + " joined");
-
+    username = textField.value;
+    websocket.send(username + " joined");
 }
 
 function send_message() \{
-
-websocket.send(username + ": " + textField.value);
-
+    websocket.send(username + ": " + textField.value);
 }
 
 function onOpen() \{
-
-writeToScreen("CONNECTED");
-
+    writeToScreen("CONNECTED");
 }
 
 function onClose() \{
-
-writeToScreen("DISCONNECTED");
-
+    writeToScreen("DISCONNECTED");
 }
 
 function onMessage(evt) \{
-
-writeToScreen("RECEIVED: " + evt.data);
-
-if (evt.data.indexOf("joined") !== -1) \{
-
-users.innerHTML += evt.data.substring(0, evt.data.indexOf(" joined")) +
-"\n";
-
-} else \{
-
-chatlog.innerHTML += evt.data + "\n";
-
-}
-
+    writeToScreen("RECEIVED: " + evt.data);
+    if (evt.data.indexOf("joined") !== -1) \{
+        users.innerHTML += evt.data.substring(0, evt.data.indexOf(" joined")) + "\n";
+    } else \{
+        chatlog.innerHTML += evt.data + "\n";
+    }
 }
 
 function onError(evt) \{
-
-writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
-
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
 }
 
 function disconnect() \{
-
-websocket.close();
-
+    websocket.close();
 }
 
 function writeToScreen(message) \{
-
-var pre = document.createElement("p");
-
-pre.style.wordWrap = "break-word";
-
-pre.innerHTML = message;
-
-output.appendChild(pre);
-
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
 }
+----
 
 The WebSocket endpoint URI is calculated by using standard JavaScript
-variables and appending the URI specified in the ChatServer class.
+variables and appending the URI specified in the `ChatServer` class.
 WebSocket is initialized by calling new WebSocket(…). Event handlers are
-registered for lifecycle events using onXXX messages. The listeners
+registered for lifecycle events using `onXXX` messages. The listeners
 registered in this script are explained in the table.
 
-*Listeners*
+[width="60%", cols="1,3" options="header"]
+|===
+| Listeners | Called When
 
-*Called When*
+| `onOpen(evt)` | WebSocket connection is initiated
 
-onOpen(evt)
+| `onMessage(evt)` | WebSocket message is received
 
-WebSocket connection is initiated
+| `onError(evt)` | Error occurs during the communication
 
-onMessage(evt)
-
-WebSocket message is received
-
-onError(evt)
-
-Error occurs during the communication
-
-onClose(evt)
-
-WebSocket connection is terminated
+| `onClose(evt)` | WebSocket connection is terminated
+|===
 
 Any relevant data is passed along as parameter to the function. Each
-method prints the status on the browser using writeToScreen utility
+method prints the status on the browser using `writeToScreen` utility
 method. The join method sends a message to the endpoint
-image:images/4.6-chatroom.png[image]
 that a particular user has joined. The endpoint then broadcasts the
-message to all the listening clients. The send_message method appends
+message to all the listening clients. The `send_message` method appends
 the logged in user name and the value of the text field and broadcasts
-to all the clients similarly. The onMessage method updates the list of
+to all the clients similarly. The `onMessage` method updates the list of
 logged in users as well.
+image:images/4.6-chatroom.png[image]
 
-*4.7* Edit “WEB-INF/template.xhtml” and change:
+*4.7* Edit "WEB-INF/template.xhtml" and change:
 
+[source,xml]
 <h:outputLink value="item2.xhtml">Item 2</h:outputLink>
 
 to
 
-<h:outputLink
-value="$\{facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml">Chat
-Room</h:outputLink>
+[source,xml]
+<h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml">
+        Chat Room
+</h:outputLink>
 
-The outputLink tag renders an HTML anchor tag with an href attribute.
-$\{facesContext.externalContext.requestContextPath} provides the request
+The `outputLink` tag renders an HTML anchor tag with an `href` attribute.
+`${facesContext.externalContext.requestContextPath}` provides the request
 URI that identifies the web application context for this request. This
 allows the links in the left navigation bar to be fully-qualified URLs.
 
 *4.8* Run the project by right clicking on the project and selecting
-“Run”. The browser shows
+"Run". The browser shows
 http://localhost:8080/movieplex7[localhost:8080/movieplex7].
 
-Click on “Chat Room” to see the output.
+Click on "Chat Room" to see the output.
 
-The “CONNECTED” status message is shown and indicates that the WebSocket
+The "CONNECTED" status message is shown and indicates that the WebSocket
 connection with the endpoint is established.
 
 image:images/4.8-chatroom.png[image]
@@ -351,16 +276,16 @@ supported browsers is available at
 http://caniuse.com/websockets[caniuse.com/websockets].
 
 Open the URI http://localhost:8080/movieplex7[localhost:8080/movieplex7]
-in another browser window. Enter “Duke” in the text box in the first
-browser and click “Join”.
+in another browser window. Enter "Duke" in the text box in the first
+browser and click "Join".
 
 image:images/4.8-chatroom-joined.png[image]
 
 Notice that the user list and the status message in both the browsers
-gets updated. Enter “James” in the text box of the second browser and
-click on “Join”. Once again the user list and the status message in both
+gets updated. Enter "James" in the text box of the second browser and
+click on "Join". Once again the user list and the status message in both
 the browsers is updated. Now you can type any messages in any of the
-browser and click on “Send” to send the message.
+browser and click on "Send" to send the message.
 
 The output from two different browsers after the initial greeting looks
 like as shown.
