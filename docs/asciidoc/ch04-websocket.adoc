@@ -5,11 +5,7 @@
 features of Java API for WebSocket 1.0 will be introduced and
 demonstrated by using them in the application.
 
- +
-
 *Estimated Time*: 30-45 mins
-
- +
 
 WebSocket provide a full-duplex and bi-directional communication
 protocol over a single TCP connection. WebSocket is a combination of
@@ -20,13 +16,9 @@ Candidate Recommendation as of this writing). The protocol defines an
 opening handshake and data transfer. The API enables Web pages to use
 the WebSocket protocol for two-way communication with the remote host.
 
- +
-
 http://jcp.org/en/jsr/detail?id=356[JSR 356] defines a standard API for
 creating WebSocket applications in the Java EE 7 Platform. The JSR
 provides support for:
-
- +
 
 * Create WebSocket endpoint using annotations and interface
 * Initiating and intercepting WebSocket events
@@ -34,34 +26,20 @@ provides support for:
 * Configuration and management of WebSocket sessions
 * Integration with Java EE security model
 
- +
-
 This section will build a chat room for movie viewers.
-
- +
 
 *4.1* Right-click on “Source Packages”, select “New”, “Java Class…”.
 Give the class name as “ChatServer”, package as
 “org.glassfish.movieplex7.chat”, and click on “Finish”.
 
- +
-
- +
-
 *4.2* Change the class such that it looks like:
-
- +
 
 @ServerEndpoint("/websocket")
 
 public class ChatServer \{
 
- +
-
 private static final Set<Session> peers =
 Collections.synchronizedSet(new HashSet<Session>());
-
- +
 
 @OnOpen
 
@@ -71,8 +49,6 @@ peers.add(peer);
 
 }
 
- +
-
 @OnClose
 
 public void onClose(Session peer) \{
@@ -80,8 +56,6 @@ public void onClose(Session peer) \{
 peers.remove(peer);
 
 }
-
- +
 
 @OnMessage
 
@@ -98,8 +72,6 @@ peer.getBasicRemote().sendObject(message);
 
 }
 
- +
-
 In this code:
 
 * @ServerEndpoint decorates the class to be a WebSocket endpoint. The
@@ -113,37 +85,19 @@ The second parameter, client, defines the other end of the WebSocket
 connection. The method implementation transmits the received message to
 all clients connected to this endpoint.
 
- +
-
 Resolve the imports by right-clicking in the editor and selecting “Fix
 Imports” or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
 Windows).
 
- +
-
 Make sure to pick java.websocket.Session for resolving imports.
 
- +
-
- +
-
 image:images/4.2-imports.png[image]
-
- +
 
 Right-click again in the editor pane and select “Format” to format your
 code.
 
- +
-
- +
-
 *4.3* In “Web Pages”, select “New”, “Folder…”, give the folder name as
 “chat” and click on “Finish”.
-
- +
-
- +
 
 *4.4* Right-click on the newly created folder, select “New”, "Other...",
 "Java Server Faces", “Facelets Template Client”, give the File Name as
@@ -151,20 +105,12 @@ code.
 “WEB-INF”, select “template.xhtml”, and click on “Select File”. Click on
 “Finish”.
 
- +
-
 image:images/4.4-template.png[image]
-
- +
 
 In this file, remove <ui:define> sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.
 
- +
-
 Replace <ui:define> section with “content” name such that it looks like:
-
- +
 
 <ui:define name="content">
 
@@ -219,8 +165,6 @@ src="$\{facesContext.externalContext.requestContextPath}/chat/websocket.js"></sc
 
 </ui:define>
 
- +
-
 The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
@@ -233,26 +177,12 @@ There is an explicit button to disconnect the WebSocket connection.
 initialization occurs in “websocket.js” included at the bottom of the
 fragment.
 
- +
-
- +
-
 *4.5* Right-click on “chat” in “Web Pages”, select “New”, "Other...",
 “Web”, “JavaScript File”.
 
- +
-
 Give the name as “websocket” and click on “Finish”.
 
- +
-
- +
-
 *4.6* Edit the contents of “websocket.js” such that it looks like:
-
- +
-
- +
 
 var wsUri = 'ws://' + document.location.host
 
@@ -272,8 +202,6 @@ var users = document.getElementById("users");
 
 var chatlog = document.getElementById("chatlog");
 
- +
-
 var username;
 
 websocket.onopen = function(evt) \{ onOpen(evt); };
@@ -286,8 +214,6 @@ websocket.onclose = function(evt) \{ onClose(evt); };
 
 var output = document.getElementById("output");
 
- +
-
 function join() \{
 
 username = textField.value;
@@ -296,15 +222,11 @@ websocket.send(username + " joined");
 
 }
 
- +
-
 function send_message() \{
 
 websocket.send(username + ": " + textField.value);
 
 }
-
- +
 
 function onOpen() \{
 
@@ -312,15 +234,11 @@ writeToScreen("CONNECTED");
 
 }
 
- +
-
 function onClose() \{
 
 writeToScreen("DISCONNECTED");
 
 }
-
- +
 
 function onMessage(evt) \{
 
@@ -339,23 +257,17 @@ chatlog.innerHTML += evt.data + "\n";
 
 }
 
- +
-
 function onError(evt) \{
 
 writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
 
 }
 
- +
-
 function disconnect() \{
 
 websocket.close();
 
 }
-
- +
 
 function writeToScreen(message) \{
 
@@ -369,17 +281,11 @@ output.appendChild(pre);
 
 }
 
- +
-
- +
-
 The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the ChatServer class.
 WebSocket is initialized by calling new WebSocket(…). Event handlers are
 registered for lifecycle events using onXXX messages. The listeners
 registered in this script are explained in the table.
-
- +
 
 *Listeners*
 
@@ -401,11 +307,6 @@ onClose(evt)
 
 WebSocket connection is terminated
 
- +
-
- +
- +
-
 Any relevant data is passed along as parameter to the function. Each
 method prints the status on the browser using writeToScreen utility
 method. The join method sends a message to the endpoint
@@ -416,60 +317,31 @@ the logged in user name and the value of the text field and broadcasts
 to all the clients similarly. The onMessage method updates the list of
 logged in users as well.
 
- +
-
- +
-
 *4.7* Edit “WEB-INF/template.xhtml” and change:
-
- +
 
 <h:outputLink value="item2.xhtml">Item 2</h:outputLink>
 
- +
-
 to
-
- +
 
 <h:outputLink
 value="$\{facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml">Chat
 Room</h:outputLink>
-
- +
 
 The outputLink tag renders an HTML anchor tag with an href attribute.
 $\{facesContext.externalContext.requestContextPath} provides the request
 URI that identifies the web application context for this request. This
 allows the links in the left navigation bar to be fully-qualified URLs.
 
- +
-
- +
-
 *4.8* Run the project by right clicking on the project and selecting
 “Run”. The browser shows
 http://localhost:8080/movieplex7[localhost:8080/movieplex7].
 
- +
-
 Click on “Chat Room” to see the output.
-
- +
 
 The “CONNECTED” status message is shown and indicates that the WebSocket
 connection with the endpoint is established.
 
- +
-
- +
- +
-
 image:images/4.8-chatroom.png[image]
-
- +
-
- +
 
 Please make sure your browser supports WebSocket in order for this page
 to show up successfully. Chrome 14.0+, Firefox 11.0+, Safari 6.0+, and
@@ -477,17 +349,11 @@ IE 10.0+ are the browsers that support WebSocket. A complete list of
 supported browsers is available at
 http://caniuse.com/websockets[caniuse.com/websockets].
 
- +
-
 Open the URI http://localhost:8080/movieplex7[localhost:8080/movieplex7]
 in another browser window. Enter “Duke” in the text box in the first
 browser and click “Join”.
 
- +
-
 image:images/4.8-chatroom-joined.png[image]
-
- +
 
 Notice that the user list and the status message in both the browsers
 gets updated. Enter “James” in the text box of the second browser and
@@ -495,25 +361,13 @@ click on “Join”. Once again the user list and the status message in both
 the browsers is updated. Now you can type any messages in any of the
 browser and click on “Send” to send the message.
 
- +
-
 The output from two different browsers after the initial greeting looks
 like as shown.
 
- +
-
 image:images/4.8-chatroom-two-browsers.png[image]
-
- +
-
- +
 
 Here it shows output from Chrome on the top and Firefox on the bottom.
 
- +
-
 Chrome Developer Tools or Firebug in Firefox can be used to monitor
 WebSocket traffic.
-
- +
 
