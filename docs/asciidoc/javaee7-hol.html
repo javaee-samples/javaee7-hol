@@ -425,13 +425,22 @@ using the following Java EE 7 technologies:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Java Persistence API 2.1 (JSR 338)</p>
+<p>Java API for WebSocket 1.0 (JSR 356)</p>
+</li>
+<li>
+<p>Batch Applications for the Java Platform 1.0 (JSR 352)</p>
+</li>
+<li>
+<p>Java API for JSON Processing 1.0 (JSR 353)</p>
 </li>
 <li>
 <p>Java API for RESTful Web Services 2.0 (JSR 339)</p>
 </li>
 <li>
 <p>Java Message Service 2.0 (JSR 343)</p>
+</li>
+<li>
+<p>Java Persistence API 2.1 (JSR 338)</p>
 </li>
 <li>
 <p>JavaServer Faces 2.2 (JSR 344)</p>
@@ -443,15 +452,6 @@ using the following Java EE 7 technologies:</p>
 <p>Bean Validation 1.1 (JSR 349)</p>
 </li>
 <li>
-<p>Batch Applications for the Java Platform 1.0 (JSR 352)</p>
-</li>
-<li>
-<p>Java API for JSON Processing 1.0 (JSR 353)</p>
-</li>
-<li>
-<p>Java API for WebSocket 1.0 (JSR 356)</p>
-</li>
-<li>
 <p>Java Transaction API 1.2 (JSR 907)</p>
 </li>
 </ul>
@@ -460,7 +460,7 @@ using the following Java EE 7 technologies:</p>
 <p>Together these APIs will allow you to be more productive by simplifying enterprise development.</p>
 </div>
 <div class="paragraph">
-<p>The latest version of this document can be downloaded from <a href="https://github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf">github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf</a>.</p>
+<p>The latest version of this document can be downloaded from <a href="https://github.com/javaee-samples/javaee7-hol/blob/master/docs/asciidoc/javaee7-hol.html">javaee7-hol.html</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_software_requirement">Software Requirement</h3>
@@ -474,10 +474,10 @@ using the following Java EE 7 technologies:</p>
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.</p>
 </li>
 <li>
-<p>NetBeans 7.4 or higher “All” or “Java EE” version from
+<p>NetBeans 7.4 or higher "All" or "Java EE" version from
 <a href="http://netbeans.org/downloads/">http://netbeans.org/downloads/</a>. A
 preview of the downloads page is shown and highlights the exact
-“Download” button to be clicked.</p>
+"Download" button to be clicked.</p>
 </li>
 </ul>
 </div>
@@ -531,65 +531,49 @@ flows.</p>
 <p>The table below details the components and the selected technology used
 in its’ implementation.</p>
 </div>
-<div class="paragraph">
-<p><strong>Flow</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong></p>
-</div>
-<div class="paragraph">
-<p>User Interface</p>
-</div>
-<div class="paragraph">
-<p>Written entirely in <em>JavaServer Faces</em> (JSF).</p>
-</div>
-<div class="paragraph">
-<p>Chat Room</p>
-</div>
-<div class="paragraph">
-<p>Utilizes client-side JavaScript and JSON to communicate with a
-<em>WebSocket</em> endpoint</p>
-</div>
-<div class="paragraph">
-<p>Ticket Sales</p>
-</div>
-<div class="paragraph">
-<p>Uses <em>Batch Applications for the Java Platform</em> to calculate the total
-sales and persist to the database.</p>
-</div>
-<div class="paragraph">
-<p>Add/Delete Movie</p>
-</div>
-<div class="paragraph">
-<p>Implemented using RESTful Web Services. JSON is used as on-the-wire data
-format.</p>
-</div>
-<div class="paragraph">
-<p>Movie Points</p>
-</div>
-<div class="paragraph">
-<p>Uses <em>Java Message Service</em> (JMS) to update and obtain loyalty reward
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flow</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Written entirely in <em>JavaServer Faces</em> (JSF).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chat Room</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Utilizes client-side JavaScript and JSON to communicate with a <em>WebSocket</em> endpoint</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ticket Sales</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uses <em>Batch Applications for the Java Platform</em> to calculate the total
+sales and persist to the database.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add/Delete Movie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implemented using RESTful Web Services. JSON is used as on-the-wire data format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Movie Points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uses <em>Java Message Service</em> (JMS) to update and obtain loyalty reward
 points; an optional implementation using database technology may be
-performed.</p>
-</div>
-<div class="paragraph">
-<p>Show Booking</p>
-</div>
-<div class="paragraph">
-<p>Uses lightweight <em>Enterprise JavaBeans</em> to communicate with the database
-using Java Persistence API.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+performed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show Booking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uses lightweight <em>Enterprise JavaBeans</em> to communicate with the database
+using Java Persistence API.</p></td>
+</tr>
+</tbody>
+</table>
+
 <div class="paragraph">
 <p>This document is not a comprehensive tutorial of Java EE. The attendees
 are expected to know the basic Java EE concepts such as EJB, JPA,
@@ -597,11 +581,6 @@ JAX-RS, and CDI. The <a href="http://docs.oracle.com/javaee/7/tutorial/doc/">Jav
 EE 7 Tutorial</a> is a good place to learn all these concepts. However
 enough explanation is provided in this guide to get you started with the
 application.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>WARNING</strong>: This is a sample application and the code may not be
@@ -612,27 +591,11 @@ to stay focused on explaining the technology. It is highly recommended
 to make sure that the code copied from this sample application is
 updated to meet those requirements.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 <div class="sect2">
 <h3 id="_lab_flow">Lab Flow</h3>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The attendees will start with an existing maven application and by
 following the instructions and guidance provided by this lab they will:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -644,11 +607,6 @@ the application and use of the selected platform technologies.</p>
 <p>Add new and update existing code with provided fragments in order to
 demonstrate usage of different technology stacks in the Java EE 7
 platform.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -656,11 +614,6 @@ platform.</p>
 <p>While you are copy/pasting the code from this document into NetBeans,
 here are couple of tips that will be really useful and make your
 experience enjoyable!</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -670,11 +623,6 @@ following conventions. This can be done for any type of source code,
 whether its XML or Java or something else. It is highly recommended to
 use this functionality after the code is copy/pasted from this document
 to the editor. This keeps the code legible.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -682,60 +630,40 @@ to the editor. This keeps the code legible.</p>
 <p>This functionality can be accessed by right-clicking in the editor pane
 and selecting “Format” as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/2.1-format.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This functionality is also accessible using the following keyboard
 shortcuts:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Shortcut</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Operating System</strong></p>
-</div>
-<div class="paragraph">
-<p>Ctrl + Shift + F</p>
-</div>
-<div class="paragraph">
-<p>Mac</p>
-</div>
-<div class="paragraph">
-<p>Alt + Shift + F</p>
-</div>
-<div class="paragraph">
-<p>Windows</p>
-</div>
-<div class="paragraph">
-<p>Alt + Shift + F</p>
-</div>
-<div class="paragraph">
-<p>Linux</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Shortcut</th>
+<th class="tableblock halign-left valign-top">Operating System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mac</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt + Shift + F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt + Shift + F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux</p></td>
+</tr>
+</tbody>
+</table>
+
 <div class="ulist">
 <ul>
 <li>
@@ -743,30 +671,15 @@ shortcuts:</p>
 not auto-import the classes. This is required to be done manually in
 order for the classes to compile. This can be fixed for each missing
 import statement by clicking on the yellow bulb shown in the side bar.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/2.1-server-endpoint.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Alternatively all the imports can be resolved by right-clicking on the
 editor pane and selecting "Fix Imports" as shown.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/2.1-fix-imports.png" alt="image"></span></p>
@@ -775,79 +688,47 @@ editor pane and selecting "Fix Imports" as shown.</p>
 <p>This functionality is also accessible using the following keyboard
 shortcuts:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Shortcut</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Operating System</strong></p>
-</div>
-<div class="paragraph">
-<p>Command + Shift + I</p>
-</div>
-<div class="paragraph">
-<p>Mac</p>
-</div>
-<div class="paragraph">
-<p>Ctrl + Shift + I</p>
-</div>
-<div class="paragraph">
-<p>Windows</p>
-</div>
-<div class="paragraph">
-<p>Ctrl + Shift + I</p>
-</div>
-<div class="paragraph">
-<p>Linux</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Shortcut</th>
+<th class="tableblock halign-left valign-top">Operating System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command + Shift + I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mac</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux</p></td>
+</tr>
+</tbody>
+</table>
+
 <div class="paragraph">
 <p>The defaults may work in most of the cases. Choices are shown in case a
 class is available to import from multiple packages. If multiple
 packages are available then specific packages to import from are clearly
 marked in the document.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_estimated_time">Estimated Time</h3>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Following the complete instructions in this document can take any where
 from three to five hours. The wide time range accommodates for learning
 the new technologies, finding your way in NetBeans, copy/pasting the
 code, and debugging the errors.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The recommended flow is where you follow through the instructions in all
@@ -856,86 +737,56 @@ section 4.0 through 9.0 in an order of your choice, based upon your
 interest and preference of the technology. However section 6.0 is a
 pre-requisite for section 7.0.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Here is an approximate time estimate for each section:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Section Number and Title</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Estimated Time</strong></p>
-</div>
-<div class="paragraph">
-<p>3.0 Walk-through of Sample Application</p>
-</div>
-<div class="paragraph">
-<p>15 - 30 mins</p>
-</div>
-<div class="paragraph">
-<p>4.0 Chat Room (Java API for WebSocket)</p>
-</div>
-<div class="paragraph">
-<p>30 - 45 mins</p>
-</div>
-<div class="paragraph">
-<p>5.0 Ticket Sales (Batch Applications for the Java Platform)</p>
-</div>
-<div class="paragraph">
-<p>30 - 45 mins</p>
-</div>
-<div class="paragraph">
-<p>6.0 View and Delete Movie (Java API for RESTful Web Services)</p>
-</div>
-<div class="paragraph">
-<p>30 - 45 mins</p>
-</div>
-<div class="paragraph">
-<p>7.0 Add Movie (Java API for JSON Processing)</p>
-</div>
-<div class="paragraph">
-<p>30 - 45 mins</p>
-</div>
-<div class="paragraph">
-<p>8.0 Movie Points (Java Message Service)</p>
-</div>
-<div class="paragraph">
-<p>30 - 45 mins</p>
-</div>
-<div class="paragraph">
-<p>9.0 Show Booking (JavaServer Faces)</p>
-</div>
-<div class="paragraph">
-<p>30 - 45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Section Title</th>
+<th class="tableblock halign-left valign-top">Estimated Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Walk-through of Sample Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 - 30 mins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chat Room (Java API for WebSocket)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ticket Sales (Batch Applications for the Java Platform)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View and Delete Movie (Java API for RESTful Web Services)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Movie (Java API for JSON Processing)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Movie Points (Java Message Service)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show Booking (JavaServer Faces)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
+</tr>
+</tbody>
+</table>
+
 <div class="paragraph">
 <p>The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
 shorter time, and you can do it too!</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The listed time for each section also allows you to create a custom
