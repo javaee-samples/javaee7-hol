@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1.1 Software Requirement</title>
+<title>Java EE 7 Hands-on Lab</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -362,157 +362,92 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </head>
 <body class="article">
 <div id="header">
+<h1>Java EE 7 Hands-on Lab</h1>
+<span id="author" class="author">Arun Gupta</span><br>
+<span id="revnumber">version 2.0,</span>
+<span id="revdate">Dec 3, 2013</span>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p><span class="image"><img src="961f24f1.gif" alt="image"></span>Java EE 7 Hands-on Lab
-using GlassFish 4</p>
-</div>
-<div class="paragraph">
-<p><strong>Java EE 7 Hands-on Lab</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p>Arun Gupta (Red Hat)
+Director, Developer Advocacy, @arungupta</p>
 </div>
 <div class="paragraph">
-<p>Arun Gupta (Red Hat)</p>
+<p>Antonio Goncalves (Independent)
+Java EE EG Member, Consultant, Java Champion, @agoncal</p>
 </div>
 <div class="paragraph">
-<p>Director, Developer Advocacy, @arungupta</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p>David Delabassee (Oracle)
+GlassFish Product Manager, @delabassee</p>
 </div>
 <div class="paragraph">
-<p>Antonio Goncalves (Independent)</p>
-</div>
-<div class="paragraph">
-<p>Java EE EG Member, Consultant, Java Champion, @agoncal</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>David Delabassee (Oracle)</p>
-</div>
-<div class="paragraph">
-<p>GlassFish Product Manager, @delabassee</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Marian Muller (Serli)</p>
-</div>
-<div class="paragraph">
-<p>Software Engineer, @mullermarian</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="be841a67.png" alt="image"></span><br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p>Marian Muller (Serli)
+Software Engineer, @mullermarian</p>
 </div>
 <div class="paragraph">
 <p><strong>Table of Contents</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>2_1146780383">1.0 Introduction 4</a></p>
+<p><a href="#<em>RefHeading</em>2_1146780383">1.0 Introduction</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>4_1146780383">1.1 Software Requirement 4</a></p>
+<p><a href="#<em>RefHeading</em>4_1146780383">1.1 Software Requirement</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>6_1146780383">2.0 Problem Statement 5</a></p>
+<p><a href="#<em>RefHeading</em>6_1146780383">2.0 Problem Statement</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>8_1146780383">2.1 Lab Flow 7</a></p>
+<p><a href="#<em>RefHeading</em>8_1146780383">2.1 Lab Flow</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>10_1146780383">2.2 Estimated Time 9</a></p>
+<p><a href="#<em>RefHeading</em>10_1146780383">2.2 Estimated Time</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>12_1146780383">3.0 Walk-through of Sample Application
-10</a></p>
+<p><a href="#<em>RefHeading</em>12_1146780383">3.0 Walk-through of Sample Application</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>14_1146780383">4.0 Chat Room (Java API for WebSocket)
-17</a></p>
+<p><a href="#<em>RefHeading</em>14_1146780383">4.0 Chat Room (Java API for WebSocket)</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>16_1146780383">5.0 Ticket Sales (Batch Applications
-for the Java Platform) 26</a></p>
+<p><a href="#<em>RefHeading</em>16_1146780383">5.0 Ticket Sales (Batch Applications for the Java Platform)</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>18_1146780383">6.0 View and Delete Movie (Java API
-for RESTful Web Services) 35</a></p>
+<p><a href="#<em>RefHeading</em>18_1146780383">6.0 View and Delete Movie (Java API for RESTful Web Services)</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>20_1146780383">7.0 Add Movie (Java API for JSON
-Processing) 43</a></p>
+<p><a href="#<em>RefHeading</em>20_1146780383">7.0 Add Movie (Java API for JSON Processing)</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>22_1146780383">8.0 Movie Points (Java Message
-Service) 52</a></p>
+<p><a href="#<em>RefHeading</em>22_1146780383">8.0 Movie Points (Java Message Service)</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>24_1146780383">9.0 Show Booking (JavaServer Faces)
-60</a></p>
+<p><a href="#<em>RefHeading</em>24_1146780383">9.0 Show Booking (JavaServer Faces)</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>26_1146780383">10.0 Conclusion 70</a></p>
+<p><a href="#<em>RefHeading</em>26_1146780383">10.0 Conclusion</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>28_1146780383">11.0 Troubleshooting 71</a></p>
+<p><a href="#<em>RefHeading</em>28_1146780383">11.0 Troubleshooting</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>30_1146780383">12.0 Acknowledgements 72</a></p>
+<p><a href="#<em>RefHeading</em>30_1146780383">12.0 Acknowledgements</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>32_1146780383">13.0 Completed Solutions 72</a></p>
+<p><a href="#<em>RefHeading</em>32_1146780383">13.0 Completed Solutions</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>34_1146780383">13.1 TODO 72</a></p>
+<p><a href="#<em>RefHeading</em>34_1146780383">13.1 TODO</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>36_1146780383">13.2 Revision History 73</a></p>
+<p><a href="#<em>RefHeading</em>36_1146780383">13.2 Revision History</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>38_1146780383">Appendix 73</a></p>
+<p><a href="#<em>RefHeading</em>38_1146780383">Appendix</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#<em>RefHeading</em>40_1146780383">Appendix A: Configure GlassFish 4 in
-NetBeans IDE 73</a></p>
+<p><a href="#<em>RefHeading</em>40_1146780383">Appendix A: Configure GlassFish 4 in NetBeans IDE</a></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -601,9 +536,7 @@ using the following Java EE 7 technologies:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Together these APIs will allow you
-t<span class="image"><img src="df8fc7a1.gif" alt="image"></span><span class="image"><img src="d4a56512.gif" alt="image"></span>o
-be more productive by simplifying enterprise development.</p>
+<p>Together these APIs will allow you to be more productive by simplifying enterprise development.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -619,8 +552,11 @@ be more productive by simplifying enterprise development.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_1_1_software_requirement">1.1 Software Requirement</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_1_software_requirement">1.1 Software Requirement</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -654,7 +590,7 @@ preview of the downloads page is shown and highlights the exact
 </ul>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="1.1-netbeans-download.png" alt="image"></span></p>
+<p><span class="image"><img src="images/1.1-netbeans-download.png" alt="image"></span></p>
 </div>
 <div class="ulist">
 <ul>
@@ -712,7 +648,7 @@ sales from each showing are calculated at the end of the day. Customers
 also accrue points for watching movies.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2.0-problem-statement.png" alt="image"></span></p>
+<p><span class="image"><img src="images/2.0-problem-statement.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -743,7 +679,7 @@ flows.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2.0-technologies.png" alt="image"></span></p>
+<p><span class="image"><img src="images/2.0-technologies.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The table below details the components and the selected technology used
@@ -842,7 +778,6 @@ updated to meet those requirements.</p>
 +</pre>
 </div>
 </div>
-</div>
 <div class="sect2">
 <h3 id="_2_1_lab_flow">2.1 Lab Flow</h3>
 <div class="literalblock">
@@ -913,7 +848,7 @@ and selecting “Format” as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2.1-format.png" alt="image"></span></p>
+<p><span class="image"><img src="images/2.1-format.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -977,7 +912,7 @@ import statement by clicking on the yellow bulb shown in the side bar.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2.1-server-endpoint.png" alt="image"></span></p>
+<p><span class="image"><img src="images/2.1-server-endpoint.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -994,7 +929,7 @@ editor pane and selecting "Fix Imports" as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2.1-fix-imports.png" alt="image"></span></p>
+<p><span class="image"><img src="images/2.1-fix-imports.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>This functionality is also accessible using the following keyboard
@@ -1236,7 +1171,7 @@ is shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3.2-project-structure.png" alt="image"></span><br>
+<p><span class="image"><img src="images/3.2-project-structure.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="literalblock">
@@ -1245,7 +1180,7 @@ is shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3.2-persistence-xml.png" alt="image"></span><br></p>
+<p><span class="image"><img src="images/3.2-persistence-xml.png" alt="image"></span><br></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1519,7 +1454,7 @@ the error shown below:</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3.4-missing-server.png" alt="image"></span></p>
+<p><span class="image"><img src="images/3.4-missing-server.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1661,7 +1596,7 @@ through the SQL scripts. The database schema is shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3.5-schema.png" alt="image"></span></p>
+<p><span class="image"><img src="images/3.5-schema.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1717,8 +1652,8 @@ same as the JPA entity class name.</p>
 </div>
 <div class="paragraph">
 <p>The mapping between JPA entity classes, EJB classes, and the URI of the
-corresponding REST
-end<span class="image"><img src="3.6-glassfish-server.png" alt="image"></span>point is shown.</p>
+corresponding REST endpoint is shown.
+<span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1882,7 +1817,7 @@ server. Choose the configured GlassFish server and click on “OK”.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3.8-first-page.png" alt="image"></span></p>
+<p><span class="image"><img src="images/3.80-first-page.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2128,7 +2063,7 @@ Windows).</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4.2-imports.png" alt="image"></span></p>
+<p><span class="image"><img src="images/4.2-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2176,7 +2111,7 @@ code.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4.4-template.png" alt="image"></span></p>
+<p><span class="image"><img src="images/4.4-template.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2598,8 +2533,8 @@ registered in this script are explained in the table.</p>
 <div class="paragraph">
 <p>Any relevant data is passed along as parameter to the function. Each
 method prints the status on the browser using writeToScreen utility
-method. The join method sends a
-m<span class="image"><img src="4.6-chatroom.png" alt="image"></span>essage to the endpoint
+method. The join method sends a message to the endpoint
+<span class="image"><img src="images/4.6-chatroom.png" alt="image"></span>
 that a particular user has joined. The endpoint then broadcasts the
 message to all the listening clients. The send_message method appends
 the logged in user name and the value of the text field and broadcasts
@@ -2700,7 +2635,7 @@ connection with the endpoint is established.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4.8-chatroom.png" alt="image"></span></p>
+<p><span class="image"><img src="images/4.8-chatroom.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2735,7 +2670,7 @@ browser and click “Join”.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4.8-chatroom-joined.png" alt="image"></span></p>
+<p><span class="image"><img src="images/4.8-chatroom-joined.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2764,7 +2699,7 @@ like as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4.8-chatroom-two-browsers.png" alt="image"></span></p>
+<p><span class="image"><img src="images/4.8-chatroom-two-browsers.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2842,7 +2777,7 @@ jobs.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="6c45bd3.png" alt="image"></span><br>
+<p><span class="image"><img src="images/5.0-batch-intro.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="literalblock">
@@ -3616,7 +3551,7 @@ the bean to be injectable in an EL expression.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="367190ee.png" alt="image"></span></p>
+<p><span class="image"><img src="images/5.10-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -3865,7 +3800,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/batch/sales.xht
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="67ec6198.png" alt="image"></span></p>
+<p><span class="image"><img src="images/5.14-sales.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -3894,7 +3829,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/batch/sales.xht
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="f9b585c2.png" alt="image"></span></p>
+<p><span class="image"><img src="images/5.15-sales.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -3926,7 +3861,7 @@ click on “Refresh” button to see the updated output as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="81e229f6.png" alt="image"></span></p>
+<p><span class="image"><img src="images/5.16-sales-output.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4060,7 +3995,7 @@ javax.enterprise.context.RequestScoped class.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="778b4c7c.png" alt="image"></span></p>
+<p><span class="image"><img src="images/6.2-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4308,7 +4243,7 @@ and f: prefixes.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="74a78a6d.png" alt="image"></span><br>
+<p><span class="image"><img src="images/6.6-imports.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="literalblock">
@@ -4408,7 +4343,7 @@ in the left navigation bar shows the output as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="135a5b98.png" alt="image"></span><br>
+<p><span class="image"><img src="images/6.8-output.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="paragraph">
@@ -4617,7 +4552,7 @@ output as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2cea1ecd.png" alt="image"></span></p>
+<p><span class="image"><img src="images/6.12-output.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4726,7 +4661,7 @@ prepared and then delete method is called to delete the resource.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="485d57a5.png" alt="image"></span><br>
+<p><span class="image"><img src="images/6.14-output.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="paragraph">
@@ -4890,7 +4825,7 @@ this implementation will consume a JSON representation of the resource.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4b68287c.png" alt="image"></span><br>
+<p><span class="image"><img src="images/7.2-imports.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="literalblock">
@@ -4907,7 +4842,7 @@ this implementation will consume a JSON representation of the resource.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="a46c1db5.png" alt="image"></span></p>
+<p><span class="image"><img src="images/7.3-implements.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5123,7 +5058,7 @@ this implementation will produce a JSON representation of the resource.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2191d56f.png" alt="image"></span><br>
+<p><span class="image"><img src="images/7.6-imports.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="literalblock">
@@ -5140,7 +5075,7 @@ this implementation will produce a JSON representation of the resource.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="1599de3.png" alt="image"></span></p>
+<p><span class="image"><img src="images/7.7-implements.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5417,7 +5352,7 @@ prefix/URI mapping as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="d2089e14.png" alt="image"></span></p>
+<p><span class="image"><img src="images/7.11-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5542,7 +5477,7 @@ MediaType.APPLICATION_JSON.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="97086271.png" alt="image"></span></p>
+<p><span class="image"><img src="images/7.14-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5563,7 +5498,7 @@ MediaType.APPLICATION_JSON.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="25affc8f.png" alt="image"></span><br>
+<p><span class="image"><img src="images/7.15-output.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="paragraph">
@@ -5588,7 +5523,7 @@ MediaType.APPLICATION_JSON.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3c303481.png" alt="image"></span><br>
+<p><span class="image"><img src="images/7.16-output.png.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="literalblock">
@@ -5616,7 +5551,7 @@ sequence; however this is not done in the application.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="67a043bb.png" alt="image"></span></p>
+<p><span class="image"><img src="images/7.16-output2.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -5761,7 +5696,7 @@ passivated with the request.</p>
 <p>Resolve the imports.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="5802f08b.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.2-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6362,7 +6297,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/points/points.x
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="ebf0adef.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6378,7 +6313,7 @@ value="$\{facesContext.externalContext.requestContextPath}/faces/points/points.x
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="5207ab50.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output2.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6395,7 +6330,7 @@ in the text box and click on “Send Message” to see the output as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="2c518642.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output3.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6421,7 +6356,7 @@ button to see the output as:</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="4a5be2ba.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output4.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The updated count now shows that there is 1 message in the queue. Click
@@ -6433,7 +6368,7 @@ on “Receive Message” button to see output as:</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="f95c49ad.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output5.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6463,7 +6398,7 @@ queue has 0 messages.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="592372b6.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output6.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The updated count now shows that the queue has 4 messages. Click on
@@ -6475,7 +6410,7 @@ queue has 0 messages.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="ab504531.png" alt="image"></span></p>
+<p><span class="image"><img src="images/8.10-output7.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -6705,7 +6640,7 @@ add namespace prefix. Do the same for f: prefix as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="1933fe7a.png" alt="image"></span></p>
+<p><span class="image"><img src="images/9.3-imports.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7396,7 +7331,7 @@ which defines the flow of the pages.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="d4317123.png" alt="image"></span></p>
+<p><span class="image"><img src="images/9.11-output.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7412,7 +7347,7 @@ which defines the flow of the pages.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="3ab805a7.png" alt="image"></span></p>
+<p><span class="image"><img src="images/9.11-output2.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7434,7 +7369,7 @@ page output as shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="710cafd8.png" alt="image"></span></p>
+<p><span class="image"><img src="images/9.11-output3.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7443,8 +7378,7 @@ page output as shown.</p>
 </div>
 <div class="paragraph">
 <p>Pick a time slot, say “04:00”, click
-o<span class="image"><img src="293e7bcd.png" alt="image"></span><span class="image"><img src="10d00070.gif" alt="image"></span>n
-“Confirm” to see the output as shown.</p>
+on “Confirm” to see the output as shown.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7452,7 +7386,7 @@ o<span class="image"><img src="293e7bcd.png" alt="image"></span><span class="ima
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="a15a427b.png" alt="image"></span></p>
+<p><span class="image"><img src="images/9.11-output4.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7468,7 +7402,7 @@ o<span class="image"><img src="293e7bcd.png" alt="image"></span><span class="ima
 </div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="a9238694.png" alt="image"></span></p>
+<p><span class="image"><img src="images/9.11-output5.png" alt="image"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7582,8 +7516,8 @@ and demonstrated the following features of the platform:</p>
 </div>
 </li>
 <li>
-<p>JavaServer
-Faces<span class="image"><img src="faaa1f11.png" alt="image"></span><span class="image"><img src="785d8d3.gif" alt="image"></span>
+<p>JavaServer Faces
+<span class="image"><img src="images/add-server-instance.png" alt="image"></span>
 2.2 (JSR 344)</p>
 <div class="ulist">
 <ul>
@@ -7729,6 +7663,9 @@ Console”.</p>
 bring it back ?</p>
 </div>
 <div class="paragraph">
+<p><span class="image"><img src="images/netbeans-view-log.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
 <p>In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
 node, and select “View Domain Server Log”.</p>
 </div>
@@ -7841,15 +7778,16 @@ hands-on lab:</p>
 <ol class="arabic">
 <li>
 <p>Add the following use cases:</p>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Concurrency Utilities for Java EE</p>
 </li>
 <li>
 <p>WebSocket Java Client</p>
 </li>
-<li>
-<p>JAX-RS Logging Filter</p>
+</ol>
+</div>
 </li>
 <li>
 <p>Disable errors in persistence.xml</p>
@@ -7886,7 +7824,7 @@ hands-on lab:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>1.1:</p>
+<p>Moving the source document from Pages to AsciiDoc.</p>
 </li>
 <li>
 <p>Moving the source document from Microsoft Word to Pages.</p>
@@ -7898,21 +7836,19 @@ hands-on lab:</p>
 <p>Updated to use NetBeans 7.4 nightly.</p>
 </li>
 <li>
-<p>Reorganized to ensure that newer Java EE 7 technologies are
-described first.</p>
+<p>Reorganized to ensure that newer Java EE 7 technologies are described first.</p>
 </li>
 <li>
-<p>1.0.4: Code updates from UberConf.</p>
+<p>Code updates from UberConf.</p>
 </li>
 <li>
-<p>1.0.3: Incorporating typos, missing dialog boxes, and code
-optimizations received during DevoxxUK.</p>
+<p>Incorporating typos, missing dialog boxes, and code optimizations received during DevoxxUK.</p>
 </li>
 <li>
-<p>1.0.2: Updating instructions after some of the bugs have been fixed.</p>
+<p>Updating instructions after some of the bugs have been fixed.</p>
 </li>
 <li>
-<p>1.0.1: Using the final GlassFish 4 build (b89).</p>
+<p>Using the final GlassFish 4 build (b89).</p>
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -7946,7 +7882,7 @@ optimizations received during DevoxxUK.</p>
 <p>A.1 In NetBeans, click on the “Services” tab.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="d0442332.png" alt="image"></span><br>
+<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span><br>
 <br></p>
 </div>
 <div class="paragraph">
@@ -7973,9 +7909,12 @@ unzipped the above archive. Click on “Finish”.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2013-11-15 12:08:36 MST
+Version 2.0<br>
+Last updated 2013-12-03 17:38:49 PST
 </div>
 </div>
 </body>
