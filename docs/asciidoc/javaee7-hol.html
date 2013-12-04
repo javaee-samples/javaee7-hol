@@ -366,107 +366,52 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <span id="author" class="author">Arun Gupta</span><br>
 <span id="revnumber">version 2.0,</span>
 <span id="revdate">Dec 3, 2013</span>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_software_requirement">Software Requirement</a></li>
+</ul>
+</li>
+<li><a href="#_problem_statement">Problem Statement</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_lab_flow">Lab Flow</a></li>
+<li><a href="#_estimated_time">Estimated Time</a></li>
+</ul>
+</li>
+<li><a href="#_walk_through_of_sample_application">Walk-through of Sample Application</a></li>
+<li><a href="#_chat_room_java_api_for_websocket">Chat Room (Java API for WebSocket)</a></li>
+<li><a href="#_ticket_sales_batch_applications_for_the_java_platform">Ticket Sales (Batch Applications for the Java Platform)</a></li>
+<li><a href="#_view_and_delete_movie_java_api_for_restful_web_services">View and Delete Movie (Java API for RESTful Web Services)</a></li>
+<li><a href="#_add_movie_java_api_for_json_processing">Add Movie (Java API for JSON Processing)</a></li>
+<li><a href="#_movie_points_java_message_service">Movie Points (Java Message Service)</a></li>
+<li><a href="#_show_booking_javaserver_faces">Show Booking (JavaServer Faces)</a></li>
+<li><a href="#_conclusion">Conclusion</a></li>
+<li><a href="#_troubleshooting">Troubleshooting</a></li>
+<li><a href="#_acknowledgements">Acknowledgements</a></li>
+<li><a href="#_completed_solutions">Completed Solutions</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_todo">TODO</a></li>
+<li><a href="#_revision_history">Revision History</a></li>
+</ul>
+</li>
+<li><a href="#_appendix">Appendix</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Arun Gupta (Red Hat)
-Director, Developer Advocacy, @arungupta</p>
-</div>
-<div class="paragraph">
-<p>Antonio Goncalves (Independent)
-Java EE EG Member, Consultant, Java Champion, @agoncal</p>
-</div>
-<div class="paragraph">
-<p>David Delabassee (Oracle)
-GlassFish Product Manager, @delabassee</p>
-</div>
-<div class="paragraph">
-<p>Marian Muller (Serli)
-Software Engineer, @mullermarian</p>
-</div>
-<div class="paragraph">
-<p><strong>Table of Contents</strong></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>2_1146780383">1.0 Introduction</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>4_1146780383">1.1 Software Requirement</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>6_1146780383">2.0 Problem Statement</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>8_1146780383">2.1 Lab Flow</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>10_1146780383">2.2 Estimated Time</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>12_1146780383">3.0 Walk-through of Sample Application</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>14_1146780383">4.0 Chat Room (Java API for WebSocket)</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>16_1146780383">5.0 Ticket Sales (Batch Applications for the Java Platform)</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>18_1146780383">6.0 View and Delete Movie (Java API for RESTful Web Services)</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>20_1146780383">7.0 Add Movie (Java API for JSON Processing)</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>22_1146780383">8.0 Movie Points (Java Message Service)</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>24_1146780383">9.0 Show Booking (JavaServer Faces)</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>26_1146780383">10.0 Conclusion</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>28_1146780383">11.0 Troubleshooting</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>30_1146780383">12.0 Acknowledgements</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>32_1146780383">13.0 Completed Solutions</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>34_1146780383">13.1 TODO</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>36_1146780383">13.2 Revision History</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>38_1146780383">Appendix</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#<em>RefHeading</em>40_1146780383">Appendix A: Configure GlassFish 4 in NetBeans IDE</a></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>1.0 Introduction</strong></p>
-</div>
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -552,11 +497,8 @@ using the following Java EE 7 technologies:</p>
 <pre>+</pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_1_software_requirement">1.1 Software Requirement</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_software_requirement">Software Requirement</h3>
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -581,11 +523,6 @@ using the following Java EE 7 technologies:</p>
 <a href="http://netbeans.org/downloads/">http://netbeans.org/downloads/</a>. A
 preview of the downloads page is shown and highlights the exact
 “Download” button to be clicked.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -595,45 +532,19 @@ preview of the downloads page is shown and highlights the exact
 <div class="ulist">
 <ul>
 <li>
-<p>GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to
-be downloaded explicitly. But if you want to download GlassFish 4 then
-can do so from <a href="http://glassfish.org/">glassfish.org</a>.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<p>GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from <a href="http://glassfish.org/">glassfish.org</a>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>If you have downloaded GlassFish 4 separately or using a pre-installed
-version of GlassFish 4, then configure it in NetBeans IDE following the
-instructions in <a href="#AppendixA">Appendix A</a>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
+<p>If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <a href="#AppendixA">Appendix A</a>.</p>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>2.0 Problem Statement</strong></p>
-</div>
+<div class="sect1">
+<h2 id="_problem_statement">Problem Statement</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -779,7 +690,7 @@ updated to meet those requirements.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_1_lab_flow">2.1 Lab Flow</h3>
+<h3 id="_lab_flow">Lab Flow</h3>
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -992,7 +903,7 @@ marked in the document.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_2_estimated_time">2.2 Estimated Time</h3>
+<h3 id="_estimated_time">Estimated Time</h3>
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -1108,9 +1019,12 @@ time.</p>
 +</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>3.0 Walk-through of Sample Application</strong></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_walk_through_of_sample_application">Walk-through of Sample Application</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -1824,9 +1738,11 @@ server. Choose the configured GlassFish server and click on “OK”.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>4.0 Chat Room (Java API for WebSocket)</strong></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_chat_room_java_api_for_websocket">Chat Room (Java API for WebSocket)</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -2738,9 +2654,11 @@ WebSocket traffic.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>5.0 Ticket Sales (Batch Applications for the Java Platform)</strong></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_ticket_sales_batch_applications_for_the_java_platform">Ticket Sales (Batch Applications for the Java Platform)</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -3901,9 +3819,11 @@ application explicitly mentioned to skip such errors.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>6.0 View and Delete Movie (Java API for RESTful Web Services)</strong></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_view_and_delete_movie_java_api_for_restful_web_services">View and Delete Movie (Java API for RESTful Web Services)</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -4684,9 +4604,11 @@ project will delete all the movies anyway and add them all back.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>7.0 Add Movie (Java API for JSON Processing)</strong></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_add_movie_java_api_for_json_processing">Add Movie (Java API for JSON Processing)</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -5571,9 +5493,11 @@ sequence; however this is not done in the application.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>8.0 Movie Points (Java Message Service)</strong></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_movie_points_java_message_service">Movie Points (Java Message Service)</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -6436,9 +6360,11 @@ remaining messages in the queue.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>9.0 Show Booking (JavaServer Faces)</strong></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_show_booking_javaserver_faces">Show Booking (JavaServer Faces)</h2>
+<div class="sectionbody">
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -7436,27 +7362,14 @@ notice how the values in the bean are preserved.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>10.0 Conclusion</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>This hands-on lab built a trivial 3-tier web application using Java EE 7
 and demonstrated the following features of the platform:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -7516,9 +7429,8 @@ and demonstrated the following features of the platform:</p>
 </div>
 </li>
 <li>
-<p>JavaServer Faces
-<span class="image"><img src="images/add-server-instance.png" alt="image"></span>
-2.2 (JSR 344)</p>
+<p>JavaServer Faces 2.2 (JSR 344)
+<span class="image"><img src="images/add-server-instance.png" alt="image"></span></p>
 <div class="ulist">
 <ul>
 <li>
@@ -7600,11 +7512,6 @@ and demonstrated the following features of the platform:</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -7613,37 +7520,18 @@ and demonstrated the following features of the platform:</p>
 </div>
 <div class="paragraph">
 <p>Hopefully this has raised your interest enough in trying out Java EE
-7applications using GlassFish 4.</p>
+7 applications using GlassFish 4.</p>
 </div>
 <div class="paragraph">
 <p>Send us feedback at <a href="mailto:users@glassfish.java.net">users@glassfish.java.net</a>.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>11.0 Troubleshooting</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<div class="sect1">
+<h2 id="_troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>11.1</strong> How can I start/stop/restart GlassFish from within the IDE ?</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>In the “Services” tab, right-click on “GlassFish Server 4”. All the
@@ -7651,12 +7539,6 @@ commands to start, stop, and restart are available from the pop-up menu.
 The server log can be viewed by clicking on “View Server Log” and
 web-based administration console can be seen by clicking on “View Admin
 Console”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>11.2</strong> I accidentally closed the GlassFish output log window. How do I
@@ -7669,37 +7551,14 @@ bring it back ?</p>
 <p>In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
 node, and select “View Domain Server Log”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>12.0 Acknowledgements</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<div class="sect1">
+<h2 id="_acknowledgements">Acknowledgements</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The following GlassFish community members graciously reviewed this
 hands-on lab:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -7723,57 +7582,26 @@ hands-on lab:</p>
 </li>
 <li>
 <p>Reza Rahman (@reza_rahman)</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+</li>
+<li>
+<p>Marian Muller (@mullermarian)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Thank you very much for providing the valuable feedback!</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>13.0 Completed Solutions</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<div class="sect1">
+<h2 id="_completed_solutions">Completed Solutions</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The completed solution can be downloaded from
 <a href="http://glassfish.org/hol/movieplex7-solution.zip">glassfish.org/hol/movieplex7-solution.zip</a>.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-</div>
 <div class="sect2">
-<h3 id="_13_1_todo">13.1 TODO</h3>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<h3 id="_todo">TODO</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7815,12 +7643,7 @@ hands-on lab:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_13_2_revision_history">13.2 Revision History</h3>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
+<h3 id="_revision_history">Revision History</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7849,30 +7672,17 @@ hands-on lab:</p>
 </li>
 <li>
 <p>Using the final GlassFish 4 build (b89).</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><strong>Appendix</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_appendix">Appendix</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_appendix_a_configure_glassfish_4_in_netbeans_ide">Appendix A: Configure GlassFish 4 in NetBeans IDE</h3>
+<h3 id="_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</h3>
 <div class="literalblock">
 <div class="content">
 <pre>+</pre>
@@ -7914,7 +7724,7 @@ unzipped the above archive. Click on “Finish”.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2013-12-03 17:38:49 PST
+Last updated 2013-12-03 19:29:04 PST
 </div>
 </div>
 </body>

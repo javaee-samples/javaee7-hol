@@ -1,71 +1,11 @@
 :revnumber: 2.0
 :author: Arun Gupta
 :revdate: Dec 3, 2013
+:toc:
 
-= Java EE 7 Hands-on Lab 
+= Java EE 7 Hands-on Lab
 
-
-Arun Gupta (Red Hat)
-Director, Developer Advocacy, @arungupta
-
-Antonio Goncalves (Independent)
-Java EE EG Member, Consultant, Java Champion, @agoncal
-
-David Delabassee (Oracle)
-GlassFish Product Manager, @delabassee
-
-Marian Muller (Serli)
-Software Engineer, @mullermarian
-
-*Table of Contents*
-
-link:#__RefHeading__2_1146780383[1.0 Introduction]
-
-link:#__RefHeading__4_1146780383[1.1 Software Requirement]
-
-link:#__RefHeading__6_1146780383[2.0 Problem Statement]
-
-link:#__RefHeading__8_1146780383[2.1 Lab Flow]
-
-link:#__RefHeading__10_1146780383[2.2 Estimated Time]
-
-link:#__RefHeading__12_1146780383[3.0 Walk-through of Sample Application]
-
-link:#__RefHeading__14_1146780383[4.0 Chat Room (Java API for WebSocket)]
-
-link:#__RefHeading__16_1146780383[5.0 Ticket Sales (Batch Applications for the Java Platform)]
-
-link:#__RefHeading__18_1146780383[6.0 View and Delete Movie (Java API for RESTful Web Services)]
-
-link:#__RefHeading__20_1146780383[7.0 Add Movie (Java API for JSON Processing)]
-
-link:#__RefHeading__22_1146780383[8.0 Movie Points (Java Message Service)]
-
-link:#__RefHeading__24_1146780383[9.0 Show Booking (JavaServer Faces)]
-
-link:#__RefHeading__26_1146780383[10.0 Conclusion]
-
-link:#__RefHeading__28_1146780383[11.0 Troubleshooting]
-
-link:#__RefHeading__30_1146780383[12.0 Acknowledgements]
-
-link:#__RefHeading__32_1146780383[13.0 Completed Solutions]
-
-link:#__RefHeading__34_1146780383[13.1 TODO]
-
-link:#__RefHeading__36_1146780383[13.2 Revision History]
-
-link:#__RefHeading__38_1146780383[Appendix]
-
-link:#__RefHeading__40_1146780383[Appendix A: Configure GlassFish 4 in NetBeans IDE]
-
- +
-
- +
-
- +
-
-*1.0 Introduction*
+== Introduction
 
  +
 
@@ -108,7 +48,7 @@ https://github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf[githu
  +
 
 [[]]
-== 1.1 Software Requirement
+=== Software Requirement
 
  +
 
@@ -123,29 +63,14 @@ http://netbeans.org/downloads/[http://netbeans.org/downloads/]. A
 preview of the downloads page is shown and highlights the exact
 “Download” button to be clicked.
 
- +
-
 image:images/1.1-netbeans-download.png[image]
 
-* GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to
-be downloaded explicitly. But if you want to download GlassFish 4 then
-can do so from http://glassfish.org/[glassfish.org].
+* GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from http://glassfish.org/[glassfish.org].
 
- +
 
-If you have downloaded GlassFish 4 separately or using a pre-installed
-version of GlassFish 4, then configure it in NetBeans IDE following the
-instructions in link:#AppendixA[Appendix A].
+If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in link:#AppendixA[Appendix A].
 
- +
-
- +
-
- +
-
- +
-
-*2.0 Problem Statement*
+== Problem Statement
 
  +
 
@@ -243,8 +168,7 @@ updated to meet those requirements.
  +
 
 [[]]
-2.1 Lab Flow
-~~~~~~~~~~~~
+=== Lab Flow
 
  +
 
@@ -364,8 +288,7 @@ marked in the document.
  +
 
 [[]]
-2.2 Estimated Time
-~~~~~~~~~~~~~~~~~~
+=== Estimated Time
 
  +
 
@@ -437,7 +360,7 @@ time.
  +
  +
 
-*3.0 Walk-through of Sample Application*
+== Walk-through of Sample Application
 
  +
 
@@ -868,7 +791,7 @@ image:images/3.80-first-page.png[image]
 
  +
 
-*4.0 Chat Room (Java API for WebSocket)*
+== Chat Room (Java API for WebSocket)
 
  +
 
@@ -1392,7 +1315,7 @@ WebSocket traffic.
 
  +
 
-*5.0 Ticket Sales (Batch Applications for the Java Platform)*
+== Ticket Sales (Batch Applications for the Java Platform)
 
  +
 
@@ -2057,7 +1980,7 @@ application explicitly mentioned to skip such errors.
 
  +
 
-*6.0 View and Delete Movie (Java API for RESTful Web Services)*
+== View and Delete Movie (Java API for RESTful Web Services)
 
  +
 
@@ -2515,7 +2438,7 @@ project will delete all the movies anyway and add them all back.
 
  +
 
-*7.0 Add Movie (Java API for JSON Processing)*
+== Add Movie (Java API for JSON Processing)
 
  +
 
@@ -3021,7 +2944,7 @@ Note that the newly added movie is now displayed.
 
  +
 
-*8.0 Movie Points (Java Message Service)*
+== Movie Points (Java Message Service)
 
  +
 
@@ -3505,7 +3428,7 @@ remaining messages in the queue.
 
  +
 
-*9.0 Show Booking (JavaServer Faces)*
+== Show Booking (JavaServer Faces)
 
  +
 
@@ -4093,16 +4016,11 @@ Click on “home” takes to the main application page.
 
  +
 
-*10.0 Conclusion*
-
- +
-
- +
+== Conclusion
 
 This hands-on lab built a trivial 3-tier web application using Java EE 7
 and demonstrated the following features of the platform:
 
- +
 
 * Java EE 7 Platform (JSR 342)
 ** Maven coordinates
@@ -4117,9 +4035,8 @@ and demonstrated the following features of the platform:
 ** Default ConnectionFactory
 ** Injecting JMSContext
 ** Synchronous message send and receive
-* JavaServer Faces
+* JavaServer Faces 2.2 (JSR 344)
 image:images/add-server-instance.png[image]
-2.2 (JSR 344)
 ** Faces Flow
 * Contexts and Dependency Injection 1.1 (JSR 346)
 ** Automatic discovery of beans
@@ -4140,34 +4057,22 @@ image:images/add-server-instance.png[image]
 
  +
 
- +
-
 Hopefully this has raised your interest enough in trying out Java EE
-7applications using GlassFish 4.
+7 applications using GlassFish 4.
 
 Send us feedback at users@glassfish.java.net.
 
- +
 
-*11.0 Troubleshooting*
+== Troubleshooting
 
- +
-
- +
 
 *11.1* How can I start/stop/restart GlassFish from within the IDE ?
-
- +
- +
 
 In the “Services” tab, right-click on “GlassFish Server 4”. All the
 commands to start, stop, and restart are available from the pop-up menu.
 The server log can be viewed by clicking on “View Server Log” and
 web-based administration console can be seen by clicking on “View Admin
 Console”.
-
- +
- +
 
 *11.2* I accidentally closed the GlassFish output log window. How do I
 bring it back ?
@@ -4177,20 +4082,13 @@ image:images/netbeans-view-log.png[image]
 In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
 node, and select “View Domain Server Log”.
 
- +
 
- +
+== Acknowledgements
 
-*12.0 Acknowledgements*
-
- +
-
- +
 
 The following GlassFish community members graciously reviewed this
 hands-on lab:
 
- +
 
 * Antonio Goncalves (@agoncal)
 * Markus Eisele (@myfear)
@@ -4199,31 +4097,18 @@ hands-on lab:
 * David Delabasse (@delabasse)
 * John Clingan (@jclingan)
 * Reza Rahman (@reza_rahman)
-
- +
+* Marian Muller (@mullermarian)
 
 Thank you very much for providing the valuable feedback!
 
- +
 
- +
-
-*13.0 Completed Solutions*
-
- +
+== Completed Solutions
 
 The completed solution can be downloaded from
 http://glassfish.org/hol/movieplex7-solution.zip[glassfish.org/hol/movieplex7-solution.zip].
 
- +
-
- +
-
 [[]]
-13.1 TODO
-~~~~~~~~~
-
- +
+=== TODO
 
 .  Add the following use cases:
 ..  Concurrency Utilities for Java EE
@@ -4238,10 +4123,7 @@ http://glassfish.org/hol/movieplex7-solution.zip[glassfish.org/hol/movieplex7-so
  +
 
 [[]]
-13.2 Revision History
-~~~~~~~~~~~~~~~~~~~~~
-
- +
+=== Revision History
 
 . Moving the source document from Pages to AsciiDoc.
 . Moving the source document from Microsoft Word to Pages.
@@ -4253,17 +4135,10 @@ http://glassfish.org/hol/movieplex7-solution.zip[glassfish.org/hol/movieplex7-so
 . Updating instructions after some of the bugs have been fixed.
 . Using the final GlassFish 4 build (b89).
 
- +
-
- +
-
-*Appendix*
-
- +
+== Appendix
 
 [[]]
-Appendix A: Configure GlassFish 4 in NetBeans IDE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Configure GlassFish 4 in NetBeans IDE
 
  +
 
