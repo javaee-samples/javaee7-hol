@@ -1,0 +1,663 @@
+== Ticket Sales (Batch Applications for the Java Platform)
+
+ +
+
+*Purpose*: Read the total sales for each show and populate the database.
+In doing so several new features of Java API for Batch Processing 1.0
+will be introduced and demonstrated by using them in the application.
+
+ +
+
+*Estimated Time*: 30-45 mins
+
+ +
+
+Batch Processing is execution of series of "jobs" that is suitable for
+non-interactive, bulk-oriented and long-running tasks. Batch
+Applications for the Java Platform (JSR 352) will define a programming
+model for batch applications and a runtime for scheduling and executing
+jobs.
+
+ +
+
+image:images/5.0-batch-intro.png[image] +
+ +
+
+ +
+
+The core concepts of Batch Processing are:
+
+ +
+
+* A *Job* is an instance that encapsulates an entire batch process. A
+job is typically put together using a Job Specification Language and
+consists of multiple steps. The Job Specification Language for JSR 352
+is implemented with XML and is referred as "Job XML".
+* A *Step* is a domain object that encapsulates an independent,
+sequential phase of a job. A step contains all of the information
+necessary to define and control the actual batch processing.
+* *JobOperator* provides an interface to manage all aspects of job
+processing, including operational commands, such as start, restart, and
+stop, as well as job repository commands, such as retrieval of job and
+step executions.
+* *JobRepository* holds information about jobs current running and jobs
+that run in the past. JobOperator provides access to this repository.
+* Reader-Processor-Writer pattern is the primary pattern and is called
+as *Chunk-oriented** **Processing*. In this, *ItemReader* reads one item
+at a time, *ItemProcessor* processes the item based upon the business
+logic, such as calculate account balance and hands it
+to *ItemWriter* for aggregation. Once the 'chunk' numbers of items are
+aggregated, they are written out, and the transaction is committed.
+
+ +
+
+This section will read the cumulative sales for each show from a CSV
+file and populate them in a database.
+
+ +
+
+ +
+
+*5.1* Right-click on Source Packages, select “New”, “Java Package…”,
+specify the value as “org.glassfish.movieplex7.batch”, and click on
+“Finish”.
+
+ +
+
+ +
+
+*5.2* Right-click on newly created package, select “New”, “Java Class…”,
+specify the name as “SalesReader”. Make this class extend from
+AbstractItemReader, change the class definition and add:
+
+ +
+
+extends AbstractItemReader
+
+ +
+
+AbstractItemReader is an abstract class that implements ItemReader
+interface. The ItemReader interface defines methods that read a stream
+of items for chunk processing. This reader implementation returns a
+String item type as indicated in the class definition.
+
+ +
+
+Add @Named as a class-level annotations and it allows the bean to be
+injected in Job XML. Add @Dependent as another class-level annotation to
+mark this bean as a bean defining annotation so that this bean is
+available for injection.
+
+ +
+
+Resolve the imports.
+
+ +
+
+ +
+
+*5.3* Add the following field:
+
+ +
+
+private BufferedReader reader;
+
+ +
+
+Override open() method to initialize the reader:
+
+ +
+
+public void open(Serializable checkpoint) throws Exception \{
+
+reader = new BufferedReader(
+
+new InputStreamReader(
+
+Thread.currentThread()
+
+.getContextClassLoader()
+
+.getResourceAsStream("META-INF/sales.csv")));
+
+}
+
+ +
+
+This method initializes a BufferedReader from “META-INF/sales.csv” that
+is bundled with the application.
+
+ +
+
+ +
+
+Sampling of the first few lines from “sales.csv” is shown below:
+
+ +
+
+1,500.00
+
+2,660.00
+
+3,80.00
+
+4,470.00
+
+5,1100.x0
+
+ +
+
+Each line has a show identifier comma separated by the total sales for
+that show. Note that the last line (5^th^ record in the sample) has an
+intentional typo. In addition, 17^th^ record also has an additional
+typo. The lab will use these lines to demonstrate how to handle parsing
+errors.
+
+ +
+
+ +
+
+*5.4* Override the following method from the abstract class:
+
+ +
+
+@Override
+
+public String readItem() \{
+
+String string = null;
+
+try \{
+
+string = reader.readLine();
+
+} catch (IOException ex) \{
+
+ex.printStackTrace();
+
+}
+
+return string;
+
+}
+
+ +
+
+The readItem method returns the next item from the stream. It returns
+null to indicate end of stream. Note end of stream indicates end of
+chunk, so the
+
+current chunk will be committed and the step will end.
+
+Resolve the imports.
+
+ +
+ +
+
+*5.5* Right-click on “org.glassfish.movieplex7.batch” package, select
+“New”, “Java Class…”, specify the name as “SalesProcessor”. Change the
+class definition and add:
+
+ +
+
+implements ItemProcessor
+
+ +
+
+ItemProcessor is an interface that defines a method that is used to
+operate on an input item and produce an output item. This processor
+accepts a String input item from the reader, SalesReader in our case,
+and returns a Sales instance to the writer (coming shortly). Sales is
+the pre-packaged JPA entity with the application starter source code.
+
+ +
+
+Add @Named and @Dependent as class-level annotations so that it allows
+the bean to be injected in Job XML.
+
+ +
+
+Resolve the imports.
+
+ +
+
+ +
+
+*5.6* Add implementation of the abstract method from the interface as:
+
+ +
+
+@Override
+
+public Sales processItem(Object s) \{
+
+Sales sales = new Sales();
+
+StringTokenizer tokens = new StringTokenizer((String)s, ",");
+
+sales.setId(Integer.parseInt(tokens.nextToken()));
+
+sales.setAmount(Float.parseFloat(tokens.nextToken()));
+
+return sales;
+
+}
+
+ +
+
+This method takes a String parameter coming from the SalesReader, parses
+the value, populates them in the Sales instance, and returns it. This is
+then aggregated with the writer.
+
+ +
+
+The method can return null indicating that the item should not be
+aggregated. For example, the parsing errors can be handled within the
+method and return null if the values are not correct. However this
+method is implemented where any parsing errors are thrown as exception.
+Job XML can be instructed to skip these exceptions and thus that
+particular record is skipped from aggregation as well (shown later).
+
+ +
+
+Resolve the imports.
+
+ +
+
+ +
+
+*5.7* Right-click on “org.glassfish.movieplex7.batch” package, select
+“New”, “Java Class…”, specify the name as “SalesWriter”. Change the
+class definition and add:
+
+ +
+
+extends AbstractItemWriter
+
+ +
+
+AbstractItemWriter is an abstract class that implements ItemWriter
+interface. The ItemWriter interface defines methods that write to a
+stream of items for chunk processing. This writer writes a list of Sales
+items.
+
+ +
+
+Add @Named and @Dependent as class-level annotations so that it allows
+the bean to be injected in Job XML.
+
+ +
+
+Resolve the imports.
+
+ +
+
+ +
+
+*5.8* Inject EntityManager as:
+
+ +
+
+@PersistenceContext EntityManager em;
+
+ +
+
+Override the following method from the abstract class:
+
+ +
+
+@Override
+
+@Transactional
+
+public void writeItems(List list) \{
+
+for (Sales s : (List<Sales>)list) \{
+
+em.persist(s);
+
+}
+
+}
+
+ +
+
+Batch runtime aggregates the list of Sales instances returned from the
+SalesProessor and makes it available as List in this method. This method
+iterates over the list and persist each item in the database.
+
+ +
+
+The method also specifies @Transactional as a method level annotation.
+This is a new annotation introduced by JTA 1.2 that provides the ability
+to control transaction boundaries on CDI managed beans. This provides
+the semantics of EJB transaction attributes in CDI beans without
+dependencies such as RMI. This support is implemented via an
+implementation of a CDI interceptor that conducts the necessary
+suspending, resuming, etc. 
+
+ +
+
+In this case, a transaction is automatically started before the method
+is called, committed if no checked exceptions are thrown, and rolled
+back if runtime exceptions are thrown. This behavior can be overridden
+using rollbackOn and dontRollbackOn attributes of the annotation.
+
+ +
+
+Resolve the imports.
+
+ +
+
+ +
+
+*5.9* Create Job XML that defines the job, step, and chunk.
+
+ +
+
+In “Files” tab, expand the project -> “src” -> “main” -> “resources”,
+right-click on “resources”, “META-INF”, select “New”, “Folder…”, specify
+the name as “batch-jobs”, and click on “Finish”.
+
+ +
+
+Right-click on the newly created folder, select “New”, “Other…”, select
+“XML”, “XML Document”, click on “Next >”, give the name as “eod-sales”,
+click on “Next”, take the default, and click on “Finish”.
+
+ +
+
+Replace contents of the file with the following:
+
+ +
+
+<job id="endOfDaySales"
+xmlns="http://xmlns.jcp.org/xml/ns/javaee[http://xmlns.jcp.org/xml/ns/javaee]"
+version="1.0">
+
+<step id="populateSales">
+
+<chunk item-count="3" skip-limit="5">
+
+<reader ref="salesReader"/>
+
+<processor ref="salesProcessor"/>
+
+<writer ref="salesWriter"/>
+
+<skippable-exception-classes>
+
+<include class="java.lang.NumberFormatException"/>
+
+</skippable-exception-classes>
+
+</chunk>
+
+</step>
+
+</job>
+
+ +
+
+ +
+
+This code shows that the job has one step of chunk type. The <reader>,
+<processor>, and <writer> elements define the CDI bean name of the
+implementations of ItemReader, ItemProcessor, and ItemWriter interfaces.
+The item-count attribute defines that 3 items are
+read/processed/aggregated and then given to the writer. The entire
+reader/processor/writer cycle is executed within a transaction. The
+<skippable-exception-classes> element specifies a set of exceptions to
+be skipped by chunk processing.
+
+ +
+
+CSV file used for this lab has intentionally introduced couple of typos
+that would generate NumberFormatException. Specifying this element
+allows skipping the exception, ignore that particular element, and
+continue processing. If this element is not specified then the batch
+processing will halt. The skip-limit attribute specifies the number of
+exceptions a step will skip.
+
+ +
+
+*5.10* Lets invoke the batch job.
+
+ +
+
+Right-click on “org.glassfish.movieplex7.batch” package, select “New”,
+“Java Class…”. Enter the name as “SalesBean” and click on “Finish”
+button.
+
+ +
+
+Add the following code to the bean:
+
+ +
+
+public void runJob() \{
+
+try \{
+
+JobOperator jo = BatchRuntime.getJobOperator();
+
+long jobId = jo.start("eod-sales", new Properties());
+
+System.out.println("Started job: with id: " + jobId);
+
+} catch (JobStartException ex) \{
+
+ex.printStackTrace();
+
+}
+
+}
+
+ +
+
+This method uses BatchRuntime to get an instance of JobOperator, which
+is then used to start the job. JobOperator is the interface for
+operating on batch jobs. It can be used to start, stop, and restart
+jobs. It can additionally inspect job history, to discover what jobs are
+currently running and what jobs have previously run.
+
+ +
+
+Add @Named and @RequestScoped as class-level annotations. This allows
+the bean to be injectable in an EL expression.
+
+ +
+
+Resolve the imports.
+
+ +
+
+image:images/5.10-imports.png[image]
+
+ +
+
+*5.11* Inject EntityManagerFactory in the class as:
+
+ +
+
+@PersistenceUnit EntityManagerFactory emf;
+
+ +
+
+and add the following method:
+
+ +
+
+public List<Sales> getSalesData() \{
+
+return emf.createEntityManager().createNamedQuery("Sales.findAll",
+Sales.class).getResultList();
+
+}
+
+ +
+
+This method uses a pre-defined @NamedQuery to query the database and
+return all the rows from the table.
+
+ +
+
+Resolve the imports.
+
+ +
+
+ +
+
+*5.12* Right-click on “Web Pages”, select “New”, “Folder…”, specify the
+name as “batch”, and click on “Finish”.
+
+ +
+
+Right-click on the newly created folder, select “New”, “Other…”,
+“JavaServer Faces”, “Facelets Template Client”, and click on “Next >”.
+
+ +
+
+Give the File Name as “sales”. Click on “Browse…” next to “Template:”,
+expand “Web Pages”, “WEB-INF”, select “template.xhtml”, and click on
+“Select File”. Click on “Finish”.
+
+ +
+
+In this file, remove <ui:define> sections where name attribute value is
+“top” and “left”. These sections are inherited from the template.
+
+ +
+
+Replace <ui:define> section with “content” name such that it looks like:
+
+ +
+
+ +
+
+<ui:define name=”content”>
+
+<h1>Movie Sales</h1>
+
+<h:form>
+
+<h:dataTable value="#\{salesBean.salesData}" var="s" border="1">
+
+<h:column>
+
+<f:facet name="header">
+
+<h:outputText value="Show ID" />
+
+</f:facet>
+
+#\{s.id}
+
+</h:column>
+
+<h:column>
+
+<f:facet name="header">
+
+<h:outputText value="Sales" />
+
+</f:facet>
+
+#\{s.amount}
+
+</h:column>
+
+</h:dataTable>
+
+ +
+
+<h:commandButton value="Run Job" action="sales"
+actionListener="#\{salesBean.runJob()}"/>
+
+<h:commandButton value="Refresh" action="sales" />
+
+</h:form>
+
+</ui:define>
+
+ +
+
+This code displays the show identifier and sales from that show in a
+table by invoking SalesBean.getSalesData(). First command button allows
+invoking the job that processes the CSV file and populates the database.
+The second command button refreshes the page.
+
+ +
+
+Right-click on the yellow bulb to fix namespace prefix/URI mapping. This
+needs to be repeated for h: and f: prefix.
+
+ +
+
+ +
+
+*5.13* Add the following code in “template.xhtml” along with other
+<outputLink>s:
+
+ +
+
+<p/><h:outputLink
+value="$\{facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml">Sales</h:outputLink>
+
+ +
+
+ +
+
+*5.14* Run the project to see the output as shown.
+
+ +
+
+image:images/5.14-sales.png[image]
+
+ +
+
+Notice, a new “Sales” entry is displayed in the left navigation bar.
+
+ +
+
+ +
+
+*5.15* Click on “Sales” to see the output as shown.
+
+ +
+
+image:images/5.15-sales.png[image]
+
+ +
+
+The empty table indicates that there is no sales data in the database.
+
+ +
+
+ +
+
+*5.16* Click on “Run Job” button to initiate data processing of CSV
+file. Look for “Waiting for localhost...” in the browser status bar,
+wait for a couple of seconds for the processing to finish, and then
+click on “Refresh” button to see the updated output as shown.
+
+ +
+
+image:images/5.16-sales-output.png[image]
+
+ +
+
+ +
+
+Now the table is populated with the sales data.
+
+ +
+
+Note that record 5 is missing from the table, as this records did not
+have correct numeric entries for the sales total. The Job XML for the
+application explicitly mentioned to skip such errors.
+
+ +
+
+ +
+

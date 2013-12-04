@@ -1,0 +1,5 @@
+== Completed Solutions
+
+The completed solution can be downloaded from
+http://glassfish.org/hol/movieplex7-solution.zip[glassfish.org/hol/movieplex7-solution.zip].
+
