@@ -5,35 +5,35 @@
 
 = Java EE 7 Hands-on Lab
 
-include::ch01-introduction.adoc[]
+include::chapters/ch01-introduction.adoc[]
 
-include::ch02-statement.adoc[]
+include::chapters/ch02-statement.adoc[]
 
-include::ch03-walkthrough.adoc[]
+include::chapters/ch03-walkthrough.adoc[]
 
-include::ch04-websocket.adoc[]
+include::chapters/ch04-websocket.adoc[]
 
-include::ch05-batch.adoc[]
+include::chapters/ch05-batch.adoc[]
 
-include::ch06-jaxrs.adoc[]
+include::chapters/ch06-jaxrs.adoc[]
 
-include::ch07-json.adoc[]
+include::chapters/ch07-json.adoc[]
 
-include::ch08-jms.adoc[]
+include::chapters/ch08-jms.adoc[]
 
-include::ch09-jsf.adoc[]
+include::chapters/ch09-jsf.adoc[]
 
-include::ch10-conclusion.adoc[]
+include::chapters/ch10-conclusion.adoc[]
 
-include::ch11-troubleshooting.adoc[]
+include::chapters/ch11-troubleshooting.adoc[]
 
-include::ch12-acks.adoc[]
+include::chapters/ch12-acks.adoc[]
 
-include::ch13-solutions.adoc[]
+include::chapters/ch13-solutions.adoc[]
 
-include::ch14-todo.adoc[]
+include::chapters/ch14-todo.adoc[]
 
-include::ch15-revision.adoc[]
+include::chapters/ch15-revision.adoc[]
 
-include::ch16-appendix.adoc[]
+include::chapters/ch16-appendix.adoc[]
 
