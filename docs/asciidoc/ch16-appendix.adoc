@@ -1,6 +1,7 @@
 [appendix]
 == Appendix
 
+[[appendix-glassfish4-netbeans]]
 === Configure GlassFish 4 in NetBeans IDE
 
 image:images/netbeans-addserver.png[image]

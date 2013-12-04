@@ -1,3 +1,4 @@
+[[batch]]
 == Ticket Sales (Batch Applications for the Java Platform)
 
 *Purpose*: Read the total sales for each show and populate the database.

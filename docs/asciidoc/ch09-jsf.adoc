@@ -1,3 +1,4 @@
+[[jsf]]
 == Show Booking (JavaServer Faces)
 
 *Purpose*: Build pages that allow a user to book a particular movie show

@@ -40,8 +40,7 @@ preview of the downloads page is shown and highlights the exact
 
 image:images/1.1-netbeans-download.png[image]
 
-* GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from http://glassfish.org/[glassfish.org].
+GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from http://glassfish.org/[glassfish.org]. 
 
-
-If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in link:#AppendixA[Appendix A].
+TIP: If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <<appendix-glassfish4-netbeans>>.
 

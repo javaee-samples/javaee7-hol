@@ -1,3 +1,4 @@
+[[jaxrs]]
 == View and Delete Movie (Java API for RESTful Web Services)
 
 *Purpose*: View, and delete a movie. In doing so several new features of

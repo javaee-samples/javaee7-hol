@@ -382,13 +382,13 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_estimated_time">Estimated Time</a></li>
 </ul>
 </li>
-<li><a href="#_walk_through_of_sample_application">Walk-through of Sample Application</a></li>
-<li><a href="#_chat_room_java_api_for_websocket">Chat Room (Java API for WebSocket)</a></li>
-<li><a href="#_ticket_sales_batch_applications_for_the_java_platform">Ticket Sales (Batch Applications for the Java Platform)</a></li>
-<li><a href="#_view_and_delete_movie_java_api_for_restful_web_services">View and Delete Movie (Java API for RESTful Web Services)</a></li>
-<li><a href="#_add_movie_java_api_for_json_processing">Add Movie (Java API for JSON Processing)</a></li>
-<li><a href="#_movie_points_java_message_service">Movie Points (Java Message Service)</a></li>
-<li><a href="#_show_booking_javaserver_faces">Show Booking (JavaServer Faces)</a></li>
+<li><a href="#walk-through">Walk-through of Sample Application</a></li>
+<li><a href="#websocket">Chat Room (Java API for WebSocket)</a></li>
+<li><a href="#batch">Ticket Sales (Batch Applications for the Java Platform)</a></li>
+<li><a href="#jaxrs">View and Delete Movie (Java API for RESTful Web Services)</a></li>
+<li><a href="#json">Add Movie (Java API for JSON Processing)</a></li>
+<li><a href="#jms">Movie Points (Java Message Service)</a></li>
+<li><a href="#jsf">Show Booking (JavaServer Faces)</a></li>
 <li><a href="#_conclusion">Conclusion</a></li>
 <li><a href="#_troubleshooting">Troubleshooting</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a></li>
@@ -398,7 +398,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_appendix">Appendix A: Appendix</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</a></li>
+<li><a href="#appendix-glassfish4-netbeans">Configure GlassFish 4 in NetBeans IDE</a></li>
 </ul>
 </li>
 </ul>
@@ -484,15 +484,20 @@ preview of the downloads page is shown and highlights the exact
 <div class="paragraph">
 <p><span class="image"><img src="images/1.1-netbeans-download.png" alt="image"></span></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from <a href="http://glassfish.org/">glassfish.org</a>.</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
-<p>If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <a href="#AppendixA">Appendix A</a>.</p>
+<p>GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from <a href="http://glassfish.org/">glassfish.org</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <a href="#appendix-glassfish4-netbeans">Configure GlassFish 4 in NetBeans IDE</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -533,8 +538,8 @@ in its’ implementation.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
+<col style="width:20%;">
+<col style="width:80%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -582,14 +587,23 @@ EE 7 Tutorial</a> is a good place to learn all these concepts. However
 enough explanation is provided in this guide to get you started with the
 application.</p>
 </div>
-<div class="paragraph">
-<p><strong>WARNING</strong>: This is a sample application and the code may not be
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+This is a sample application and the code may not be
 following the best practices to prevent SQL injection, cross-side
 scripting attacks, escaping parameters, and other similar features
 expected of a robust enterprise application. This is intentional such as
 to stay focused on explaining the technology. It is highly recommended
 to make sure that the code copied from this sample application is
-updated to meet those requirements.</p>
+updated to meet those requirements.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_lab_flow">Lab Flow</h3>
@@ -637,7 +651,7 @@ and selecting “Format” as shown.</p>
 <p>This functionality is also accessible using the following keyboard
 shortcuts:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width:100%; ">
+<table class="tableblock frame-all grid-all" style="width:50%; ">
 <colgroup>
 <col style="width:50%;">
 <col style="width:50%;"> 
@@ -688,7 +702,7 @@ editor pane and selecting "Fix Imports" as shown.</p>
 <p>This functionality is also accessible using the following keyboard
 shortcuts:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width:100%; ">
+<table class="tableblock frame-all grid-all" style="width:50%; ">
 <colgroup>
 <col style="width:50%;">
 <col style="width:50%;"> 
@@ -740,10 +754,10 @@ pre-requisite for section 7.0.</p>
 <div class="paragraph">
 <p>Here is an approximate time estimate for each section:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width:100%; ">
+<table class="tableblock frame-all grid-all" style="width:80%; ">
 <colgroup>
-<col style="width:50%;">
-<col style="width:50%;"> 
+<col style="width:66%;">
+<col style="width:33%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -753,51 +767,69 @@ pre-requisite for section 7.0.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Walk-through of Sample Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#walk-through">Walk-through of Sample Application</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">15 - 30 mins</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chat Room (Java API for WebSocket)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#websocket">Chat Room (Java API for WebSocket)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ticket Sales (Batch Applications for the Java Platform)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#batch">Ticket Sales (Batch Applications for the Java Platform)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View and Delete Movie (Java API for RESTful Web Services)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jaxrs">View and Delete Movie (Java API for RESTful Web Services)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add Movie (Java API for JSON Processing)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#json">Add Movie (Java API for JSON Processing)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Movie Points (Java Message Service)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jms">Movie Points (Java Message Service)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show Booking (JavaServer Faces)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jsf">Show Booking (JavaServer Faces)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30 - 45 mins</p></td>
 </tr>
 </tbody>
 </table>
 
-<div class="paragraph">
-<p>The listed time for each section is only an estimate and by no means
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
-shorter time, and you can do it too!</p>
+shorter time, and you can do it too!
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>The listed time for each section also allows you to create a custom
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The listed time for each section also allows you to create a custom
 version of the lab depending upon your target audience and available
-time.</p>
+time.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_walk_through_of_sample_application">Walk-through of Sample Application</h2>
+<h2 id="walk-through">Walk-through of Sample Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: This section will download the sample application to be used
@@ -1150,7 +1182,7 @@ server. Choose the configured GlassFish server and click on “OK”.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_chat_room_java_api_for_websocket">Chat Room (Java API for WebSocket)</h2>
+<h2 id="websocket">Chat Room (Java API for WebSocket)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: Build a chat room for viewers. In doing so several new
@@ -1689,7 +1721,7 @@ WebSocket traffic.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ticket_sales_batch_applications_for_the_java_platform">Ticket Sales (Batch Applications for the Java Platform)</h2>
+<h2 id="batch">Ticket Sales (Batch Applications for the Java Platform)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: Read the total sales for each show and populate the database.
@@ -2307,7 +2339,7 @@ application explicitly mentioned to skip such errors.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_view_and_delete_movie_java_api_for_restful_web_services">View and Delete Movie (Java API for RESTful Web Services)</h2>
+<h2 id="jaxrs">View and Delete Movie (Java API for RESTful Web Services)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: View, and delete a movie. In doing so several new features of
@@ -2709,7 +2741,7 @@ project will delete all the movies anyway and add them all back.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_add_movie_java_api_for_json_processing">Add Movie (Java API for JSON Processing)</h2>
+<h2 id="json">Add Movie (Java API for JSON Processing)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: Add a new movie. In doing so several new features of the Java
@@ -3164,7 +3196,7 @@ sequence; however this is not done in the application.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_movie_points_java_message_service">Movie Points (Java Message Service)</h2>
+<h2 id="jms">Movie Points (Java Message Service)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: Customers accrue points for watching a movie.</p>
@@ -3610,7 +3642,7 @@ remaining messages in the queue.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_show_booking_javaserver_faces">Show Booking (JavaServer Faces)</h2>
+<h2 id="jsf">Show Booking (JavaServer Faces)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Purpose</strong>: Build pages that allow a user to book a particular movie show
@@ -4477,7 +4509,7 @@ node, and select “View Domain Server Log”.</p>
 <h2 id="_appendix">Appendix A: Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</h3>
+<h3 id="appendix-glassfish4-netbeans">Configure GlassFish 4 in NetBeans IDE</h3>
 <div class="paragraph">
 <p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span></p>
 </div>

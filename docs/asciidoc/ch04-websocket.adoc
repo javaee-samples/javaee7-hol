@@ -1,3 +1,4 @@
+[[websocket]]
 == Chat Room (Java API for WebSocket)
 
 

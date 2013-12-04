@@ -25,6 +25,7 @@ image:images/2.0-technologies.png[image]
 The table below details the components and the selected technology used
 in its’ implementation.
 
+[cols="2,8", options="header"]
 |===
 | Flow | Description
 
@@ -58,7 +59,7 @@ EE 7 Tutorial] is a good place to learn all these concepts. However
 enough explanation is provided in this guide to get you started with the
 application.
 
-*WARNING*: This is a sample application and the code may not be
+WARNING: This is a sample application and the code may not be
 following the best practices to prevent SQL injection, cross-side
 scripting attacks, escaping parameters, and other similar features
 expected of a robust enterprise application. This is intentional such as
@@ -95,6 +96,7 @@ image:images/2.1-format.png[image]
 This functionality is also accessible using the following keyboard
 shortcuts:
 
+[width="50%", options="header"]
 |===
 | Shortcut | Operating System
 
@@ -123,6 +125,7 @@ image:images/2.1-fix-imports.png[image]
 This functionality is also accessible using the following keyboard
 shortcuts:
 
+[width="50%", options="header"]
 |===
 | Shortcut | Operating System
 
@@ -156,30 +159,31 @@ pre-requisite for section 7.0.
 
 Here is an approximate time estimate for each section:
 
+[width="80%", cols="4,2" options="header"]
 |===
 | Section Title | Estimated Time
 
-| Walk-through of Sample Application | 15 - 30 mins
+| <<walk-through>> | 15 - 30 mins
 
-| Chat Room (Java API for WebSocket) | 30 - 45 mins
+| <<websocket>> | 30 - 45 mins
 
-| Ticket Sales (Batch Applications for the Java Platform) | 30 - 45 mins
+| <<batch>> | 30 - 45 mins
 
-| View and Delete Movie (Java API for RESTful Web Services) | 30 - 45 mins
+| <<jaxrs>> | 30 - 45 mins
 
-| Add Movie (Java API for JSON Processing) | 30 - 45 mins
+| <<json>> | 30 - 45 mins
 
-| Movie Points (Java Message Service) | 30 - 45 mins
+| <<jms>> | 30 - 45 mins
 
-| Show Booking (JavaServer Faces) | 30 - 45 mins
+| <<jsf>> | 30 - 45 mins
 |===
 
 
-The listed time for each section is only an estimate and by no means
+TIP: The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
 shorter time, and you can do it too!
 
-The listed time for each section also allows you to create a custom
+TIP: The listed time for each section also allows you to create a custom
 version of the lab depending upon your target audience and available
 time.
 

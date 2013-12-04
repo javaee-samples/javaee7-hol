@@ -1,3 +1,4 @@
+[[walk-through]]
 == Walk-through of Sample Application
 
 *Purpose*: This section will download the sample application to be used

@@ -1,3 +1,4 @@
+[[jms]]
 == Movie Points (Java Message Service)
 
 *Purpose*: Customers accrue points for watching a movie.
