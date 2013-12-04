@@ -1,12 +1,4 @@
 == Revision History
 
-. Moving the source document from Pages to AsciiDoc.
-. Moving the source document from Microsoft Word to Pages.
-. Added time estimates for each section.
-. Updated to use NetBeans 7.4 nightly.
-. Reorganized to ensure that newer Java EE 7 technologies are described first.
-. Code updates from UberConf.
-. Incorporating typos, missing dialog boxes, and code optimizations received during DevoxxUK.
-. Updating instructions after some of the bugs have been fixed.
-. Using the final GlassFish 4 build (b89).
+. Moving the source document from Pages to AsciiDoc (Dec 3, 2013)
 

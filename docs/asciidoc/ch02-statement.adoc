@@ -30,7 +30,7 @@ in its’ implementation.
 | Flow | Description
 
 | User Interface
-| Written entirely in _JavaServer Faces_ (JSF).
+| Written entirely in _JavaServer Faces_ (JSF)
 
 | Chat Room
 | Utilizes client-side JavaScript and JSON to communicate with a _WebSocket_ endpoint
@@ -40,16 +40,16 @@ in its’ implementation.
 sales and persist to the database.
 
 | Add/Delete Movie
-| Implemented using RESTful Web Services. JSON is used as on-the-wire data format.
+| Implemented using RESTful Web Services. JSON is used as on-the-wire data format
 
 | Movie Points
 | Uses _Java Message Service_ (JMS) to update and obtain loyalty reward
 points; an optional implementation using database technology may be
-performed.
+performed
 
 | Show Booking
 | Uses lightweight _Enterprise JavaBeans_ to communicate with the database
-using Java Persistence API.
+using Java Persistence API
 |===
 
 This document is not a comprehensive tutorial of Java EE. The attendees
@@ -179,7 +179,7 @@ Here is an approximate time estimate for each section:
 |===
 
 
-TIP: The listed time for each section is only an estimate and by no means
+The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
 shorter time, and you can do it too!
 

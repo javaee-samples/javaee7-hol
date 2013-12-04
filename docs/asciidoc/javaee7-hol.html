@@ -550,7 +550,7 @@ in its’ implementation.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Written entirely in <em>JavaServer Faces</em> (JSF).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Written entirely in <em>JavaServer Faces</em> (JSF)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Chat Room</p></td>
@@ -563,18 +563,18 @@ sales and persist to the database.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Add/Delete Movie</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Implemented using RESTful Web Services. JSON is used as on-the-wire data format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implemented using RESTful Web Services. JSON is used as on-the-wire data format</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Movie Points</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <em>Java Message Service</em> (JMS) to update and obtain loyalty reward
 points; an optional implementation using database technology may be
-performed.</p></td>
+performed</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Show Booking</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Uses lightweight <em>Enterprise JavaBeans</em> to communicate with the database
-using Java Persistence API.</p></td>
+using Java Persistence API</p></td>
 </tr>
 </tbody>
 </table>
@@ -797,19 +797,10 @@ pre-requisite for section 7.0.</p>
 </tbody>
 </table>
 
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-The listed time for each section is only an estimate and by no means
+<div class="paragraph">
+<p>The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
-shorter time, and you can do it too!
-</td>
-</tr>
-</table>
+shorter time, and you can do it too!</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -842,41 +833,47 @@ performed to provide an understanding of the application architecture.</p>
 <div class="paragraph">
 <p><strong>3.1</strong> Download the sample application from
 <a href="http://glassfish.org/hol/movieplex7-starting-template.zip">glassfish.org/hol/movieplex7-starting-template.zip</a>
-and unzip. This will create a “movieplex7” directory and unzips all the
+and unzip. This will create a "movieplex7" directory and unzips all the
 content there.</p>
 </div>
 <div class="paragraph">
-<p><strong>3.2</strong> In NetBeans IDE, select “File”, “Open Project…”, select the
-unzipped directory, and click on “Open Project”. The project structure
+<p><strong>3.2</strong> In NetBeans IDE, select "File", "Open Project…", select the
+unzipped directory, and click on "Open Project". The project structure
 is shown.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.2-project-structure.png" alt="image"></span><br></p>
+<p><span class="image"><img src="images/3.2-project-structure.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.2-persistence-xml.png" alt="image"></span><br></p>
+<p><strong>3.3</strong> Maven Coordinates: Expand "Project Files" and double click on
+"pom.xml". In the "pom.xml", the Java EE 7 API is specified as a
+<code>&lt;dependency&gt;</code>:</p>
 </div>
-<div class="paragraph">
-<p><strong>3.3</strong> Maven Coordinates: Expand “Project Files” and double click on
-“pom.xml”. In the “pom.xml”, the Java EE 7 API is specified as a
-&lt;dependency&gt;:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="xml language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax&lt;/groupId&gt;
+        &lt;artifactId&gt;javaee-api&lt;/artifactId&gt;
+        &lt;version&gt;7.0&lt;/version&gt;
+        &lt;scope&gt;provided&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
 </div>
-<div class="paragraph">
-<p>&lt;dependencies&gt;
-&lt;dependency&gt;
-&lt;groupId&gt;javax&lt;/groupId&gt;
-&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;
-&lt;version&gt;7.0&lt;/version&gt;
-&lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;
-&lt;/dependencies&gt;</p>
 </div>
 <div class="paragraph">
 <p>This will ensure that Java EE 7 APIs are retrieved from the central
 Maven repository.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>The Java EE 6 platform introduced the notion of “profiles”. A profile is
+<p>The Java EE 6 platform introduced the notion of "profiles". A profile is
 a configuration of the Java EE platform targeted at a specific class of
 applications. All Java EE profiles share a set of common features, such
 as naming and resource injection, packaging rules, security
@@ -890,183 +887,202 @@ specifications defined in the Web Profile is defined in the Java EE 7
 Web Profile Specification. GlassFish can be downloaded in two different
 flavors – Full Platform or Web Profile.</p>
 </div>
-<div class="paragraph">
-<p>This lab requires Full Platform download. All technologies used in this
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+This lab requires Full Platform download. All technologies used in this
 lab, except Java Message Service and Batch Applications for the Java
-Platform, can be deployed on Web Profile.</p>
+Platform, can be deployed on Web Profile.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p><strong>3.4</strong> <strong>Default Data Source</strong>: Expand “Other Sources”,
-“src/main/resources”, “META-INF”, and double-click on “persistence.xml”.
+<p><strong>3.4</strong> <strong>Default Data Source</strong>: Expand "Other Sources",
+"src/main/resources", "META-INF", and double-click on "persistence.xml".
 By default, NetBeans opens the file in Design View. Click on Source tab
 to view the XML source.</p>
 </div>
 <div class="paragraph">
+<p><span class="image"><img src="images/3.2-persistence-xml.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
 <p>It looks like:</p>
 </div>
-<div class="paragraph">
-<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;persistence version="2.1"
-xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-<a href="http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;">http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;</a></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="xml language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;persistence
+    version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;
+    &lt;persistence-unit name="movieplex7PU" transaction-type="JTA"&gt;
+        &lt;!--
+            &lt;jta-data-source&gt;java:comp/DefaultDataSource&lt;/jta-data-source&gt;
+        --&gt;
+        &lt;properties&gt;
+            &lt;property
+                name="javax.persistence.schema-generation.database.action"
+                value="drop-and-create"/&gt;
+            &lt;property
+                name="javax.persistence.schema-generation.create-source"
+                value="script"/&gt;
+            &lt;property
+                name="javax.persistence.schema-generation.drop-source"
+                value="script"/&gt;
+            &lt;property
+                name="javax.persistence.schema-generation.drop-script-source"
+                value="META-INF/drop.sql"/&gt;
+            &lt;property
+                name="javax.persistence.sql-load-script-source"
+                value="META-INF/load.sql"/&gt;
+            &lt;property
+                name="eclipselink.deploy-on-startup"
+                value="true"/&gt;
+            &lt;property
+                name="eclipselink.logging.exceptions"
+                value="false"/&gt;
+        &lt;/properties&gt;
+    &lt;/persistence-unit&gt;
+&lt;/persistence&gt;</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>&lt;persistence-unit name="movieplex7PU" transaction-type="JTA"&gt;
-&lt;!--
-&lt;jta-data-source&gt;java:comp/DefaultDataSource&lt;/jta-data-source&gt;
--&#8594;
-&lt;properties&gt;
-&lt;property
-name="javax.persistence.schema-generation.database.action"
-value="drop-and-create"/&gt;
-&lt;property
-name="javax.persistence.schema-generation.create-source"
-value="script"/&gt;
-&lt;property
-name="javax.persistence.schema-generation.drop-source"
-value="script"/&gt;
-&lt;property
-name="javax.persistence.schema-generation.drop-script-source"
-value="META-INF/drop.sql"/&gt;
-&lt;property
-name="javax.persistence.sql-load-script-source"
-value="META-INF/load.sql"/&gt;
-&lt;property
-name="eclipselink.deploy-on-startup"
-value="true"/&gt;
-&lt;property
-name="eclipselink.logging.exceptions"
-value="false"/&gt;
-&lt;/properties&gt;
-&lt;/persistence-unit&gt;
-&lt;/persistence&gt;</p>
-</div>
-<div class="paragraph">
-<p>Notice &lt;jta-data-source&gt; is commented out, i.e. no data source element
+<p>Notice <code>&lt;jta-data-source&gt;</code> is commented out, i.e. no data source element
 is specified. This element identifies the JDBC resource to connect to in
 the runtime environment of the underlying application server.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 7 platform defines a new default DataSource that must be
+<p>The Java EE 7 platform defines a new default data source that must be
 provided by the runtime. This pre-configured data source is accessible
 under the JNDI name</p>
 </div>
-<div class="paragraph">
-<p>java:comp/DefaultDataSource</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="java language-java">java:comp/DefaultDataSource</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>The JPA 2.1 specification says if neither jta-data-source nor
-non-jta-data-source elements are specified, the deployer must specify a
+<p>The JPA 2.1 specification says if neither <code>jta-data-source</code> nor
+<code>non-jta-data-source</code> elements are specified, the deployer must specify a
 JTA data source or the default JTA data source must be provided by the
 container.</p>
 </div>
 <div class="paragraph">
 <p>For GlassFish 4, the default data source is bound to the JDBC resource
-jdbc/__default.</p>
+<code>jdbc/__default</code>.</p>
 </div>
 <div class="paragraph">
-<p>Clicking back and forth between “Design” and “Source” view may prompt
+<p>Clicking back and forth between "Design" and "Source" view may prompt
 the error shown below:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.4-missing-server.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>This will get resolved when we run the application. Click on “OK” to
+<p>This will get resolved when we run the application. Click on "OK" to
 dismiss the dialog.</p>
 </div>
 <div class="paragraph">
-<p><strong>3.5</strong> <strong>Schema Generation:*JPA 2.1 defines a new set of
-javax.persistence.schema-generation.</strong> properties that can be used to
+<p><strong>3.5</strong> <strong>Schema Generation:</strong> JPA 2.1 defines a new set of
+<code>javax.persistence.schema-generation.*</code> properties that can be used to
 generate database artifacts like tables, indexes, and constraints in a
 database schema. This helps in prototyping of your application where the
 required artifacts are generated either prior to application deployment
-or as part of EntityManagerFactory creation. This feature will allow
+or as part of <code>EntityManagerFactory</code> creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.</p>
 </div>
 <div class="paragraph">
-<p>The “persistence.xml” in the application has the following
-javax.persistence.schema-generation.* properties. Their meaning and
-possible values are explained in <a href="#Table2">Table 2</a>.</p>
+<p>The "persistence.xml" in the application has the following
+<code>javax.persistence.schema-generation.*</code> properties. Their meaning and
+possible values are explained:</p>
 </div>
-<div class="paragraph">
-<p><strong>Property</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Meaning</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Values</strong></p>
-</div>
-<div class="paragraph">
-<p>javax.persistence.schema-generation.database.action</p>
-</div>
-<div class="paragraph">
-<p>Specifies the action to be taken by the persistence provider with regard
-to the database artifacts.</p>
-</div>
-<div class="paragraph">
-<p>“none”, “create”, “drop-and-create”, “drop”</p>
-</div>
-<div class="paragraph">
-<p>javax.persistence.schema-generation.create-source/drop-source</p>
-</div>
-<div class="paragraph">
-<p>Specifies whether the creation or deletion of database artifacts is to
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.database.action</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the action to be taken by the persistence provider with regard
+to the database artifacts.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>none</code>, <code>create</code>, <code>drop-and-create</code>, <code>drop</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-source</code>
+ <code>javax.persistence.schema-generation.drop-source</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies whether the creation or deletion of database artifacts is to
 occur on the basis of the object/relational mapping metadata, DDL
-script, or a combination of the two.</p>
-</div>
-<div class="paragraph">
-<p>“metadata”, “script”, “metadata-then-script”, “script-then-metadata”</p>
-</div>
-<div class="paragraph">
-<p>javax.persistence.schema-generation.create-script-source/drop-script-source</p>
-</div>
-<div class="paragraph">
-<p>Specifies a java.IO.Reader configured for reading of the SQL script or a
+script, or a combination of the two.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metadata</code>, <code>script</code>, <code>metadata-then-script</code>, <code>script-then-metadata</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-script-source</code>
+ <code>javax.persistence.schema-generation.drop-script-source</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a <code>java.IO.Reader</code> configured for reading of the SQL script or a
 string designating a file URL for the SQL script to create or delete
-database artifacts.</p>
-</div>
-<div class="paragraph">
-<p>javax.persistence.sql-load-script-source</p>
-</div>
-<div class="paragraph">
-<p>Specifies a java.IO.Reader configured for reading of the SQL load script
+database artifacts.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.sql-load-script-source</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a <code>java.IO.Reader</code> configured for reading of the SQL load script
 for database initialization or a string designating a file URL for the
-script.</p>
-</div>
+script.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+
 <div class="paragraph">
 <p>Refer to the <a href="http://jcp.org/en/jsr/detail?id=338">JPA 2.1 Specification</a>
 for a complete understanding of these properties.</p>
 </div>
 <div class="paragraph">
 <p>In the application, the scripts are bundled in the WAR file in
-“META-INF” directory. As the location of these scripts is specified as a
+"META-INF" directory. As the location of these scripts is specified as a
 URL, the scripts may be loaded from outside the WAR file as well.</p>
 </div>
 <div class="paragraph">
-<p>Feel free to open “create.sql”, “drop.sql” and “load.sql” and read
+<p>Feel free to open "create.sql", "drop.sql" and "load.sql" and read
 through the SQL scripts. The database schema is shown.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.5-schema.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>This folder also contains “sales.csv” which carries some comma-separated
+<p>This folder also contains "sales.csv" which carries some comma-separated
 data, and is used later in the application.</p>
 </div>
 <div class="paragraph">
-<p><strong>3.6</strong> <strong>JPA entities, Stateless EJBs, and REST endpoints</strong>: Expand “Source
-Packages”. The package “org.glassfish.movieplex7.entities” contains the
+<p><strong>3.6</strong> <strong>JPA entities, Stateless EJBs, and REST endpoints</strong>: Expand "Source
+Packages". The package <code>org.glassfish.movieplex7.entities</code> contains the
 JPA entities corresponding to the database table definitions. Each JPA
 entity has several convenient @NamedQuery defined and uses Bean
 Validation constraints to enforce validation.</p>
 </div>
 <div class="paragraph">
-<p>The package “org.glassfish.movieplex7.rest” contains stateless EJBs
+<p>The package <code>org.glassfish.movieplex7.rest</code> contains stateless EJBs
 corresponding to different JPA entities.</p>
 </div>
 <div class="paragraph">
@@ -1081,103 +1097,102 @@ same as the JPA entity class name.</p>
 corresponding REST endpoint is shown.
 <span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>JPA Entity Class</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>EJB Class</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>RESTful Path</strong></p>
-</div>
-<div class="paragraph">
-<p>Movie</p>
-</div>
-<div class="paragraph">
-<p>MovieFacadeREST</p>
-</div>
-<div class="paragraph">
-<p>/webresources/movie</p>
-</div>
-<div class="paragraph">
-<p>Sales</p>
-</div>
-<div class="paragraph">
-<p>SalesFacadeREST</p>
-</div>
-<div class="paragraph">
-<p>/webresources/sales</p>
-</div>
-<div class="paragraph">
-<p>ShowTiming</p>
-</div>
-<div class="paragraph">
-<p>ShowTimingFacadeREST</p>
-</div>
-<div class="paragraph">
-<p>/webresources/showtiming</p>
-</div>
-<div class="paragraph">
-<p>Theater</p>
-</div>
-<div class="paragraph">
-<p>TheaterFacadeREST</p>
-</div>
-<div class="paragraph">
-<p>/webresources/theater</p>
-</div>
-<div class="paragraph">
-<p>Timeslot</p>
-</div>
-<div class="paragraph">
-<p>TimeslotFacadeREST</p>
-</div>
-<div class="paragraph">
-<p>/webresources/timeslot</p>
-</div>
+<table class="tableblock frame-all grid-all" style="width:60%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">JPA Entity Class</th>
+<th class="tableblock halign-left valign-top">EJB Class</th>
+<th class="tableblock halign-left valign-top">RESTful Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Movie</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MovieFacadeREST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/movie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Sales</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SalesFacadeREST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/sales</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ShowTiming</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ShowTimingFacadeREST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/showtiming</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Theater</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TheaterFacadeREST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/theater</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Timeslot</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TimeslotFacadeREST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/timeslot</p></td>
+</tr>
+</tbody>
+</table>
+
 <div class="paragraph">
 <p>Feel free to browse through the code.</p>
 </div>
 <div class="paragraph">
-<p><strong>3.7</strong> <strong>JSF pages</strong>: “WEB-INF/template.xhtml” defines the template of the
+<p><strong>3.7</strong> <strong>JSF pages</strong>: "WEB-INF/template.xhtml" defines the template of the
 web page and has a header, left navigation bar, and a main content
-section. “index.xhtml” uses this template and the EJBs to display the
+section. "index.xhtml" uses this template and the EJBs to display the
 number of movies and theaters.</p>
 </div>
 <div class="paragraph">
-<p>Java EE 7 enables CDI discovery of beans by default. No “beans.xml” is
-required in “WEB-INF”. This allows all beans with bean defining
+<p>Java EE 7 enables CDI discovery of beans by default. No "beans.xml" is
+required in "WEB-INF". This allows all beans with bean defining
 annotation, i.e. either a bean with an explicit CDI scope or EJBs to be
 available for injection.</p>
 </div>
 <div class="paragraph">
-<p>Note, “template.xhtml” is in “WEB-INF” folder as it allows the template
+<p>Note, "template.xhtml" is in "WEB-INF" folder as it allows the template
 to be accessible from the pages bundled with the application only. If it
 were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.</p>
 </div>
 <div class="paragraph">
-<p><strong>3.8</strong> <strong>Run the sample</strong>: Right-click on the project and select “Run”.
+<p><strong>3.8</strong> <strong>Run the sample</strong>: Right-click on the project and select "Run".
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on GlassFish 4, and show the URL
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a> in the
 default browser configured in NetBeans. Note that this could take a
-while if you have never built a Maven application on your machine. Also,
-the project will show red squiggly lines in the source code indicating
+while if you have never built a Maven application on your machine.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The project will show red squiggly lines in the source code indicating
 that the classes cannot be resolved. This is expected before the
 dependencies are downloaded. However these references will be resolved
-correctly after the dependencies are downloaded during project building.</p>
+correctly after the dependencies are downloaded during project building.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>During the first run, the IDE will ask you to select a deployment
-server. Choose the configured GlassFish server and click on “OK”.</p>
+server. Choose the configured GlassFish server and click on "OK".</p>
 </div>
 <div class="paragraph">
 <p>The output looks like as shown.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.80-first-page.png" alt="image"></span></p>
+<p><span class="image"><img src="images/3.8-first-page.png" alt="image"></span></p>
 </div>
 </div>
 </div>
@@ -4370,21 +4385,18 @@ and demonstrated the following features of the platform:</p>
 <ol>
 <li>
 <p><em>How can I start/stop/restart GlassFish from within the IDE ?</em></p>
-<p>In the “Services” tab, right-click on “GlassFish Server 4”. All the
-commands to start, stop, and restart are available from the pop-up menu.
-The server log can be viewed by clicking on “View Server Log” and
-web-based administration console can be seen by clicking on “View Admin
-Console”.</p>
+<p>In the "Services" tab, right-click on "GlassFish Server 4". All the
+commands to start, stop, and restart are available from the pop-up menu.</p>
 </li>
 <li>
 <p><em>I accidentally closed the GlassFish output log window. How do I bring it back ?</em></p>
-<p>In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
-node, and select “View Domain Server Log”.</p>
+<p>In “Services” tab of NetBeans, expand "Servers", choose the GlassFish
+node, and select "View Domain Server Log".
+<span class="image"><img src="images/netbeans-view-log.png" alt="image"></span>
+In addition the web-based administration
+console can be seen by clicking on "View Domain Admin Console".</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/netbeans-view-log.png" alt="image"></span></p>
 </div>
 </div>
 </div>
@@ -4475,31 +4487,7 @@ node, and select “View Domain Server Log”.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Moving the source document from Pages to AsciiDoc.</p>
-</li>
-<li>
-<p>Moving the source document from Microsoft Word to Pages.</p>
-</li>
-<li>
-<p>Added time estimates for each section.</p>
-</li>
-<li>
-<p>Updated to use NetBeans 7.4 nightly.</p>
-</li>
-<li>
-<p>Reorganized to ensure that newer Java EE 7 technologies are described first.</p>
-</li>
-<li>
-<p>Code updates from UberConf.</p>
-</li>
-<li>
-<p>Incorporating typos, missing dialog boxes, and code optimizations received during DevoxxUK.</p>
-</li>
-<li>
-<p>Updating instructions after some of the bugs have been fixed.</p>
-</li>
-<li>
-<p>Using the final GlassFish 4 build (b89).</p>
+<p>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</p>
 </li>
 </ol>
 </div>
@@ -4510,9 +4498,6 @@ node, and select “View Domain Server Log”.</p>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="appendix-glassfish4-netbeans">Configure GlassFish 4 in NetBeans IDE</h3>
-<div class="paragraph">
-<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span></p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4521,14 +4506,21 @@ node, and select “View Domain Server Log”.</p>
 <li>
 <p>Right-click on Servers, choose “Add Server&#8230;” in the pop-up menu.</p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Select “GlassFish Server” in the Add Server Instance wizard, set the
-name to “GlassFish 4.0” and click “Next &gt;”.</p>
+<p>Select "GlassFish Server" in the Add Server Instance wizard, set the
+name to "GlassFish 4.0" and click "Next &gt;".</p>
 </li>
 <li>
-<p>Click on “Browse …” and browse to where you unzipped the GlassFish
-build and point to the “glassfish4” directory that got created when you
-unzipped the above archive. Click on “Finish”.</p>
+<p>Click on "Browse …" and browse to where you unzipped the GlassFish
+build and point to the "glassfish4" directory that got created when you
+unzipped the above archive. Click on "Finish".</p>
 </li>
 </ol>
 </div>
