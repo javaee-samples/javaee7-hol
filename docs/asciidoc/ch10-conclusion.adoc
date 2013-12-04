@@ -18,7 +18,6 @@ and demonstrated the following features of the platform:
 ** Injecting JMSContext
 ** Synchronous message send and receive
 * JavaServer Faces 2.2 (JSR 344)
-image:images/add-server-instance.png[image]
 ** Faces Flow
 * Contexts and Dependency Injection 1.1 (JSR 346)
 ** Automatic discovery of beans
@@ -37,10 +36,7 @@ image:images/add-server-instance.png[image]
 * Java Transaction API 1.2 (JSR 907)
 ** @Transactional
 
- +
-
-Hopefully this has raised your interest enough in trying out Java EE
-7 applications using GlassFish 4.
+Hopefully this has raised your interest enough in trying out Java EE 7 applications using GlassFish 4.
 
 Send us feedback at users@glassfish.java.net.
 

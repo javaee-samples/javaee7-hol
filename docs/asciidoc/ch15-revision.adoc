@@ -1,5 +1,5 @@
 [[]]
-=== Revision History
+== Revision History
 
 . Moving the source document from Pages to AsciiDoc.
 . Moving the source document from Microsoft Word to Pages.

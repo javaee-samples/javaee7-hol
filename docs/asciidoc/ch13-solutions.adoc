@@ -1,5 +1,4 @@
 == Completed Solutions
 
-The completed solution can be downloaded from
-http://glassfish.org/hol/movieplex7-solution.zip[glassfish.org/hol/movieplex7-solution.zip].
+The completed solution can be downloaded from https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip[javaee7-hol].
 

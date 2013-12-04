@@ -393,13 +393,9 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_troubleshooting">Troubleshooting</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a></li>
 <li><a href="#_completed_solutions">Completed Solutions</a></li>
-<li>
-<ul class="sectlevel2">
 <li><a href="#_todo">TODO</a></li>
 <li><a href="#_revision_history">Revision History</a></li>
-</ul>
-</li>
-<li><a href="#_appendix">Appendix</a></li>
+<li><a href="#_appendix">Appendix A: Appendix</a></li>
 <li>
 <ul class="sectlevel2">
 <li><a href="#_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</a></li>
@@ -412,11 +408,6 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="sect1">
 <h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The Java EE 7 platform continues the ease of development push that
 characterized prior releases by bringing further simplification to
@@ -427,19 +418,9 @@ improvements in the Java language. There are plenty of improvements to
 several other components. Newer web standards like HTML 5, WebSocket,
 and JSON processing are embraced to build modern web applications.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This hands-on lab will build a typical 3-tier end-to-end application
 using the following Java EE 7 technologies:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -472,45 +453,19 @@ using the following Java EE 7 technologies:</p>
 </li>
 <li>
 <p>Java Transaction API 1.2 (JSR 907)</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Together these APIs will allow you to be more productive by simplifying enterprise development.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>The latest version of this document can be downloaded from
-<a href="https://github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf">github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf</a>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p>The latest version of this document can be downloaded from <a href="https://github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf">github.com/arun-gupta/javaee7-hol/blob/master/docs/javaee7-hol.pdf</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_software_requirement">Software Requirement</h3>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The following software needs to be downloaded and installed:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -545,11 +500,6 @@ preview of the downloads page is shown and highlights the exact
 <div class="sect1">
 <h2 id="_problem_statement">Problem Statement</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This hands-on lab builds a typical 3-tier Java EE 7 Web application that
 allows customers to view the show timings for a movie in a 7-theater
@@ -561,11 +511,6 @@ also accrue points for watching movies.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/2.0-problem-statement.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This figure shows the key components of the application. The User
 Interface initiates all the flows in the application. Show Booking,
@@ -573,21 +518,11 @@ Add/Delete Movie and Ticket Sales interact with the database; Movie
 Points may interact with the database, however, this is out of scope for
 this application; and Chat Room does not interact with the database.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The different functions of the application, as detailed above, utilize
 various Java technologies and web standards in their implementation. The
 following figure shows how Java EE technologies are used in different
 flows.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/2.0-technologies.png" alt="image"></span></p>
@@ -595,12 +530,6 @@ flows.</p>
 <div class="paragraph">
 <p>The table below details the components and the selected technology used
 in its’ implementation.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>Flow</strong></p>
@@ -1013,66 +942,25 @@ shorter time, and you can do it too!</p>
 version of the lab depending upon your target audience and available
 time.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_walk_through_of_sample_application">Walk-through of Sample Application</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: This section will download the sample application to be used
 in this hands-on lab. A walk-through of the application will be
 performed to provide an understanding of the application architecture.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 15-30 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.1</strong> Download the sample application from
 <a href="http://glassfish.org/hol/movieplex7-starting-template.zip">glassfish.org/hol/movieplex7-starting-template.zip</a>
 and unzip. This will create a “movieplex7” directory and unzips all the
 content there.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.2</strong> In NetBeans IDE, select “File”, “Open Project…”, select the
@@ -1733,21 +1621,11 @@ server. Choose the configured GlassFish server and click on “OK”.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.80-first-page.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_chat_room_java_api_for_websocket">Chat Room (Java API for WebSocket)</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: Build a chat room for viewers. In doing so several new
 features of Java API for WebSocket 1.0 will be introduced and
@@ -2638,16 +2516,6 @@ like as shown.</p>
 <div class="paragraph">
 <p>Chrome Developer Tools or Firebug in Firefox can be used to monitor
 WebSocket traffic.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -3814,11 +3682,6 @@ application explicitly mentioned to skip such errors.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -4594,26 +4457,11 @@ project will delete all the movies anyway and add them all back.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_add_movie_java_api_for_json_processing">Add Movie (Java API for JSON Processing)</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: Add a new movie. In doing so several new features of the Java
 API for JSON Processing 1.0 will be introduced and demonstrated by using
@@ -5483,16 +5331,6 @@ sequence; however this is not done in the application.</p>
 <div class="paragraph">
 <p>Note that the newly added movie is now displayed.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -6344,16 +6182,6 @@ queue has 0 messages.</p>
 <div class="paragraph">
 <p>The count is once again updated to reflect the 2 consumed and 2
 remaining messages in the queue.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -7352,16 +7180,6 @@ notice how the values in the bean are preserved.</p>
 <pre>+</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -7429,8 +7247,7 @@ and demonstrated the following features of the platform:</p>
 </div>
 </li>
 <li>
-<p>JavaServer Faces 2.2 (JSR 344)
-<span class="image"><img src="images/add-server-instance.png" alt="image"></span></p>
+<p>JavaServer Faces 2.2 (JSR 344)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -7507,11 +7324,6 @@ and demonstrated the following features of the platform:</p>
 <ul>
 <li>
 <p>@Transactional</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -7519,8 +7331,7 @@ and demonstrated the following features of the platform:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Hopefully this has raised your interest enough in trying out Java EE
-7 applications using GlassFish 4.</p>
+<p>Hopefully this has raised your interest enough in trying out Java EE 7 applications using GlassFish 4.</p>
 </div>
 <div class="paragraph">
 <p>Send us feedback at <a href="mailto:users@glassfish.java.net">users@glassfish.java.net</a>.</p>
@@ -7530,26 +7341,25 @@ and demonstrated the following features of the platform:</p>
 <div class="sect1">
 <h2 id="_troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>11.1</strong> How can I start/stop/restart GlassFish from within the IDE ?</p>
-</div>
-<div class="paragraph">
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>How can I start/stop/restart GlassFish from within the IDE ?</em></p>
 <p>In the “Services” tab, right-click on “GlassFish Server 4”. All the
 commands to start, stop, and restart are available from the pop-up menu.
 The server log can be viewed by clicking on “View Server Log” and
 web-based administration console can be seen by clicking on “View Admin
 Console”.</p>
-</div>
-<div class="paragraph">
-<p><strong>11.2</strong> I accidentally closed the GlassFish output log window. How do I
-bring it back ?</p>
+</li>
+<li>
+<p><em>I accidentally closed the GlassFish output log window. How do I bring it back ?</em></p>
+<p>In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
+node, and select “View Domain Server Log”.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/netbeans-view-log.png" alt="image"></span></p>
-</div>
-<div class="paragraph">
-<p>In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
-node, and select “View Domain Server Log”.</p>
 </div>
 </div>
 </div>
@@ -7557,8 +7367,7 @@ node, and select “View Domain Server Log”.</p>
 <h2 id="_acknowledgements">Acknowledgements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following GlassFish community members graciously reviewed this
-hands-on lab:</p>
+<p>The following Java EE community members graciously reviewed this hands-on lab:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -7597,11 +7406,13 @@ hands-on lab:</p>
 <h2 id="_completed_solutions">Completed Solutions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The completed solution can be downloaded from
-<a href="http://glassfish.org/hol/movieplex7-solution.zip">glassfish.org/hol/movieplex7-solution.zip</a>.</p>
+<p>The completed solution can be downloaded from <a href="https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip">javaee7-hol</a>.</p>
 </div>
-<div class="sect2">
-<h3 id="_todo">TODO</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_todo">TODO</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7628,22 +7439,14 @@ hands-on lab:</p>
 </li>
 <li>
 <p>Change logging to use java.util.Logging.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_revision_history">Revision History</h3>
+</div>
+<div class="sect1">
+<h2 id="_revision_history">Revision History</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7677,45 +7480,32 @@ hands-on lab:</p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="_appendix">Appendix</h2>
+<h2 id="_appendix">Appendix A: Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</h3>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>A.1 In NetBeans, click on the “Services” tab.</p>
+<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span><br></p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="paragraph">
-<p>A.2 Right-click on Servers, choose “Add Server&#8230;” in the pop-up menu.</p>
-</div>
-<div class="paragraph">
-<p>A.3 Select “GlassFish Server” in the Add Server Instance wizard, set the
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In NetBeans, click on the “Services” tab.</p>
+</li>
+<li>
+<p>Right-click on Servers, choose “Add Server&#8230;” in the pop-up menu.</p>
+</li>
+<li>
+<p>Select “GlassFish Server” in the Add Server Instance wizard, set the
 name to “GlassFish 4.0” and click “Next &gt;”.</p>
-</div>
-<div class="paragraph">
-<p>A.4 Click on “Browse …” and browse to where you unzipped the GlassFish
+</li>
+<li>
+<p>Click on “Browse …” and browse to where you unzipped the GlassFish
 build and point to the “glassfish4” directory that got created when you
 unzipped the above archive. Click on “Finish”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -7724,7 +7514,7 @@ unzipped the above archive. Click on “Finish”.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2013-12-03 19:29:04 PST
+Last updated 2013-12-03 21:05:57 PST
 </div>
 </div>
 </body>

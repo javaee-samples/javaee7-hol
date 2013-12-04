@@ -35,28 +35,5 @@ include::ch14-todo.adoc[]
 
 include::ch15-revision.adoc[]
 
-== Appendix
-
-[[]]
-=== Configure GlassFish 4 in NetBeans IDE
-
- +
-
-A.1 In NetBeans, click on the “Services” tab.
-
-image:images/netbeans-addserver.png[image] +
- +
-
-A.2 Right-click on Servers, choose “Add Server...” in the pop-up menu.
-
-A.3 Select “GlassFish Server” in the Add Server Instance wizard, set the
-name to “GlassFish 4.0” and click “Next >”.
-
-A.4 Click on “Browse …” and browse to where you unzipped the GlassFish
-build and point to the “glassfish4” directory that got created when you
-unzipped the above archive. Click on “Finish”.
-
- +
-
- +
+include::ch16-appendix.adoc[]
 

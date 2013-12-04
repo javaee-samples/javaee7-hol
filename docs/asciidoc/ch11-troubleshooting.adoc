@@ -1,20 +1,16 @@
 == Troubleshooting
 
-
-*11.1* How can I start/stop/restart GlassFish from within the IDE ?
-
+[qanda]
+How can I start/stop/restart GlassFish from within the IDE ?::
 In the “Services” tab, right-click on “GlassFish Server 4”. All the
 commands to start, stop, and restart are available from the pop-up menu.
 The server log can be viewed by clicking on “View Server Log” and
 web-based administration console can be seen by clicking on “View Admin
 Console”.
 
-*11.2* I accidentally closed the GlassFish output log window. How do I
-bring it back ?
-
-image:images/netbeans-view-log.png[image]
-
+I accidentally closed the GlassFish output log window. How do I bring it back ?::
 In “Services” tab of NetBeans, expand “Servers”, choose the GlassFish
 node, and select “View Domain Server Log”.
 
+image:images/netbeans-view-log.png[image]
 
