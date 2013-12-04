@@ -1,10 +1,9 @@
 [appendix]
 == Appendix
 
-[[]]
 === Configure GlassFish 4 in NetBeans IDE
 
-image:images/netbeans-addserver.png[image] +
+image:images/netbeans-addserver.png[image]
 
 . In NetBeans, click on the “Services” tab.
 

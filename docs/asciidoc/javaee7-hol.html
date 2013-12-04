@@ -818,85 +818,30 @@ content there.</p>
 unzipped directory, and click on “Open Project”. The project structure
 is shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.2-project-structure.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p><span class="image"><img src="images/3.2-project-structure.png" alt="image"></span><br></p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.2-persistence-xml.png" alt="image"></span><br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.3</strong> Maven Coordinates: Expand “Project Files” and double click on
 “pom.xml”. In the “pom.xml”, the Java EE 7 API is specified as a
 &lt;dependency&gt;:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>&lt;dependencies&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;dependency&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;groupId&gt;javax&lt;/groupId&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;version&gt;7.0&lt;/version&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;scope&gt;provided&lt;/scope&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;/dependency&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;/dependencies&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p>&lt;dependencies&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;javax&lt;/groupId&gt;
+&lt;artifactId&gt;javaee-api&lt;/artifactId&gt;
+&lt;version&gt;7.0&lt;/version&gt;
+&lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;/dependencies&gt;</p>
 </div>
 <div class="paragraph">
 <p>This will ensure that Java EE 7 APIs are retrieved from the central
 Maven repository.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The Java EE 6 platform introduced the notion of “profiles”. A profile is
@@ -918,164 +863,66 @@ flavors – Full Platform or Web Profile.</p>
 lab, except Java Message Service and Batch Applications for the Java
 Platform, can be deployed on Web Profile.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>3.4</strong> <strong>Default Data Source</strong>: Expand “Other Sources”,
 “src/main/resources”, “META-INF”, and double-click on “persistence.xml”.
 By default, NetBeans opens the file in Design View. Click on Source tab
 to view the XML source.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>It looks like:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;persistence version="2.1"
+<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;persistence version="2.1"
 xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 <a href="http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;">http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;</a></p>
 </div>
 <div class="paragraph">
-<p>&lt;persistence-unit name="movieplex7PU" transaction-type="JTA"&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;!--</p>
-</div>
-<div class="paragraph">
-<p>&lt;jta-data-source&gt;java:comp/DefaultDataSource&lt;/jta-data-source&gt;</p>
-</div>
-<div class="paragraph">
-<p>-&#8594;</p>
-</div>
-<div class="paragraph">
-<p>&lt;properties&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="javax.persistence.schema-generation.database.action"</p>
-</div>
-<div class="paragraph">
-<p>value="drop-and-create"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="javax.persistence.schema-generation.create-source"</p>
-</div>
-<div class="paragraph">
-<p>value="script"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="javax.persistence.schema-generation.drop-source"</p>
-</div>
-<div class="paragraph">
-<p>value="script"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="javax.persistence.schema-generation.drop-script-source"</p>
-</div>
-<div class="paragraph">
-<p>value="META-INF/drop.sql"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="javax.persistence.sql-load-script-source"</p>
-</div>
-<div class="paragraph">
-<p>value="META-INF/load.sql"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="eclipselink.deploy-on-startup"</p>
-</div>
-<div class="paragraph">
-<p>value="true"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;property</p>
-</div>
-<div class="paragraph">
-<p>name="eclipselink.logging.exceptions"</p>
-</div>
-<div class="paragraph">
-<p>value="false"/&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;/properties&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;/persistence-unit&gt;</p>
-</div>
-<div class="paragraph">
-<p>&lt;/persistence&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p>&lt;persistence-unit name="movieplex7PU" transaction-type="JTA"&gt;
+&lt;!--
+&lt;jta-data-source&gt;java:comp/DefaultDataSource&lt;/jta-data-source&gt;
+-&#8594;
+&lt;properties&gt;
+&lt;property
+name="javax.persistence.schema-generation.database.action"
+value="drop-and-create"/&gt;
+&lt;property
+name="javax.persistence.schema-generation.create-source"
+value="script"/&gt;
+&lt;property
+name="javax.persistence.schema-generation.drop-source"
+value="script"/&gt;
+&lt;property
+name="javax.persistence.schema-generation.drop-script-source"
+value="META-INF/drop.sql"/&gt;
+&lt;property
+name="javax.persistence.sql-load-script-source"
+value="META-INF/load.sql"/&gt;
+&lt;property
+name="eclipselink.deploy-on-startup"
+value="true"/&gt;
+&lt;property
+name="eclipselink.logging.exceptions"
+value="false"/&gt;
+&lt;/properties&gt;
+&lt;/persistence-unit&gt;
+&lt;/persistence&gt;</p>
 </div>
 <div class="paragraph">
 <p>Notice &lt;jta-data-source&gt; is commented out, i.e. no data source element
 is specified. This element identifies the JDBC resource to connect to in
 the runtime environment of the underlying application server.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The Java EE 7 platform defines a new default DataSource that must be
 provided by the runtime. This pre-configured data source is accessible
 under the JNDI name</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>java:comp/DefaultDataSource</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The JPA 2.1 specification says if neither jta-data-source nor
@@ -1083,50 +930,20 @@ non-jta-data-source elements are specified, the deployer must specify a
 JTA data source or the default JTA data source must be provided by the
 container.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>For GlassFish 4, the default data source is bound to the JDBC resource
 jdbc/__default.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Clicking back and forth between “Design” and “Source” view may prompt
 the error shown below:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.4-missing-server.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This will get resolved when we run the application. Click on “OK” to
 dismiss the dialog.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.5</strong> <strong>Schema Generation:*JPA 2.1 defines a new set of
@@ -1138,20 +955,10 @@ or as part of EntityManagerFactory creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The “persistence.xml” in the application has the following
 javax.persistence.schema-generation.* properties. Their meaning and
 possible values are explained in <a href="#Table2">Table 2</a>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>Property</strong></p>
@@ -1191,11 +998,6 @@ script, or a combination of the two.</p>
 string designating a file URL for the SQL script to create or delete
 database artifacts.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>javax.persistence.sql-load-script-source</p>
 </div>
@@ -1204,71 +1006,25 @@ database artifacts.</p>
 for database initialization or a string designating a file URL for the
 script.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Refer to the <a href="http://jcp.org/en/jsr/detail?id=338">JPA 2.1 Specification</a>
 for a complete understanding of these properties.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>In the application, the scripts are bundled in the WAR file in
 “META-INF” directory. As the location of these scripts is specified as a
 URL, the scripts may be loaded from outside the WAR file as well.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Feel free to open “create.sql”, “drop.sql” and “load.sql” and read
 through the SQL scripts. The database schema is shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.5-schema.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This folder also contains “sales.csv” which carries some comma-separated
 data, and is used later in the application.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.6</strong> <strong>JPA entities, Stateless EJBs, and REST endpoints</strong>: Expand “Source
@@ -1277,19 +1033,9 @@ JPA entities corresponding to the database table definitions. Each JPA
 entity has several convenient @NamedQuery defined and uses Bean
 Validation constraints to enforce validation.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The package “org.glassfish.movieplex7.rest” contains stateless EJBs
 corresponding to different JPA entities.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Each EJB has methods to perform CRUD operations on the JPA entity and
@@ -1298,20 +1044,10 @@ published as a REST endpoint (@Path). The AplicationConfig class defines
 the base path of REST endpoint. The path for the REST endpoint is the
 same as the JPA entity class name.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The mapping between JPA entity classes, EJB classes, and the URI of the
 corresponding REST endpoint is shown.
 <span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>JPA Entity Class</strong></p>
@@ -1367,29 +1103,8 @@ corresponding REST endpoint is shown.
 <div class="paragraph">
 <p>/webresources/timeslot</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Feel free to browse through the code.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.7</strong> <strong>JSF pages</strong>: “WEB-INF/template.xhtml” defines the template of the
@@ -1397,21 +1112,11 @@ web page and has a header, left navigation bar, and a main content
 section. “index.xhtml” uses this template and the EJBs to display the
 number of movies and theaters.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Java EE 7 enables CDI discovery of beans by default. No “beans.xml” is
 required in “WEB-INF”. This allows all beans with bean defining
 annotation, i.e. either a bean with an explicit CDI scope or EJBs to be
 available for injection.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Note, “template.xhtml” is in “WEB-INF” folder as it allows the template
@@ -1419,16 +1124,6 @@ to be accessible from the pages bundled with the application only. If it
 were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>3.8</strong> <strong>Run the sample</strong>: Right-click on the project and select “Run”.
@@ -1442,32 +1137,12 @@ that the classes cannot be resolved. This is expected before the
 dependencies are downloaded. However these references will be resolved
 correctly after the dependencies are downloaded during project building.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>During the first run, the IDE will ask you to select a deployment
 server. Choose the configured GlassFish server and click on “OK”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The output looks like as shown.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.80-first-page.png" alt="image"></span></p>
@@ -1482,18 +1157,8 @@ server. Choose the configured GlassFish server and click on “OK”.</p>
 features of Java API for WebSocket 1.0 will be introduced and
 demonstrated by using them in the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 30-45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>WebSocket provide a full-duplex and bi-directional communication
@@ -1505,20 +1170,10 @@ Candidate Recommendation as of this writing). The protocol defines an
 opening handshake and data transfer. The API enables Web pages to use
 the WebSocket protocol for two-way communication with the remote host.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><a href="http://jcp.org/en/jsr/detail?id=356">JSR 356</a> defines a standard API for
 creating WebSocket applications in the Java EE 7 Platform. The JSR
 provides support for:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1536,44 +1191,19 @@ provides support for:</p>
 </li>
 <li>
 <p>Integration with Java EE security model</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>This section will build a chat room for movie viewers.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.1</strong> Right-click on “Source Packages”, select “New”, “Java Class…”.
 Give the class name as “ChatServer”, package as
 “org.glassfish.movieplex7.chat”, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.2</strong> Change the class such that it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@ServerEndpoint("/websocket")</p>
@@ -1581,19 +1211,9 @@ Give the class name as “ChatServer”, package as
 <div class="paragraph">
 <p>public class ChatServer \{</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>private static final Set&lt;Session&gt; peers =
 Collections.synchronizedSet(new HashSet&lt;Session&gt;());</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@OnOpen</p>
@@ -1607,11 +1227,6 @@ Collections.synchronizedSet(new HashSet&lt;Session&gt;());</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>@OnClose</p>
 </div>
@@ -1623,11 +1238,6 @@ Collections.synchronizedSet(new HashSet&lt;Session&gt;());</p>
 </div>
 <div class="paragraph">
 <p>}</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@OnMessage</p>
@@ -1651,11 +1261,6 @@ EncodeException \{</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this code:</p>
 </div>
@@ -1676,11 +1281,6 @@ message. The first parameter, message, is the payload of the message.
 The second parameter, client, defines the other end of the WebSocket
 connection. The method implementation transmits the received message to
 all clients connected to this endpoint.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -1689,59 +1289,19 @@ all clients connected to this endpoint.</p>
 Imports” or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
 Windows).</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Make sure to pick java.websocket.Session for resolving imports.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/4.2-imports.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Right-click again in the editor pane and select “Format” to format your
 code.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.3</strong> In “Web Pages”, select “New”, “Folder…”, give the folder name as
 “chat” and click on “Finish”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>4.4</strong> Right-click on the newly created folder, select “New”, "Other&#8230;",
@@ -1750,35 +1310,15 @@ code.</p>
 “WEB-INF”, select “template.xhtml”, and click on “Select File”. Click on
 “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/4.4-template.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Replace &lt;ui:define&gt; section with “content” name such that it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;ui:define name="content"&gt;</p>
@@ -1859,11 +1399,6 @@ src="$\{facesContext.externalContext.requestContextPath}/chat/websocket.js"&gt;&
 <div class="paragraph">
 <p>&lt;/ui:define&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
@@ -1877,50 +1412,15 @@ There is an explicit button to disconnect the WebSocket connection.
 initialization occurs in “websocket.js” included at the bottom of the
 fragment.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.5</strong> Right-click on “chat” in “Web Pages”, select “New”, "Other&#8230;",
 “Web”, “JavaScript File”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Give the name as “websocket” and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.6</strong> Edit the contents of “websocket.js” such that it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>var wsUri = <em>ws://</em> + document.location.host</p>
@@ -1949,11 +1449,6 @@ fragment.</p>
 <div class="paragraph">
 <p>var chatlog = document.getElementById("chatlog");</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>var username;</p>
 </div>
@@ -1972,11 +1467,6 @@ fragment.</p>
 <div class="paragraph">
 <p>var output = document.getElementById("output");</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>function join() \{</p>
 </div>
@@ -1989,11 +1479,6 @@ fragment.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>function send_message() \{</p>
 </div>
@@ -2002,11 +1487,6 @@ fragment.</p>
 </div>
 <div class="paragraph">
 <p>}</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>function onOpen() \{</p>
@@ -2017,11 +1497,6 @@ fragment.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>function onClose() \{</p>
 </div>
@@ -2030,11 +1505,6 @@ fragment.</p>
 </div>
 <div class="paragraph">
 <p>}</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>function onMessage(evt) \{</p>
@@ -2061,11 +1531,6 @@ fragment.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>function onError(evt) \{</p>
 </div>
@@ -2075,11 +1540,6 @@ fragment.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>function disconnect() \{</p>
 </div>
@@ -2088,11 +1548,6 @@ fragment.</p>
 </div>
 <div class="paragraph">
 <p>}</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>function writeToScreen(message) \{</p>
@@ -2112,27 +1567,12 @@ fragment.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the ChatServer class.
 WebSocket is initialized by calling new WebSocket(…). Event handlers are
 registered for lifecycle events using onXXX messages. The listeners
 registered in this script are explained in the table.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>Listeners</strong></p>
@@ -2164,17 +1604,6 @@ registered in this script are explained in the table.</p>
 <div class="paragraph">
 <p>WebSocket connection is terminated</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Any relevant data is passed along as parameter to the function. Each
 method prints the status on the browser using writeToScreen utility
@@ -2186,49 +1615,19 @@ the logged in user name and the value of the text field and broadcasts
 to all the clients similarly. The onMessage method updates the list of
 logged in users as well.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.7</strong> Edit “WEB-INF/template.xhtml” and change:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>to</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h:outputLink
 value="$\{facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml"&gt;Chat
 Room&lt;/h:outputLink&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The outputLink tag renders an HTML anchor tag with an href attribute.
@@ -2236,61 +1635,20 @@ $\{facesContext.externalContext.requestContextPath} provides the request
 URI that identifies the web application context for this request. This
 allows the links in the left navigation bar to be fully-qualified URLs.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>4.8</strong> Run the project by right clicking on the project and selecting
 “Run”. The browser shows
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a>.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on “Chat Room” to see the output.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The “CONNECTED” status message is shown and indicates that the WebSocket
 connection with the endpoint is established.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/4.8-chatroom.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Please make sure your browser supports WebSocket in order for this page
@@ -2299,28 +1657,13 @@ IE 10.0+ are the browsers that support WebSocket. A complete list of
 supported browsers is available at
 <a href="http://caniuse.com/websockets">caniuse.com/websockets</a>.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Open the URI <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a>
 in another browser window. Enter “Duke” in the text box in the first
 browser and click “Join”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/4.8-chatroom-joined.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Notice that the user list and the status message in both the browsers
@@ -2329,77 +1672,32 @@ click on “Join”. Once again the user list and the status message in both
 the browsers is updated. Now you can type any messages in any of the
 browser and click on “Send” to send the message.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The output from two different browsers after the initial greeting looks
 like as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/4.8-chatroom-two-browsers.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Here it shows output from Chrome on the top and Firefox on the bottom.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Chrome Developer Tools or Firebug in Firefox can be used to monitor
 WebSocket traffic.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_ticket_sales_batch_applications_for_the_java_platform">Ticket Sales (Batch Applications for the Java Platform)</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: Read the total sales for each show and populate the database.
 In doing so several new features of Java API for Batch Processing 1.0
 will be introduced and demonstrated by using them in the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 30-45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Batch Processing is execution of series of "jobs" that is suitable for
@@ -2408,27 +1706,11 @@ Applications for the Java Platform (JSR 352) will define a programming
 model for batch applications and a runtime for scheduling and executing
 jobs.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/5.0-batch-intro.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p><span class="image"><img src="images/5.0-batch-intro.png" alt="image"></span><br></p>
 </div>
 <div class="paragraph">
 <p>The core concepts of Batch Processing are:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2460,11 +1742,6 @@ at a time, <strong>ItemProcessor</strong> processes the item based upon the bus
 logic, such as calculate account balance and hands it
 to <strong>ItemWriter</strong> for aggregation. Once the <em>chunk</em> numbers of items are
 aggregated, they are written out, and the transaction is committed.</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -2472,48 +1749,18 @@ aggregated, they are written out, and the transaction is committed.</p>
 <p>This section will read the cumulative sales for each show from a CSV
 file and populate them in a database.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.1</strong> Right-click on Source Packages, select “New”, “Java Package…”,
 specify the value as “org.glassfish.movieplex7.batch”, and click on
 “Finish”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.2</strong> Right-click on newly created package, select “New”, “Java Class…”,
 specify the name as “SalesReader”. Make this class extend from
 AbstractItemReader, change the class definition and add:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>extends AbstractItemReader</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>AbstractItemReader is an abstract class that implements ItemReader
@@ -2521,58 +1768,23 @@ interface. The ItemReader interface defines methods that read a stream
 of items for chunk processing. This reader implementation returns a
 String item type as indicated in the class definition.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add @Named as a class-level annotations and it allows the bean to be
 injected in Job XML. Add @Dependent as another class-level annotation to
 mark this bean as a bean defining annotation so that this bean is
 available for injection.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.3</strong> Add the following field:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>private BufferedReader reader;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Override open() method to initialize the reader:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public void open(Serializable checkpoint) throws Exception \{</p>
@@ -2590,32 +1802,12 @@ available for injection.</p>
 <div class="title">getResourceAsStream("META-INF/sales.csv")));</div>
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method initializes a BufferedReader from “META-INF/sales.csv” that
 is bundled with the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Sampling of the first few lines from “sales.csv” is shown below:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>1,500.00</p>
@@ -2632,11 +1824,6 @@ is bundled with the application.</p>
 <div class="paragraph">
 <p>5,1100.x0</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Each line has a show identifier comma separated by the total sales for
 that show. Note that the last line (5<sup>th</sup> record in the sample) has an
@@ -2644,23 +1831,8 @@ intentional typo. In addition, 17<sup>th</sup> record also has an additional
 typo. The lab will use these lines to demonstrate how to handle parsing
 errors.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.4</strong> Override the following method from the abstract class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Override</p>
@@ -2692,11 +1864,6 @@ errors.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The readItem method returns the next item from the stream. It returns
 null to indicate end of stream. Note end of stream indicates end of
@@ -2708,29 +1875,13 @@ chunk, so the</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.5</strong> Right-click on “org.glassfish.movieplex7.batch” package, select
 “New”, “Java Class…”, specify the name as “SalesProcessor”. Change the
 class definition and add:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>implements ItemProcessor</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>ItemProcessor is an interface that defines a method that is used to
@@ -2739,40 +1890,15 @@ accepts a String input item from the reader, SalesReader in our case,
 and returns a Sales instance to the writer (coming shortly). Sales is
 the pre-packaged JPA entity with the application starter source code.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add @Named and @Dependent as class-level annotations so that it allows
 the bean to be injected in Job XML.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.6</strong> Add implementation of the abstract method from the interface as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Override</p>
@@ -2798,20 +1924,10 @@ the bean to be injected in Job XML.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method takes a String parameter coming from the SalesReader, parses
 the value, populates them in the Sales instance, and returns it. This is
 then aggregated with the writer.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The method can return null indicating that the item should not be
@@ -2821,41 +1937,16 @@ method is implemented where any parsing errors are thrown as exception.
 Job XML can be instructed to skip these exceptions and thus that
 particular record is skipped from aggregation as well (shown later).</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.7</strong> Right-click on “org.glassfish.movieplex7.batch” package, select
 “New”, “Java Class…”, specify the name as “SalesWriter”. Change the
 class definition and add:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>extends AbstractItemWriter</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>AbstractItemWriter is an abstract class that implements ItemWriter
@@ -2863,56 +1954,21 @@ interface. The ItemWriter interface defines methods that write to a
 stream of items for chunk processing. This writer writes a list of Sales
 items.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add @Named and @Dependent as class-level annotations so that it allows
 the bean to be injected in Job XML.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.8</strong> Inject EntityManager as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>@PersistenceContext EntityManager em;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Override the following method from the abstract class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Override</p>
@@ -2935,20 +1991,10 @@ the bean to be injected in Job XML.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Batch runtime aggregates the list of Sales instances returned from the
 SalesProessor and makes it available as List in this method. This method
 iterates over the list and persist each item in the database.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The method also specifies @Transactional as a method level annotation.
@@ -2959,70 +2005,30 @@ dependencies such as RMI. This support is implemented via an
 implementation of a CDI interceptor that conducts the necessary
 suspending, resuming, etc. </p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this case, a transaction is automatically started before the method
 is called, committed if no checked exceptions are thrown, and rolled
 back if runtime exceptions are thrown. This behavior can be overridden
 using rollbackOn and dontRollbackOn attributes of the annotation.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.9</strong> Create Job XML that defines the job, step, and chunk.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>In “Files” tab, expand the project &#8594; “src” &#8594; “main” &#8594; “resources”,
 right-click on “resources”, “META-INF”, select “New”, “Folder…”, specify
 the name as “batch-jobs”, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Right-click on the newly created folder, select “New”, “Other…”, select
 “XML”, “XML Document”, click on “Next &gt;”, give the name as “eod-sales”,
 click on “Next”, take the default, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Replace contents of the file with the following:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;job id="endOfDaySales"
@@ -3062,16 +2068,6 @@ version="1.0"&gt;</p>
 <div class="paragraph">
 <p>&lt;/job&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code shows that the job has one step of chunk type. The &lt;reader&gt;,
 &lt;processor&gt;, and &lt;writer&gt; elements define the CDI bean name of the
@@ -3082,11 +2078,6 @@ reader/processor/writer cycle is executed within a transaction. The
 &lt;skippable-exception-classes&gt; element specifies a set of exceptions to
 be skipped by chunk processing.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>CSV file used for this lab has intentionally introduced couple of typos
 that would generate NumberFormatException. Specifying this element
@@ -3095,36 +2086,16 @@ continue processing. If this element is not specified then the batch
 processing will halt. The skip-limit attribute specifies the number of
 exceptions a step will skip.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.10</strong> Lets invoke the batch job.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Right-click on “org.glassfish.movieplex7.batch” package, select “New”,
 “Java Class…”. Enter the name as “SalesBean” and click on “Finish”
 button.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following code to the bean:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public void runJob() \{</p>
@@ -3153,11 +2124,6 @@ button.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method uses BatchRuntime to get an instance of JobOperator, which
 is then used to start the job. JobOperator is the interface for
@@ -3165,59 +2131,24 @@ operating on batch jobs. It can be used to start, stop, and restart
 jobs. It can additionally inspect job history, to discover what jobs are
 currently running and what jobs have previously run.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add @Named and @RequestScoped as class-level annotations. This allows
 the bean to be injectable in an EL expression.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.10-imports.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.11</strong> Inject EntityManagerFactory in the class as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@PersistenceUnit EntityManagerFactory emf;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>and add the following method:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public List&lt;Sales&gt; getSalesData() \{</p>
@@ -3229,82 +2160,32 @@ Sales.class).getResultList();</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method uses a pre-defined @NamedQuery to query the database and
 return all the rows from the table.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.12</strong> Right-click on “Web Pages”, select “New”, “Folder…”, specify the
 name as “batch”, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Right-click on the newly created folder, select “New”, “Other…”,
 “JavaServer Faces”, “Facelets Template Client”, and click on “Next &gt;”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Give the File Name as “sales”. Click on “Browse…” next to “Template:”,
 expand “Web Pages”, “WEB-INF”, select “template.xhtml”, and click on
 “Select File”. Click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Replace &lt;ui:define&gt; section with “content” name such that it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;ui:define name=”content”&gt;</p>
@@ -3357,11 +2238,6 @@ expand “Web Pages”, “WEB-INF”, select “template.xhtml”, and click on
 <div class="paragraph">
 <p>&lt;/h:dataTable&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;h:commandButton value="Run Job" action="sales"
 actionListener="#\{salesBean.runJob()}"/&gt;</p>
@@ -3375,116 +2251,41 @@ actionListener="#\{salesBean.runJob()}"/&gt;</p>
 <div class="paragraph">
 <p>&lt;/ui:define&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code displays the show identifier and sales from that show in a
 table by invoking SalesBean.getSalesData(). First command button allows
 invoking the job that processes the CSV file and populates the database.
 The second command button refreshes the page.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Right-click on the yellow bulb to fix namespace prefix/URI mapping. This
 needs to be repeated for h: and f: prefix.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.13</strong> Add the following code in “template.xhtml” along with other
 &lt;outputLink&gt;s:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;p/&gt;&lt;h:outputLink
 value="$\{facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml"&gt;Sales&lt;/h:outputLink&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>5.14</strong> Run the project to see the output as shown.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.14-sales.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Notice, a new “Sales” entry is displayed in the left navigation bar.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.15</strong> Click on “Sales” to see the output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.15-sales.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The empty table indicates that there is no sales data in the database.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>5.16</strong> Click on “Run Job” button to initiate data processing of CSV
@@ -3492,74 +2293,29 @@ file. Look for “Waiting for localhost&#8230;” in the browser status bar,
 wait for a couple of seconds for the processing to finish, and then
 click on “Refresh” button to see the updated output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.16-sales-output.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Now the table is populated with the sales data.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Note that record 5 is missing from the table, as this records did not
 have correct numeric entries for the sales total. The Job XML for the
 application explicitly mentioned to skip such errors.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_view_and_delete_movie_java_api_for_restful_web_services">View and Delete Movie (Java API for RESTful Web Services)</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: View, and delete a movie. In doing so several new features of
 JAX-RS 2 will be introduced and demonstrated by using them in the
 application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 30-45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>JAX-RS 2 defines a standard API to create, publish, and invoke a REST
@@ -3596,69 +2352,29 @@ API.</p>
 Give the class name as “MovieClientBean”, package as
 “org.glassfish.movieplex7.client”, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This bean will be used to invoke the REST endpoint.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>6.2</strong> Add @Named and @RequestScoped class-level annotations. This allows
 the class to be injected in an EL expression and also defines the bean
 to be automatically activated and passivated with the request.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports. Make sure to pick
 javax.enterprise.context.RequestScoped class.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/6.2-imports.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.3</strong> Add the following code to the class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Client client;</p>
 </div>
 <div class="paragraph">
 <p>WebTarget target;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@PostConstruct</p>
@@ -3676,11 +2392,6 @@ client.target("http://localhost:8080/movieplex7/webresources/movie/");</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>@PreDestroy</p>
 </div>
@@ -3693,11 +2404,6 @@ client.target("http://localhost:8080/movieplex7/webresources/movie/");</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>ClientBuilder is the main entry point to the Client API. It uses a
 fluent builder API to invoke REST endpoints. A new Client instance is
@@ -3707,33 +2413,13 @@ manage the client-side communication infrastructure. It is highly
 recommended to create only required number of instances of Client and
 close it appropriately.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this case, Client instance is created and destroyed in the lifecycle
 callback methods. The endpoint URI is set on this instance by calling
 the target method.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.4</strong> Add the following method to the class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public Movie[] getMovies() \{</p>
@@ -3745,71 +2431,31 @@ the target method.</p>
 <div class="title">get(Movie[].class);</div>
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>A request is prepared by calling the request method. HTTP GET method is
 invoked by calling get method. The response type is specified in the
 last method call and so return value is of the type Movie[].</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.5</strong> Right-click on “Web Pages”, select “New”, “Folder…”, specify the
 name as “client”, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Right-click on the newly created folder, select “New”, “Other…”,
 “JavaServer Faces”, “Facelets Template Client”, and click on “Next &gt;”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Give the File Name as “movies”. Click on “Browse…” next to “Template:”,
 expand “Web Pages”, “WEB-INF”, select “template.xhtml”, and click on
 “Select File”. Click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.6</strong> Replace the content inside &lt;ui:define&gt; with “content” with the
 code fragment shown below:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h:form prependId="false"&gt;</p>
@@ -3830,21 +2476,11 @@ layout="pageDirection"&gt;</p>
 <div class="paragraph">
 <p>&lt;/h:selectOneRadio&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;h:commandButton value="Details" action="movie" /&gt;</p>
 </div>
 <div class="paragraph">
 <p>&lt;/h:form&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This code fragment invokes getMovies method from MovieClientBean,
@@ -3852,156 +2488,64 @@ iterates over the response in a for loop, and display the name of each
 movie with a radio button. The selected radio button value is bound to
 the EL expression #\{movieBackingBean.movieId}.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The code also has a button with “Details” label and looks for
 “movie.xhtml” in the same directory. We will create this file later.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Click on the yellow bulb in the left bar to resolve the namespace
 prefix-to-URI resolution. This needs to be completed for – for h:, c:,
 and f: prefixes.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/6.6-imports.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p><span class="image"><img src="images/6.6-imports.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>6.7</strong> Right-click on “org.glassfish.movieplex7.client” package, select
 “New”, “Java Class…”, specify the value as “MovieBackingBean” and click
 on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following field:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>int movieId;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Add getters/setters by right-clicking on the editor pane and selecting
 “Insert Code…” (Ctrl + I shortcut on Mac). Select the field and click on
 “Generate”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add @Named and @SessionScoped class-level annotations and implements
 Serializable.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Resolve the imports. Make sure to import
 javax.enterprise.context.SessionScoped.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.8</strong> In “template.xhtml”, add the following code in &lt;ui:insert&gt; with
 name=”left”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;p/&gt;&lt;h:outputLink
 value="$\{facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml"&gt;Movies&lt;/h:outputLink&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Running the project (Fn + F6 shortcut on Mac) and clicking on “Movies”
 in the left navigation bar shows the output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/6.8-output.png" alt="image"></span><br>
-<br></p>
+<p><span class="image"><img src="images/6.8-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The list of all the movies with a radio button next to them is
 displayed.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.9</strong> In “MovieClientBean”, inject “MovieBackingBean” to read the value
 of selected movie from the page. Add the following code:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Inject</p>
@@ -4009,28 +2553,8 @@ of selected movie from the page. Add the following code:</p>
 <div class="paragraph">
 <p>MovieBackingBean bean;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.10</strong> In “MovieClientBean”, add the following method:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public Movie getMovie() \{</p>
@@ -4045,11 +2569,6 @@ of selected movie from the page. Add the following code:</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code reuses the Client and WebTarget instances created in
 @PostConstruct. It also adds a variable part to the URI of the REST
@@ -4057,49 +2576,19 @@ endpoint, defined using {movie}, and binds it to a concrete value using
 resolveTemplate method. The return type is specified as a parameter to
 the get method.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.11</strong> Right-click on “client” folder, select “New”, “Facelets Template
 Client”, give the File Name as “movie”. Click on “Browse…” next to
 “Template:”, expand “Web Pages”, “WEB-INF”, select “template.xhtml”, and
 click on “Select File”. Click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Replace the content inside &lt;ui:define&gt; with “content” with the code
 fragment shown below:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h1&gt;Movie Details&lt;/h1&gt;</p>
@@ -4155,101 +2644,36 @@ fragment shown below:</p>
 <div class="paragraph">
 <p>&lt;/h:form&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on the yellow-bulb to resolve the namespace prefix-URI mapping for
 h:. The output values are displayed by calling the getMovie method and
 using the id, name, and actors property values.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>6.12</strong> Run the project, select “Movies” in the left navigation bar,
 select a radio button next to any movie, and click on details to see the
 output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/6.12-output.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on the “Back” button to select another movie.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>6.13</strong> Add the ability to delete a movie. In “movies.xhtml”, add the
 following code with the other commandButton.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;h:commandButton value="Delete" action="movies"
 actionListener="#\{movieClientBean.deleteMovie()}"/&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This button displays a label “Delete”, invokes the method deleteMovie
 from “MovieClientBean”, and then renders “movies.xhtml”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>6.14</strong> Add the following code to “MovieClientBean”:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public void deleteMovie() \{</p>
@@ -4261,11 +2685,6 @@ from “MovieClientBean”, and then renders “movies.xhtml”.</p>
 <div class="title">delete();</div>
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code again reuses the Client and WebTarget instances created in
 @PostConstruct. It also adds a variable part to the URI of the REST
@@ -4273,40 +2692,19 @@ endpoint, defined using {movieId}, and binds it to a concrete value
 using resolveTemplate method. The URI of the resource to be deleted is
 prepared and then delete method is called to delete the resource.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Make sure to resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Running the project shows the output shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/6.14-output.png" alt="image"></span><br>
-<br></p>
+<p><span class="image"><img src="images/6.14-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>Select a movie and click on Delete button. This deletes the movie from
 the database and refreshes list on the page. Note that a redeploy of the
 project will delete all the movies anyway and add them all back.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 </div>
 </div>
@@ -4318,28 +2716,13 @@ project will delete all the movies anyway and add them all back.</p>
 API for JSON Processing 1.0 will be introduced and demonstrated by using
 them in the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 30-45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Java API for JSON Processing provides a standard API to parse and
 generate JSON so that the applications can rely upon a portable API.
 This API will provide:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -4349,11 +2732,6 @@ XML)</p>
 </li>
 <li>
 <p>Build a Java Object Model for JSON (similar to DOM API for XML)</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -4361,11 +2739,6 @@ XML)</p>
 <p>This section will define a JAX-RS Entity Providers that will allow
 reading and writing JSON for a Movie POJO. The JAX-RS Client API will
 request this JSON representation.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>JAX-RS Entity Providers supply mapping services between on-the-wire
@@ -4376,45 +2749,20 @@ and is required by the specification. Applications may provide their own
 mapping to custom types using MessageBodyReader and MessageBodyWriter
 interfaces.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This section will provide the ability to add a new movie to the
 application. Typically, this functionality will be available after
 proper authentication and authorization.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>7.1</strong> Right-click on Source Packages, select “New”, “Java Package…”,
 specify the value as “org.glassfish.movieplex7.json”, and click on
 “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.2</strong> Right-click on newly created package, select “New”, “Java Class…”,
 specify the name as “MovieReader”, and click on “Finish”. Add the
 following class-level annotations:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Provider</p>
@@ -4422,105 +2770,39 @@ following class-level annotations:</p>
 <div class="paragraph">
 <p>@Consumes(MediaType.APPLICATION_JSON)</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>@Provider allows this implementation to be discovered by the JAX-RS
 runtime during the provider scanning phase. @Consumes indicates that
 this implementation will consume a JSON representation of the resource.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Make sure to resolve imports from the appropriate package as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/7.2-imports.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p><span class="image"><img src="images/7.2-imports.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>7.3</strong> Make the class implements MessageBodyReader&lt;Movie&gt;.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.3-implements.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Click on the hint (shown as yellow bulb) on the class definition and
 select “Implement all abstract methods”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.4</strong> Change implementation of the isReadable method as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>return Movie.class.isAssignableFrom(type);</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This method ascertains if the MessageBodyReader can produce an instance
 of a particular type.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.5</strong> Replace the readFrom method to:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Override</p>
@@ -4611,43 +2893,18 @@ IOException, WebApplicationException \{</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code reads a type from the input stream in. JsonParser, a streaming
 parser, is created from the input stream. Key values are read from the
 parser and a Movie instance is populated and returned.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>7.6</strong> Right-click on newly created package, select “New”, “Java Class…”,
 specify the name as “MovieWriter”, and click on “Finish”. Add the
 following class-level annotations:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Provider</p>
@@ -4655,123 +2912,42 @@ following class-level annotations:</p>
 <div class="paragraph">
 <p>@Produces(MediaType.APPLICATION_JSON)</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>@Provider allows this implementation to be discovered by the JAX-RS
 runtime during the provider scanning phase. @Produces indicates that
 this implementation will produce a JSON representation of the resource.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/7.6-imports.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p><span class="image"><img src="images/7.6-imports.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>7.7</strong> Make this class implements MessageBodyWriter&lt;Movie&gt;.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.7-implements.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Click on the hint (show as yellow bulb) on the class definition and
 select “Implement all abstract methods”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.8</strong> Change implementation of the isWritable method to:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>return Movie.class.isAssignableFrom(type);</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This method ascertains if the MessageBodyWriter supports a particular
 type.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.9</strong> Add implementation of the getSize method as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>return -1;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Originally, this method was called to ascertain the length in bytes of
@@ -4779,23 +2955,8 @@ the serialized form of t. In JAX-RS 2.0, this method is deprecated and
 the value returned by the method is ignored by a JAX-RS runtime. All
 MessageBodyWriter implementations are advised to return -1.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.10</strong> Change implementation of the writeTo method as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public void writeTo(Movie t, Class&lt;?&gt; type, Type type1, Annotation[]
@@ -4815,75 +2976,30 @@ out) throws IOException, WebApplicationException \{</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method writes a type to an HTTP message. JsonGenerator writes JSON
 data to an output stream in a streaming way. Overloaded write methods
 are used to write different data types to the stream.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>7.11</strong> In “Web Pages”, right-click on “client” folder, select “New”,
 “Facelets Template Client”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Give the File Name as “addmovie”. Click on “Browse…” next to
 “Template:”, expand “Web Pages”, “WEB-INF”, select “template.xhtml”, and
 click on “Select File”. Click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Replace the content inside &lt;ui:define&gt; with “content” with the code
 fragment shown below:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h1&gt;Add a New Movie&lt;/h1&gt;</p>
@@ -4930,11 +3046,6 @@ fragment shown below:</p>
 <div class="paragraph">
 <p>&lt;/tr&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;/table&gt;</p>
 </div>
@@ -4947,46 +3058,21 @@ fragment shown below:</p>
 <div class="paragraph">
 <p>&lt;/h:form&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code creates a form to accept input of id, name, and actors of a
 movie. These values are bound to fields in “MovieBackingBean”. The click
 of command button invokes the addMovie method from “MovieClientBean” and
 then renders “movies.xhtml”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on the hint (show as yellow bulb) to resolve the namespace
 prefix/URI mapping as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.11-imports.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.12</strong> Add movieName and actors field to “MovieBackingBean” as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>String movieName;</p>
@@ -4994,61 +3080,21 @@ prefix/URI mapping as shown.</p>
 <div class="paragraph">
 <p>String actors;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Generate getters and setters by clicking on the menu item “Source” and
 then “Insert Code&#8230;”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.13</strong> Add the following code to “movies.xhtml”</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h:commandButton value="New Movie" action="addmovie" /&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>along with rest of the &lt;commandButton&gt;s.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.14</strong> Add the following method in “MovieClientBean”:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public void addMovie() \{</p>
@@ -5072,11 +3118,6 @@ then “Insert Code&#8230;”.</p>
 <div class="title">post(Entity.entity(m, MediaType.APPLICATION_JSON));</div>
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method creates a new Movie instance, populates it with the values
 from the backing bean, and POSTs the bean to the REST endpoint. The
@@ -5084,73 +3125,26 @@ register method registers a MovieWriter that provides conversion from
 the POJO to JSON. Media type of “application/json” is specified using
 MediaType.APPLICATION_JSON.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Resolve the imports as shown</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.14-imports.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.15</strong> Run the project to see the updated main page as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/7.15-output.png" alt="image"></span><br>
-<br></p>
+<p><span class="image"><img src="images/7.15-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>A new movie can be added by clicking on “New Movie” button.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>7.16</strong> Enter the details as shown:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
-<p><span class="image"><img src="images/7.16-output.png.png" alt="image"></span><br>
-<br></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
+<p><span class="image"><img src="images/7.16-output.png.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>Click on “Add” button. The “Movie Id” value has to be greater than 20
@@ -5158,26 +3152,11 @@ otherwise the primary key constraint will be violated. The table
 definition may be updated to generate the primary key based upon a
 sequence; however this is not done in the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The updated page looks like as shown</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.16-output2.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Note that the newly added movie is now displayed.</p>
@@ -5187,36 +3166,16 @@ sequence; however this is not done in the application.</p>
 <div class="sect1">
 <h2 id="_movie_points_java_message_service">Movie Points (Java Message Service)</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: Customers accrue points for watching a movie.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 30-45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Java Message Service 2.0 allows sending and receiving messages between
 distributed systems. JMS 2 introduced several improvements over the
 previous version such as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
@@ -5234,11 +3193,6 @@ previous version such as:</p>
 </li>
 <li>
 <p>Simplified message sending</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
@@ -5248,42 +3202,17 @@ accrued by a customer. These points are submitted to a JMS queue that is
 then read synchronously by another bean. JMS queue for further
 processing, possibly storing in the database using JPA.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.1</strong> Right-click on Source Packages, select “New”, “Java Package…”,
 specify the value as “org.glassfish.movieplex7.points”, and click on
 “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.2</strong> Right-click on newly created package, select “New”, “Java Class…”,
 specify the name as “SendPointsBean”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following class-level annotations:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Named</p>
@@ -5291,35 +3220,15 @@ specify the name as “SendPointsBean”.</p>
 <div class="paragraph">
 <p>@RequestScoped</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This makes the bean to be EL-injectable and automatically activated and
 passivated with the request.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.2-imports.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>8.3</strong> A message to a JMS Queue is sent after the customer has bought the
@@ -5328,27 +3237,12 @@ points for that customer. This allows the two systems, one generating
 the data about tickets purchased and the other about crediting the
 account with the points, completely decoupled.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This lab will mimic the sending and consuming of a message by an
 explicit call to the bean from a JSF page.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following field to the class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@NotNull</p>
@@ -5362,11 +3256,6 @@ explicit call to the bean from a JSF page.</p>
 <div class="paragraph">
 <p>private String message;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This field contains the message sent to the queue. This field’s value is
 bound to an inputText in a JSF page (created later). Constraints have
@@ -5376,42 +3265,17 @@ by a comma, and then 2 more numerical digits. If the message does not
 meet the validation criteria then the error message to be displayed is
 specified using message attribute.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This could be thought as conveying the customer identifier and the
 points accrued by that customer.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Generate getter/setters for this field. Right-click in the editor pane,
 select “Insert Code” (Ctrl + I shortcut on Mac), select “Getter and
 Setter…”, select the field, and click on “Generate”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.4</strong> Add the following code to the class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Inject</p>
@@ -5425,37 +3289,17 @@ Setter…”, select the field, and click on “Generate”.</p>
 <div class="paragraph">
 <p>Queue pointsQueue;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>public void sendMessage() \{</p>
 </div>
 <div class="paragraph">
 <p>System.out.println("Sending message: " + message);</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>context.createProducer().send(pointsQueue, message);</p>
 </div>
 <div class="paragraph">
 <p>}</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The Java EE Platform requires a pre-configured JMS connection factory
@@ -5464,40 +3308,20 @@ connection factory is specified then the pre-configured connection
 factory is used. In a Java EE environment, where CDI is enabled by
 default anyway, a container-managed JMSContext can be injected as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>@Inject</p>
 </div>
 <div class="paragraph">
 <p>JMSContext context;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code uses the default factory to inject an instance of
 container-managed JMSContext.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>JMSContext is a new interface introduced in JMS 2. This combines in a
 single object the functionality of two separate objects from the JMS 1.1
 API: a Connection and a Session.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>When an application needs to send messages it use the createProducer
@@ -5510,12 +3334,6 @@ asynchronously.</p>
 createConsumer or createDurableConsumer methods to create a JMSConsumer.
 A JMSConsumer provides methods to receive messages either synchronously
 or asynchronously.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>All messages are then sent to a Queue instance (created later)
@@ -5530,40 +3348,15 @@ message field.</p>
 <p>Make sure Queue class is imported from javax.jms.Queue instead of the
 default java.util.Queue as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on “OK”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>8.5</strong> Right-click on “org.glassfish.movieplex7.points” package, select
 “New”, “Java Class…”, specify the name as “ReceivePointsBean”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following class-level annotations:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@JMSDestinationDefinition(name = "java:global/jms/pointsQueue",</p>
@@ -5577,19 +3370,9 @@ default java.util.Queue as shown.</p>
 <div class="paragraph">
 <p>@RequestScoped</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This allows the bean to refered from an EL expression. It also activates
 and passivates the bean with the request.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>JMSDestinationDefinition is a new annotation introduced in JMS 2. It is
@@ -5598,28 +3381,8 @@ application to be deployed into a Java EE environment with minimal
 administrative configuration. This code will create Queue with the JNDI
 name java:global/jms/pointsQueue.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.6</strong> Add the following code to the class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@Inject</p>
@@ -5632,11 +3395,6 @@ name java:global/jms/pointsQueue.</p>
 </div>
 <div class="paragraph">
 <p>Queue pointsQueue;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public String receiveMessage() \{</p>
@@ -5654,33 +3412,13 @@ context.createConsumer(pointsQueue).receiveBody(String.class);</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code is very similar to SendPointsBean. createConsumer method
 creates JMSConsumer which is then used to synchronously receive a
 message.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.7</strong> Add the following method to the class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public int getQueueSize() \{</p>
@@ -5724,43 +3462,18 @@ message.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code creates a QueueBrowser to look at the messages on a queue
 without removing them. It calculates and returns the total number of
 messages in the queue.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Make sure to resolve the import from javax.jms.Queue, take all other
 defaults.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.8</strong> Right-click on “Web Pages”, select “New”, “Folder…”, specify the
 name as “points”, and click on “Finish”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>In “Web Pages”, right-click on newly created folder, select “Facelets
@@ -5768,36 +3481,16 @@ Template Client”, give the File Name as “points”. Click on “Browse…”
 next to “Template:”, expand “Web Pages”, “WEB-INF”, select
 “template.xhtml”, and click on “Select File”. Click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Replace the content inside &lt;ui:define&gt; with “content” with the code
 fragment shown below:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Copy the following code inside &lt;ui:define&gt; with name=”content”:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h1&gt;Points&lt;/h1&gt;</p>
@@ -5813,11 +3506,6 @@ fragment shown below:</p>
 </div>
 <div class="paragraph">
 <p>&lt;h:inputText value="#\{sendPointsBean.message}"/&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h:commandButton value="Send Message" action="points"
@@ -5836,19 +3524,9 @@ actionListener="#\{receivePointsBean.receiveMessage()}"/&gt;</p>
 <div class="paragraph">
 <p>&lt;/h:form&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on the yellow bulb to resolve namespace prefix/URI mapping for h:
 prefix.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This page displays the number of messages in the current queue. It
@@ -5859,114 +3537,44 @@ by 1 in this case, is displayed. The second command button invokes
 receiveMessage method from ReceivePointsBean and refreshes the page. The
 queue count is updated again, decremented by 1 in this case.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>If the message does not meet the validation criteria then the error
 message is displayed on the screen.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>8.9</strong> Add the following code in “template.xhtml” along with other
 &lt;outputLink&gt;s:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;p/&gt;&lt;h:outputLink
 value="$\{facesContext.externalContext.requestContextPath}/faces/points/points.xhtml"&gt;Points&lt;/h:outputLink&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>8.10</strong> Run the project. The update page looks like as shown:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output.png" alt="image"></span></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on “Points” to see the output as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output2.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The output shows that the queue has 0 messages. Enter a message “1212”
 in the text box and click on “Send Message” to see the output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output3.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>This message is not meeting the validation criteria and so the error
 message is displayed.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Enter a message as “12,12” in the text box and click on “Send Message”
 button to see the output as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output4.png" alt="image"></span></p>
@@ -5975,40 +3583,15 @@ button to see the output as:</p>
 <p>The updated count now shows that there is 1 message in the queue. Click
 on “Receive Message” button to see output as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output5.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The updated count now shows that the message has been consumed and the
 queue has 0 messages.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on “Send Message” 4 times to see the output as:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output6.png" alt="image"></span></p>
@@ -6017,66 +3600,31 @@ queue has 0 messages.</p>
 <p>The updated count now shows that the queue has 4 messages. Click on
 “Receive Message” 2 times to see the output as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output7.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>The count is once again updated to reflect the 2 consumed and 2
 remaining messages in the queue.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_show_booking_javaserver_faces">Show Booking (JavaServer Faces)</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Purpose</strong>: Build pages that allow a user to book a particular movie show
 in a theater. In doing so a new feature of JavaServer Faces 2.2 will be
 introduced and demonstrated by using in the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 30-45 mins</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>JavaServer Faces 2.2 introduces a new feature called <em>Faces Flow</em> that
 provides an encapsulation of related views/pages with application
 defined entry and exit points. Faces Flow borrows core concepts from ADF
 TaskFlow, Spring Web Flow, and Apache MyFaces CODI.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>It introduces @FlowScoped CDI annotation for flow-local storage and
@@ -6087,19 +3635,9 @@ reused. The application thus becomes a collection of flows and non-flow
 pages. Usually the objects in a flow are designed to allow the user to
 accomplish a task that requires input over a number of different views.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This application will build a flow that allows the user to make a movie
 reservation. The flow will contain four pages:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -6114,17 +3652,6 @@ reservation. The flow will contain four pages:</p>
 </li>
 <li>
 <p>Make the reservation and show the ticket</p>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+
-+</pre>
-</div>
-</div>
 </li>
 </ol>
 </div>
@@ -6134,55 +3661,20 @@ required to keep them together in a directory. In NetBeans, right-click
 on the “Web Pages”, select “New”, “Folder…”, specify the folder name
 “booking”, and click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.2</strong> Right-click on the newly created folder, select “New”, “Facelets
 Template Client”, give the File Name as “booking”. Click on “Browse…”
 next to “Template:”, expand “Web Pages”, “WEB-INF”, select
 “template.xhtml”, and click on “Select File”. Click on “Finish”.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 “top” and “left”. These sections are inherited from the template.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>9.3</strong> “booking.xhtml” is the entry point to the flow (more on this
 later). Replace the &lt;ui:define&gt; with name=”content” section such that it
 looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;ui:define name="content"&gt;</p>
@@ -6192,11 +3684,6 @@ looks like:</p>
 </div>
 <div class="paragraph">
 <p>&lt;h:form prependId="false"&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;h:selectOneRadio value="#\{booking.movieId}" layout="pageDirection"
@@ -6218,11 +3705,6 @@ itemValue="\{m.id}" itemLabel="#\{m.name}"/&gt;</p>
 <div class="paragraph">
 <p>&lt;/ui:define&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The code builds an HTML form that displays the list of movies as radio
 button choices. The chosen movie is bound to #\{booking.movieId} which
@@ -6230,42 +3712,17 @@ will be defined as a flow-scoped bean. The value of action attribute on
 commandButton refers to the next view in the flow, i.e.
 “showtimes.xhtml” in the same directory in our case.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on the hint (shown as yellow bulb) and click on the suggestion to
 add namespace prefix. Do the same for f: prefix as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.3-imports.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>9.4</strong> Right-click on “Source Packages”, select “New”, “Java Class…”.
 Specify the class name as “Booking” and the package name as
 “org.glassfish.movieplex7.booking”.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Add @Named class-level annotation to make the class EL-injectable. Add
@@ -6273,43 +3730,18 @@ Specify the class name as “Booking” and the package name as
 is automatically activated and passivated as the flow is entered or
 exited.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following field:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>int movieId;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>and generate getters/setters by going to “Source”, “Insert Code…”,
 selecting “Getter and Setter…”, and select the field.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Inject EntityManager in this class by adding the following code:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>@PersistenceContext</p>
@@ -6317,18 +3749,8 @@ selecting “Getter and Setter…”, and select the field.</p>
 <div class="paragraph">
 <p>EntityManager em;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Add the following convenience method:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public String getMovieName() \{</p>
@@ -6352,43 +3774,18 @@ Movie.class).setParameter("id", movieId).getSingleResult().getName();</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method will return the movie name based upon the selected movie.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Alternatively, movie id and name may be passed from the selected radio
 button and parsed in the backing bean. This will reduce an extra trip to
 the database.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.5</strong> Create “showtimes.xhtml” in the “booking” folder following the
 steps in section 9.2. Replace “content” &lt;ui:define&gt; section such that it
 looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;ui:define name="content"&gt;</p>
@@ -6429,11 +3826,6 @@ immediate="true"/&gt;</p>
 <div class="paragraph">
 <p>&lt;/ui:define&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code builds an HTML form that displays the chosen movie name and
 all the show times. #\{timeslotFacadeREST.all} returns the list of all
@@ -6443,11 +3835,6 @@ command button (value=”Back”) allows going back to the previous page and
 the other command button (value=”Confirm”) takes to next view in the
 flow, “confirm.xhtml” in our case.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Typically a user will expect the show times only for the selected movie
 but all the show times are shown here. This allows us to demonstrate
@@ -6455,23 +3842,8 @@ going back and forth within a flow if an incorrect show time for a movie
 is chosen. A different query may be written that displays only the shows
 available for this movie; however this is not part of the application.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.6</strong> Add the following fields to the Booking class:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>String startTime;</p>
@@ -6479,18 +3851,8 @@ available for this movie; however this is not part of the application.</p>
 <div class="paragraph">
 <p>int startTimeId;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>And the following methods:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public String getStartTime() \{</p>
@@ -6500,11 +3862,6 @@ available for this movie; however this is not part of the application.</p>
 </div>
 <div class="paragraph">
 <p>}</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public void setStartTime(String startTime) \{</p>
@@ -6521,11 +3878,6 @@ available for this movie; however this is not part of the application.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>public int getStartTimeId() \{</p>
 </div>
@@ -6535,19 +3887,9 @@ available for this movie; however this is not part of the application.</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>These methods will parse the values received from the form. Also add the
 following method:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>public String getTheater() \{</p>
@@ -6571,11 +3913,6 @@ following method:</p>
 <div class="paragraph">
 <p>return "none";</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>return list</p>
 </div>
@@ -6592,43 +3929,18 @@ following method:</p>
 <div class="paragraph">
 <p>}</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This method will find the first theater available for the chosen movie
 and show the timing.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Additionally a list of theaters offering that movie may be shown in a
 separate page.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.7</strong> Create “confirm.xhtml” page in the “booking” folder by following
 the steps defined in 9.2. Replace “content” &lt;ui:define&gt; section such
 that it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;ui:define name="content"&gt;</p>
@@ -6696,46 +4008,21 @@ that it looks like:</p>
 <div class="paragraph">
 <p>&lt;/ui:define&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The code displays the selected movie, show timing, and theater if
 available. The reservation can proceed if all three are available.
 “print.xhtml”, identified by action of commandButton with “Book” value,
 is the last page that shows the confirmed reservation.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>actionListener can be added to commandButton to invoke the business
 logic for making the reservation. Additional pages may be added to take
 the credit card details and email address.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.8</strong> Create “print.xhtml” page in the “booking” folder by following the
 steps defined in 9.2 and replace “content” &lt;ui:define&gt; section such that
 it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;ui:define name="content"&gt;</p>
@@ -6764,33 +4051,13 @@ it looks like:</p>
 <div class="paragraph">
 <p>&lt;/ui:define&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This code displays the movie name, show timings, and the selected
 theater.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>The commandButton initiates exit from the flow. The action attribute
 defines a navigation rule that will be defined in the next step.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p><strong>9.9</strong> “booking.xhtml”, “showtimes.xhtml”, “confirm.xhtml”, and
@@ -6799,21 +4066,11 @@ informed that the views in this directory are to be treated as view
 nodes in a flow. This can be done by adding “booking/booking-flow.xml”
 or have a class with a method that @Produces @FlowDefinition.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Right-click on “Web Pages/booking” folder, select “New”, “Other”, “XML”,
 “XML Document”, give the name as “booking-flow”, click on “Next&gt;”, take
 the default of “Well-formed Document”, and click on “Finish”. Edit the
 file such that it looks like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"</p>
@@ -6848,67 +4105,27 @@ file such that it looks like:</p>
 <div class="paragraph">
 <p>&lt;/faces-config&gt;</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>This defines the flow graph. It uses the standard parent element used in
 any “faces-config.xml” but defines a &lt;flow-definition&gt;.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>&lt;flow-return&gt; defines a return node in a flow graph. &lt;from-outcome&gt;
 contains the node value, or an EL expression that defines the node, to
 return to. In this case, the navigation returns to the home page.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.10</strong> Finally, invoke the flow by editing “WEB-INF/template.xhtml” and
 changing:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;h:commandLink action="item1"&gt;Item 1&lt;/h:commandLink&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>to</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>&lt;h:commandLink action="booking"&gt;Book a movie&lt;/h:commandLink&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>commandLink renders an HTML anchor tag that behaves like a form submit
@@ -6916,120 +4133,45 @@ button. The action attribute points to the directory where all views for
 the flow are stored. This directory already contains “booking-flow.xml”
 which defines the flow of the pages.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><strong>9.11</strong> Run the project by right clicking on the project and selecting
 “Run”. The browser shows the updated output.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Click on “Book a movie” to see the page as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output2.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Select a movie, say “The Shining” and click on “Pick a time” to see the
 page output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output3.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Pick a time slot, say “04:00”, click
 on “Confirm” to see the output as shown.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output4.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Click on “Book” to confirm and see the output as:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output5.png" alt="image"></span></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 <div class="paragraph">
 <p>Feel free to enter other combinations, go back and forth in the flow and
 notice how the values in the bean are preserved.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Click on “home” takes to the main application page.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>+</pre>
-</div>
 </div>
 </div>
 </div>
@@ -7337,7 +4479,7 @@ node, and select “View Domain Server Log”.</p>
 <div class="sect2">
 <h3 id="_configure_glassfish_4_in_netbeans_ide">Configure GlassFish 4 in NetBeans IDE</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span><br></p>
+<p><span class="image"><img src="images/netbeans-addserver.png" alt="image"></span></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

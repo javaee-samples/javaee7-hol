@@ -1,4 +1,3 @@
-[[]]
 == Revision History
 
 . Moving the source document from Pages to AsciiDoc.
