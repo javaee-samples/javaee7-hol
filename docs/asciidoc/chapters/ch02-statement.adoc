@@ -153,13 +153,13 @@ code, and debugging the errors.
 
 The recommended flow is where you follow through the instructions in all
 sections in the listed sequence. Alternatively, you may like to cover
-section 4.0 through 9.0 in an order of your choice, based upon your
-interest and preference of the technology. However section 6.0 is a
-pre-requisite for section 7.0.
+section <<walk-through>> through <<jsf>> in an order of your choice, based upon your
+interest and preference of the technology. However section <jaxrs> is a
+pre-requisite for <<json>>.
 
 Here is an approximate time estimate for each section:
 
-[width="80%", cols="4,2" options="header"]
+[cols="4,2" options="header"]
 |===
 | Section Title | Estimated Time
 

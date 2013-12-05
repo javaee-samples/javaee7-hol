@@ -134,7 +134,9 @@ The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
 Clicking on "Join" button takes the value as user name and clicking on
-"Send" takes the value as chat message. JavaScript methods are invoked
+"Send" takes the value as chat message.
+
+JavaScript methods are invoked
 when these buttons are clicked and these are explained in the next
 section. The chat messages are sent and received as WebSocket payloads.
 There is an explicit button to disconnect the WebSocket connection.
@@ -214,11 +216,11 @@ function writeToScreen(message) \{
 
 The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the `ChatServer` class.
-WebSocket is initialized by calling new WebSocket(…). Event handlers are
+WebSocket is initialized by calling new `WebSocket(…)`. Event handlers are
 registered for lifecycle events using `onXXX` messages. The listeners
 registered in this script are explained in the table.
 
-[width="60%", cols="1,3" options="header"]
+[cols="1,3" options="header"]
 |===
 | Listeners | Called When
 
@@ -249,8 +251,9 @@ image:images/4.6-chatroom.png[image]
 to
 
 [source,xml]
-<h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml">
-        Chat Room
+<h:outputLink
+    value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml">
+    Chat Room
 </h:outputLink>
 
 The `outputLink` tag renders an HTML anchor tag with an `href` attribute.

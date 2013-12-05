@@ -747,14 +747,14 @@ code, and debugging the errors.</p>
 <div class="paragraph">
 <p>The recommended flow is where you follow through the instructions in all
 sections in the listed sequence. Alternatively, you may like to cover
-section 4.0 through 9.0 in an order of your choice, based upon your
-interest and preference of the technology. However section 6.0 is a
-pre-requisite for section 7.0.</p>
+section <a href="#walk-through">Walk-through of Sample Application</a> through <a href="#jsf">Show Booking (JavaServer Faces)</a> in an order of your choice, based upon your
+interest and preference of the technology. However section &lt;jaxrs&gt; is a
+pre-requisite for <a href="#json">Add Movie (Java API for JSON Processing)</a>.</p>
 </div>
 <div class="paragraph">
 <p>Here is an approximate time estimate for each section:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width:80%; ">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
 <col style="width:66%;">
 <col style="width:33%;"> 
@@ -832,7 +832,7 @@ performed to provide an understanding of the application architecture.</p>
 </div>
 <div class="paragraph">
 <p><strong>3.1</strong> Download the sample application from
-<a href="http://glassfish.org/hol/movieplex7-starting-template.zip">glassfish.org/hol/movieplex7-starting-template.zip</a>
+<a href="https://github.com/javaee-samples/javaee7-hol/blob/master/starting-template/movieplex7-starting-template.zip?raw=true">movieplex7-starting-template.zip</a>
 and unzip. This will create a "movieplex7" directory and unzips all the
 content there.</p>
 </div>
@@ -1094,10 +1094,9 @@ same as the JPA entity class name.</p>
 </div>
 <div class="paragraph">
 <p>The mapping between JPA entity classes, EJB classes, and the URI of the
-corresponding REST endpoint is shown.
-<span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
+corresponding REST endpoint is shown.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width:60%; ">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
 <col style="width:33%;">
 <col style="width:33%;">
@@ -1187,6 +1186,9 @@ correctly after the dependencies are downloaded during project building.
 <div class="paragraph">
 <p>During the first run, the IDE will ask you to select a deployment
 server. Choose the configured GlassFish server and click on "OK".</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The output looks like as shown.</p>
@@ -1383,7 +1385,10 @@ code.</p>
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
 Clicking on "Join" button takes the value as user name and clicking on
-"Send" takes the value as chat message. JavaScript methods are invoked
+"Send" takes the value as chat message.</p>
+</div>
+<div class="paragraph">
+<p>JavaScript methods are invoked
 when these buttons are clicked and these are explained in the next
 section. The chat messages are sent and received as WebSocket payloads.
 There is an explicit button to disconnect the WebSocket connection.
@@ -1467,11 +1472,11 @@ function writeToScreen(message) \{
 <div class="paragraph">
 <p>The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the <code>ChatServer</code> class.
-WebSocket is initialized by calling new WebSocket(…). Event handlers are
+WebSocket is initialized by calling new <code>WebSocket(…)</code>. Event handlers are
 registered for lifecycle events using <code>onXXX</code> messages. The listeners
 registered in this script are explained in the table.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width:60%; ">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
 <col style="width:25%;">
 <col style="width:75%;"> 
@@ -1526,8 +1531,9 @@ logged in users as well.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml"&gt;
-        Chat Room
+<pre class="highlight"><code class="xml language-xml">&lt;h:outputLink
+    value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml"&gt;
+    Chat Room
 &lt;/h:outputLink&gt;</code></pre>
 </div>
 </div>
@@ -3329,7 +3335,7 @@ looks like:</p>
 </div>
 <div class="paragraph">
 <p>The code builds an HTML form that displays the list of movies as radio
-button choices. The chosen movie is bound to #\{booking.movieId} which
+button choices. The chosen movie is bound to #{booking.movieId} which
 will be defined as a flow-scoped bean. The value of action attribute on
 commandButton refers to the next view in the flow, i.e.
 "showtimes.xhtml" in the same directory in our case.</p>
@@ -3984,7 +3990,7 @@ unzipped the above archive. Click on "Finish".</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2013-12-04 13:24:07 PST
+Last updated 2013-12-04 16:32:52 PST
 </div>
 </div>
 </body>

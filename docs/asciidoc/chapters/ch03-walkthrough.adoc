@@ -8,7 +8,7 @@ performed to provide an understanding of the application architecture.
 *Estimated Time*: 15-30 mins
 
 *3.1* Download the sample application from
-http://glassfish.org/hol/movieplex7-starting-template.zip[glassfish.org/hol/movieplex7-starting-template.zip]
+https://github.com/javaee-samples/javaee7-hol/blob/master/starting-template/movieplex7-starting-template.zip?raw=true[movieplex7-starting-template.zip]
 and unzip. This will create a "movieplex7" directory and unzips all the
 content there.
 
@@ -208,9 +208,8 @@ same as the JPA entity class name.
 
 The mapping between JPA entity classes, EJB classes, and the URI of the
 corresponding REST endpoint is shown.
-image:images/3.6-glassfish-server.png[image]
 
-[width="60%", options="header"]
+[options="header"]
 |===
 | JPA Entity Class | EJB Class | RESTful Path
 
@@ -267,6 +266,8 @@ correctly after the dependencies are downloaded during project building.
 
 During the first run, the IDE will ask you to select a deployment
 server. Choose the configured GlassFish server and click on "OK".
+
+image:images/3.6-glassfish-server.png[image]
 
 The output looks like as shown.
 
