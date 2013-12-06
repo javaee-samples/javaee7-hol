@@ -18,3 +18,57 @@ name to "GlassFish 4.0" and click "Next >".
 build and point to the "glassfish4" directory that got created when you
 unzipped the above archive. Click on "Finish".
 
+[[appendix-glassfish4-idea]]
+=== Configure GlassFish 4 in IntelliJ IDEA
+
+
+. Clone the repository from either git@github.com:arun-gupta/javaee7-hol.git or https://github.com/arun-gupta/javaee7-hol.git.
+
+. Switch to the cloned project directory's `starting-template/movieplex7/` folder.
+
+. In the command shell, just to make sure that everything is set up correctly, run the following commands:
+
+  mvn idea:idea
+  mvn clean package
+
+You will now find an IntelliJ IDEA project in the that folder, along with a packaged .WAR in the `target/`-folder.
+
+. Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with "Convert".
+
+image:images/idea-convertproject.png[image]
+
+. Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on "Configure".
+
+image:images/idea-configure-jpa.png[image]
+
+. In the dialog box that shows up make sure the only detected file in there says `persistence.xml` and is checked and confirm  it with "Ok".
+
+image:images/idea-configure-jpa-dialogbox.png[image]
+
+. As a next step we need to build the project. Open the "Maven Projects" pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with "Yes".
+
+image:images/idea-open-mavenprojects-pane.png[image]
+
+. When the project is reloaded go to the "Maven Projects" pane again and have Maven build and package the project by selecting "Java EE 7 Hands-on Lab > Lifecycle > package" and clicking on the green "play" arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on "Enable Auto-Import" if a green hint pops up.
+
+image:images/idea-mavenprojects-run-package-command.png[image]
+
+. In the menu click on "Run > Edit Configurations'".
+
+. In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry `(17 more items)`. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for "GlassFish Server" should show up.
+
+image:images/idea-add-glassfish-server-configuration.png[image]
+
+. Pick "Local" and in the upcoming dialog box enter a name (e.g. `GlassFish Server 4.0.0` - depending on your GlassFish Server version) and uncheck "After launch" so the browser doesn't get opened after each redeploy. In the textfield for "Server Domain" enter `domain1` as the name of the domain. Leave the "Username" field at `admin` and the `Password` field empty. Then click "Configure'" next to the "Application server" drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.
+
+image:images/idea-edit-glassfish-server-configuration-servertab.png[image]
+
+. Now click on the "Deployment" tab, then click on the Plus-sign underneath the large empty white area labeled "Deploy at the server startup" and choose `Artifact`. Choose the entry `movieplex7:war` and click "Ok". Click "Ok" again to close the entire configuration dialog. We're now done.
+
+image:images/idea-edit-glassfish-server-configuration-deploymenttab.png[image]
+
+. As a final step we need to start the database. For NetBeans users this happens automagically but we'll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder's `bin/`-directory and enter the following command `asadmin start-database`, or for Mac/Linux users: `./asadmin start-database` and you're good to go.
+
+. In the menu now choose "Run > Run GlassFish Server 4.0.0" (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
+
+. Open `http://localhost:8080/movieplex7-1.0-SNAPSHOT/` in your browser to see the (mostly empty) starter template.
