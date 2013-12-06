@@ -1,0 +1,363 @@
+[[jsf]]
+== Show Booking (JavaServer Faces)
+
+*Purpose*: Build pages that allow a user to book a particular movie show
+in a theater. In doing so a new feature of JavaServer Faces 2.2 will be
+introduced and demonstrated by using in the application.
+
+*Estimated Time*: 30-45 mins
+
+JavaServer Faces 2.2 introduces a new feature called _Faces Flow_ that
+provides an encapsulation of related views/pages with application
+defined entry and exit points. Faces Flow borrows core concepts from ADF
+TaskFlow, Spring Web Flow, and Apache MyFaces CODI.
+
+It introduces `@FlowScoped` CDI annotation for flow-local storage and
+`@FlowDefinition` to define the flow using CDI producer methods. There are
+clearly defined entry and exit points with well-defined parameters. This
+allows the flow to be packaged together as a JAR or ZIP file and be
+reused. The application thus becomes a collection of flows and non-flow
+pages. Usually the objects in a flow are designed to allow the user to
+accomplish a task that requires input over a number of different views.
+
+This application will build a flow that allows the user to make a movie
+reservation. The flow will contain four pages:
+
+1.  Display the list of movies
+2.  Display the list of available show timings
+3.  Confirm the choices
+4.  Make the reservation and show the ticket
+
+*9.1* Items in a flow are logically related to each other and so it is
+required to keep them together in a directory. In NetBeans, right-click
+on the "Web Pages", select "New", "Folder…", specify the folder name
+"booking", and click on "Finish".
+
+*9.2* Right-click on the newly created folder, select "New", "Facelets
+Template Client", give the File Name as "booking". Click on "Browse…"
+next to "Template:", expand "Web Pages", "WEB-INF", select
+"template.xhtml", and click on "Select File". Click on "Finish".
+
+In this file, remove `<ui:define>` sections where name attribute value is
+"top" and "left". These sections are inherited from the template.
+
+*9.3* "booking.xhtml" is the entry point to the flow (more on this
+later). Replace the `<ui:define>` with name="content" section such that it
+looks like:
+
+[source, xml]
+----
+<ui:define name="content">
+    <h2>Pick a movie</h2>
+    <h:form prependId="false">
+        <h:selectOneRadio 
+            value="#{booking.movieId}"
+            layout="pageDirection"
+            required="true">
+            <f:selectItems
+                value="#{movieFacadeREST.all}"
+                var="m"
+                itemValue="#{m.id}"
+                itemLabel="#{m.name}"/>
+        </h:selectOneRadio>
+        <h:commandButton id="shows" value="Pick a time" action="showtimes" />
+    </h:form>
+</ui:define>
+----
+
+The code builds an HTML form that displays the list of movies as radio
+button choices. The chosen movie is bound to #{booking.movieId} which
+will be defined as a flow-scoped bean. The value of action attribute on
+commandButton refers to the next view in the flow, i.e.
+"showtimes.xhtml" in the same directory in our case.
+
+Click on the hint (shown as yellow bulb) and click on the suggestion to
+add namespace prefix. Do the same for f: prefix as shown.
+
+image:images/9.3-imports.png[image]
+
+*9.4* Right-click on "Source Packages", select "New", "Java Class…".
+Specify the class name as "Booking" and the package name as
+"org.glassfish.movieplex7.booking".
+
+Add `@Named` class-level annotation to make the class EL-injectable. Add
+`@FlowScoped("booking")` to define the scope of bean as the flow. The bean
+is automatically activated and passivated as the flow is entered or
+exited.
+
+Add the following field:
+
+[source, java]
+int movieId;
+
+and generate getters/setters by going to "Source", "Insert Code…",
+selecting "Getter and Setter…", and select the field.
+
+Inject `EntityManager` in this class by adding the following code:
+
+[source, java]
+----
+@PersistenceContext
+EntityManager em;
+----
+
+Add the following convenience method:
+
+[source, java]
+----
+public String getMovieName() {
+    try {
+        return em.createNamedQuery("Movie.findById", Movie.class)
+                  .setParameter("id", movieId)
+                  .getSingleResult()
+                  .getName();
+    } catch (NoResultException e) {
+        return "";
+    }
+}
+----
+
+This method will return the movie name based upon the selected movie.
+
+Alternatively, movie id and name may be passed from the selected radio
+button and parsed in the backing bean. This will reduce an extra trip to
+the database.
+
+*9.5* Create "showtimes.xhtml" in the "booking" folder following the
+steps in section 9.2. Replace "content" `<ui:define>` section such that it
+looks like:
+
+[source, xml]
+----
+<ui:define name="content">
+    <h2>Show Timings for <font color="red">#{booking.movieName}</font></h2>
+    <h:form>
+        <h:selectOneRadio value="#{booking.startTime}" layout="pageDirection" required="true">
+            <c:forEach items="#{timeslotFacadeREST.all}" var="s">
+                <f:selectItem itemValue="#{s.id},#{s.startTime}" itemLabel="#{s.startTime}"/>
+            </c:forEach>
+        </h:selectOneRadio>
+        <h:commandButton value="Confirm" action="confirm" />
+        <h:commandButton id="back" value="Back" action="booking" immediate="true"/>
+    </h:form>
+</ui:define>
+----
+
+This code builds an HTML form that displays the chosen movie name and
+all the show times. `#{timeslotFacadeREST.all}` returns the list of all
+the movies and iterates over them using a `c:forEach` loop. The id and
+start time of the selected show are bound to `#{booking.startTime}`. One
+command button (value="Back") allows going back to the previous page and
+the other command button (value="Confirm") takes to next view in the
+flow, "confirm.xhtml" in our case.
+
+Typically a user will expect the show times only for the selected movie
+but all the show times are shown here. This allows us to demonstrate
+going back and forth within a flow if an incorrect show time for a movie
+is chosen. A different query may be written that displays only the shows
+available for this movie; however this is not part of the application.
+
+*9.6* Add the following fields to the Booking class:
+
+[source, java]
+----
+String startTime;
+int startTimeId;
+----
+
+And the following methods:
+
+[source, java]
+----
+public String getStartTime() {
+    return startTime;
+}
+
+public void setStartTime(String startTime) {
+    StringTokenizer tokens = new StringTokenizer(startTime, ",");
+    startTimeId = Integer.parseInt(tokens.nextToken());
+    this.startTime = tokens.nextToken();
+}
+
+public int getStartTimeId() {
+    return startTimeId;
+}
+----
+
+These methods will parse the values received from the form. Also add the
+following method:
+
+[source, java]
+----
+public String getTheater() {
+    // for a movie and show
+    try {
+
+        // Always return the first theater
+        List<ShowTiming> list =
+            em.createNamedQuery("ShowTiming.findByMovieAndTimingId",
+                ShowTiming.class)
+                .setParameter("movieId", movieId)
+                .setParameter("timingId", startTimeId)
+                .getResultList();
+
+        if (list.isEmpty())
+            return "none";
+
+        return list
+                .get(0)
+                .getTheaterId()
+                .getId()
+                .toString();
+    } catch (NoResultException e) {
+        return "none";
+    }
+}
+----
+
+This method will find the first theater available for the chosen movie
+and show the timing.
+
+Additionally a list of theaters offering that movie may be shown in a
+separate page.
+
+*9.7* Create "confirm.xhtml" page in the "booking" folder by following
+the steps defined in 9.2. Replace "content" `<ui:define>` section such
+that it looks like:
+
+[source, xml]
+----
+<ui:define name="content">
+    <c:choose>
+        <c:when test="#{booking.theater == 'none'}">
+            <h2>No theater found, choose a different time</h2>
+            <h:form>
+                Movie name: #{booking.movieName}<p/>
+                Starts at: #{booking.startTime}<p/>
+                <h:commandButton id="back" value="Back" action="showtimes"/>
+            </h:form>
+        </c:when>
+        <c:otherwise>
+            <h2>Confirm ?</h2>
+            <h:form>
+                Movie name: #{booking.movieName}<p/>
+                Starts at: #{booking.startTime}<p/>
+                Theater: #{booking.theater}<p/>
+                <h:commandButton id="next" value="Book" action="print"/>
+                <h:commandButton id="back" value="Back" action="showtimes"/>
+            </h:form>
+        </c:otherwise>
+    </c:choose>
+</ui:define>
+----
+
+The code displays the selected movie, show timing, and theater if
+available. The reservation can proceed if all three are available.
+"print.xhtml", identified by action of commandButton with "Book" value,
+is the last page that shows the confirmed reservation.
+
+`actionListener` can be added to `commandButton` to invoke the business
+logic for making the reservation. Additional pages may be added to take
+the credit card details and email address.
+
+*9.8* Create "print.xhtml" page in the "booking" folder by following the
+steps defined in 9.2 and replace "content" `<ui:define>` section such that
+it looks like:
+
+[source, xml]
+----
+<ui:define name="content">
+    <h2>Reservation Confirmed</h2>
+    <h:form>
+        Movie name: #{booking.movieName}<p/>
+        Starts at: #{booking.startTime}<p/>
+        Theater: #{booking.theater}<p/>
+        <h:commandButton id="home" value="home" action="goHome" /></p>
+    </h:form>
+</ui:define>
+----
+
+This code displays the movie name, show timings, and the selected
+theater.
+
+The `commandButton` initiates exit from the flow. The `action` attribute
+defines a navigation rule that will be defined in the next step.
+
+*9.9* "booking.xhtml", "showtimes.xhtml", "confirm.xhtml", and
+"print.xhtml" are all in the same directory. Now the runtime needs to be
+informed that the views in this directory are to be treated as view
+nodes in a flow. This can be done by adding "booking/booking-flow.xml"
+or have a class with a method that `@Produces @FlowDefinition`.
+
+Right-click on "Web Pages/booking" folder, select "New", "Other", "XML",
+"XML Document", give the name as "booking-flow", click on "Next>", take
+the default of "Well-formed Document", and click on "Finish". Edit the
+file such that it looks like:
+
+[source, xml]
+----
+<faces-config
+    version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <flow-definition id="booking">
+        <flow-return id="goHome">
+        <from-outcome>/index</from-outcome>
+        </flow-return>
+    </flow-definition>
+</faces-config>
+----
+
+This defines the flow graph. It uses the standard parent element used in
+any "faces-config.xml" but defines a `<flow-definition>`.
+
+`<flow-return>` defines a return node in a flow graph. `<from-outcome>`
+contains the node value, or an EL expression that defines the node, to
+return to. In this case, the navigation returns to the home page.
+
+*9.10* Finally, invoke the flow by editing "WEB-INF/template.xhtml" and
+changing:
+
+[source, xml]
+<h:commandLink action="item1">Item 1</h:commandLink>
+
+to
+
+[source, xml]
+<h:commandLink action="booking">Book a movie</h:commandLink>
+
+`commandLink` renders an HTML anchor tag that behaves like a form submit
+button. The action attribute points to the directory where all views for
+the flow are stored. This directory already contains "booking-flow.xml"
+which defines the flow of the pages.
+
+*9.11* Run the project by right clicking on the project and selecting
+"Run". The browser shows the updated output.
+
+image:images/9.11-output.png[image]
+
+Click on "Book a movie" to see the page as shown.
+
+image:images/9.11-output2.png[image]
+
+Select a movie, say "The Shining" and click on "Pick a time" to see the
+page output as shown.
+
+image:images/9.11-output3.png[image]
+
+Pick a time slot, say "04:00", click
+on "Confirm" to see the output as shown.
+
+image:images/9.11-output4.png[image]
+
+Click on "Book" to confirm and see the output as:
+
+image:images/9.11-output5.png[image]
+
+Feel free to enter other combinations, go back and forth in the flow and
+notice how the values in the bean are preserved.
+
+Click on "home" takes to the main application page.
+

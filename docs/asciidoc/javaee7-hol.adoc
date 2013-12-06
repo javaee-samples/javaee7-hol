@@ -1,0 +1,39 @@
+:revnumber: 2.0
+:author: Arun Gupta
+:revdate: Dec 3, 2013
+:toc:
+
+= Java EE 7 Hands-on Lab
+
+include::chapters/ch01-introduction.adoc[]
+
+include::chapters/ch02-statement.adoc[]
+
+include::chapters/ch03-walkthrough.adoc[]
+
+include::chapters/ch04-websocket.adoc[]
+
+include::chapters/ch05-batch.adoc[]
+
+include::chapters/ch06-jaxrs.adoc[]
+
+include::chapters/ch07-json.adoc[]
+
+include::chapters/ch08-jms.adoc[]
+
+include::chapters/ch09-jsf.adoc[]
+
+include::chapters/ch10-conclusion.adoc[]
+
+include::chapters/ch11-troubleshooting.adoc[]
+
+include::chapters/ch12-acks.adoc[]
+
+include::chapters/ch13-solutions.adoc[]
+
+include::chapters/ch14-todo.adoc[]
+
+include::chapters/ch15-revision.adoc[]
+
+include::chapters/ch16-appendix.adoc[]
+

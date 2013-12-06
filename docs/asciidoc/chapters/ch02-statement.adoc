@@ -1,0 +1,189 @@
+== Problem Statement
+
+This hands-on lab builds a typical 3-tier Java EE 7 Web application that
+allows customers to view the show timings for a movie in a 7-theater
+Cineplex and make reservations. Users can add new movies and delete
+existing movies. Customers can discuss the movie in a chat room. Total
+sales from each showing are calculated at the end of the day. Customers
+also accrue points for watching movies.
+
+image:images/2.0-problem-statement.png[image]
+
+This figure shows the key components of the application. The User
+Interface initiates all the flows in the application. Show Booking,
+Add/Delete Movie and Ticket Sales interact with the database; Movie
+Points may interact with the database, however, this is out of scope for
+this application; and Chat Room does not interact with the database.
+
+The different functions of the application, as detailed above, utilize
+various Java technologies and web standards in their implementation. The
+following figure shows how Java EE technologies are used in different
+flows.
+
+image:images/2.0-technologies.png[image]
+
+The table below details the components and the selected technology used
+in its’ implementation.
+
+[cols="2,8", options="header"]
+|===
+| Flow | Description
+
+| User Interface
+| Written entirely in _JavaServer Faces_ (JSF)
+
+| Chat Room
+| Utilizes client-side JavaScript and JSON to communicate with a _WebSocket_ endpoint
+
+| Ticket Sales
+| Uses _Batch Applications for the Java Platform_ to calculate the total
+sales and persist to the database.
+
+| Add/Delete Movie
+| Implemented using RESTful Web Services. JSON is used as on-the-wire data format
+
+| Movie Points
+| Uses _Java Message Service_ (JMS) to update and obtain loyalty reward
+points; an optional implementation using database technology may be
+performed
+
+| Show Booking
+| Uses lightweight _Enterprise JavaBeans_ to communicate with the database
+using Java Persistence API
+|===
+
+This document is not a comprehensive tutorial of Java EE. The attendees
+are expected to know the basic Java EE concepts such as EJB, JPA,
+JAX-RS, and CDI. The http://docs.oracle.com/javaee/7/tutorial/doc/[Java
+EE 7 Tutorial] is a good place to learn all these concepts. However
+enough explanation is provided in this guide to get you started with the
+application.
+
+WARNING: This is a sample application and the code may not be
+following the best practices to prevent SQL injection, cross-side
+scripting attacks, escaping parameters, and other similar features
+expected of a robust enterprise application. This is intentional such as
+to stay focused on explaining the technology. It is highly recommended
+to make sure that the code copied from this sample application is
+updated to meet those requirements.
+
+=== Lab Flow
+
+The attendees will start with an existing maven application and by
+following the instructions and guidance provided by this lab they will:
+
+* Read existing source code to gain an understanding of the structure of
+the application and use of the selected platform technologies.
+* Add new and update existing code with provided fragments in order to
+demonstrate usage of different technology stacks in the Java EE 7
+platform.
+
+While you are copy/pasting the code from this document into NetBeans,
+here are couple of tips that will be really useful and make your
+experience enjoyable!
+
+* NetBeans provides capability to neatly format the source code
+following conventions. This can be done for any type of source code,
+whether its XML or Java or something else. It is highly recommended to
+use this functionality after the code is copy/pasted from this document
+to the editor. This keeps the code legible.
+
+This functionality can be accessed by right-clicking in the editor pane
+and selecting “Format” as shown.
+
+image:images/2.1-format.png[image]
+
+This functionality is also accessible using the following keyboard
+shortcuts:
+
+[width="50%", options="header"]
+|===
+| Shortcut | Operating System
+
+|Ctrl + Shift + F
+|Mac
+
+|Alt + Shift + F
+|Windows
+
+|Alt + Shift + F
+|Linux
+|===
+
+* Copy/pasting the Java code from this document in NetBeans editor does
+not auto-import the classes. This is required to be done manually in
+order for the classes to compile. This can be fixed for each missing
+import statement by clicking on the yellow bulb shown in the side bar.
+
+image:images/2.1-server-endpoint.png[image]
+
+Alternatively all the imports can be resolved by right-clicking on the
+editor pane and selecting "Fix Imports" as shown.
+
+image:images/2.1-fix-imports.png[image]
+
+This functionality is also accessible using the following keyboard
+shortcuts:
+
+[width="50%", options="header"]
+|===
+| Shortcut | Operating System
+
+| Command + Shift + I
+| Mac
+
+| Ctrl + Shift + I
+| Windows
+
+| Ctrl + Shift + I
+| Linux
+|===
+
+The defaults may work in most of the cases. Choices are shown in case a
+class is available to import from multiple packages. If multiple
+packages are available then specific packages to import from are clearly
+marked in the document.
+
+=== Estimated Time
+
+Following the complete instructions in this document can take any where
+from three to five hours. The wide time range accommodates for learning
+the new technologies, finding your way in NetBeans, copy/pasting the
+code, and debugging the errors.
+
+The recommended flow is where you follow through the instructions in all
+sections in the listed sequence. Alternatively, you may like to cover
+section <<walk-through>> through <<jsf>> in an order of your choice, based upon your
+interest and preference of the technology. However section <jaxrs> is a
+pre-requisite for <<json>>.
+
+Here is an approximate time estimate for each section:
+
+[cols="4,2" options="header"]
+|===
+| Section Title | Estimated Time
+
+| <<walk-through>> | 15 - 30 mins
+
+| <<websocket>> | 30 - 45 mins
+
+| <<batch>> | 30 - 45 mins
+
+| <<jaxrs>> | 30 - 45 mins
+
+| <<json>> | 30 - 45 mins
+
+| <<jms>> | 30 - 45 mins
+
+| <<jsf>> | 30 - 45 mins
+|===
+
+
+The listed time for each section is only an estimate and by no means
+restrict you within that. These sections have been completed in much
+shorter time, and you can do it too!
+
+TIP: The listed time for each section also allows you to create a custom
+version of the lab depending upon your target audience and available
+time.
+

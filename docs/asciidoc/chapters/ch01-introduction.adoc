@@ -1,0 +1,46 @@
+== Introduction
+
+The Java EE 7 platform continues the ease of development push that
+characterized prior releases by bringing further simplification to
+enterprise development. It adds new and important APIs such as the REST
+client API in JAX-RS 2.0 and the long awaited Batch Processing API. Java
+Message Service 2.0 has undergone an extreme makeover to align with the
+improvements in the Java language. There are plenty of improvements to
+several other components. Newer web standards like HTML 5, WebSocket,
+and JSON processing are embraced to build modern web applications.
+
+This hands-on lab will build a typical 3-tier end-to-end application
+using the following Java EE 7 technologies:
+
+* Java API for WebSocket 1.0 (JSR 356)
+* Batch Applications for the Java Platform 1.0 (JSR 352)
+* Java API for JSON Processing 1.0 (JSR 353)
+* Java API for RESTful Web Services 2.0 (JSR 339)
+* Java Message Service 2.0 (JSR 343)
+* Java Persistence API 2.1 (JSR 338)
+* JavaServer Faces 2.2 (JSR 344)
+* Contexts and Dependency Injection 1.1 (JSR 346)
+* Bean Validation 1.1 (JSR 349)
+* Java Transaction API 1.2 (JSR 907)
+
+Together these APIs will allow you to be more productive by simplifying enterprise development.
+
+The latest version of this document can be downloaded from https://github.com/javaee-samples/javaee7-hol/blob/master/docs/asciidoc/javaee7-hol.html[javaee7-hol.html].
+
+=== Software Requirement
+
+The following software needs to be downloaded and installed:
+
+* JDK 7 from
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[http://www.oracle.com/technetwork/java/javase/downloads/index.html].
+* NetBeans 7.4 or higher "All" or "Java EE" version from
+http://netbeans.org/downloads/[http://netbeans.org/downloads/]. A
+preview of the downloads page is shown and highlights the exact
+"Download" button to be clicked.
+
+image:images/1.1-netbeans-download.png[image]
+
+GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from http://glassfish.org/[glassfish.org]. 
+
+TIP: If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <<appendix-glassfish4-netbeans>>.
+

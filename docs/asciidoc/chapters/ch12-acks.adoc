@@ -1,0 +1,17 @@
+== Acknowledgements
+
+The following Java EE community members graciously reviewed this hands-on lab:
+
+
+* Antonio Goncalves (@agoncal)
+* Markus Eisele (@myfear)
+* Craig Sharpe (@dapugs)
+* Marcus Vinicius Margarites (@mvfm)
+* David Delabasse (@delabasse)
+* John Clingan (@jclingan)
+* Reza Rahman (@reza_rahman)
+* Marian Muller (@mullermarian)
+
+Thank you very much for providing the valuable feedback!
+
+

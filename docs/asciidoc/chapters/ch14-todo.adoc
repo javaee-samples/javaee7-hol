@@ -1,0 +1,10 @@
+== TODO
+
+.  Add the following use cases:
+..  Concurrency Utilities for Java EE
+..  WebSocket Java Client
+.  Disable errors in persistence.xml
+.  How to override .m2/repository in NetBeans?
+.  Add icons for Fix Imports, Format, Fix namespaces, Run the Project.
+.  Change logging to use java.util.Logging.
+
