@@ -44,3 +44,5 @@ GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloa
 
 TIP: If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <<appendix-glassfish4-netbeans>>.
 
+TIP: <<appendix-glassfish4-idea>> explains how to configure GlassFish in IntelliJ IDEA.
+

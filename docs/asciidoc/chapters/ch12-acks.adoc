@@ -1,7 +1,6 @@
 == Acknowledgements
 
-The following Java EE community members graciously reviewed this hands-on lab:
-
+The following Java EE community members graciously reviewed contributed to this hands-on lab:
 
 * Antonio Goncalves (@agoncal)
 * Markus Eisele (@myfear)

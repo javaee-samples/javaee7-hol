@@ -100,6 +100,10 @@ preview of the downloads page is shown and highlights the exact
 <simpara>If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <xref linkend="appendix-glassfish4-netbeans"/>.</simpara>
 </tip>
 
+<tip>
+<simpara><xref linkend="appendix-glassfish4-idea"/> explains how to configure GlassFish in IntelliJ IDEA.</simpara>
+</tip>
+
 </section>
 </chapter>
 <chapter id="_problem_statement">
@@ -527,11 +531,15 @@ time.</simpara>
 in this hands-on lab. A walk-through of the application will be
 performed to provide an understanding of the application architecture.</simpara>
 <simpara><emphasis role="strong">Estimated Time</emphasis>: 15-30 mins</simpara>
-<simpara><emphasis role="strong">3.1</emphasis> Download the sample application from
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Download the sample application from
 <ulink url="https://github.com/javaee-samples/javaee7-hol/blob/master/starting-template/movieplex7-starting-template.zip?raw=true">movieplex7-starting-template.zip</ulink>
 and unzip. This will create a "movieplex7" directory and unzips all the
 content there.</simpara>
-<simpara><emphasis role="strong">3.2</emphasis> In NetBeans IDE, select "File", "Open Project…", select the
+</listitem>
+<listitem>
+<simpara>In NetBeans IDE, select "File", "Open Project…", select the
 unzipped directory, and click on "Open Project". The project structure
 is shown.</simpara>
 <simpara><inlinemediaobject>
@@ -540,7 +548,9 @@ is shown.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">3.3</emphasis> Maven Coordinates: Expand "Project Files" and double click on
+</listitem>
+<listitem>
+<simpara>Maven Coordinates: Expand "Project Files" and double click on
 "pom.xml". In the "pom.xml", the Java EE 7 API is specified as a
 <literal>&lt;dependency&gt;</literal>:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;dependencies&gt;
@@ -561,7 +571,8 @@ applications. All Java EE profiles share a set of common features, such
 as naming and resource injection, packaging rules, security
 requirements, etc. A profile may contain a proper subset or superset of
 the technologies contained in the platform.</simpara>
-<simpara>The Java EE Web Profile is a profile of the Java EE Platform
+<simpara>+
+The Java EE Web Profile is a profile of the Java EE Platform
 specifically targeted at modern web applications. The complete set of
 specifications defined in the Web Profile is defined in the Java EE 7
 Web Profile Specification. GlassFish can be downloaded in two different
@@ -574,7 +585,9 @@ lab, except Java Message Service and Batch Applications for the Java
 Platform, can be deployed on Web Profile.</simpara>
 </important>
 
-<simpara><emphasis role="strong">3.4</emphasis> <emphasis role="strong">Default Data Source</emphasis>: Expand "Other Sources",
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Default Data Source</emphasis>: Expand "Other Sources",
 "src/main/resources", "META-INF", and double-click on "persistence.xml".
 By default, NetBeans opens the file in Design View. Click on Source tab
 to view the XML source.</simpara>
@@ -646,7 +659,9 @@ the error shown below:</simpara>
 </inlinemediaobject></simpara>
 <simpara>This will get resolved when we run the application. Click on "OK" to
 dismiss the dialog.</simpara>
-<simpara><emphasis role="strong">3.5</emphasis> <emphasis role="strong">Schema Generation:</emphasis> JPA 2.1 defines a new set of
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Schema Generation:</emphasis> JPA 2.1 defines a new set of
 <literal>javax.persistence.schema-generation.*</literal> properties that can be used to
 generate database artifacts like tables, indexes, and constraints in a
 database schema. This helps in prototyping of your application where the
@@ -754,7 +769,9 @@ through the SQL scripts. The database schema is shown.</simpara>
 </inlinemediaobject></simpara>
 <simpara>This folder also contains "sales.csv" which carries some comma-separated
 data, and is used later in the application.</simpara>
-<simpara><emphasis role="strong">3.6</emphasis> <emphasis role="strong">JPA entities, Stateless EJBs, and REST endpoints</emphasis>: Expand "Source
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">JPA entities, Stateless EJBs, and REST endpoints</emphasis>: Expand "Source
 Packages". The package <literal>org.glassfish.movieplex7.entities</literal> contains the
 JPA entities corresponding to the database table definitions. Each JPA
 entity has several convenient @NamedQuery defined and uses Bean
@@ -852,7 +869,9 @@ corresponding REST endpoint is shown.</simpara>
 </informaltable>
 
 <simpara>Feel free to browse through the code.</simpara>
-<simpara><emphasis role="strong">3.7</emphasis> <emphasis role="strong">JSF pages</emphasis>: "WEB-INF/template.xhtml" defines the template of the
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">JSF pages</emphasis>: "WEB-INF/template.xhtml" defines the template of the
 web page and has a header, left navigation bar, and a main content
 section. "index.xhtml" uses this template and the EJBs to display the
 number of movies and theaters.</simpara>
@@ -865,7 +884,9 @@ to be accessible from the pages bundled with the application only. If it
 were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.</simpara>
-<simpara><emphasis role="strong">3.8</emphasis> <emphasis role="strong">Run the sample</emphasis>: Right-click on the project and select "Run".
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Run the sample</emphasis>: Right-click on the project and select "Run".
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on GlassFish 4, and show the URL
 <ulink url="http://localhost:8080/movieplex7">localhost:8080/movieplex7</ulink> in the
@@ -893,6 +914,9 @@ server. Choose the configured GlassFish server and click on "OK".</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="websocket">
 <title>Chat Room (Java API for WebSocket)</title>
@@ -930,10 +954,14 @@ provides support for:</simpara>
 </itemizedlist>
 
 <simpara>This section will build a chat room for movie viewers.</simpara>
-<simpara><emphasis role="strong">4.1</emphasis> Right-click on "Source Packages", select "New", "Java Class…".
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Right-click on "Source Packages", select "New", "Java Class…".
 Give the class name as "ChatServer", package as
 <literal>org.glassfish.movieplex7.chat</literal>, and click on "Finish".</simpara>
-<simpara><emphasis role="strong">4.2</emphasis> Change the class such that it looks like:</simpara>
+</listitem>
+<listitem>
+<simpara>Change the class such that it looks like:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@ServerEndpoint("/websocket")
 public class ChatServer {
     private static final Set&lt;Session&gt; peers =
@@ -959,7 +987,7 @@ public class ChatServer {
 }</programlisting>
 
 <simpara>In this code:</simpara>
-<itemizedlist>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara><literal>@ServerEndpoint</literal> decorates the class to be a WebSocket endpoint. The
 value defines the URI where this endpoint is published.</simpara>
@@ -975,9 +1003,6 @@ message. The first parameter, message, is the payload of the message.
 The second parameter, <literal>client</literal>, defines the other end of the WebSocket
 connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.</simpara>
-</listitem>
-</itemizedlist>
-
 <simpara>Resolve the imports by right-clicking in the editor and selecting "Fix
 Imports" or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
 Windows).</simpara>
@@ -993,9 +1018,16 @@ Windows).</simpara>
 </inlinemediaobject></simpara>
 <simpara>Right-click again in the editor pane and select "Format" to format your
 code.</simpara>
-<simpara><emphasis role="strong">4.3</emphasis> In "Web Pages", select "New", "Folder…", give the folder name as
+</listitem>
+</orderedlist>
+
+</listitem>
+<listitem>
+<simpara>In "Web Pages", select "New", "Folder…", give the folder name as
 "chat" and click on "Finish".</simpara>
-<simpara><emphasis role="strong">4.4</emphasis> Right-click on the newly created folder, select "New", "Other&#8230;",
+</listitem>
+<listitem>
+<simpara>Right-click on the newly created folder, select "New", "Other&#8230;",
 "Java Server Faces", "Facelets Template Client", give the File Name as
 "chatroom". Click on "Browse…" next to "Template:", expand "Web Pages",
 "WEB-INF", select "template.xhtml", and click on "Select File". Click on
@@ -1049,10 +1081,14 @@ There is an explicit button to disconnect the WebSocket connection.
 "output" div is the placeholder for status messages. The WebSocket
 initialization occurs in "websocket.js" included at the bottom of the
 fragment.</simpara>
-<simpara><emphasis role="strong">4.5</emphasis> Right-click on "chat" in "Web Pages", select "New", "Other&#8230;",
+</listitem>
+<listitem>
+<simpara>Right-click on "chat" in "Web Pages", select "New", "Other&#8230;",
 "Web", "JavaScript File".</simpara>
 <simpara>Give the name as "websocket" and click on "Finish".</simpara>
-<simpara><emphasis role="strong">4.6</emphasis> Edit the contents of "websocket.js" such that it looks like:</simpara>
+</listitem>
+<listitem>
+<simpara>Edit the contents of "websocket.js" such that it looks like:</simpara>
 <programlisting language="javascript" linenumbering="unnumbered">var wsUri = 'ws://' + document.location.host
             + document.location.pathname.substr(0,
               document.location.pathname.indexOf("/faces")) +
@@ -1193,7 +1229,9 @@ logged in users as well.
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">4.7</emphasis> Edit "WEB-INF/template.xhtml" and change:</simpara>
+</listitem>
+<listitem>
+<simpara>Edit "WEB-INF/template.xhtml" and change:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</programlisting>
 
 <simpara>to</simpara>
@@ -1206,7 +1244,9 @@ logged in users as well.
 <literal>${facesContext.externalContext.requestContextPath}</literal> provides the request
 URI that identifies the web application context for this request. This
 allows the links in the left navigation bar to be fully-qualified URLs.</simpara>
-<simpara><emphasis role="strong">4.8</emphasis> Run the project by right clicking on the project and selecting
+</listitem>
+<listitem>
+<simpara>Run the project by right clicking on the project and selecting
 "Run". The browser shows
 <ulink url="http://localhost:8080/movieplex7">localhost:8080/movieplex7</ulink>.</simpara>
 <simpara>Click on "Chat Room" to see the output.</simpara>
@@ -1248,6 +1288,9 @@ like as shown.</simpara>
 <simpara>Here it shows output from Chrome on the top and Firefox on the bottom.</simpara>
 <simpara>Chrome Developer Tools or Firebug in Firefox can be used to monitor
 WebSocket traffic.</simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="batch">
 <title>Ticket Sales (Batch Applications for the Java Platform)</title>
@@ -1265,7 +1308,7 @@ jobs.</simpara>
     <imagedata fileref="images/5.0-batch-intro.png"/>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
-</inlinemediaobject><?asciidoc-br?></simpara>
+</inlinemediaobject></simpara>
 <simpara>The core concepts of Batch Processing are:</simpara>
 <itemizedlist>
 <listitem>
@@ -1301,10 +1344,14 @@ aggregated, they are written out, and the transaction is committed.</simpara>
 
 <simpara>This section will read the cumulative sales for each show from a CSV
 file and populate them in a database.</simpara>
-<simpara><emphasis role="strong">5.1</emphasis> Right-click on Source Packages, select "New", "Java Package…",
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Right-click on Source Packages, select "New", "Java Package…",
 specify the value as "org.glassfish.movieplex7.batch", and click on
 "Finish".</simpara>
-<simpara><emphasis role="strong">5.2</emphasis> Right-click on newly created package, select "New", "Java Class…",
+</listitem>
+<listitem>
+<simpara>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "SalesReader". Make this class extend from
 <literal>AbstractItemReader</literal>, change the class definition and add:</simpara>
 <programlisting language="java" linenumbering="unnumbered">extends AbstractItemReader</programlisting>
@@ -1318,7 +1365,9 @@ injected in Job XML. Add <literal>@Dependent</literal> as another class-level an
 mark this bean as a bean defining annotation so that this bean is
 available for injection.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.3</emphasis> Add the following code:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following code:</simpara>
 <programlisting language="java" linenumbering="unnumbered">private BufferedReader reader;
 
 Override open() method to initialize the reader:
@@ -1344,7 +1393,9 @@ that show. Note that the last line (5<superscript>th</superscript> record in the
 intentional typo. In addition, 17<superscript>th</superscript> record also has an additional
 typo. The lab will use these lines to demonstrate how to handle parsing
 errors.</simpara>
-<simpara><emphasis role="strong">5.4</emphasis> Override the following method from the abstract class:</simpara>
+</listitem>
+<listitem>
+<simpara>Override the following method from the abstract class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Override
 public String readItem() {
     String string = null;
@@ -1360,7 +1411,9 @@ public String readItem() {
 <literal>null</literal> to indicate end of stream. Note end of stream indicates end of chunk,
 so the current chunk will be committed and the step will end.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.5</emphasis> Right-click on "org.glassfish.movieplex7.batch" package, select
+</listitem>
+<listitem>
+<simpara>Right-click on "org.glassfish.movieplex7.batch" package, select
 "New", "Java Class…", specify the name as "SalesProcessor". Change the
 class definition and add:</simpara>
 <programlisting language="java" linenumbering="unnumbered">implements ItemProcessor</programlisting>
@@ -1373,7 +1426,9 @@ the pre-packaged JPA entity with the application starter source code.</simpara>
 <simpara>Add <literal>@Named</literal> and <literal>@Dependent</literal> as class-level annotations so that it allows
 the bean to be injected in Job XML.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.6</emphasis> Add implementation of the abstract method from the interface as:</simpara>
+</listitem>
+<listitem>
+<simpara>Add implementation of the abstract method from the interface as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Override
 public Sales processItem(Object s) {
     Sales sales = new Sales();
@@ -1394,7 +1449,9 @@ method is implemented where any parsing errors are thrown as exception.
 Job XML can be instructed to skip these exceptions and thus that
 particular record is skipped from aggregation as well (shown later).</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.7</emphasis> Right-click on "org.glassfish.movieplex7.batch" package, select
+</listitem>
+<listitem>
+<simpara>Right-click on "org.glassfish.movieplex7.batch" package, select
 "New", "Java Class…", specify the name as "SalesWriter". Change the
 class definition and add:</simpara>
 <programlisting language="java" linenumbering="unnumbered">extends AbstractItemWriter</programlisting>
@@ -1406,7 +1463,9 @@ items.</simpara>
 <simpara>Add <literal>@Named</literal> and <literal>@Dependent</literal> as class-level annotations so that it allows
 the bean to be injected in Job XML.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.8</emphasis> Inject <literal>EntityManager</literal> as:</simpara>
+</listitem>
+<listitem>
+<simpara>Inject <literal>EntityManager</literal> as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@PersistenceContext EntityManager em;</programlisting>
 
 <simpara>Override the following method from the abstract class:</simpara>
@@ -1433,7 +1492,9 @@ is called, committed if no checked exceptions are thrown, and rolled
 back if runtime exceptions are thrown. This behavior can be overridden
 using <literal>rollbackOn</literal> and <literal>dontRollbackOn</literal> attributes of the annotation.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.9</emphasis> Create Job XML that defines the job, step, and chunk.</simpara>
+</listitem>
+<listitem>
+<simpara>Create Job XML that defines the job, step, and chunk.</simpara>
 <simpara>In "Files" tab, expand the project &#8594; "src" &#8594; "main" &#8594; "resources",
 right-click on "resources", "META-INF", select "New", "Folder…", specify
 the name as "batch-jobs", and click on "Finish".</simpara>
@@ -1470,7 +1531,9 @@ allows skipping the exception, ignore that particular element, and
 continue processing. If this element is not specified then the batch
 processing will halt. The <literal>skip-limit</literal> attribute specifies the number of
 exceptions a step will skip.</simpara>
-<simpara><emphasis role="strong">5.10</emphasis> Lets invoke the batch job.</simpara>
+</listitem>
+<listitem>
+<simpara>Lets invoke the batch job.</simpara>
 <simpara>Right-click on "org.glassfish.movieplex7.batch" package, select "New",
 "Java Class…". Enter the name as "SalesBean" and click on "Finish"
 button.</simpara>
@@ -1499,7 +1562,9 @@ the bean to be injectable in an EL expression.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">5.11</emphasis> Inject EntityManagerFactory in the class as:</simpara>
+</listitem>
+<listitem>
+<simpara>Inject EntityManagerFactory in the class as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@PersistenceUnit EntityManagerFactory emf;</programlisting>
 
 <simpara>and add the following method:</simpara>
@@ -1513,7 +1578,9 @@ the bean to be injectable in an EL expression.</simpara>
 <simpara>This method uses a pre-defined <literal>@NamedQuery</literal> to query the database and
 return all the rows from the table.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">5.12</emphasis> Right-click on "Web Pages", select "New", "Folder…", specify the
+</listitem>
+<listitem>
+<simpara>Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "batch", and click on "Finish".</simpara>
 <simpara>Right-click on the newly created folder, select "New", "Other…",
 "JavaServer Faces", "Facelets Template Client", and click on "Next &gt;".</simpara>
@@ -1556,14 +1623,18 @@ invoking the job that processes the CSV file and populates the database.
 The second command button refreshes the page.</simpara>
 <simpara>Right-click on the yellow bulb to fix namespace prefix/URI mapping. This
 needs to be repeated for h: and f: prefix.</simpara>
-<simpara><emphasis role="strong">5.13</emphasis> Add the following code in "template.xhtml" along with other
+</listitem>
+<listitem>
+<simpara>Add the following code in "template.xhtml" along with other
 `&lt;outputLink&gt;`s:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;p/&gt;&lt;h:outputLink
     value="${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml"&gt;
     Sales
     &lt;/h:outputLink&gt;</programlisting>
 
-<simpara><emphasis role="strong">5.14</emphasis> Run the project to see the output as shown.</simpara>
+</listitem>
+<listitem>
+<simpara>Run the project to see the output as shown.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/5.14-sales.png"/>
@@ -1571,7 +1642,9 @@ needs to be repeated for h: and f: prefix.</simpara>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Notice, a new "Sales" entry is displayed in the left navigation bar.</simpara>
-<simpara><emphasis role="strong">5.15</emphasis> Click on "Sales" to see the output as shown.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on "Sales" to see the output as shown.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/5.15-sales.png"/>
@@ -1579,7 +1652,9 @@ needs to be repeated for h: and f: prefix.</simpara>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>The empty table indicates that there is no sales data in the database.</simpara>
-<simpara><emphasis role="strong">5.16</emphasis> Click on "Run Job" button to initiate data processing of CSV
+</listitem>
+<listitem>
+<simpara>Click on "Run Job" button to initiate data processing of CSV
 file. Look for "Waiting for localhost&#8230;" in the browser status bar,
 wait for a couple of seconds for the processing to finish, and then
 click on "Refresh" button to see the updated output as shown.</simpara>
@@ -1593,6 +1668,9 @@ click on "Refresh" button to see the updated output as shown.</simpara>
 <simpara>Note that record 5 is missing from the table, as this records did not
 have correct numeric entries for the sales total. The Job XML for the
 application explicitly mentioned to skip such errors.</simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="jaxrs">
 <title>View and Delete Movie (Java API for RESTful Web Services)</title>
@@ -1625,11 +1703,15 @@ return type.</simpara>
 <simpara>This section will provide the ability to view all the movies, details of
 a selected movie, and delete an existing movie using the JAX-RS Client
 API.</simpara>
-<simpara><emphasis role="strong">6.1</emphasis> Right-click on "Source Packages", select "New", "Java Class…".
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Right-click on "Source Packages", select "New", "Java Class…".
 Give the class name as "MovieClientBean", package as
 "org.glassfish.movieplex7.client", and click on "Finish".</simpara>
 <simpara>This bean will be used to invoke the REST endpoint.</simpara>
-<simpara><emphasis role="strong">6.2</emphasis> Add <literal>@Named</literal> and <literal>@RequestScoped</literal> class-level annotations. This allows
+</listitem>
+<listitem>
+<simpara>Add <literal>@Named</literal> and <literal>@RequestScoped</literal> class-level annotations. This allows
 the class to be injected in an EL expression and also defines the bean
 to be automatically activated and passivated with the request.</simpara>
 <simpara>Resolve the imports.</simpara>
@@ -1643,7 +1725,9 @@ to be automatically activated and passivated with the request.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">6.3</emphasis> Add the following code to the class:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following code to the class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">Client client;
 WebTarget target;
 
@@ -1668,7 +1752,9 @@ close it appropriately.</simpara>
 <simpara>In this case, <literal>Client</literal> instance is created and destroyed in the lifecycle
 callback methods. The endpoint URI is set on this instance by calling
 the target method.</simpara>
-<simpara><emphasis role="strong">6.4</emphasis> Add the following method to the class:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following method to the class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public Movie[] getMovies() {
     return target
         .request()
@@ -1677,8 +1763,10 @@ the target method.</simpara>
 
 <simpara>A request is prepared by calling the request method. HTTP GET method is
 invoked by calling get method. The response type is specified in the
-last method call and so return value is of the type Movie[].</simpara>
-<simpara><emphasis role="strong">6.5</emphasis> Right-click on "Web Pages", select "New", "Folder…", specify the
+last method call and so return value is of the type <literal>Movie[]</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "client", and click on "Finish".</simpara>
 <simpara>Right-click on the newly created folder, select "New", "Other…",
 "JavaServer Faces", "Facelets Template Client", and click on "Next &gt;".</simpara>
@@ -1687,7 +1775,9 @@ expand "Web Pages", "WEB-INF", select "template.xhtml", and click on
 "Select File". Click on "Finish".</simpara>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
 "top" and "left". These sections are inherited from the template.</simpara>
-<simpara><emphasis role="strong">6.6</emphasis> Replace the content inside <literal>&lt;ui:define&gt;</literal> with "content" with the
+</listitem>
+<listitem>
+<simpara>Replace the content inside <literal>&lt;ui:define&gt;</literal> with "content" with the
 code fragment shown below:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:form prependId="false"&gt;
     &lt;h:selectOneRadio value="#{movieBackingBean.movieId}" layout="pageDirection"&gt;
@@ -1713,7 +1803,9 @@ and <literal>f:</literal> prefixes.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">6.7</emphasis> Right-click on "org.glassfish.movieplex7.client" package, select
+</listitem>
+<listitem>
+<simpara>Right-click on "org.glassfish.movieplex7.client" package, select
 "New", "Java Class…", specify the value as "MovieBackingBean" and click
 on "Finish".</simpara>
 <simpara>Add the following field:</simpara>
@@ -1729,7 +1821,9 @@ on "Finish".</simpara>
 <simpara>Make sure to import <literal>javax.enterprise.context.SessionScoped</literal>.</simpara>
 </warning>
 
-<simpara><emphasis role="strong">6.8</emphasis> In "template.xhtml", add the following code in <literal>&lt;ui:insert&gt;</literal> with
+</listitem>
+<listitem>
+<simpara>In "template.xhtml", add the following code in <literal>&lt;ui:insert&gt;</literal> with
 name="left".</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;p/&gt;&lt;h:outputLink
         value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml"&gt;
@@ -1746,12 +1840,16 @@ in the left navigation bar shows the output as shown.</simpara>
 </inlinemediaobject></simpara>
 <simpara>The list of all the movies with a radio button next to them is
 displayed.</simpara>
-<simpara><emphasis role="strong">6.9</emphasis> In <literal>MovieClientBean</literal>, inject <literal>MovieBackingBean</literal> to read the value
+</listitem>
+<listitem>
+<simpara>In <literal>MovieClientBean</literal>, inject <literal>MovieBackingBean</literal> to read the value
 of selected movie from the page. Add the following code:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Inject
 MovieBackingBean bean;</programlisting>
 
-<simpara><emphasis role="strong">6.10</emphasis> In <literal>MovieClientBean</literal>, add the following method:</simpara>
+</listitem>
+<listitem>
+<simpara>In <literal>MovieClientBean</literal>, add the following method:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public Movie getMovie() {
     Movie m = target
         .path("{movie}")
@@ -1766,7 +1864,9 @@ MovieBackingBean bean;</programlisting>
 endpoint, defined using <literal>{movie}</literal>, and binds it to a concrete value using
 <literal>resolveTemplate</literal> method. The return type is specified as a parameter to
 the get method.</simpara>
-<simpara><emphasis role="strong">6.11</emphasis> Right-click on "client" folder, select "New", "Facelets Template
+</listitem>
+<listitem>
+<simpara>Right-click on "client" folder, select "New", "Facelets Template
 Client", give the File Name as "movie". Click on "Browse…" next to
 "Template:", expand "Web Pages", "WEB-INF", select "template.xhtml", and
 click on "Select File". Click on "Finish".</simpara>
@@ -1796,7 +1896,9 @@ fragment shown below:</simpara>
 <simpara>Click on the yellow-bulb to resolve the namespace prefix-URI mapping for
 <literal>h:</literal>. The output values are displayed by calling the <literal>getMovie</literal> method and
 using the <literal>id</literal>, <literal>name</literal>, and <literal>actors</literal> property values.</simpara>
-<simpara><emphasis role="strong">6.12</emphasis> Run the project, select "Movies" in the left navigation bar,
+</listitem>
+<listitem>
+<simpara>Run the project, select "Movies" in the left navigation bar,
 select a radio button next to any movie, and click on details to see the
 output as shown.</simpara>
 <simpara><inlinemediaobject>
@@ -1806,7 +1908,9 @@ output as shown.</simpara>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Click on the "Back" button to select another movie.</simpara>
-<simpara><emphasis role="strong">6.13</emphasis> Add the ability to delete a movie. In "movies.xhtml", add the
+</listitem>
+<listitem>
+<simpara>Add the ability to delete a movie. In "movies.xhtml", add the
 following code with the other commandButton.</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:commandButton
     value="Delete"
@@ -1815,7 +1919,9 @@ following code with the other commandButton.</simpara>
 
 <simpara>This button displays a label "Delete", invokes the method deleteMovie
 from "MovieClientBean", and then renders "movies.xhtml".</simpara>
-<simpara><emphasis role="strong">6.14</emphasis> Add the following code to "MovieClientBean":</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following code to "MovieClientBean":</simpara>
 <programlisting language="java" linenumbering="unnumbered">public void deleteMovie() {
     target
         .path("{movieId}")
@@ -1840,6 +1946,9 @@ prepared and then delete method is called to delete the resource.</simpara>
 <simpara>Select a movie and click on Delete button. This deletes the movie from
 the database and refreshes list on the page. Note that a redeploy of the
 project will delete all the movies anyway and add them all back.</simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="json">
 <title>Add Movie (Java API for JSON Processing)</title>
@@ -1872,17 +1981,21 @@ interfaces.</simpara>
 <simpara>This section will provide the ability to add a new movie to the
 application. Typically, this functionality will be available after
 proper authentication and authorization.</simpara>
-<simpara><emphasis role="strong">7.1</emphasis> Right-click on Source Packages, select "New", "Java Package…",
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Right-click on Source Packages, select "New", "Java Package…",
 specify the value as "org.glassfish.movieplex7.json", and click on
 "Finish".</simpara>
-<simpara><emphasis role="strong">7.2</emphasis> Right-click on newly created package, select "New", "Java Class…",
+</listitem>
+<listitem>
+<simpara>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "MovieReader", and click on "Finish". Add the
 following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Provider
 @Consumes(MediaType.APPLICATION_JSON)</programlisting>
 
 <simpara><literal>@Provider</literal> allows this implementation to be discovered by the JAX-RS
-runtime during the provider scanning phase. @Consumes indicates that
+runtime during the provider scanning phase. <literal>@Consumes</literal> indicates that
 this implementation will consume a JSON representation of the resource.</simpara>
 <simpara>Make sure to resolve imports from the appropriate package as shown.</simpara>
 <simpara><inlinemediaobject>
@@ -1891,7 +2004,9 @@ this implementation will consume a JSON representation of the resource.</simpara
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">7.3</emphasis> Make the class implements <literal>MessageBodyReader&lt;Movie&gt;</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Make the class implements <literal>MessageBodyReader&lt;Movie&gt;</literal>.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/7.3-implements.png"/>
@@ -1900,12 +2015,16 @@ this implementation will consume a JSON representation of the resource.</simpara
 </inlinemediaobject></simpara>
 <simpara>Click on the hint (shown as yellow bulb) on the class definition and
 select "Implement all abstract methods".</simpara>
-<simpara><emphasis role="strong">7.4</emphasis> Change implementation of the <literal>isReadable</literal> method as:</simpara>
+</listitem>
+<listitem>
+<simpara>Change implementation of the <literal>isReadable</literal> method as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">return Movie.class.isAssignableFrom(type);</programlisting>
 
 <simpara>This method ascertains if the <literal>MessageBodyReader</literal> can produce an instance
 of a particular type.</simpara>
-<simpara><emphasis role="strong">7.5</emphasis> Replace the readFrom method to:</simpara>
+</listitem>
+<listitem>
+<simpara>Replace the readFrom method to:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Override
 public Movie readFrom(
     Class&lt;Movie&gt; type,
@@ -1948,7 +2067,9 @@ public Movie readFrom(
 parser, is created from the input stream. Key values are read from the
 parser and a <literal>Movie</literal> instance is populated and returned.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">7.6</emphasis> Right-click on newly created package, select "New", "Java Class…",
+</listitem>
+<listitem>
+<simpara>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "MovieWriter", and click on "Finish". Add the
 following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Provider
@@ -1964,7 +2085,9 @@ this implementation will produce a JSON representation of the resource.</simpara
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">7.7</emphasis> Make this class implements <literal>MessageBodyWriter&lt;Movie&gt;</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Make this class implements <literal>MessageBodyWriter&lt;Movie&gt;</literal>.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/7.7-implements.png"/>
@@ -1973,19 +2096,25 @@ this implementation will produce a JSON representation of the resource.</simpara
 </inlinemediaobject></simpara>
 <simpara>Click on the hint (show as yellow bulb) on the class definition and
 select "Implement all abstract methods".</simpara>
-<simpara><emphasis role="strong">7.8</emphasis> Change implementation of the <literal>isWritable</literal> method to:</simpara>
+</listitem>
+<listitem>
+<simpara>Change implementation of the <literal>isWritable</literal> method to:</simpara>
 <programlisting language="java" linenumbering="unnumbered">return Movie.class.isAssignableFrom(type);</programlisting>
 
 <simpara>This method ascertains if the <literal>MessageBodyWriter</literal> supports a particular
 type.</simpara>
-<simpara><emphasis role="strong">7.9</emphasis> Add implementation of the <literal>getSize</literal> method as:</simpara>
+</listitem>
+<listitem>
+<simpara>Add implementation of the <literal>getSize</literal> method as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">return -1;</programlisting>
 
 <simpara>Originally, this method was called to ascertain the length in bytes of
 the serialized form of <literal>t</literal>. In JAX-RS 2.0, this method is deprecated and
 the value returned by the method is ignored by a JAX-RS runtime. All
 <literal>MessageBodyWriter</literal> implementations are advised to return -1.</simpara>
-<simpara><emphasis role="strong">7.10</emphasis> Change implementation of the <literal>writeTo</literal> method as:</simpara>
+</listitem>
+<listitem>
+<simpara>Change implementation of the <literal>writeTo</literal> method as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public void writeTo(Movie t,
     Class&lt;?&gt; type,
     Type type1,
@@ -2004,11 +2133,13 @@ the value returned by the method is ignored by a JAX-RS runtime. All
         gen.flush();
 }</programlisting>
 
-<simpara>This method writes a type to an HTTP message. JsonGenerator writes JSON
+<simpara>This method writes a type to an HTTP message. <literal>JsonGenerator</literal> writes JSON
 data to an output stream in a streaming way. Overloaded write methods
 are used to write different data types to the stream.</simpara>
 <simpara>Resolve the imports.</simpara>
-<simpara><emphasis role="strong">7.11</emphasis> In "Web Pages", right-click on "client" folder, select "New",
+</listitem>
+<listitem>
+<simpara>In "Web Pages", right-click on "client" folder, select "New",
 "Facelets Template Client".</simpara>
 <simpara>Give the File Name as "addmovie". Click on "Browse…" next to
 "Template:", expand "Web Pages", "WEB-INF", select "template.xhtml", and
@@ -2051,17 +2182,23 @@ prefix/URI mapping as shown.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">7.12</emphasis> Add <literal>movieName</literal> and <literal>actors</literal> field to <literal>MovieBackingBean</literal> as:</simpara>
+</listitem>
+<listitem>
+<simpara>Add <literal>movieName</literal> and <literal>actors</literal> field to <literal>MovieBackingBean</literal> as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">String movieName;
 String actors;</programlisting>
 
 <simpara>Generate getters and setters by clicking on the menu item "Source" and
 then "Insert Code&#8230;".</simpara>
-<simpara><emphasis role="strong">7.13</emphasis> Add the following code to "movies.xhtml"</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following code to "movies.xhtml"</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:commandButton value="New Movie" action="addmovie" /&gt;</programlisting>
 
-<simpara>along with rest of the &lt;commandButton&gt;s.</simpara>
-<simpara><emphasis role="strong">7.14</emphasis> Add the following method in <literal>MovieClientBean</literal>:</simpara>
+<simpara>along with rest of the `&lt;commandButton&gt;`s.</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following method in <literal>MovieClientBean</literal>:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public void addMovie() {
     Movie m = new Movie();
     m.setId(bean.getMovieId());
@@ -2085,7 +2222,9 @@ the POJO to JSON. Media type of "application/json" is specified using
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">7.15</emphasis> Run the project to see the updated main page as:</simpara>
+</listitem>
+<listitem>
+<simpara>Run the project to see the updated main page as:</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/7.15-output.png"/>
@@ -2093,7 +2232,9 @@ the POJO to JSON. Media type of "application/json" is specified using
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>A new movie can be added by clicking on "New Movie" button.</simpara>
-<simpara><emphasis role="strong">7.16</emphasis> Enter the details as shown:</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the details as shown:</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/7.16-output.png"/>
@@ -2112,6 +2253,9 @@ sequence; however this is not done in the application.</simpara>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Note that the newly added movie is now displayed.</simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="jms">
 <title>Movie Points (Java Message Service)</title>
@@ -2142,10 +2286,14 @@ previous version such as:</simpara>
 accrued by a customer. These points are submitted to a JMS queue that is
 then read synchronously by another bean. JMS queue for further
 processing, possibly storing in the database using JPA.</simpara>
-<simpara><emphasis role="strong">8.1</emphasis> Right-click on Source Packages, select "New", "Java Package…",
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Right-click on Source Packages, select "New", "Java Package…",
 specify the value as "org.glassfish.movieplex7.points", and click on
 "Finish".</simpara>
-<simpara><emphasis role="strong">8.2</emphasis> Right-click on newly created package, select "New", "Java Class…",
+</listitem>
+<listitem>
+<simpara>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "SendPointsBean".</simpara>
 <simpara>Add the following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Named
@@ -2160,7 +2308,9 @@ passivated with the request.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">8.3</emphasis> A message to a JMS Queue is sent after the customer has bought the
+</listitem>
+<listitem>
+<simpara>A message to a JMS Queue is sent after the customer has bought the
 tickets. Another bean will then retrieve this message and update the
 points for that customer. This allows the two systems, one generating
 the data about tickets purchased and the other about crediting the
@@ -2185,7 +2335,9 @@ points accrued by that customer.</simpara>
 <simpara>Generate getter/setters for this field. Right-click in the editor pane,
 select "Insert Code" (Ctrl + I shortcut on Mac), select "Getter and
 Setter…", select the field, and click on "Generate".</simpara>
-<simpara><emphasis role="strong">8.4</emphasis> Add the following code to the class:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following code to the class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Inject
 JMSContext context;
 
@@ -2201,12 +2353,12 @@ public void sendMessage() \{
 under the JNDI name <literal>java:comp/DefaultJMSConnectionFactory</literal>. If no
 connection factory is specified then the pre-configured connection
 factory is used. In a Java EE environment, where CDI is enabled by
-default anyway, a container-managed JMSContext can be injected as:</simpara>
+default anyway, a container-managed <literal>JMSContext</literal> can be injected as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Inject
 JMSContext context;</programlisting>
 
 <simpara>This code uses the default factory to inject an instance of
-container-managed JMSContext.</simpara>
+container-managed <literal>JMSContext</literal>.</simpara>
 <simpara><literal>JMSContext</literal> is a new interface introduced in JMS 2. This combines in a
 single object the functionality of two separate objects from the JMS 1.1
 API: a <literal>Connection</literal> and a <literal>Session</literal>.</simpara>
@@ -2229,7 +2381,9 @@ default <literal>java.util.Queue</literal>.</simpara>
 </warning>
 
 <simpara>Click on "OK".</simpara>
-<simpara><emphasis role="strong">8.5</emphasis> Right-click on "org.glassfish.movieplex7.points" package, select
+</listitem>
+<listitem>
+<simpara>Right-click on "org.glassfish.movieplex7.points" package, select
 "New", "Java Class…", specify the name as "ReceivePointsBean".</simpara>
 <simpara>Add the following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@JMSDestinationDefinition(name = "java:global/jms/pointsQueue",
@@ -2244,7 +2398,9 @@ used by the application to provision the required resources and allow an
 application to be deployed into a Java EE environment with minimal
 administrative configuration. This code will create Queue with the JNDI
 name <literal>java:global/jms/pointsQueue</literal>.</simpara>
-<simpara><emphasis role="strong">8.6</emphasis> Add the following code to the class:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following code to the class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Inject
 JMSContext context;
 
@@ -2260,7 +2416,9 @@ public String receiveMessage() {
 <simpara>This code is very similar to <literal>SendPointsBean</literal>. The <literal>createConsumer</literal> method
 creates <literal>JMSConsumer</literal> which is then used to synchronously receive a
 message.</simpara>
-<simpara><emphasis role="strong">8.7</emphasis> Add the following method to the class:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following method to the class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public int getQueueSize() {
     int count = 0;
     try {
@@ -2281,7 +2439,9 @@ without removing them. It calculates and returns the total number of
 messages in the queue.</simpara>
 <simpara>Make sure to resolve the import from <literal>javax.jms.Queue</literal>, take all other
 defaults.</simpara>
-<simpara><emphasis role="strong">8.8</emphasis> Right-click on "Web Pages", select "New", "Folder…", specify the
+</listitem>
+<listitem>
+<simpara>Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "points", and click on "Finish".</simpara>
 <simpara>In "Web Pages", right-click on newly created folder, select "Facelets
 Template Client", give the File Name as "points". Click on "Browse…"
@@ -2320,14 +2480,18 @@ by 1 in this case, is displayed. The second command button invokes
 queue count is updated again, decremented by 1 in this case.</simpara>
 <simpara>If the message does not meet the validation criteria then the error
 message is displayed on the screen.</simpara>
-<simpara><emphasis role="strong">8.9</emphasis> Add the following code in "template.xhtml" along with other
+</listitem>
+<listitem>
+<simpara>Add the following code in "template.xhtml" along with other
 `&lt;outputLink&gt;`s:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;p/&gt;&lt;h:outputLink
         value="${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml"&gt;
         Points
     &lt;/h:outputLink&gt;</programlisting>
 
-<simpara><emphasis role="strong">8.10</emphasis> Run the project. The update page looks like as shown:</simpara>
+</listitem>
+<listitem>
+<simpara>Run the project. The update page looks like as shown:</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/8.10-output.png"/>
@@ -2386,6 +2550,9 @@ queue has 0 messages.</simpara>
 </inlinemediaobject></simpara>
 <simpara>The count is once again updated to reflect the 2 consumed and 2
 remaining messages in the queue.</simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="jsf">
 <title>Show Booking (JavaServer Faces)</title>
@@ -2406,7 +2573,7 @@ pages. Usually the objects in a flow are designed to allow the user to
 accomplish a task that requires input over a number of different views.</simpara>
 <simpara>This application will build a flow that allows the user to make a movie
 reservation. The flow will contain four pages:</simpara>
-<orderedlist numeration="arabic">
+<itemizedlist>
 <listitem>
 <simpara>Display the list of movies</simpara>
 </listitem>
@@ -2419,19 +2586,26 @@ reservation. The flow will contain four pages:</simpara>
 <listitem>
 <simpara>Make the reservation and show the ticket</simpara>
 </listitem>
-</orderedlist>
+</itemizedlist>
 
-<simpara><emphasis role="strong">9.1</emphasis> Items in a flow are logically related to each other and so it is
+<simpara>Lets build the application.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Items in a flow are logically related to each other and so it is
 required to keep them together in a directory. In NetBeans, right-click
 on the "Web Pages", select "New", "Folder…", specify the folder name
 "booking", and click on "Finish".</simpara>
-<simpara><emphasis role="strong">9.2</emphasis> Right-click on the newly created folder, select "New", "Facelets
+</listitem>
+<listitem>
+<simpara>Right-click on the newly created folder, select "New", "Facelets
 Template Client", give the File Name as "booking". Click on "Browse…"
 next to "Template:", expand "Web Pages", "WEB-INF", select
 "template.xhtml", and click on "Select File". Click on "Finish".</simpara>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
 "top" and "left". These sections are inherited from the template.</simpara>
-<simpara><emphasis role="strong">9.3</emphasis> "booking.xhtml" is the entry point to the flow (more on this
+</listitem>
+<listitem>
+<simpara>"booking.xhtml" is the entry point to the flow (more on this
 later). Replace the <literal>&lt;ui:define&gt;</literal> with name="content" section such that it
 looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
@@ -2464,7 +2638,9 @@ add namespace prefix. Do the same for f: prefix as shown.</simpara>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<simpara><emphasis role="strong">9.4</emphasis> Right-click on "Source Packages", select "New", "Java Class…".
+</listitem>
+<listitem>
+<simpara>Right-click on "Source Packages", select "New", "Java Class…".
 Specify the class name as "Booking" and the package name as
 "org.glassfish.movieplex7.booking".</simpara>
 <simpara>Add <literal>@Named</literal> class-level annotation to make the class EL-injectable. Add
@@ -2496,7 +2672,9 @@ EntityManager em;</programlisting>
 <simpara>Alternatively, movie id and name may be passed from the selected radio
 button and parsed in the backing bean. This will reduce an extra trip to
 the database.</simpara>
-<simpara><emphasis role="strong">9.5</emphasis> Create "showtimes.xhtml" in the "booking" folder following the
+</listitem>
+<listitem>
+<simpara>Create "showtimes.xhtml" in the "booking" folder following the
 steps in section 9.2. Replace "content" <literal>&lt;ui:define&gt;</literal> section such that it
 looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
@@ -2524,7 +2702,9 @@ but all the show times are shown here. This allows us to demonstrate
 going back and forth within a flow if an incorrect show time for a movie
 is chosen. A different query may be written that displays only the shows
 available for this movie; however this is not part of the application.</simpara>
-<simpara><emphasis role="strong">9.6</emphasis> Add the following fields to the Booking class:</simpara>
+</listitem>
+<listitem>
+<simpara>Add the following fields to the Booking class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">String startTime;
 int startTimeId;</programlisting>
 
@@ -2574,7 +2754,9 @@ following method:</simpara>
 and show the timing.</simpara>
 <simpara>Additionally a list of theaters offering that movie may be shown in a
 separate page.</simpara>
-<simpara><emphasis role="strong">9.7</emphasis> Create "confirm.xhtml" page in the "booking" folder by following
+</listitem>
+<listitem>
+<simpara>Create "confirm.xhtml" page in the "booking" folder by following
 the steps defined in 9.2. Replace "content" <literal>&lt;ui:define&gt;</literal> section such
 that it looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
@@ -2607,7 +2789,9 @@ is the last page that shows the confirmed reservation.</simpara>
 <simpara><literal>actionListener</literal> can be added to <literal>commandButton</literal> to invoke the business
 logic for making the reservation. Additional pages may be added to take
 the credit card details and email address.</simpara>
-<simpara><emphasis role="strong">9.8</emphasis> Create "print.xhtml" page in the "booking" folder by following the
+</listitem>
+<listitem>
+<simpara>Create "print.xhtml" page in the "booking" folder by following the
 steps defined in 9.2 and replace "content" <literal>&lt;ui:define&gt;</literal> section such that
 it looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
@@ -2624,7 +2808,9 @@ it looks like:</simpara>
 theater.</simpara>
 <simpara>The <literal>commandButton</literal> initiates exit from the flow. The <literal>action</literal> attribute
 defines a navigation rule that will be defined in the next step.</simpara>
-<simpara><emphasis role="strong">9.9</emphasis> "booking.xhtml", "showtimes.xhtml", "confirm.xhtml", and
+</listitem>
+<listitem>
+<simpara>"booking.xhtml", "showtimes.xhtml", "confirm.xhtml", and
 "print.xhtml" are all in the same directory. Now the runtime needs to be
 informed that the views in this directory are to be treated as view
 nodes in a flow. This can be done by adding "booking/booking-flow.xml"
@@ -2651,7 +2837,9 @@ any "faces-config.xml" but defines a <literal>&lt;flow-definition&gt;</literal>.
 <simpara><literal>&lt;flow-return&gt;</literal> defines a return node in a flow graph. <literal>&lt;from-outcome&gt;</literal>
 contains the node value, or an EL expression that defines the node, to
 return to. In this case, the navigation returns to the home page.</simpara>
-<simpara><emphasis role="strong">9.10</emphasis> Finally, invoke the flow by editing "WEB-INF/template.xhtml" and
+</listitem>
+<listitem>
+<simpara>Finally, invoke the flow by editing "WEB-INF/template.xhtml" and
 changing:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:commandLink action="item1"&gt;Item 1&lt;/h:commandLink&gt;</programlisting>
 
@@ -2662,7 +2850,9 @@ changing:</simpara>
 button. The action attribute points to the directory where all views for
 the flow are stored. This directory already contains "booking-flow.xml"
 which defines the flow of the pages.</simpara>
-<simpara><emphasis role="strong">9.11</emphasis> Run the project by right clicking on the project and selecting
+</listitem>
+<listitem>
+<simpara>Run the project by right clicking on the project and selecting
 "Run". The browser shows the updated output.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
@@ -2703,15 +2893,18 @@ on "Confirm" to see the output as shown.</simpara>
 <simpara>Feel free to enter other combinations, go back and forth in the flow and
 notice how the values in the bean are preserved.</simpara>
 <simpara>Click on "home" takes to the main application page.</simpara>
+</listitem>
+</orderedlist>
+
 </chapter>
 <chapter id="_conclusion">
 <title>Conclusion</title>
 <simpara>This hands-on lab built a trivial 3-tier web application using Java EE 7
 and demonstrated the following features of the platform:</simpara>
-<itemizedlist>
+<orderedlist numeration="arabic">
 <listitem>
-<simpara>Java EE 7 Platform (JSR 342)</simpara>
-<itemizedlist>
+<simpara>Java EE 7 Platform</simpara>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Maven coordinates</simpara>
 </listitem>
@@ -2721,33 +2914,60 @@ and demonstrated the following features of the platform:</simpara>
 <listitem>
 <simpara>Default JMSConnectionFactory</simpara>
 </listitem>
-</itemizedlist>
+</orderedlist>
 
 </listitem>
 <listitem>
-<simpara>Java Persistence API 2.1 (JSR 338)</simpara>
-<itemizedlist>
+<simpara>Java API for WebSocket 1.0</simpara>
+<orderedlist numeration="loweralpha">
 <listitem>
-<simpara>Schema generation properties</simpara>
+<simpara>Annotated server endpoint</simpara>
 </listitem>
-</itemizedlist>
+<listitem>
+<simpara>JavaScript client</simpara>
+</listitem>
+</orderedlist>
 
 </listitem>
 <listitem>
-<simpara>Java API for RESTful Web Services 2.0 (JSR 339)</simpara>
-<itemizedlist>
+<simpara>Batch Applications for the Java Platform 1.0</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Chunk-style processing</simpara>
+</listitem>
+<listitem>
+<simpara>Exception handling</simpara>
+</listitem>
+</orderedlist>
+
+</listitem>
+<listitem>
+<simpara>Java API for JSON Processing 1.0</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Streaming API for generating JSON</simpara>
+</listitem>
+<listitem>
+<simpara>Streaming API for consuming JSON</simpara>
+</listitem>
+</orderedlist>
+
+</listitem>
+<listitem>
+<simpara>Java API for RESTful Web Services 2.0</simpara>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Client API</simpara>
 </listitem>
 <listitem>
 <simpara>Custom Entity Providers</simpara>
 </listitem>
-</itemizedlist>
+</orderedlist>
 
 </listitem>
 <listitem>
-<simpara>Java Message Service 2.0 (JSR 343)</simpara>
-<itemizedlist>
+<simpara>Java Message Service 2.0</simpara>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Default ConnectionFactory</simpara>
 </listitem>
@@ -2757,85 +2977,58 @@ and demonstrated the following features of the platform:</simpara>
 <listitem>
 <simpara>Synchronous message send and receive</simpara>
 </listitem>
-</itemizedlist>
+</orderedlist>
 
 </listitem>
 <listitem>
-<simpara>JavaServer Faces 2.2 (JSR 344)</simpara>
-<itemizedlist>
-<listitem>
-<simpara>Faces Flow</simpara>
-</listitem>
-</itemizedlist>
-
-</listitem>
-<listitem>
-<simpara>Contexts and Dependency Injection 1.1 (JSR 346)</simpara>
-<itemizedlist>
+<simpara>Contexts and Dependency Injection 1.1</simpara>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Automatic discovery of beans</simpara>
 </listitem>
 <listitem>
 <simpara>Injection of beans</simpara>
 </listitem>
-</itemizedlist>
+</orderedlist>
+
+</listitem>
+<listitem>
+<simpara>JavaServer Faces 2.2 (JSR 344)</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Faces Flow</simpara>
+</listitem>
+</orderedlist>
 
 </listitem>
 <listitem>
 <simpara>Bean Validation 1.1 (JSR 349)</simpara>
-<itemizedlist>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Integration with JavaServer Faces</simpara>
 </listitem>
-</itemizedlist>
+</orderedlist>
 
 </listitem>
 <listitem>
-<simpara>Batch Applications for the Java Platform 1.0 (JSR 352)</simpara>
-<itemizedlist>
-<listitem>
-<simpara>Chunk-style processing</simpara>
-</listitem>
-<listitem>
-<simpara>Exception handling</simpara>
-</listitem>
-</itemizedlist>
-
-</listitem>
-<listitem>
-<simpara>Java API for JSON Processing 1.0 (JSR 353)</simpara>
-<itemizedlist>
-<listitem>
-<simpara>Streaming API for generating JSON</simpara>
-</listitem>
-<listitem>
-<simpara>Streaming API for consuming JSON</simpara>
-</listitem>
-</itemizedlist>
-
-</listitem>
-<listitem>
-<simpara>Java API for WebSocket 1.0 (JSR 356)</simpara>
-<itemizedlist>
-<listitem>
-<simpara>Annotated server endpoint</simpara>
-</listitem>
-<listitem>
-<simpara>JavaScript client</simpara>
-</listitem>
-</itemizedlist>
-
-</listitem>
-<listitem>
-<simpara>Java Transaction API 1.2 (JSR 907)</simpara>
-<itemizedlist>
+<simpara>Java Transaction API 1.2</simpara>
+<orderedlist numeration="loweralpha">
 <listitem>
 <simpara>@Transactional</simpara>
 </listitem>
-</itemizedlist>
+</orderedlist>
 
 </listitem>
-</itemizedlist>
+<listitem>
+<simpara>Java Persistence API 2.1</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Schema generation properties</simpara>
+</listitem>
+</orderedlist>
+
+</listitem>
+</orderedlist>
 
 <simpara>Hopefully this has raised your interest enough in trying out Java EE 7 applications using GlassFish 4.</simpara>
 <simpara>Send us feedback at <ulink url="mailto:users@glassfish.java.net">users@glassfish.java.net</ulink>.</simpara>
@@ -2874,7 +3067,7 @@ console can be seen by clicking on "View Domain Admin Console".</simpara>
 </chapter>
 <chapter id="_acknowledgements">
 <title>Acknowledgements</title>
-<simpara>The following Java EE community members graciously reviewed this hands-on lab:</simpara>
+<simpara>The following Java EE community members graciously reviewed contributed to this hands-on lab:</simpara>
 <itemizedlist>
 <listitem>
 <simpara>Antonio Goncalves (@agoncal)</simpara>
@@ -2980,19 +3173,12 @@ unzipped the above archive. Click on "Finish".</simpara>
 <title>Configure GlassFish 4 in IntelliJ IDEA</title>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>Clone the repository from either <ulink url="mailto:git@github.com">git@github.com</ulink>:arun-gupta/javaee7-hol.git or <ulink url="https://github.com/arun-gupta/javaee7-hol.git">https://github.com/arun-gupta/javaee7-hol.git</ulink>.</simpara>
-</listitem>
-<listitem>
-<simpara>Switch to the cloned project directory&#8217;s <literal>starting-template/movieplex7/</literal> folder.</simpara>
-</listitem>
-<listitem>
-<simpara>In the command shell, just to make sure that everything is set up correctly, run the following commands:</simpara>
+<simpara>Create an IntelliJ IDEA project in the movieplex7 directory and build the WAR file:</simpara>
 
 <literallayout class="monospaced">mvn idea:idea
 mvn clean package</literallayout>
 
 
-<simpara>You will now find an IntelliJ IDEA project in the that folder, along with a packaged .WAR in the <literal>target/</literal>-folder.</simpara>
 </listitem>
 <listitem>
 <simpara>Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with "Convert".</simpara>

@@ -24,24 +24,24 @@ This section will provide the ability to view all the movies, details of
 a selected movie, and delete an existing movie using the JAX-RS Client
 API.
 
-*6.1* Right-click on "Source Packages", select "New", "Java Class…".
+. Right-click on "Source Packages", select "New", "Java Class…".
 Give the class name as "MovieClientBean", package as
 "org.glassfish.movieplex7.client", and click on "Finish".
-
++
 This bean will be used to invoke the REST endpoint.
-
-*6.2* Add `@Named` and `@RequestScoped` class-level annotations. This allows
++
+. Add `@Named` and `@RequestScoped` class-level annotations. This allows
 the class to be injected in an EL expression and also defines the bean
 to be automatically activated and passivated with the request.
-
++
 Resolve the imports.
-
++
 WARNING: Make sure to pick `javax.enterprise.context.RequestScoped` class.
-
++
 image:images/6.2-imports.png[image]
-
-*6.3* Add the following code to the class:
-
++
+. Add the following code to the class:
++
 [source, java]
 ----
 Client client;
@@ -58,7 +58,7 @@ public void destroy() \{
     client.close();
 }
 ----
-
++
 `ClientBuilder` is the main entry point to the Client API. It uses a
 fluent builder API to invoke REST endpoints. A new `Client` instance is
 created using the default client builder implementation provided by the
@@ -66,13 +66,13 @@ JAX-RS implementation provider. Client are heavy-weight objects that
 manage the client-side communication infrastructure. It is highly
 recommended to create only required number of instances of Client and
 close it appropriately.
-
++
 In this case, `Client` instance is created and destroyed in the lifecycle
 callback methods. The endpoint URI is set on this instance by calling
 the target method.
-
-*6.4* Add the following method to the class:
-
++
+. Add the following method to the class:
++
 [source, java]
 ----
 public Movie[] getMovies() {
@@ -81,27 +81,27 @@ public Movie[] getMovies() {
         .get(Movie[].class);
 }
 ----
-
++
 A request is prepared by calling the request method. HTTP GET method is
 invoked by calling get method. The response type is specified in the
-last method call and so return value is of the type Movie[].
-
-*6.5* Right-click on "Web Pages", select "New", "Folder…", specify the
+last method call and so return value is of the type `Movie[]`.
++
+. Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "client", and click on "Finish".
-
++
 Right-click on the newly created folder, select "New", "Other…",
 "JavaServer Faces", "Facelets Template Client", and click on "Next >".
-
++
 Give the File Name as "movies". Click on "Browse…" next to "Template:",
 expand "Web Pages", "WEB-INF", select "template.xhtml", and click on
 "Select File". Click on "Finish".
-
++
 In this file, remove `<ui:define>` sections where name attribute value is
 "top" and "left". These sections are inherited from the template.
-
-*6.6* Replace the content inside `<ui:define>` with "content" with the
++
+. Replace the content inside `<ui:define>` with "content" with the
 code fragment shown below:
-
++
 [source, xml]
 ----
 <h:form prependId="false">
@@ -113,44 +113,44 @@ code fragment shown below:
     <h:commandButton value="Details" action="movie" />
 </h:form>
 ----
-
++
 This code fragment invokes getMovies method from `MovieClientBean`,
 iterates over the response in a for loop, and display the name of each
 movie with a radio button. The selected radio button value is bound to
 the EL expression `#{movieBackingBean.movieId}`.
-
++
 The code also has a button with "Details" label and looks for
 "movie.xhtml" in the same directory. We will create this file later.
-
++
 Click on the yellow bulb in the left bar to resolve the namespace
 prefix-to-URI resolution. This needs to be completed for – for `h:`, `c:`,
 and `f:` prefixes.
-
++
 image:images/6.6-imports.png[image]
-
-*6.7* Right-click on "org.glassfish.movieplex7.client" package, select
++
+. Right-click on "org.glassfish.movieplex7.client" package, select
 "New", "Java Class…", specify the value as "MovieBackingBean" and click
 on "Finish".
-
++
 Add the following field:
-
++
 [source, java]
 int movieId;
-
++
 Add getters/setters by right-clicking on the editor pane and selecting
 "Insert Code…" (Ctrl + I shortcut on Mac). Select the field and click on
 "Generate".
-
++
 Add `@Named` and `@SessionScoped` class-level annotations and implements
 `Serializable`.
-
++
 Resolve the imports.
-
++
 WARNING: Make sure to import `javax.enterprise.context.SessionScoped`.
-
-*6.8* In "template.xhtml", add the following code in `<ui:insert>` with
++
+. In "template.xhtml", add the following code in `<ui:insert>` with
 name="left".
-
++
 [source, xml]
 ----
 <p/><h:outputLink
@@ -158,26 +158,26 @@ name="left".
         Movies
     </h:outputLink>
 ----
-
++
 Running the project (Fn + F6 shortcut on Mac) and clicking on "Movies"
 in the left navigation bar shows the output as shown.
-
++
 image:images/6.8-output.png[image]
-
++
 The list of all the movies with a radio button next to them is
 displayed.
-
-*6.9* In `MovieClientBean`, inject `MovieBackingBean` to read the value
++
+. In `MovieClientBean`, inject `MovieBackingBean` to read the value
 of selected movie from the page. Add the following code:
-
++
 [source, java]
 ----
 @Inject
 MovieBackingBean bean;
 ----
-
-*6.10* In `MovieClientBean`, add the following method:
-
++
+. In `MovieClientBean`, add the following method:
++
 [source, java]
 ----
 public Movie getMovie() {
@@ -189,24 +189,24 @@ public Movie getMovie() {
     return m;
 }
 ----
-
++
 This code reuses the `Client` and `WebTarget` instances created in
 `@PostConstruct`. It also adds a variable part to the URI of the REST
 endpoint, defined using `{movie}`, and binds it to a concrete value using
 `resolveTemplate` method. The return type is specified as a parameter to
 the get method.
-
-*6.11* Right-click on "client" folder, select "New", "Facelets Template
++
+. Right-click on "client" folder, select "New", "Facelets Template
 Client", give the File Name as "movie". Click on "Browse…" next to
 "Template:", expand "Web Pages", "WEB-INF", select "template.xhtml", and
 click on "Select File". Click on "Finish".
-
++
 In this file, remove `<ui:define>` sections where name attribute value is
 "top" and "left". These sections are inherited from the template.
-
++
 Replace the content inside `<ui:define>` with "content" with the code
 fragment shown below:
-
++
 [source, xml]
 ----
 <h1>Movie Details</h1>
@@ -228,22 +228,22 @@ fragment shown below:
     <h:commandButton value="Back" action="movies" />
 </h:form>
 ----
-
++
 Click on the yellow-bulb to resolve the namespace prefix-URI mapping for
 `h:`. The output values are displayed by calling the `getMovie` method and
 using the `id`, `name`, and `actors` property values.
-
-*6.12* Run the project, select "Movies" in the left navigation bar,
++
+. Run the project, select "Movies" in the left navigation bar,
 select a radio button next to any movie, and click on details to see the
 output as shown.
-
++
 image:images/6.12-output.png[image]
-
++
 Click on the "Back" button to select another movie.
-
-*6.13* Add the ability to delete a movie. In "movies.xhtml", add the
++
+. Add the ability to delete a movie. In "movies.xhtml", add the
 following code with the other commandButton.
-
++
 [source, xml]
 ----
 <h:commandButton
@@ -251,12 +251,12 @@ following code with the other commandButton.
     action="movies"
     actionListener="#{movieClientBean.deleteMovie()}"/>
 ----
-
++
 This button displays a label "Delete", invokes the method deleteMovie
 from "MovieClientBean", and then renders "movies.xhtml".
-
-*6.14* Add the following code to "MovieClientBean":
-
++
+. Add the following code to "MovieClientBean":
++
 [source, java]
 ----
 public void deleteMovie() {
@@ -267,19 +267,19 @@ public void deleteMovie() {
         .delete();
 }
 ----
-
++
 This code again reuses the `Client` and `WebTarget` instances created in
 `@PostConstruct`. It also adds a variable part to the URI of the REST
 endpoint, defined using `{movieId}`, and binds it to a concrete value
 using `resolveTemplate` method. The URI of the resource to be deleted is
 prepared and then delete method is called to delete the resource.
-
++
 Make sure to resolve the imports.
-
++
 Running the project shows the output shown.
-
++
 image:images/6.14-output.png[image]
-
++
 Select a movie and click on Delete button. This deletes the movie from
 the database and refreshes list on the page. Note that a redeploy of the
 project will delete all the movies anyway and add them all back.

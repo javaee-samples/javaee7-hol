@@ -500,6 +500,18 @@ If you have downloaded GlassFish 4 separately or using a pre-installed version o
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<a href="#appendix-glassfish4-idea">Configure GlassFish 4 in IntelliJ IDEA</a> explains how to configure GlassFish in IntelliJ IDEA.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -831,25 +843,26 @@ performed to provide an understanding of the application architecture.</p>
 <div class="paragraph">
 <p><strong>Estimated Time</strong>: 15-30 mins</p>
 </div>
-<div class="paragraph">
-<p><strong>3.1</strong> Download the sample application from
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the sample application from
 <a href="https://github.com/javaee-samples/javaee7-hol/blob/master/starting-template/movieplex7-starting-template.zip?raw=true">movieplex7-starting-template.zip</a>
 and unzip. This will create a "movieplex7" directory and unzips all the
 content there.</p>
-</div>
-<div class="paragraph">
-<p><strong>3.2</strong> In NetBeans IDE, select "File", "Open Project…", select the
+</li>
+<li>
+<p>In NetBeans IDE, select "File", "Open Project…", select the
 unzipped directory, and click on "Open Project". The project structure
 is shown.</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.2-project-structure.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>3.3</strong> Maven Coordinates: Expand "Project Files" and double click on
+</li>
+<li>
+<p>Maven Coordinates: Expand "Project Files" and double click on
 "pom.xml". In the "pom.xml", the Java EE 7 API is specified as a
 <code>&lt;dependency&gt;</code>:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;dependencies&gt;
@@ -882,7 +895,8 @@ requirements, etc. A profile may contain a proper subset or superset of
 the technologies contained in the platform.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE Web Profile is a profile of the Java EE Platform
+<p>+
+The Java EE Web Profile is a profile of the Java EE Platform
 specifically targeted at modern web applications. The complete set of
 specifications defined in the Web Profile is defined in the Java EE 7
 Web Profile Specification. GlassFish can be downloaded in two different
@@ -906,12 +920,12 @@ Platform, can be deployed on Web Profile.
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>3.4</strong> <strong>Default Data Source</strong>: Expand "Other Sources",
+</li>
+<li>
+<p><strong>Default Data Source</strong>: Expand "Other Sources",
 "src/main/resources", "META-INF", and double-click on "persistence.xml".
 By default, NetBeans opens the file in Design View. Click on Source tab
 to view the XML source.</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.2-persistence-xml.png" alt="image"></span></p>
 </div>
@@ -994,8 +1008,9 @@ the error shown below:</p>
 <p>This will get resolved when we run the application. Click on "OK" to
 dismiss the dialog.</p>
 </div>
-<div class="paragraph">
-<p><strong>3.5</strong> <strong>Schema Generation:</strong> JPA 2.1 defines a new set of
+</li>
+<li>
+<p><strong>Schema Generation:</strong> JPA 2.1 defines a new set of
 <code>javax.persistence.schema-generation.*</code> properties that can be used to
 generate database artifacts like tables, indexes, and constraints in a
 database schema. This helps in prototyping of your application where the
@@ -1003,7 +1018,6 @@ required artifacts are generated either prior to application deployment
 or as part of <code>EntityManagerFactory</code> creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.</p>
-</div>
 <div class="paragraph">
 <p>The "persistence.xml" in the application has the following
 <code>javax.persistence.schema-generation.*</code> properties. Their meaning and
@@ -1075,13 +1089,13 @@ through the SQL scripts. The database schema is shown.</p>
 <p>This folder also contains "sales.csv" which carries some comma-separated
 data, and is used later in the application.</p>
 </div>
-<div class="paragraph">
-<p><strong>3.6</strong> <strong>JPA entities, Stateless EJBs, and REST endpoints</strong>: Expand "Source
+</li>
+<li>
+<p><strong>JPA entities, Stateless EJBs, and REST endpoints</strong>: Expand "Source
 Packages". The package <code>org.glassfish.movieplex7.entities</code> contains the
 JPA entities corresponding to the database table definitions. Each JPA
 entity has several convenient @NamedQuery defined and uses Bean
 Validation constraints to enforce validation.</p>
-</div>
 <div class="paragraph">
 <p>The package <code>org.glassfish.movieplex7.rest</code> contains stateless EJBs
 corresponding to different JPA entities.</p>
@@ -1142,12 +1156,12 @@ corresponding REST endpoint is shown.</p>
 <div class="paragraph">
 <p>Feel free to browse through the code.</p>
 </div>
-<div class="paragraph">
-<p><strong>3.7</strong> <strong>JSF pages</strong>: "WEB-INF/template.xhtml" defines the template of the
+</li>
+<li>
+<p><strong>JSF pages</strong>: "WEB-INF/template.xhtml" defines the template of the
 web page and has a header, left navigation bar, and a main content
 section. "index.xhtml" uses this template and the EJBs to display the
 number of movies and theaters.</p>
-</div>
 <div class="paragraph">
 <p>Java EE 7 enables CDI discovery of beans by default. No "beans.xml" is
 required in "WEB-INF". This allows all beans with bean defining
@@ -1161,14 +1175,14 @@ were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.</p>
 </div>
-<div class="paragraph">
-<p><strong>3.8</strong> <strong>Run the sample</strong>: Right-click on the project and select "Run".
+</li>
+<li>
+<p><strong>Run the sample</strong>: Right-click on the project and select "Run".
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on GlassFish 4, and show the URL
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a> in the
 default browser configured in NetBeans. Note that this could take a
 while if you have never built a Maven application on your machine.</p>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1196,6 +1210,9 @@ server. Choose the configured GlassFish server and click on "OK".</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/3.8-first-page.png" alt="image"></span></p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1247,14 +1264,15 @@ provides support for:</p>
 <div class="paragraph">
 <p>This section will build a chat room for movie viewers.</p>
 </div>
-<div class="paragraph">
-<p><strong>4.1</strong> Right-click on "Source Packages", select "New", "Java Class…".
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Right-click on "Source Packages", select "New", "Java Class…".
 Give the class name as "ChatServer", package as
 <code>org.glassfish.movieplex7.chat</code>, and click on "Finish".</p>
-</div>
-<div class="paragraph">
-<p><strong>4.2</strong> Change the class such that it looks like:</p>
-</div>
+</li>
+<li>
+<p>Change the class such that it looks like:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@ServerEndpoint("/websocket")
@@ -1285,8 +1303,8 @@ public class ChatServer {
 <div class="paragraph">
 <p>In this code:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p><code>@ServerEndpoint</code> decorates the class to be a WebSocket endpoint. The
 value defines the URI where this endpoint is published.</p>
@@ -1302,9 +1320,6 @@ message. The first parameter, message, is the payload of the message.
 The second parameter, <code>client</code>, defines the other end of the WebSocket
 connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p>Resolve the imports by right-clicking in the editor and selecting "Fix
 Imports" or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
@@ -1329,17 +1344,20 @@ Make sure to pick <code>java.websocket.Session</code> for resolving imports.
 <p>Right-click again in the editor pane and select "Format" to format your
 code.</p>
 </div>
-<div class="paragraph">
-<p><strong>4.3</strong> In "Web Pages", select "New", "Folder…", give the folder name as
-"chat" and click on "Finish".</p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p><strong>4.4</strong> Right-click on the newly created folder, select "New", "Other&#8230;",
+</li>
+<li>
+<p>In "Web Pages", select "New", "Folder…", give the folder name as
+"chat" and click on "Finish".</p>
+</li>
+<li>
+<p>Right-click on the newly created folder, select "New", "Other&#8230;",
 "Java Server Faces", "Facelets Template Client", give the File Name as
 "chatroom". Click on "Browse…" next to "Template:", expand "Web Pages",
 "WEB-INF", select "template.xhtml", and click on "Select File". Click on
 "Finish".</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/4.4-template.png" alt="image"></span></p>
 </div>
@@ -1397,16 +1415,16 @@ There is an explicit button to disconnect the WebSocket connection.
 initialization occurs in "websocket.js" included at the bottom of the
 fragment.</p>
 </div>
-<div class="paragraph">
-<p><strong>4.5</strong> Right-click on "chat" in "Web Pages", select "New", "Other&#8230;",
+</li>
+<li>
+<p>Right-click on "chat" in "Web Pages", select "New", "Other&#8230;",
 "Web", "JavaScript File".</p>
-</div>
 <div class="paragraph">
 <p>Give the name as "websocket" and click on "Finish".</p>
 </div>
-<div class="paragraph">
-<p><strong>4.6</strong> Edit the contents of "websocket.js" such that it looks like:</p>
-</div>
+</li>
+<li>
+<p>Edit the contents of "websocket.js" such that it looks like:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="javascript language-javascript">var wsUri = 'ws://' + document.location.host
@@ -1519,9 +1537,9 @@ to all the clients similarly. The <code>onMessage</code> method updates the list
 logged in users as well.
 <span class="image"><img src="images/4.6-chatroom.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>4.7</strong> Edit "WEB-INF/template.xhtml" and change:</p>
-</div>
+</li>
+<li>
+<p>Edit "WEB-INF/template.xhtml" and change:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</code></pre>
@@ -1544,11 +1562,11 @@ logged in users as well.
 URI that identifies the web application context for this request. This
 allows the links in the left navigation bar to be fully-qualified URLs.</p>
 </div>
-<div class="paragraph">
-<p><strong>4.8</strong> Run the project by right clicking on the project and selecting
+</li>
+<li>
+<p>Run the project by right clicking on the project and selecting
 "Run". The browser shows
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a>.</p>
-</div>
 <div class="paragraph">
 <p>Click on "Chat Room" to see the output.</p>
 </div>
@@ -1595,6 +1613,9 @@ like as shown.</p>
 <p>Chrome Developer Tools or Firebug in Firefox can be used to monitor
 WebSocket traffic.</p>
 </div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1616,7 +1637,7 @@ model for batch applications and a runtime for scheduling and executing
 jobs.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/5.0-batch-intro.png" alt="image"></span><br></p>
+<p><span class="image"><img src="images/5.0-batch-intro.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The core concepts of Batch Processing are:</p>
@@ -1658,16 +1679,17 @@ aggregated, they are written out, and the transaction is committed.</p>
 <p>This section will read the cumulative sales for each show from a CSV
 file and populate them in a database.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.1</strong> Right-click on Source Packages, select "New", "Java Package…",
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Right-click on Source Packages, select "New", "Java Package…",
 specify the value as "org.glassfish.movieplex7.batch", and click on
 "Finish".</p>
-</div>
-<div class="paragraph">
-<p><strong>5.2</strong> Right-click on newly created package, select "New", "Java Class…",
+</li>
+<li>
+<p>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "SalesReader". Make this class extend from
 <code>AbstractItemReader</code>, change the class definition and add:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">extends AbstractItemReader</code></pre>
@@ -1688,9 +1710,9 @@ available for injection.</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.3</strong> Add the following code:</p>
-</div>
+</li>
+<li>
+<p>Add the following code:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">private BufferedReader reader;
@@ -1728,9 +1750,9 @@ intentional typo. In addition, 17<sup>th</sup> record also has an additional
 typo. The lab will use these lines to demonstrate how to handle parsing
 errors.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.4</strong> Override the following method from the abstract class:</p>
-</div>
+</li>
+<li>
+<p>Override the following method from the abstract class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Override
@@ -1753,11 +1775,11 @@ so the current chunk will be committed and the step will end.</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.5</strong> Right-click on "org.glassfish.movieplex7.batch" package, select
+</li>
+<li>
+<p>Right-click on "org.glassfish.movieplex7.batch" package, select
 "New", "Java Class…", specify the name as "SalesProcessor". Change the
 class definition and add:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">implements ItemProcessor</code></pre>
@@ -1777,9 +1799,9 @@ the bean to be injected in Job XML.</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.6</strong> Add implementation of the abstract method from the interface as:</p>
-</div>
+</li>
+<li>
+<p>Add implementation of the abstract method from the interface as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Override
@@ -1809,11 +1831,11 @@ particular record is skipped from aggregation as well (shown later).</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.7</strong> Right-click on "org.glassfish.movieplex7.batch" package, select
+</li>
+<li>
+<p>Right-click on "org.glassfish.movieplex7.batch" package, select
 "New", "Java Class…", specify the name as "SalesWriter". Change the
 class definition and add:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">extends AbstractItemWriter</code></pre>
@@ -1832,9 +1854,9 @@ the bean to be injected in Job XML.</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.8</strong> Inject <code>EntityManager</code> as:</p>
-</div>
+</li>
+<li>
+<p>Inject <code>EntityManager</code> as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@PersistenceContext EntityManager em;</code></pre>
@@ -1877,9 +1899,9 @@ using <code>rollbackOn</code> and <code>dontRollbackOn</code> attributes of the 
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.9</strong> Create Job XML that defines the job, step, and chunk.</p>
-</div>
+</li>
+<li>
+<p>Create Job XML that defines the job, step, and chunk.</p>
 <div class="paragraph">
 <p>In "Files" tab, expand the project &#8594; "src" &#8594; "main" &#8594; "resources",
 right-click on "resources", "META-INF", select "New", "Folder…", specify
@@ -1929,9 +1951,9 @@ continue processing. If this element is not specified then the batch
 processing will halt. The <code>skip-limit</code> attribute specifies the number of
 exceptions a step will skip.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.10</strong> Lets invoke the batch job.</p>
-</div>
+</li>
+<li>
+<p>Lets invoke the batch job.</p>
 <div class="paragraph">
 <p>Right-click on "org.glassfish.movieplex7.batch" package, select "New",
 "Java Class…". Enter the name as "SalesBean" and click on "Finish"
@@ -1970,9 +1992,9 @@ the bean to be injectable in an EL expression.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.10-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>5.11</strong> Inject EntityManagerFactory in the class as:</p>
-</div>
+</li>
+<li>
+<p>Inject EntityManagerFactory in the class as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@PersistenceUnit EntityManagerFactory emf;</code></pre>
@@ -1998,10 +2020,10 @@ return all the rows from the table.</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.12</strong> Right-click on "Web Pages", select "New", "Folder…", specify the
+</li>
+<li>
+<p>Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "batch", and click on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>Right-click on the newly created folder, select "New", "Other…",
 "JavaServer Faces", "Facelets Template Client", and click on "Next &gt;".</p>
@@ -2058,10 +2080,10 @@ The second command button refreshes the page.</p>
 <p>Right-click on the yellow bulb to fix namespace prefix/URI mapping. This
 needs to be repeated for h: and f: prefix.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.13</strong> Add the following code in "template.xhtml" along with other
+</li>
+<li>
+<p>Add the following code in "template.xhtml" along with other
 `&lt;outputLink&gt;`s:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
@@ -2070,30 +2092,30 @@ needs to be repeated for h: and f: prefix.</p>
     &lt;/h:outputLink&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>5.14</strong> Run the project to see the output as shown.</p>
-</div>
+</li>
+<li>
+<p>Run the project to see the output as shown.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.14-sales.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>Notice, a new "Sales" entry is displayed in the left navigation bar.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.15</strong> Click on "Sales" to see the output as shown.</p>
-</div>
+</li>
+<li>
+<p>Click on "Sales" to see the output as shown.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.15-sales.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The empty table indicates that there is no sales data in the database.</p>
 </div>
-<div class="paragraph">
-<p><strong>5.16</strong> Click on "Run Job" button to initiate data processing of CSV
+</li>
+<li>
+<p>Click on "Run Job" button to initiate data processing of CSV
 file. Look for "Waiting for localhost&#8230;" in the browser status bar,
 wait for a couple of seconds for the processing to finish, and then
 click on "Refresh" button to see the updated output as shown.</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/5.16-sales-output.png" alt="image"></span></p>
 </div>
@@ -2104,6 +2126,9 @@ click on "Refresh" button to see the updated output as shown.</p>
 <p>Note that record 5 is missing from the table, as this records did not
 have correct numeric entries for the sales total. The Job XML for the
 application explicitly mentioned to skip such errors.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2148,19 +2173,20 @@ return type.</p>
 a selected movie, and delete an existing movie using the JAX-RS Client
 API.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.1</strong> Right-click on "Source Packages", select "New", "Java Class…".
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Right-click on "Source Packages", select "New", "Java Class…".
 Give the class name as "MovieClientBean", package as
 "org.glassfish.movieplex7.client", and click on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>This bean will be used to invoke the REST endpoint.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.2</strong> Add <code>@Named</code> and <code>@RequestScoped</code> class-level annotations. This allows
+</li>
+<li>
+<p>Add <code>@Named</code> and <code>@RequestScoped</code> class-level annotations. This allows
 the class to be injected in an EL expression and also defines the bean
 to be automatically activated and passivated with the request.</p>
-</div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
@@ -2179,9 +2205,9 @@ Make sure to pick <code>javax.enterprise.context.RequestScoped</code> class.
 <div class="paragraph">
 <p><span class="image"><img src="images/6.2-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>6.3</strong> Add the following code to the class:</p>
-</div>
+</li>
+<li>
+<p>Add the following code to the class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">Client client;
@@ -2213,9 +2239,9 @@ close it appropriately.</p>
 callback methods. The endpoint URI is set on this instance by calling
 the target method.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.4</strong> Add the following method to the class:</p>
-</div>
+</li>
+<li>
+<p>Add the following method to the class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">public Movie[] getMovies() {
@@ -2228,12 +2254,12 @@ the target method.</p>
 <div class="paragraph">
 <p>A request is prepared by calling the request method. HTTP GET method is
 invoked by calling get method. The response type is specified in the
-last method call and so return value is of the type Movie[].</p>
+last method call and so return value is of the type <code>Movie[]</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.5</strong> Right-click on "Web Pages", select "New", "Folder…", specify the
+</li>
+<li>
+<p>Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "client", and click on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>Right-click on the newly created folder, select "New", "Other…",
 "JavaServer Faces", "Facelets Template Client", and click on "Next &gt;".</p>
@@ -2247,10 +2273,10 @@ expand "Web Pages", "WEB-INF", select "template.xhtml", and click on
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
 "top" and "left". These sections are inherited from the template.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.6</strong> Replace the content inside <code>&lt;ui:define&gt;</code> with "content" with the
+</li>
+<li>
+<p>Replace the content inside <code>&lt;ui:define&gt;</code> with "content" with the
 code fragment shown below:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;h:form prependId="false"&gt;
@@ -2281,11 +2307,11 @@ and <code>f:</code> prefixes.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/6.6-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>6.7</strong> Right-click on "org.glassfish.movieplex7.client" package, select
+</li>
+<li>
+<p>Right-click on "org.glassfish.movieplex7.client" package, select
 "New", "Java Class…", specify the value as "MovieBackingBean" and click
 on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>Add the following field:</p>
 </div>
@@ -2318,10 +2344,10 @@ Make sure to import <code>javax.enterprise.context.SessionScoped</code>.
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>6.8</strong> In "template.xhtml", add the following code in <code>&lt;ui:insert&gt;</code> with
+</li>
+<li>
+<p>In "template.xhtml", add the following code in <code>&lt;ui:insert&gt;</code> with
 name="left".</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
@@ -2341,19 +2367,19 @@ in the left navigation bar shows the output as shown.</p>
 <p>The list of all the movies with a radio button next to them is
 displayed.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.9</strong> In <code>MovieClientBean</code>, inject <code>MovieBackingBean</code> to read the value
+</li>
+<li>
+<p>In <code>MovieClientBean</code>, inject <code>MovieBackingBean</code> to read the value
 of selected movie from the page. Add the following code:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Inject
 MovieBackingBean bean;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>6.10</strong> In <code>MovieClientBean</code>, add the following method:</p>
-</div>
+</li>
+<li>
+<p>In <code>MovieClientBean</code>, add the following method:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">public Movie getMovie() {
@@ -2373,12 +2399,12 @@ endpoint, defined using <code>{movie}</code>, and binds it to a concrete value u
 <code>resolveTemplate</code> method. The return type is specified as a parameter to
 the get method.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.11</strong> Right-click on "client" folder, select "New", "Facelets Template
+</li>
+<li>
+<p>Right-click on "client" folder, select "New", "Facelets Template
 Client", give the File Name as "movie". Click on "Browse…" next to
 "Template:", expand "Web Pages", "WEB-INF", select "template.xhtml", and
 click on "Select File". Click on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
 "top" and "left". These sections are inherited from the template.</p>
@@ -2414,21 +2440,21 @@ fragment shown below:</p>
 <code>h:</code>. The output values are displayed by calling the <code>getMovie</code> method and
 using the <code>id</code>, <code>name</code>, and <code>actors</code> property values.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.12</strong> Run the project, select "Movies" in the left navigation bar,
+</li>
+<li>
+<p>Run the project, select "Movies" in the left navigation bar,
 select a radio button next to any movie, and click on details to see the
 output as shown.</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/6.12-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>Click on the "Back" button to select another movie.</p>
 </div>
-<div class="paragraph">
-<p><strong>6.13</strong> Add the ability to delete a movie. In "movies.xhtml", add the
+</li>
+<li>
+<p>Add the ability to delete a movie. In "movies.xhtml", add the
 following code with the other commandButton.</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;h:commandButton
@@ -2441,9 +2467,9 @@ following code with the other commandButton.</p>
 <p>This button displays a label "Delete", invokes the method deleteMovie
 from "MovieClientBean", and then renders "movies.xhtml".</p>
 </div>
-<div class="paragraph">
-<p><strong>6.14</strong> Add the following code to "MovieClientBean":</p>
-</div>
+</li>
+<li>
+<p>Add the following code to "MovieClientBean":</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">public void deleteMovie() {
@@ -2475,6 +2501,9 @@ prepared and then delete method is called to delete the resource.</p>
 <p>Select a movie and click on Delete button. This deletes the movie from
 the database and refreshes list on the page. Note that a redeploy of the
 project will delete all the movies anyway and add them all back.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2523,16 +2552,17 @@ interfaces.</p>
 application. Typically, this functionality will be available after
 proper authentication and authorization.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.1</strong> Right-click on Source Packages, select "New", "Java Package…",
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Right-click on Source Packages, select "New", "Java Package…",
 specify the value as "org.glassfish.movieplex7.json", and click on
 "Finish".</p>
-</div>
-<div class="paragraph">
-<p><strong>7.2</strong> Right-click on newly created package, select "New", "Java Class…",
+</li>
+<li>
+<p>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "MovieReader", and click on "Finish". Add the
 following class-level annotations:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Provider
@@ -2541,7 +2571,7 @@ following class-level annotations:</p>
 </div>
 <div class="paragraph">
 <p><code>@Provider</code> allows this implementation to be discovered by the JAX-RS
-runtime during the provider scanning phase. @Consumes indicates that
+runtime during the provider scanning phase. <code>@Consumes</code> indicates that
 this implementation will consume a JSON representation of the resource.</p>
 </div>
 <div class="paragraph">
@@ -2550,9 +2580,9 @@ this implementation will consume a JSON representation of the resource.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.2-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>7.3</strong> Make the class implements <code>MessageBodyReader&lt;Movie&gt;</code>.</p>
-</div>
+</li>
+<li>
+<p>Make the class implements <code>MessageBodyReader&lt;Movie&gt;</code>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.3-implements.png" alt="image"></span></p>
 </div>
@@ -2560,9 +2590,9 @@ this implementation will consume a JSON representation of the resource.</p>
 <p>Click on the hint (shown as yellow bulb) on the class definition and
 select "Implement all abstract methods".</p>
 </div>
-<div class="paragraph">
-<p><strong>7.4</strong> Change implementation of the <code>isReadable</code> method as:</p>
-</div>
+</li>
+<li>
+<p>Change implementation of the <code>isReadable</code> method as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">return Movie.class.isAssignableFrom(type);</code></pre>
@@ -2572,9 +2602,9 @@ select "Implement all abstract methods".</p>
 <p>This method ascertains if the <code>MessageBodyReader</code> can produce an instance
 of a particular type.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.5</strong> Replace the readFrom method to:</p>
-</div>
+</li>
+<li>
+<p>Replace the readFrom method to:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Override
@@ -2624,11 +2654,11 @@ parser and a <code>Movie</code> instance is populated and returned.</p>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.6</strong> Right-click on newly created package, select "New", "Java Class…",
+</li>
+<li>
+<p>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "MovieWriter", and click on "Finish". Add the
 following class-level annotations:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Provider
@@ -2646,9 +2676,9 @@ this implementation will produce a JSON representation of the resource.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.6-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>7.7</strong> Make this class implements <code>MessageBodyWriter&lt;Movie&gt;</code>.</p>
-</div>
+</li>
+<li>
+<p>Make this class implements <code>MessageBodyWriter&lt;Movie&gt;</code>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.7-implements.png" alt="image"></span></p>
 </div>
@@ -2656,9 +2686,9 @@ this implementation will produce a JSON representation of the resource.</p>
 <p>Click on the hint (show as yellow bulb) on the class definition and
 select "Implement all abstract methods".</p>
 </div>
-<div class="paragraph">
-<p><strong>7.8</strong> Change implementation of the <code>isWritable</code> method to:</p>
-</div>
+</li>
+<li>
+<p>Change implementation of the <code>isWritable</code> method to:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">return Movie.class.isAssignableFrom(type);</code></pre>
@@ -2668,9 +2698,9 @@ select "Implement all abstract methods".</p>
 <p>This method ascertains if the <code>MessageBodyWriter</code> supports a particular
 type.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.9</strong> Add implementation of the <code>getSize</code> method as:</p>
-</div>
+</li>
+<li>
+<p>Add implementation of the <code>getSize</code> method as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">return -1;</code></pre>
@@ -2682,9 +2712,9 @@ the serialized form of <code>t</code>. In JAX-RS 2.0, this method is deprecated 
 the value returned by the method is ignored by a JAX-RS runtime. All
 <code>MessageBodyWriter</code> implementations are advised to return -1.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.10</strong> Change implementation of the <code>writeTo</code> method as:</p>
-</div>
+</li>
+<li>
+<p>Change implementation of the <code>writeTo</code> method as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">public void writeTo(Movie t,
@@ -2707,17 +2737,17 @@ the value returned by the method is ignored by a JAX-RS runtime. All
 </div>
 </div>
 <div class="paragraph">
-<p>This method writes a type to an HTTP message. JsonGenerator writes JSON
+<p>This method writes a type to an HTTP message. <code>JsonGenerator</code> writes JSON
 data to an output stream in a streaming way. Overloaded write methods
 are used to write different data types to the stream.</p>
 </div>
 <div class="paragraph">
 <p>Resolve the imports.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.11</strong> In "Web Pages", right-click on "client" folder, select "New",
+</li>
+<li>
+<p>In "Web Pages", right-click on "client" folder, select "New",
 "Facelets Template Client".</p>
-</div>
 <div class="paragraph">
 <p>Give the File Name as "addmovie". Click on "Browse…" next to
 "Template:", expand "Web Pages", "WEB-INF", select "template.xhtml", and
@@ -2769,9 +2799,9 @@ prefix/URI mapping as shown.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.11-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>7.12</strong> Add <code>movieName</code> and <code>actors</code> field to <code>MovieBackingBean</code> as:</p>
-</div>
+</li>
+<li>
+<p>Add <code>movieName</code> and <code>actors</code> field to <code>MovieBackingBean</code> as:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">String movieName;
@@ -2782,20 +2812,20 @@ String actors;</code></pre>
 <p>Generate getters and setters by clicking on the menu item "Source" and
 then "Insert Code&#8230;".</p>
 </div>
-<div class="paragraph">
-<p><strong>7.13</strong> Add the following code to "movies.xhtml"</p>
-</div>
+</li>
+<li>
+<p>Add the following code to "movies.xhtml"</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;h:commandButton value="New Movie" action="addmovie" /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>along with rest of the &lt;commandButton&gt;s.</p>
+<p>along with rest of the `&lt;commandButton&gt;`s.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.14</strong> Add the following method in <code>MovieClientBean</code>:</p>
-</div>
+</li>
+<li>
+<p>Add the following method in <code>MovieClientBean</code>:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">public void addMovie() {
@@ -2823,18 +2853,18 @@ the POJO to JSON. Media type of "application/json" is specified using
 <div class="paragraph">
 <p><span class="image"><img src="images/7.14-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>7.15</strong> Run the project to see the updated main page as:</p>
-</div>
+</li>
+<li>
+<p>Run the project to see the updated main page as:</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.15-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>A new movie can be added by clicking on "New Movie" button.</p>
 </div>
-<div class="paragraph">
-<p><strong>7.16</strong> Enter the details as shown:</p>
-</div>
+</li>
+<li>
+<p>Enter the details as shown:</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/7.16-output.png" alt="image"></span></p>
 </div>
@@ -2852,6 +2882,9 @@ sequence; however this is not done in the application.</p>
 </div>
 <div class="paragraph">
 <p>Note that the newly added movie is now displayed.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2894,15 +2927,16 @@ accrued by a customer. These points are submitted to a JMS queue that is
 then read synchronously by another bean. JMS queue for further
 processing, possibly storing in the database using JPA.</p>
 </div>
-<div class="paragraph">
-<p><strong>8.1</strong> Right-click on Source Packages, select "New", "Java Package…",
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Right-click on Source Packages, select "New", "Java Package…",
 specify the value as "org.glassfish.movieplex7.points", and click on
 "Finish".</p>
-</div>
-<div class="paragraph">
-<p><strong>8.2</strong> Right-click on newly created package, select "New", "Java Class…",
+</li>
+<li>
+<p>Right-click on newly created package, select "New", "Java Class…",
 specify the name as "SendPointsBean".</p>
-</div>
 <div class="paragraph">
 <p>Add the following class-level annotations:</p>
 </div>
@@ -2922,13 +2956,13 @@ passivated with the request.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.2-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>8.3</strong> A message to a JMS Queue is sent after the customer has bought the
+</li>
+<li>
+<p>A message to a JMS Queue is sent after the customer has bought the
 tickets. Another bean will then retrieve this message and update the
 points for that customer. This allows the two systems, one generating
 the data about tickets purchased and the other about crediting the
 account with the points, completely decoupled.</p>
-</div>
 <div class="paragraph">
 <p>This lab will mimic the sending and consuming of a message by an
 explicit call to the bean from a JSF page.</p>
@@ -2962,9 +2996,9 @@ points accrued by that customer.</p>
 select "Insert Code" (Ctrl + I shortcut on Mac), select "Getter and
 Setter…", select the field, and click on "Generate".</p>
 </div>
-<div class="paragraph">
-<p><strong>8.4</strong> Add the following code to the class:</p>
-</div>
+</li>
+<li>
+<p>Add the following code to the class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Inject
@@ -2984,7 +3018,7 @@ public void sendMessage() \{
 under the JNDI name <code>java:comp/DefaultJMSConnectionFactory</code>. If no
 connection factory is specified then the pre-configured connection
 factory is used. In a Java EE environment, where CDI is enabled by
-default anyway, a container-managed JMSContext can be injected as:</p>
+default anyway, a container-managed <code>JMSContext</code> can be injected as:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2994,7 +3028,7 @@ JMSContext context;</code></pre>
 </div>
 <div class="paragraph">
 <p>This code uses the default factory to inject an instance of
-container-managed JMSContext.</p>
+container-managed <code>JMSContext</code>.</p>
 </div>
 <div class="paragraph">
 <p><code>JMSContext</code> is a new interface introduced in JMS 2. This combines in a
@@ -3038,10 +3072,10 @@ default <code>java.util.Queue</code>.
 <div class="paragraph">
 <p>Click on "OK".</p>
 </div>
-<div class="paragraph">
-<p><strong>8.5</strong> Right-click on "org.glassfish.movieplex7.points" package, select
+</li>
+<li>
+<p>Right-click on "org.glassfish.movieplex7.points" package, select
 "New", "Java Class…", specify the name as "ReceivePointsBean".</p>
-</div>
 <div class="paragraph">
 <p>Add the following class-level annotations:</p>
 </div>
@@ -3064,9 +3098,9 @@ application to be deployed into a Java EE environment with minimal
 administrative configuration. This code will create Queue with the JNDI
 name <code>java:global/jms/pointsQueue</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>8.6</strong> Add the following code to the class:</p>
-</div>
+</li>
+<li>
+<p>Add the following code to the class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@Inject
@@ -3087,9 +3121,9 @@ public String receiveMessage() {
 creates <code>JMSConsumer</code> which is then used to synchronously receive a
 message.</p>
 </div>
-<div class="paragraph">
-<p><strong>8.7</strong> Add the following method to the class:</p>
-</div>
+</li>
+<li>
+<p>Add the following method to the class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">public int getQueueSize() {
@@ -3117,10 +3151,10 @@ messages in the queue.</p>
 <p>Make sure to resolve the import from <code>javax.jms.Queue</code>, take all other
 defaults.</p>
 </div>
-<div class="paragraph">
-<p><strong>8.8</strong> Right-click on "Web Pages", select "New", "Folder…", specify the
+</li>
+<li>
+<p>Right-click on "Web Pages", select "New", "Folder…", specify the
 name as "points", and click on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>In "Web Pages", right-click on newly created folder, select "Facelets
 Template Client", give the File Name as "points". Click on "Browse…"
@@ -3175,10 +3209,10 @@ queue count is updated again, decremented by 1 in this case.</p>
 <p>If the message does not meet the validation criteria then the error
 message is displayed on the screen.</p>
 </div>
-<div class="paragraph">
-<p><strong>8.9</strong> Add the following code in "template.xhtml" along with other
+</li>
+<li>
+<p>Add the following code in "template.xhtml" along with other
 `&lt;outputLink&gt;`s:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
@@ -3187,9 +3221,9 @@ message is displayed on the screen.</p>
     &lt;/h:outputLink&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><strong>8.10</strong> Run the project. The update page looks like as shown:</p>
-</div>
+</li>
+<li>
+<p>Run the project. The update page looks like as shown:</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output.png" alt="image"></span></p>
 </div>
@@ -3245,6 +3279,9 @@ queue has 0 messages.</p>
 <p>The count is once again updated to reflect the 2 consumed and 2
 remaining messages in the queue.</p>
 </div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3277,8 +3314,8 @@ accomplish a task that requires input over a number of different views.</p>
 <p>This application will build a flow that allows the user to make a movie
 reservation. The flow will contain four pages:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
 <p>Display the list of movies</p>
 </li>
@@ -3291,29 +3328,33 @@ reservation. The flow will contain four pages:</p>
 <li>
 <p>Make the reservation and show the ticket</p>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong>9.1</strong> Items in a flow are logically related to each other and so it is
+<p>Lets build the application.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Items in a flow are logically related to each other and so it is
 required to keep them together in a directory. In NetBeans, right-click
 on the "Web Pages", select "New", "Folder…", specify the folder name
 "booking", and click on "Finish".</p>
-</div>
-<div class="paragraph">
-<p><strong>9.2</strong> Right-click on the newly created folder, select "New", "Facelets
+</li>
+<li>
+<p>Right-click on the newly created folder, select "New", "Facelets
 Template Client", give the File Name as "booking". Click on "Browse…"
 next to "Template:", expand "Web Pages", "WEB-INF", select
 "template.xhtml", and click on "Select File". Click on "Finish".</p>
-</div>
 <div class="paragraph">
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
 "top" and "left". These sections are inherited from the template.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.3</strong> "booking.xhtml" is the entry point to the flow (more on this
+</li>
+<li>
+<p>"booking.xhtml" is the entry point to the flow (more on this
 later). Replace the <code>&lt;ui:define&gt;</code> with name="content" section such that it
 looks like:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3348,11 +3389,11 @@ add namespace prefix. Do the same for f: prefix as shown.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.3-imports.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p><strong>9.4</strong> Right-click on "Source Packages", select "New", "Java Class…".
+</li>
+<li>
+<p>Right-click on "Source Packages", select "New", "Java Class…".
 Specify the class name as "Booking" and the package name as
 "org.glassfish.movieplex7.booking".</p>
-</div>
 <div class="paragraph">
 <p>Add <code>@Named</code> class-level annotation to make the class EL-injectable. Add
 <code>@FlowScoped("booking")</code> to define the scope of bean as the flow. The bean
@@ -3405,11 +3446,11 @@ EntityManager em;</code></pre>
 button and parsed in the backing bean. This will reduce an extra trip to
 the database.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.5</strong> Create "showtimes.xhtml" in the "booking" folder following the
+</li>
+<li>
+<p>Create "showtimes.xhtml" in the "booking" folder following the
 steps in section 9.2. Replace "content" <code>&lt;ui:define&gt;</code> section such that it
 looks like:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3442,9 +3483,9 @@ going back and forth within a flow if an incorrect show time for a movie
 is chosen. A different query may be written that displays only the shows
 available for this movie; however this is not part of the application.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.6</strong> Add the following fields to the Booking class:</p>
-</div>
+</li>
+<li>
+<p>Add the following fields to the Booking class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">String startTime;
@@ -3511,11 +3552,11 @@ and show the timing.</p>
 <p>Additionally a list of theaters offering that movie may be shown in a
 separate page.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.7</strong> Create "confirm.xhtml" page in the "booking" folder by following
+</li>
+<li>
+<p>Create "confirm.xhtml" page in the "booking" folder by following
 the steps defined in 9.2. Replace "content" <code>&lt;ui:define&gt;</code> section such
 that it looks like:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3553,11 +3594,11 @@ is the last page that shows the confirmed reservation.</p>
 logic for making the reservation. Additional pages may be added to take
 the credit card details and email address.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.8</strong> Create "print.xhtml" page in the "booking" folder by following the
+</li>
+<li>
+<p>Create "print.xhtml" page in the "booking" folder by following the
 steps defined in 9.2 and replace "content" <code>&lt;ui:define&gt;</code> section such that
 it looks like:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3579,13 +3620,13 @@ theater.</p>
 <p>The <code>commandButton</code> initiates exit from the flow. The <code>action</code> attribute
 defines a navigation rule that will be defined in the next step.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.9</strong> "booking.xhtml", "showtimes.xhtml", "confirm.xhtml", and
+</li>
+<li>
+<p>"booking.xhtml", "showtimes.xhtml", "confirm.xhtml", and
 "print.xhtml" are all in the same directory. Now the runtime needs to be
 informed that the views in this directory are to be treated as view
 nodes in a flow. This can be done by adding "booking/booking-flow.xml"
 or have a class with a method that <code>@Produces @FlowDefinition</code>.</p>
-</div>
 <div class="paragraph">
 <p>Right-click on "Web Pages/booking" folder, select "New", "Other", "XML",
 "XML Document", give the name as "booking-flow", click on "Next&gt;", take
@@ -3617,10 +3658,10 @@ any "faces-config.xml" but defines a <code>&lt;flow-definition&gt;</code>.</p>
 contains the node value, or an EL expression that defines the node, to
 return to. In this case, the navigation returns to the home page.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.10</strong> Finally, invoke the flow by editing "WEB-INF/template.xhtml" and
+</li>
+<li>
+<p>Finally, invoke the flow by editing "WEB-INF/template.xhtml" and
 changing:</p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;h:commandLink action="item1"&gt;Item 1&lt;/h:commandLink&gt;</code></pre>
@@ -3640,10 +3681,10 @@ button. The action attribute points to the directory where all views for
 the flow are stored. This directory already contains "booking-flow.xml"
 which defines the flow of the pages.</p>
 </div>
-<div class="paragraph">
-<p><strong>9.11</strong> Run the project by right clicking on the project and selecting
+</li>
+<li>
+<p>Run the project by right clicking on the project and selecting
 "Run". The browser shows the updated output.</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output.png" alt="image"></span></p>
 </div>
@@ -3680,6 +3721,9 @@ notice how the values in the bean are preserved.</p>
 <div class="paragraph">
 <p>Click on "home" takes to the main application page.</p>
 </div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3689,12 +3733,12 @@ notice how the values in the bean are preserved.</p>
 <p>This hands-on lab built a trivial 3-tier web application using Java EE 7
 and demonstrated the following features of the platform:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Java EE 7 Platform (JSR 342)</p>
-<div class="ulist">
-<ul>
+<p>Java EE 7 Platform</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Maven coordinates</p>
 </li>
@@ -3704,36 +3748,65 @@ and demonstrated the following features of the platform:</p>
 <li>
 <p>Default JMSConnectionFactory</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p>Java Persistence API 2.1 (JSR 338)</p>
-<div class="ulist">
-<ul>
+<p>Java API for WebSocket 1.0</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p>Schema generation properties</p>
+<p>Annotated server endpoint</p>
 </li>
-</ul>
+<li>
+<p>JavaScript client</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
-<p>Java API for RESTful Web Services 2.0 (JSR 339)</p>
-<div class="ulist">
-<ul>
+<p>Batch Applications for the Java Platform 1.0</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Chunk-style processing</p>
+</li>
+<li>
+<p>Exception handling</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Java API for JSON Processing 1.0</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Streaming API for generating JSON</p>
+</li>
+<li>
+<p>Streaming API for consuming JSON</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Java API for RESTful Web Services 2.0</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Client API</p>
 </li>
 <li>
 <p>Custom Entity Providers</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p>Java Message Service 2.0 (JSR 343)</p>
-<div class="ulist">
-<ul>
+<p>Java Message Service 2.0</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Default ConnectionFactory</p>
 </li>
@@ -3743,92 +3816,63 @@ and demonstrated the following features of the platform:</p>
 <li>
 <p>Synchronous message send and receive</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p>JavaServer Faces 2.2 (JSR 344)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Faces Flow</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Contexts and Dependency Injection 1.1 (JSR 346)</p>
-<div class="ulist">
-<ul>
+<p>Contexts and Dependency Injection 1.1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Automatic discovery of beans</p>
 </li>
 <li>
 <p>Injection of beans</p>
 </li>
-</ul>
+</ol>
+</div>
+</li>
+<li>
+<p>JavaServer Faces 2.2 (JSR 344)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Faces Flow</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
 <p>Bean Validation 1.1 (JSR 349)</p>
-<div class="ulist">
-<ul>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Integration with JavaServer Faces</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p>Batch Applications for the Java Platform 1.0 (JSR 352)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Chunk-style processing</p>
-</li>
-<li>
-<p>Exception handling</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Java API for JSON Processing 1.0 (JSR 353)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Streaming API for generating JSON</p>
-</li>
-<li>
-<p>Streaming API for consuming JSON</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Java API for WebSocket 1.0 (JSR 356)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Annotated server endpoint</p>
-</li>
-<li>
-<p>JavaScript client</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Java Transaction API 1.2 (JSR 907)</p>
-<div class="ulist">
-<ul>
+<p>Java Transaction API 1.2</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>@Transactional</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
-</ul>
+<li>
+<p>Java Persistence API 2.1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Schema generation properties</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Hopefully this has raised your interest enough in trying out Java EE 7 applications using GlassFish 4.</p>
@@ -3864,7 +3908,7 @@ console can be seen by clicking on "View Domain Admin Console".</p>
 <h2 id="_acknowledgements">12. Acknowledgements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following Java EE community members graciously reviewed this hands-on lab:</p>
+<p>The following Java EE community members graciously reviewed contributed to this hands-on lab:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3986,21 +4030,12 @@ unzipped the above archive. Click on "Finish".</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Clone the repository from either <a href="mailto:git@github.com">git@github.com</a>:arun-gupta/javaee7-hol.git or <a href="https://github.com/arun-gupta/javaee7-hol.git">https://github.com/arun-gupta/javaee7-hol.git</a>.</p>
-</li>
-<li>
-<p>Switch to the cloned project directory&#8217;s <code>starting-template/movieplex7/</code> folder.</p>
-</li>
-<li>
-<p>In the command shell, just to make sure that everything is set up correctly, run the following commands:</p>
+<p>Create an IntelliJ IDEA project in the movieplex7 directory and build the WAR file:</p>
 <div class="literalblock">
 <div class="content">
 <pre>mvn idea:idea
 mvn clean package</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>You will now find an IntelliJ IDEA project in the that folder, along with a packaged .WAR in the <code>target/</code>-folder.</p>
 </div>
 </li>
 <li>
@@ -4072,7 +4107,7 @@ mvn clean package</pre>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2013-12-06 17:30:22 CET
+Last updated 2013-12-04 16:32:52 PST
 </div>
 </div>
 </body>
