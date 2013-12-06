@@ -2957,16 +2957,13 @@ console can be seen by clicking on "View Domain Admin Console".</simpara>
 </listitem>
 <listitem>
 <simpara>Right-click on Servers, choose “Add Server&#8230;” in the pop-up menu.</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/netbeans-addserver.png"/>
   </imageobject>
   <textobject><phrase>image</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>Select "GlassFish Server" in the Add Server Instance wizard, set the
 name to "GlassFish 4.0" and click "Next &gt;".</simpara>
@@ -2995,110 +2992,83 @@ unzipped the above archive. Click on "Finish".</simpara>
 mvn clean package</literallayout>
 
 
-</listitem>
-</orderedlist>
-
 <simpara>You will now find an IntelliJ IDEA project in the that folder, along with a packaged .WAR in the <literal>target/</literal>-folder.</simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with "Convert".</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-convertproject.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Convert Project</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on "Configure".</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-configure-jpa.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Configure Frameworks</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>In the dialog box that shows up make sure the only detected file in there says <literal>persistence.xml</literal> and is checked and confirm  it with "Ok".</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-configure-jpa-dialogbox.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Setup Frameworks</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>As a next step we need to build the project. Open the "Maven Projects" pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with "Yes".</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-open-mavenprojects-pane.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Find Maven Project</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>When the project is reloaded go to the "Maven Projects" pane again and have Maven build and package the project by selecting "Java EE 7 Hands-on Lab &gt; Lifecycle &gt; package" and clicking on the green "play" arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on "Enable Auto-Import" if a green hint pops up.</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-mavenprojects-run-package-command.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Run "maven package" Command</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>In the menu click on "Run &gt; Edit Configurations'".</simpara>
 </listitem>
 <listitem>
 <simpara>In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry <literal>(17 more items)</literal>. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for "GlassFish Server" should show up.</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-add-glassfish-server-configuration.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Add GlassFish Server Configuration</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>Pick "Local" and in the upcoming dialog box enter a name (e.g. <literal>GlassFish Server 4.0.0</literal> - depending on your GlassFish Server version) and uncheck "After launch" so the browser doesn&#8217;t get opened after each redeploy. In the textfield for "Server Domain" enter <literal>domain1</literal> as the name of the domain. Leave the "Username" field at <literal>admin</literal> and the <literal>Password</literal> field empty. Then click "Configure'" next to the "Application server" drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-edit-glassfish-server-configuration-servertab.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Configure GlassFish Server</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>Now click on the "Deployment" tab, then click on the Plus-sign underneath the large empty white area labeled "Deploy at the server startup" and choose <literal>Artifact</literal>. Choose the entry <literal>movieplex7:war</literal> and click "Ok". Click "Ok" again to close the entire configuration dialog. We&#8217;re now done.</simpara>
-</listitem>
-</orderedlist>
-
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/idea-edit-glassfish-server-configuration-deploymenttab.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Configure Deployment</phrase></textobject>
 </inlinemediaobject></simpara>
-<orderedlist numeration="arabic">
+</listitem>
 <listitem>
 <simpara>As a final step we need to start the database. For NetBeans users this happens automagically but we&#8217;ll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder&#8217;s <literal>bin/</literal>-directory and enter the following command <literal>asadmin start-database</literal>, or for Mac/Linux users: <literal>./asadmin start-database</literal> and you&#8217;re good to go.</simpara>
 </listitem>
