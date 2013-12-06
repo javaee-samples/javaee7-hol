@@ -71,7 +71,7 @@ private static final Set<Session> peers = Collections.synchronizedSet(new HashSe
     @OnMessage
     public void message(String message, Session client) throws IOException, EncodeException {
         for (Session peer : peers) {
-           peer.getBasicRemote().sendObject(message);
+           peer.getBasicRemote().sendText(message);
         }
     }
 }
