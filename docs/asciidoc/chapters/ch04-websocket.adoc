@@ -55,7 +55,7 @@ public class ChatServer {
     public void message(String message, Session client)
            throws IOException, EncodeException {
         for (Session peer : peers) {
-            peer.getBasicRemote().sendObject(message);
+            peer.getBasicRemote().sendText(message);
         }
     }
 }
@@ -70,8 +70,8 @@ WebSocket session is opened or closed. The peer parameter defines the
 client requesting connection initiation and termination.
 * `@OnMessage` decorates the message that receives the incoming WebSocket
 message. The first parameter, message, is the payload of the message.
-The second parameter, client, defines the other end of the WebSocket
-connection. The method implementation transmits the received message to
+The second parameter, `client`, defines the other end of the WebSocket
+connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.
 
 Resolve the imports by right-clicking in the editor and selecting "Fix
