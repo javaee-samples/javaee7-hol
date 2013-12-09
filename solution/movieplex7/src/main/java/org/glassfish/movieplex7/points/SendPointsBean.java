@@ -48,7 +48,6 @@ import javax.jms.Queue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-
 /**
  * @author Arun Gupta
  */
