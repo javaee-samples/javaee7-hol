@@ -46,6 +46,7 @@ import javax.annotation.Resource;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.jms.JMSConsumer;
 import javax.jms.JMSContext;
 import javax.jms.JMSDestinationDefinition;
 import javax.jms.JMSException;
@@ -69,9 +70,11 @@ public class ReceivePointsBean {
     Queue pointsQueue;
 
     public String receiveMessage() {
-        String message = context.createConsumer(pointsQueue).receiveBody(String.class);
-        System.out.println("Received message: " + message);
-        return message;
+        try (JMSConsumer consumer = context.createConsumer(pointsQueue)) {
+            String message = consumer.receiveBody(String.class);
+            System.out.println("Received message: " + message);
+            return message;
+        }
     }
 
     public int getQueueSize() {

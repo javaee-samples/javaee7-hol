@@ -166,15 +166,19 @@ JMSContext context;
 Queue pointsQueue;
 
 public String receiveMessage() {
-    String message = context.createConsumer(pointsQueue).receiveBody(String.class);
-    System.out.println("Received message: " + message);
-    return message;
+    try (JMSConsumer consumer = context.createConsumer(pointsQueue)) {
+        String message = consumer.receiveBody(String.class);
+        System.out.println("Received message: " + message);
+        return message;
+    }
 }
 ----
 +
-This code is very similar to `SendPointsBean`. The `createConsumer` method
-creates `JMSConsumer` which is then used to synchronously receive a
-message.
+This code creates `JMSConsumer` in a try-with-resources block
+which is then used to synchronously receive a message. Note that `JMSConsumer`
+is created as an auto-managed resource and so is closed automatically after
+receiving each message. Alternatively asynchronous message delivery can also be setup
+using Message Driven Beans. However that is not covered in this lab.
 +
 . Add the following method to the class:
 +
