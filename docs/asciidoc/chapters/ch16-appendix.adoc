@@ -3,12 +3,15 @@
 
 ifdef::server-wildfly[]
 [[appendix-wildfly-netbeans]]
-=== Configure WildFly 8 in NetBeans IDE
+=== Configure WildFly 8 in NetBeans
+
+[[appendix-wildfly-idea]]
+=== Configure WildFly 8 in IntelliJ IDEA
 endif::server-wildfly[]
 
 ifdef::server-glassfish[]
 [[appendix-glassfish4-netbeans]]
-=== Configure GlassFish 4 in NetBeans IDE
+=== Configure GlassFish 4 in NetBeans
 
 . In NetBeans, click on the “Services” tab.
 +
@@ -71,3 +74,4 @@ image:images/idea-edit-glassfish-server-configuration-deploymenttab.png[Configur
 
 . Open `http://localhost:8080/movieplex7-1.0-SNAPSHOT/` in your browser to see the (mostly empty) starter template.
 endif::server-glassfish[]
+

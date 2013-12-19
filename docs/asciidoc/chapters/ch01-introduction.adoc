@@ -51,5 +51,6 @@ TIP: <<appendix-glassfish4-idea>> explains how to configure GlassFish in Intelli
 endif::server-glassfish[]
 ifdef::server-wildfly[]
 WildFly 8 needs to be downloaded from http://wildfly.org/downloads/[wildfly.org] and configured in NetBeans IDE following the instructions in <<appendix-wildfly-netbeans>>.
++
+TIP: <<appendix-wildfly-idea>> explains how to configure GlassFish in IntelliJ IDEA.
 endif::server-wildfly[]
-
