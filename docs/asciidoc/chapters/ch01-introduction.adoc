@@ -33,16 +33,23 @@ The following software needs to be downloaded and installed:
 
 * JDK 7 from
 http://www.oracle.com/technetwork/java/javase/downloads/index.html[http://www.oracle.com/technetwork/java/javase/downloads/index.html].
-* NetBeans 7.4 or higher "All" or "Java EE" version from
+ifdef::ide-netbeans[]
+* NetBeans 8 Beta or higher "All" or "Java EE" version from
 http://netbeans.org/downloads/[http://netbeans.org/downloads/]. A
-preview of the downloads page is shown and highlights the exact
+snapshot of the downloads page is shown and highlights the exact
 "Download" button to be clicked.
-
++
 image:images/1.1-netbeans-download.png[image]
-
-GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from http://glassfish.org/[glassfish.org]. 
-
+endif::ide-netbeans[]
++
+ifdef::server-glassfish[]
+GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from http://glassfish.org/[glassfish.org].
++
 TIP: If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <<appendix-glassfish4-netbeans>>.
-
++
 TIP: <<appendix-glassfish4-idea>> explains how to configure GlassFish in IntelliJ IDEA.
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+WildFly 8 needs to be downloaded from http://wildfly.org/downloads/[wildfly.org] and configured in NetBeans IDE following the instructions in <<appendix-wildfly-netbeans>>.
+endif::server-wildfly[]
 

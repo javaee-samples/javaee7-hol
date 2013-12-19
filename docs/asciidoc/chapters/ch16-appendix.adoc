@@ -1,6 +1,12 @@
 [appendix]
 == Appendix
 
+ifdef::server-wildfly[]
+[[appendix-wildfly-netbeans]]
+=== Configure WildFly 8 in NetBeans IDE
+endif::server-wildfly[]
+
+ifdef::server-glassfish[]
 [[appendix-glassfish4-netbeans]]
 === Configure GlassFish 4 in NetBeans IDE
 
@@ -64,3 +70,4 @@ image:images/idea-edit-glassfish-server-configuration-deploymenttab.png[Configur
 . In the menu now choose "Run > Run GlassFish Server 4.0.0" (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
 
 . Open `http://localhost:8080/movieplex7-1.0-SNAPSHOT/` in your browser to see the (mostly empty) starter template.
+endif::server-glassfish[]
