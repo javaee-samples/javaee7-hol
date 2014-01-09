@@ -5,26 +5,40 @@ ifdef::server-wildfly[]
 [[appendix-wildfly-netbeans]]
 === Configure WildFly 8 in NetBeans
 
+. In NetBeans, click on `Tools', `Plugins', `Settings', and click on `Add'.
++
+. Specify the name as ``Dev Update Center'' and the URL as ``http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz''.
+image:images/16-netbeans-add-dev-update-center.png[image]
++
+and click on `OK'.
+. Click on `Available Plugins', type ``wildfly'' in `Search:' box, and select the plugin by clicking on the checkbox in `Install' column.
+image:images/16-netbeans-available-plugins-wildfly.png[image]
++
+The exact plugin version and the date may be different.
+. Click on `Install' button, `Next >', accept the license agreement by clicking on the checkbox, and click on `Install' button to install the plugin. Click on `Finish' to restart the IDE and complete installation.
+
 [[appendix-wildfly-idea]]
 === Configure WildFly 8 in IntelliJ IDEA
+
+. In IntelliJ IDEA
 endif::server-wildfly[]
 
 ifdef::server-glassfish[]
 [[appendix-glassfish4-netbeans]]
 === Configure GlassFish 4 in NetBeans
 
-. In NetBeans, click on the “Services” tab.
+. In NetBeans, click on `Services' tab.
 +
-. Right-click on Servers, choose “Add Server...” in the pop-up menu.
+. Right-click on Servers, choose `Add Server...' in the pop-up menu.
 +
 image:images/netbeans-addserver.png[image]
 +
-. Select "GlassFish Server" in the Add Server Instance wizard, set the
-name to "GlassFish 4.0" and click "Next >".
+. Select `GlassFish Server' in the Add Server Instance wizard, set the
+name to `GlassFish 4.0' and click `Next >'.
 +
-. Click on "Browse …" and browse to where you unzipped the GlassFish
-build and point to the "glassfish4" directory that got created when you
-unzipped the above archive. Click on "Finish".
+. Click on `Browse …' and browse to where you unzipped the GlassFish
+build and point to the `glassfish4' directory that got created when you
+unzipped the above archive. Click on ”Finish”.
 
 [[appendix-glassfish4-idea]]
 === Configure GlassFish 4 in IntelliJ IDEA
@@ -34,43 +48,43 @@ unzipped the above archive. Click on "Finish".
   mvn idea:idea
   mvn clean package
 +
-. Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with "Convert".
+. Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with `Convert'.
 +
 image:images/idea-convertproject.png[Convert Project]
 +
-. Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on "Configure".
+. Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on `Configure'.
 +
 image:images/idea-configure-jpa.png[Configure Frameworks]
 +
-. In the dialog box that shows up make sure the only detected file in there says `persistence.xml` and is checked and confirm  it with "Ok".
+. In the dialog box that shows up make sure the only detected file in there says `persistence.xml` and is checked and confirm  it with `Ok'.
 +
 image:images/idea-configure-jpa-dialogbox.png[Setup Frameworks]
 +
-. As a next step we need to build the project. Open the "Maven Projects" pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with "Yes".
+. As a next step we need to build the project. Open the ”Maven Projects” pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with `Yes'.
 +
 image:images/idea-open-mavenprojects-pane.png[Find Maven Project]
 +
-. When the project is reloaded go to the "Maven Projects" pane again and have Maven build and package the project by selecting "Java EE 7 Hands-on Lab > Lifecycle > package" and clicking on the green "play" arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on "Enable Auto-Import" if a green hint pops up.
+. When the project is reloaded go to the `Maven Projects' pane again and have Maven build and package the project by selecting `Java EE 7 Hands-on Lab > Lifecycle > package' and clicking on the green `play' arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on `Enable Auto-Import' if a green hint pops up.
 +
-image:images/idea-mavenprojects-run-package-command.png[Run "maven package" Command]
+image:images/idea-mavenprojects-run-package-command.png[Run `maven package` Command]
 +
-. In the menu click on "Run > Edit Configurations'".
+. In the menu click on `Run > Edit Configurations'.
 +
-. In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry `(17 more items)`. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for "GlassFish Server" should show up.
+. In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry `(17 more items)`. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for `GlassFish Server' should show up.
 +
 image:images/idea-add-glassfish-server-configuration.png[Add GlassFish Server Configuration]
 +
-. Pick "Local" and in the upcoming dialog box enter a name (e.g. `GlassFish Server 4.0.0` - depending on your GlassFish Server version) and uncheck "After launch" so the browser doesn't get opened after each redeploy. In the textfield for "Server Domain" enter `domain1` as the name of the domain. Leave the "Username" field at `admin` and the `Password` field empty. Then click "Configure'" next to the "Application server" drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.
+. Pick `Local' and in the upcoming dialog box enter a name (e.g. `GlassFish Server 4.0.0` - depending on your GlassFish Server version) and uncheck `After launch' so the browser doesn't get opened after each redeploy. In the textfield for ”Server Domain” enter `domain1` as the name of the domain. Leave the `Username' field at `admin` and the `Password` field empty. Then click `Configure' next to the `Application server' drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.
 +
 image:images/idea-edit-glassfish-server-configuration-servertab.png[Configure GlassFish Server]
 +
-. Now click on the "Deployment" tab, then click on the Plus-sign underneath the large empty white area labeled "Deploy at the server startup" and choose `Artifact`. Choose the entry `movieplex7:war` and click "Ok". Click "Ok" again to close the entire configuration dialog. We're now done.
+. Now click on the `Deployment' tab, then click on the Plus-sign underneath the large empty white area labeled `Deploy at the server startup' and choose `Artifact`. Choose the entry `movieplex7:war` and click `Ok'. Click `Ok' again to close the entire configuration dialog. We're now done.
 +
 image:images/idea-edit-glassfish-server-configuration-deploymenttab.png[Configure Deployment]
 +
 . As a final step we need to start the database. For NetBeans users this happens automagically but we'll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder's `bin/`-directory and enter the following command `asadmin start-database`, or for Mac/Linux users: `./asadmin start-database` and you're good to go.
 
-. In the menu now choose "Run > Run GlassFish Server 4.0.0" (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
+. In the menu now choose `Run > Run GlassFish Server 4.0.0' (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
 
 . Open `http://localhost:8080/movieplex7-1.0-SNAPSHOT/` in your browser to see the (mostly empty) starter template.
 endif::server-glassfish[]

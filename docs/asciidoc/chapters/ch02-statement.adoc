@@ -147,14 +147,14 @@ marked in the document.
 === Estimated Time
 
 Following the complete instructions in this document can take any where
-from three to five hours. The wide time range accommodates for learning
+from two to four hours. The wide time range accommodates for learning
 the new technologies, finding your way in NetBeans, copy/pasting the
 code, and debugging the errors.
 
 The recommended flow is where you follow through the instructions in all
 sections in the listed sequence. Alternatively, you may like to cover
 section <<walk-through>> through <<jsf>> in an order of your choice, based upon your
-interest and preference of the technology. However section <jaxrs> is a
+interest and preference of the technology. However section <<jaxrs>> is a
 pre-requisite for <<json>>.
 
 Here is an approximate time estimate for each section:

@@ -3,7 +3,7 @@
 :revdate: Dec 3, 2013
 :toc:
 :ide-netbeans: true
-:server-glassfish: true
+:server-wildfly: true
 
 = Java EE 7 Hands-on Lab
 
