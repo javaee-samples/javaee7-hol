@@ -37,7 +37,7 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-package org.glassfish.movieplex7.entities;
+package org.javaee7.movieplex7.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

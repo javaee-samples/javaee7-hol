@@ -37,7 +37,7 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-package org.glassfish.movieplex7.rest;
+package org.javaee7.movieplex7.rest;
 
 import javax.ws.rs.core.Application;
 

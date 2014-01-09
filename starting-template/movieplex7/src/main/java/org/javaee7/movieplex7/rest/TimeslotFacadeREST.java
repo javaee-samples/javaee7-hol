@@ -37,7 +37,7 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-package org.glassfish.movieplex7.rest;
+package org.javaee7.movieplex7.rest;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -52,30 +52,31 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import org.glassfish.movieplex7.entities.Theater;
+import org.javaee7.movieplex7.entities.Timeslot;
 
 /**
  * @author Arun Gupta
  */
 @Named
 @Stateless
-@Path("theater")
-public class TheaterFacadeREST extends AbstractFacade<Theater> {
+@Path("timeslot")
+public class TimeslotFacadeREST extends AbstractFacade<Timeslot> {
     @PersistenceContext
     private EntityManager em;
 
-    public TheaterFacadeREST() {
-        super(Theater.class);
+    public TimeslotFacadeREST() {
+        super(Timeslot.class);
     }
 
     @POST
     @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(Theater entity) {
+    public void create(Timeslot entity) {
         super.create(entity);
     }
 
     @PUT
+    @Consumes({"application/xml", "application/json"})
     @Path("{id}")
     public void edit(@PathParam("id") Integer id) {
         super.edit(id);
@@ -90,21 +91,21 @@ public class TheaterFacadeREST extends AbstractFacade<Theater> {
     @GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public Theater find(@PathParam("id") Integer id) {
+    public Timeslot find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({"application/xml", "application/json"})
-    public List<Theater> getAll() {
+    public List<Timeslot> getAll() {
         return super.getAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({"application/xml", "application/json"})
-    public List<Theater> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Timeslot> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

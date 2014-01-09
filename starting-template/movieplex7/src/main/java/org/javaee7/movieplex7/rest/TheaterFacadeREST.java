@@ -37,62 +37,87 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-package org.glassfish.movieplex7.rest;
+package org.javaee7.movieplex7.rest;
 
 import java.util.List;
+import javax.ejb.Stateless;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import org.javaee7.movieplex7.entities.Theater;
 
 /**
  * @author Arun Gupta
- * @param <T> entity class
  */
-public abstract class AbstractFacade<T> {
-    private final Class<T> entityClass;
+@Named
+@Stateless
+@Path("theater")
+public class TheaterFacadeREST extends AbstractFacade<Theater> {
+    @PersistenceContext
+    private EntityManager em;
 
-    public AbstractFacade(Class<T> entityClass) {
-        this.entityClass = entityClass;
+    public TheaterFacadeREST() {
+        super(Theater.class);
     }
 
-    protected abstract EntityManager getEntityManager();
-
-    public void create(T entity) {
-        getEntityManager().persist(entity);
+    @POST
+    @Override
+    @Consumes({"application/xml", "application/json"})
+    public void create(Theater entity) {
+        super.create(entity);
     }
 
-    public void edit(Object id) {
-        T t = getEntityManager().find(entityClass, id);
-        getEntityManager().merge(t);
+    @PUT
+    @Path("{id}")
+    public void edit(@PathParam("id") Integer id) {
+        super.edit(id);
     }
 
-    public void remove(T entity) {
-        getEntityManager().remove(getEntityManager().merge(entity));
+    @DELETE
+    @Path("{id}")
+    public void remove(@PathParam("id") Integer id) {
+        super.remove(super.find(id));
     }
 
-    public T find(Object id) {
-        return getEntityManager().find(entityClass, id);
+    @GET
+    @Path("{id}")
+    @Produces({"application/xml", "application/json"})
+    public Theater find(@PathParam("id") Integer id) {
+        return super.find(id);
     }
 
-    public List<T> getAll() {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(entityClass));
-        return getEntityManager().createQuery(cq).getResultList();
+    @GET
+    @Override
+    @Produces({"application/xml", "application/json"})
+    public List<Theater> getAll() {
+        return super.getAll();
     }
 
-    public List<T> findRange(int[] range) {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(entityClass));
-        javax.persistence.Query q = getEntityManager().createQuery(cq);
-        q.setMaxResults(range[1] - range[0]);
-        q.setFirstResult(range[0]);
-        return q.getResultList();
+    @GET
+    @Path("{from}/{to}")
+    @Produces({"application/xml", "application/json"})
+    public List<Theater> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+        return super.findRange(new int[]{from, to});
     }
 
-    public int count() {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        javax.persistence.criteria.Root<T> rt = cq.from(entityClass);
-        cq.select(getEntityManager().getCriteriaBuilder().count(rt));
-        javax.persistence.Query q = getEntityManager().createQuery(cq);
-        return ((Long) q.getSingleResult()).intValue();
+    @GET
+    @Path("count")
+    @Produces("text/plain")
+    public String countREST() {
+        return String.valueOf(super.count());
+    }
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
     }
     
 }

@@ -37,61 +37,58 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-package org.glassfish.movieplex7.entities;
+
+package org.javaee7.movieplex7.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.CascadeType;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * @author Arun Gupta
  */
 @Entity
-@Table(name = "MOVIE")
+@Table(name = "SALES")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Movie.findAll", query = "SELECT m FROM Movie m"),
-    @NamedQuery(name = "Movie.findById", query = "SELECT m FROM Movie m WHERE m.id = :id"),
-    @NamedQuery(name = "Movie.findByName", query = "SELECT m FROM Movie m WHERE m.name = :name"),
-    @NamedQuery(name = "Movie.findByActors", query = "SELECT m FROM Movie m WHERE m.actors = :actors")})
-public class Movie implements Serializable {
+    @NamedQuery(name = "Sales.findAll", query = "SELECT s FROM Sales s"),
+    @NamedQuery(name = "Sales.findById", query = "SELECT s FROM Sales s WHERE s.id = :id"),
+    @NamedQuery(name = "Sales.findByAmount", query = "SELECT s FROM Sales s WHERE s.amount = :amount")})
+public class Sales implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @Basic(optional = false)
     @NotNull
+    @Column(name = "ID")
     private Integer id;
-    
+    @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
-    private String name;
+    @Column(name = "AMOUNT")
+    private double amount;
     
-    @NotNull
-    @Size(min = 1, max = 200)
-    private String actors;
-    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "movieId")
-    private Collection<ShowTiming> showTimingCollection;
+//    @JoinColumn(name = "ID", referencedColumnName = "ID", insertable = false, updatable = false)
+//    @OneToOne(optional = false)
+//    private Timeslot timeslot;
 
-    public Movie() {
+    public Sales() {
     }
 
-    public Movie(Integer id) {
+    public Sales(Integer id) {
         this.id = id;
     }
 
-    public Movie(Integer id, String name, String actors) {
+    public Sales(Integer id, double amount) {
         this.id = id;
-        this.name = name;
-        this.actors = actors;
+        this.amount = amount;
     }
 
     public Integer getId() {
@@ -102,30 +99,21 @@ public class Movie implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public String getActors() {
-        return actors;
-    }
-
-    public void setActors(String actors) {
-        this.actors = actors;
-    }
-
-    @XmlTransient
-    public Collection<ShowTiming> getShowTimingCollection() {
-        return showTimingCollection;
-    }
-
-    public void setShowTimingCollection(Collection<ShowTiming> showTimingCollection) {
-        this.showTimingCollection = showTimingCollection;
-    }
+//    public Timeslot getTimeslot() {
+//        return timeslot;
+//    }
+//
+//    public void setTimeslot(Timeslot timeslot) {
+//        this.timeslot = timeslot;
+//    }
 
     @Override
     public int hashCode() {
@@ -137,10 +125,10 @@ public class Movie implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Movie)) {
+        if (!(object instanceof Sales)) {
             return false;
         }
-        Movie other = (Movie) object;
+        Sales other = (Sales) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -149,7 +137,7 @@ public class Movie implements Serializable {
 
     @Override
     public String toString() {
-        return name;
+        return "foo.Sales[ id=" + id + " ]";
     }
-    
+
 }
