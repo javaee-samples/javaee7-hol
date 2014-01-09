@@ -123,8 +123,13 @@ The JPA 2.1 specification says if neither `jta-data-source` nor
 JTA data source or the default JTA data source must be provided by the
 container.
 +
+ifdef::server-wildfly[]
+For WildFly 8, the default data source is bound to the JDBC resource `what name`.
+endif::server-wildfly[]
+ifdef::server-glassfish[]
 For GlassFish 4, the default data source is bound to the JDBC resource
 `jdbc/__default`.
+endif::server-glassfish[]
 +
 Clicking back and forth between `Design' and `Source' view may prompt
 the error shown below:
@@ -265,10 +270,15 @@ that the classes cannot be resolved. This is expected before the
 dependencies are downloaded. However these references will be resolved
 correctly after the dependencies are downloaded during project building.
 +
-During the first run, the IDE will ask you to select a deployment
-server. Choose the configured GlassFish server and click on `OK'.
+During the first run, the IDE will ask you to select a deployment server.
+ifdef::server-wildfly[]
+What to do for WildFly ?
+endif::server-wildfly[]
+ifdef::server-glassfish[]
+Choose the configured GlassFish server and click on `OK'.
 +
 image:images/3.6-glassfish-server.png[image]
+endif::server-glassfish[]
 +
 The output looks like as shown.
 +

@@ -16,11 +16,27 @@ image:images/16-netbeans-available-plugins-wildfly.png[image]
 +
 The exact plugin version and the date may be different.
 . Click on `Install' button, `Next >', accept the license agreement by clicking on the checkbox, and click on `Install' button to install the plugin. Click on `Finish' to restart the IDE and complete installation.
++
+. In NetBeans, click on `Services' tab.
++
+. Right-click on Servers, choose `Add Server...' in the pop-up menu.
++
+image:images/netbeans-addserver.png[image]
++
+. Select `WildFly Application Server' in the Add Server Instance wizard, set the
+name to `WildFly 8' and click `Next >'.
++
+image:images/16-netbeans-add-instance-wildfly.png[image]
++
+. Click on `Browse …' and select the directory that got created
+when WildFly archive was unzipped. Click on `Next' and then `Finish'. 
+The `Services' should show the WildFly instance.
++
+image:images/16-netbeans-wildfly-server.png[image]
 
 [[appendix-wildfly-idea]]
 === Configure WildFly 8 in IntelliJ IDEA
 
-. In IntelliJ IDEA
 endif::server-wildfly[]
 
 ifdef::server-glassfish[]
