@@ -9,17 +9,17 @@ performed to provide an understanding of the application architecture.
 
 . Download the sample application from
 https://github.com/javaee-samples/javaee7-hol/blob/master/starting-template/movieplex7-starting-template.zip?raw=true[movieplex7-starting-template.zip]
-and unzip. This will create a "movieplex7" directory and unzips all the
+and unzip. This will create a `movieplex7' directory and unzips all the
 content there.
 +
-. In NetBeans IDE, select "File", "Open Project…", select the
-unzipped directory, and click on "Open Project". The project structure
+. In NetBeans IDE, select `File', `Open Project', select the
+unzipped directory, and click on `Open Project'. The project structure
 is shown.
 +
 image:images/3.2-project-structure.png[image]
 +
-. Maven Coordinates: Expand "Project Files" and double click on
-"pom.xml". In the "pom.xml", the Java EE 7 API is specified as a
+. Maven Coordinates: Expand `Project Files' and double click on
+`pom.xml'. In the `pom.xml', the Java EE 7 API is specified as a
 `<dependency>`:
 +
 [source,xml]
@@ -37,27 +37,32 @@ Maven repository.
 +
 [NOTE]
 =================
-The Java EE 6 platform introduced the notion of "profiles". A profile is
+The Java EE 6 platform introduced the notion of `profiles'. A profile is
 a configuration of the Java EE platform targeted at a specific class of
 applications. All Java EE profiles share a set of common features, such
 as naming and resource injection, packaging rules, security
 requirements, etc. A profile may contain a proper subset or superset of
 the technologies contained in the platform.
-+
+
 The Java EE Web Profile is a profile of the Java EE Platform
 specifically targeted at modern web applications. The complete set of
 specifications defined in the Web Profile is defined in the Java EE 7
-Web Profile Specification. GlassFish can be downloaded in two different
-flavors – Full Platform or Web Profile.
+Web Profile Specification.
 =================
+ifdef::server-glassfish[]
+GlassFish can be downloaded in two different flavors – Full Platform or Web Profile.
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+WildFly can be started in Full Platform or Web Profile (default).
+endif::server-wildfly[]
 +
 IMPORTANT: This lab requires Full Platform download. All technologies used in this
 lab, except Java Message Service and Batch Applications for the Java
 Platform, can be deployed on Web Profile.
 +
-. *Default Data Source*: Expand "Other Sources",
-"src/main/resources", "META-INF", and double-click on "persistence.xml".
-By default, NetBeans opens the file in Design View. Click on Source tab
+. *Default Data Source*: Expand `Other Sources',
+`src/main/resources', `META-INF', and double-click on `persistence.xml'.
+By default, NetBeans opens the file in Design View. Click on `Source' tab
 to view the XML source.
 +
 image:images/3.2-persistence-xml.png[image]
@@ -121,12 +126,12 @@ container.
 For GlassFish 4, the default data source is bound to the JDBC resource
 `jdbc/__default`.
 +
-Clicking back and forth between "Design" and "Source" view may prompt
+Clicking back and forth between `Design' and `Source' view may prompt
 the error shown below:
 +
 image:images/3.4-missing-server.png[image]
 +
-This will get resolved when we run the application. Click on "OK" to
+This will get resolved when we run the application. Click on `OK' to
 dismiss the dialog.
 +
 . *Schema Generation:* JPA 2.1 defines a new set of
@@ -176,24 +181,24 @@ Refer to the http://jcp.org/en/jsr/detail?id=338[JPA 2.1 Specification]
 for a complete understanding of these properties.
 +
 In the application, the scripts are bundled in the WAR file in
-"META-INF" directory. As the location of these scripts is specified as a
+`META-INF' directory. As the location of these scripts is specified as a
 URL, the scripts may be loaded from outside the WAR file as well.
 +
-Feel free to open "create.sql", "drop.sql" and "load.sql" and read
+Feel free to open `create.sql', `drop.sql' and `load.sql' and read
 through the SQL scripts. The database schema is shown.
 +
 image:images/3.5-schema.png[image]
 +
-This folder also contains "sales.csv" which carries some comma-separated
+This folder also contains `sales.csv' which carries some comma-separated
 data, and is used later in the application.
 +
-. *JPA entities, Stateless EJBs, and REST endpoints*: Expand "Source
-Packages". The package `org.glassfish.movieplex7.entities` contains the
+. *JPA entities, Stateless EJBs, and REST endpoints*: Expand `Source
+Packages'. The package `org.javaee7.movieplex7.entities` contains the
 JPA entities corresponding to the database table definitions. Each JPA
-entity has several convenient @NamedQuery defined and uses Bean
+entity has several convenient `@NamedQuery` defined and uses Bean
 Validation constraints to enforce validation.
 +
-The package `org.glassfish.movieplex7.rest` contains stateless EJBs
+The package `org.javaee7.movieplex7.rest` contains stateless EJBs
 corresponding to different JPA entities.
 +
 Each EJB has methods to perform CRUD operations on the JPA entity and
@@ -232,23 +237,23 @@ corresponding REST endpoint is shown.
 +
 Feel free to browse through the code.
 +
-. *JSF pages*: "WEB-INF/template.xhtml" defines the template of the
+. *JSF pages*: `WEB-INF/template.xhtml' defines the template of the
 web page and has a header, left navigation bar, and a main content
 section. "index.xhtml" uses this template and the EJBs to display the
 number of movies and theaters.
 +
-Java EE 7 enables CDI discovery of beans by default. No "beans.xml" is
-required in "WEB-INF". This allows all beans with bean defining
+Java EE 7 enables CDI discovery of beans by default. No `beans.xml' is
+required in `WEB-INF'. This allows all beans with bean defining
 annotation, i.e. either a bean with an explicit CDI scope or EJBs to be
 available for injection.
 +
-Note, "template.xhtml" is in "WEB-INF" folder as it allows the template
+Note, `template.xhtml' is in `WEB-INF' folder as it allows the template
 to be accessible from the pages bundled with the application only. If it
 were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.
 +
-. *Run the sample*: Right-click on the project and select "Run".
+. *Run the sample*: Right-click on the project and select `Run'.
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on GlassFish 4, and show the URL
 http://localhost:8080/movieplex7[localhost:8080/movieplex7] in the
@@ -261,7 +266,7 @@ dependencies are downloaded. However these references will be resolved
 correctly after the dependencies are downloaded during project building.
 +
 During the first run, the IDE will ask you to select a deployment
-server. Choose the configured GlassFish server and click on "OK".
+server. Choose the configured GlassFish server and click on `OK'.
 +
 image:images/3.6-glassfish-server.png[image]
 +
