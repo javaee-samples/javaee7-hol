@@ -7,7 +7,7 @@ will be introduced and demonstrated by using them in the application.
 
 *Estimated Time*: 30-45 mins
 
-Batch Processing is execution of series of "jobs" that is suitable for
+Batch Processing is execution of series of `jobs' that is suitable for
 non-interactive, bulk-oriented and long-running tasks. Batch
 Applications for the Java Platform (JSR 352) will define a programming
 model for batch applications and a runtime for scheduling and executing
@@ -20,7 +20,7 @@ The core concepts of Batch Processing are:
 * A *Job* is an instance that encapsulates an entire batch process. A
 job is typically put together using a Job Specification Language and
 consists of multiple steps. The Job Specification Language for JSR 352
-is implemented with XML and is referred as "Job XML".
+is implemented with XML and is referred as `Job XML'.
 * A *Step* is a domain object that encapsulates an independent,
 sequential phase of a job. A step contains all of the information
 necessary to define and control the actual batch processing.
@@ -40,13 +40,13 @@ aggregated, they are written out, and the transaction is committed.
 This section will read the cumulative sales for each show from a CSV
 file and populate them in a database.
 
-. Right-click on Source Packages, select "New", "Java Package…",
-specify the value as "org.glassfish.movieplex7.batch", and click on
-"Finish".
+. Right-click on Source Packages, select `New', `Java Package',
+specify the value as `org.javaee7.movieplex7.batch', and click on
+`Finish'.
 +
-. Right-click on newly created package, select "New", "Java Class…",
-specify the name as "SalesReader". Make this class extend from
-`AbstractItemReader`, change the class definition and add:
+. Right-click on newly created package, select `New', `Java Class',
+specify the name as `SalesReader'. Make this class extend from
+`AbstractItemReader' by changing the class definition and add:
 +
 [source, java]
 extends AbstractItemReader
@@ -63,14 +63,13 @@ available for injection.
 +
 Resolve the imports.
 +
-. Add the following code:
+. Override `open()` method to initialize the reader by adding the following code:
 +
 [source, java]
 ----
 private BufferedReader reader;
 
-Override open() method to initialize the reader:
-public void open(Serializable checkpoint) throws Exception \{
+public void open(Serializable checkpoint) throws Exception {
     reader = new BufferedReader(
         new InputStreamReader(
         Thread.currentThread()
@@ -79,10 +78,10 @@ public void open(Serializable checkpoint) throws Exception \{
 }
 ----
 +
-This method initializes a BufferedReader from "META-INF/sales.csv" that
+This method initializes a BufferedReader from `META-INF/sales.csv' that
 is bundled with the application.
 +
-Sampling of the first few lines from "sales.csv" is shown below:
+Sampling of the first few lines from `sales.csv' is shown below:
 +
 [source,csv]
 1,500.00
@@ -119,8 +118,8 @@ so the current chunk will be committed and the step will end.
 +
 Resolve the imports.
 +
-. Right-click on "org.glassfish.movieplex7.batch" package, select
-"New", "Java Class…", specify the name as "SalesProcessor". Change the
+. Right-click on `org.javaee7.movieplex7.batch' package, select
+`New', `Java Class', specify the name as `SalesProcessor'. Change the
 class definition and add:
 +
 [source, java]
@@ -165,8 +164,8 @@ particular record is skipped from aggregation as well (shown later).
 +
 Resolve the imports.
 +
-. Right-click on "org.glassfish.movieplex7.batch" package, select
-"New", "Java Class…", specify the name as "SalesWriter". Change the
+. Right-click on `org.javaee7.movieplex7.batch` package, select
+`New', `Java Class', specify the name as `SalesWriter'. Change the
 class definition and add:
 +
 [source, java]
@@ -187,7 +186,7 @@ Resolve the imports.
 [source, java]
 @PersistenceContext EntityManager em;
 +
-Override the following method from the abstract class:
+Override `writeItems` method from the abstract class by adding the following code:
 +
 [source, java]
 ----
@@ -217,17 +216,23 @@ is called, committed if no checked exceptions are thrown, and rolled
 back if runtime exceptions are thrown. This behavior can be overridden
 using `rollbackOn` and `dontRollbackOn` attributes of the annotation.
 +
+[NOTE]
+=================
+Each chunk is processed within a container-managed transaction already.
+There is really no need for `@Transactional` on `writeItems` method but 
+shows a usage for the annotation.
+=================
 Resolve the imports.
 +
 . Create Job XML that defines the job, step, and chunk.
 +
-In "Files" tab, expand the project -> "src" -> "main" -> "resources",
-right-click on "resources", "META-INF", select "New", "Folder…", specify
-the name as "batch-jobs", and click on "Finish".
+In `Files' tab, expand the project -> `src' -> `main' -> `resources',
+right-click on `META-INF', select `New', `Folder', specify
+the name as `batch-jobs', and click on `Finish'.
 +
-Right-click on the newly created folder, select "New", "Other…", select
-"XML", "XML Document", click on "Next >", give the name as "eod-sales",
-click on "Next", take the default, and click on "Finish".
+Right-click on the newly created folder, select `New', `Other', select
+`XML', `XML Document', click on `Next >', give the name as `eod-sales',
+click on `Next', take the default, and click on `Finish'.
 +
 Replace contents of the file with the following:
 +
@@ -254,8 +259,9 @@ This code shows that the job has one step of chunk type. The `<reader>`,
 implementations of `ItemReader`, `ItemProcessor`, and `ItemWriter` interfaces.
 The `item-count` attribute defines that 3 items are
 read/processed/aggregated and then given to the writer. The entire
-reader/processor/writer cycle is executed within a transaction. The
-`<skippable-exception-classes>` element specifies a set of exceptions to
+reader/processor/writer cycle is executed within a transaction.
++
+The `<skippable-exception-classes>` element specifies a set of exceptions to
 be skipped by chunk processing.
 +
 CSV file used for this lab has intentionally introduced couple of typos
@@ -267,8 +273,8 @@ exceptions a step will skip.
 +
 . Lets invoke the batch job.
 +
-Right-click on "org.glassfish.movieplex7.batch" package, select "New",
-"Java Class…". Enter the name as "SalesBean" and click on "Finish"
+In `Projects' tab, right-click on `org.javaee7.movieplex7.batch' package, select `New',
+`Java Class'. Enter the name as `SalesBean' and click on `Finish'
 button.
 +
 Add the following code to the bean:
@@ -280,7 +286,7 @@ public void runJob() {
         JobOperator jo = BatchRuntime.getJobOperator();
         long jobId = jo.start("eod-sales", new Properties());
         System.out.println("Started job: with id: " + jobId);
-    } catch (JobStartException ex) \{
+    } catch (JobStartException ex) {
         ex.printStackTrace();
     }
 }
@@ -299,7 +305,7 @@ Resolve the imports.
 +
 image:images/5.10-imports.png[image]
 +
-. Inject EntityManagerFactory in the class as:
+. Inject `EntityManagerFactory` in the class as:
 +
 [source, java]
 @PersistenceUnit EntityManagerFactory emf;
@@ -321,20 +327,20 @@ return all the rows from the table.
 +
 Resolve the imports.
 +
-. Right-click on "Web Pages", select "New", "Folder…", specify the
-name as "batch", and click on "Finish".
+. Right-click on `Web Pages', select `New', `Folder', specify the
+name as `batch', and click on `Finish'.
 +
-Right-click on the newly created folder, select "New", "Other…",
-"JavaServer Faces", "Facelets Template Client", and click on "Next >".
+Right-click on the newly created folder, select `New', `Other',
+`JavaServer Faces', `Facelets Template Client', and click on `Next >'.
 +
-Give the File Name as "sales". Click on "Browse…" next to "Template:",
-expand "Web Pages", "WEB-INF", select "template.xhtml", and click on
-"Select File". Click on "Finish".
+Give the File Name as `sales'. Click on `Browse' next to `Template:',
+expand `Web Pages', `WEB-INF', select `template.xhtml', and click on
+`Select File'. Click on `Finish'.
 +
 In this file, remove `<ui:define>` sections where name attribute value is
-"top" and "left". These sections are inherited from the template.
+`top' and `left'. These sections are inherited from the template.
 +
-Replace `<ui:define>` section with "content" name such that it looks like:
+Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
@@ -371,11 +377,10 @@ table by invoking `SalesBean.getSalesData()`. First command button allows
 invoking the job that processes the CSV file and populates the database.
 The second command button refreshes the page.
 +
-Right-click on the yellow bulb to fix namespace prefix/URI mapping. This
-needs to be repeated for h: and f: prefix.
+Right-click on the yellow bulb to fix namespace prefix/URI mapping for `h:`. This
+needs to be repeated for `f:` prefix.
 +
-. Add the following code in "template.xhtml" along with other
-`<outputLink>`s:
+. Add the following code in `template.xhtml` along with other <outputLink>s:
 +
 [source, xml]
 ----
@@ -389,18 +394,18 @@ needs to be repeated for h: and f: prefix.
 +
 image:images/5.14-sales.png[image]
 +
-Notice, a new "Sales" entry is displayed in the left navigation bar.
+Notice, a new `Sales' entry is displayed in the left navigation bar.
 +
-. Click on "Sales" to see the output as shown.
+. Click on `Sales' to see the output as shown.
 +
 image:images/5.15-sales.png[image]
 +
 The empty table indicates that there is no sales data in the database.
 +
-. Click on "Run Job" button to initiate data processing of CSV
-file. Look for "Waiting for localhost..." in the browser status bar,
+. Click on `Run Job' button to initiate data processing of CSV
+file. Look for `Waiting for localhost' in the browser status bar,
 wait for a couple of seconds for the processing to finish, and then
-click on "Refresh" button to see the updated output as shown.
+click on `Refresh' button to see the updated output as shown.
 +
 image:images/5.16-sales-output.png[image]
 +
@@ -409,4 +414,3 @@ Now the table is populated with the sales data.
 Note that record 5 is missing from the table, as this records did not
 have correct numeric entries for the sales total. The Job XML for the
 application explicitly mentioned to skip such errors.
-

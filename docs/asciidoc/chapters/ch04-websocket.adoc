@@ -28,9 +28,9 @@ provides support for:
 
 This section will build a chat room for movie viewers.
 
-. Right-click on "Source Packages", select "New", "Java Class…".
-Give the class name as "ChatServer", package as
-`org.glassfish.movieplex7.chat`, and click on "Finish".
+. Right-click on `Source Packages' , select `New', `Java Class'.
+Give the class name as `ChatServer', package as
+`org.javaee7.movieplex7.chat', and click on `Finish'.
 +
 . Change the class such that it looks like:
 +
@@ -74,25 +74,25 @@ The second parameter, `client`, defines the other end of the WebSocket
 connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.
 +
-Resolve the imports by right-clicking in the editor and selecting "Fix
-Imports" or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
+Resolve the imports by right-clicking in the editor and selecting `Fix
+Imports' or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
 Windows).
 +
-WARNING: Make sure to pick `java.websocket.Session` for resolving imports.
+WARNING: Make sure to pick `java.websocket.Session` for resolving imports. This is not the default option shown by NetBeans.
 +
 image:images/4.2-imports.png[image]
 +
-Right-click again in the editor pane and select "Format" to format your
+Right-click again in the editor pane and select `Format' to format your
 code.
 +
-. In "Web Pages", select "New", "Folder…", give the folder name as
-"chat" and click on "Finish".
+. In `Web Pages', select `New', `Folder', give the folder name as
+"chat" and click on `Finish'.
 +
-. Right-click on the newly created folder, select "New", "Other...",
-"Java Server Faces", "Facelets Template Client", give the File Name as
-"chatroom". Click on "Browse…" next to "Template:", expand "Web Pages",
-"WEB-INF", select "template.xhtml", and click on "Select File". Click on
-"Finish".
+. Right-click on the newly created folder, select `New', `Other',
+`Java Server Faces', `Facelets Template Client', give the File Name as
+`chatroom'. Click on `Browse' next to `Template:', expand `Web Pages',
+`WEB-INF', select `template.xhtml', and click on `Select File'. Click on
+`Finish'.
 +
 image:images/4.4-template.png[image]
 +
@@ -140,16 +140,16 @@ JavaScript methods are invoked
 when these buttons are clicked and these are explained in the next
 section. The chat messages are sent and received as WebSocket payloads.
 There is an explicit button to disconnect the WebSocket connection.
-"output" div is the placeholder for status messages. The WebSocket
-initialization occurs in "websocket.js" included at the bottom of the
+`output` div is the placeholder for status messages. The WebSocket
+initialization occurs in `websocket.js' included at the bottom of the
 fragment.
 +
-. Right-click on "chat" in "Web Pages", select "New", "Other...",
-"Web", "JavaScript File".
+. Right-click on `chat' in `Web Pages', select `New', `Web' 
+categories, `JavaScript File' file type. Click on `Next'.
 +
-Give the name as "websocket" and click on "Finish".
+Give the name as `websocket' and click on `Finish'.
 +
-. Edit the contents of "websocket.js" such that it looks like:
+. Edit the contents of `websocket.js' such that it looks like:
 +
 [source,javascript]
 ----
@@ -165,48 +165,48 @@ var users = document.getElementById("users");
 var chatlog = document.getElementById("chatlog");
 var username;
 
-websocket.onopen = function(evt) \{ onOpen(evt); };
-websocket.onmessage = function(evt) \{ onMessage(evt); };
-websocket.onerror = function(evt) \{ onError(evt); };
-websocket.onclose = function(evt) \{ onClose(evt); };
+websocket.onopen = function(evt) { onOpen(evt); };
+websocket.onmessage = function(evt) { onMessage(evt); };
+websocket.onerror = function(evt) { onError(evt); };
+websocket.onclose = function(evt) { onClose(evt); };
 
 var output = document.getElementById("output");
 
-function join() \{
+function join() {
     username = textField.value;
     websocket.send(username + " joined");
 }
 
-function send_message() \{
+function send_message() {
     websocket.send(username + ": " + textField.value);
 }
 
-function onOpen() \{
+function onOpen() {
     writeToScreen("CONNECTED");
 }
 
-function onClose() \{
+function onClose() {
     writeToScreen("DISCONNECTED");
 }
 
-function onMessage(evt) \{
+function onMessage(evt) {
     writeToScreen("RECEIVED: " + evt.data);
-    if (evt.data.indexOf("joined") !== -1) \{
+    if (evt.data.indexOf("joined") !== -1) {
         users.innerHTML += evt.data.substring(0, evt.data.indexOf(" joined")) + "\n";
-    } else \{
+    } else {
         chatlog.innerHTML += evt.data + "\n";
     }
 }
 
-function onError(evt) \{
+function onError(evt) {
     writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
 }
 
-function disconnect() \{
+function disconnect() {
     websocket.close();
 }
 
-function writeToScreen(message) \{
+function writeToScreen(message) {
     var pre = document.createElement("p");
     pre.style.wordWrap = "break-word";
     pre.innerHTML = message;
@@ -241,7 +241,6 @@ message to all the listening clients. The `send_message` method appends
 the logged in user name and the value of the text field and broadcasts
 to all the clients similarly. The `onMessage` method updates the list of
 logged in users as well.
-image:images/4.6-chatroom.png[image]
 +
 . Edit "WEB-INF/template.xhtml" and change:
 +
@@ -265,6 +264,8 @@ allows the links in the left navigation bar to be fully-qualified URLs.
 "Run". The browser shows
 http://localhost:8080/movieplex7[localhost:8080/movieplex7].
 +
+image:images/4.6-chatroom.png[image]
++
 Click on "Chat Room" to see the output.
 +
 The "CONNECTED" status message is shown and indicates that the WebSocket
@@ -279,16 +280,16 @@ supported browsers is available at
 http://caniuse.com/websockets[caniuse.com/websockets].
 +
 Open the URI http://localhost:8080/movieplex7[localhost:8080/movieplex7]
-in another browser window. Enter "Duke" in the text box in the first
-browser and click "Join".
+in another browser window. Enter `Duke' in the text box in the first
+browser and click `Join'.
 +
 image:images/4.8-chatroom-joined.png[image]
 +
 Notice that the user list and the status message in both the browsers
-gets updated. Enter "James" in the text box of the second browser and
-click on "Join". Once again the user list and the status message in both
+gets updated. Enter `James' in the text box of the second browser and
+click on `Join'. Once again the user list and the status message in both
 the browsers is updated. Now you can type any messages in any of the
-browser and click on "Send" to send the message.
+browser and click on `Send' to send the message.
 +
 The output from two different browsers after the initial greeting looks
 like as shown.

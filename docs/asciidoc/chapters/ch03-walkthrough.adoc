@@ -20,7 +20,7 @@ image:images/3.2-project-structure.png[image]
 +
 . Maven Coordinates: Expand `Project Files' and double click on
 `pom.xml'. In the `pom.xml', the Java EE 7 API is specified as a
-`<dependency>`:
+<dependency>:
 +
 [source,xml]
 <dependencies>
@@ -53,7 +53,7 @@ ifdef::server-glassfish[]
 GlassFish can be downloaded in two different flavors – Full Platform or Web Profile.
 endif::server-glassfish[]
 ifdef::server-wildfly[]
-WildFly can be started in Full Platform or Web Profile (default).
+WildFly can be started in Full Platform or Web Profile.
 endif::server-wildfly[]
 +
 IMPORTANT: This lab requires Full Platform download. All technologies used in this
@@ -260,10 +260,17 @@ well.
 +
 . *Run the sample*: Right-click on the project and select `Run'.
 This will download all the maven dependencies on your machine, build a
-WAR file, deploy on GlassFish 4, and show the URL
+WAR file, deploy on 
+ifdef::server-glassfish[]
+GlassFish 4
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+WildFly 8
+endif::server-wildfly[]
+, and show the URL
 http://localhost:8080/movieplex7[localhost:8080/movieplex7] in the
 default browser configured in NetBeans. Note that this could take a
-while if you have never built a Maven application on your machine. 
+while if you have never built a Maven application on your machine.
 +
 TIP: The project will show red squiggly lines in the source code indicating
 that the classes cannot be resolved. This is expected before the
@@ -272,7 +279,9 @@ correctly after the dependencies are downloaded during project building.
 +
 During the first run, the IDE will ask you to select a deployment server.
 ifdef::server-wildfly[]
-What to do for WildFly ?
+Choose the configured WildFly server and click on `OK'.
++
+image:images/3.6-wildfly-server.png[image]
 endif::server-wildfly[]
 ifdef::server-glassfish[]
 Choose the configured GlassFish server and click on `OK'.
