@@ -30,12 +30,12 @@ This section will provide the ability to add a new movie to the
 application. Typically, this functionality will be available after
 proper authentication and authorization.
 
-. Right-click on Source Packages, select "New", "Java Package…",
-specify the value as "org.glassfish.movieplex7.json", and click on
-"Finish".
+. Right-click on Source Packages, select `New', `Java Class',
+specify the name as `MovieReader', package as `org.javaee7.movieplex7.json'
+and click on `Finish'. Add the following class-level annotations:
 +
-. Right-click on newly created package, select "New", "Java Class…",
-specify the name as "MovieReader", and click on "Finish". Add the
+. Right-click on newly created package, select `New', `Java Class',
+specify the name as `MovieReader', and click on `Finish'. Add the
 following class-level annotations:
 +
 [source, java]
@@ -57,7 +57,7 @@ image:images/7.2-imports.png[image]
 image:images/7.3-implements.png[image]
 +
 Click on the hint (shown as yellow bulb) on the class definition and
-select "Implement all abstract methods".
+select `Implement all abstract methods'.
 +
 . Change implementation of the `isReadable` method as:
 +
@@ -67,7 +67,7 @@ return Movie.class.isAssignableFrom(type);
 This method ascertains if the `MessageBodyReader` can produce an instance
 of a particular type.
 +
-. Replace the readFrom method to:
+. Replace the `readFrom` method with:
 +
 [source, java]
 ----
@@ -116,8 +116,8 @@ parser and a `Movie` instance is populated and returned.
 +
 Resolve the imports.
 +
-. Right-click on newly created package, select "New", "Java Class…",
-specify the name as "MovieWriter", and click on "Finish". Add the
+. Right-click on `org.javaee7.movieplex7.json' package, select `New', `Java Class',
+specify the name as `MovieWriter', and click on `Finish'. Add the
 following class-level annotations:
 +
 [source, java]
@@ -134,12 +134,18 @@ Resolve the imports as shown.
 +
 image:images/7.6-imports.png[image]
 +
-. Make this class implements `MessageBodyWriter<Movie>`.
+. Make this class implement `MessageBodyWriter` interface by adding the following code:
+[source, java]
+implements MessageBodyWriter<Movie>
++
+Resolve the imports.
++
+The IDE provide a hint to implement abstract methods as:
 +
 image:images/7.7-implements.png[image]
 +
 Click on the hint (show as yellow bulb) on the class definition and
-select "Implement all abstract methods".
+select `Implement all abstract methods'.
 +
 . Change implementation of the `isWritable` method to:
 +
@@ -159,27 +165,17 @@ the serialized form of `t`. In JAX-RS 2.0, this method is deprecated and
 the value returned by the method is ignored by a JAX-RS runtime. All
 `MessageBodyWriter` implementations are advised to return -1.
 +
-. Change implementation of the `writeTo` method as:
+. Change implementation of the `writeTo` method to:
 +
 [source, java]
 ----
-public void writeTo(Movie t,
-    Class<?> type,
-    Type type1,
-    Annotation[] antns,
-    MediaType mt,
-    MultivaluedMap<String, Object> mm,
-    OutputStream out)
-        throws IOException, WebApplicationException \{
-
-    JsonGenerator gen = Json.createGenerator(out);
-    gen.writeStartObject()
-        .write("id", t.getId())
-        .write("name", t.getName())
-        .write("actors", t.getActors())
-        .writeEnd();
-        gen.flush();
-}
+JsonGenerator gen = Json.createGenerator(entityStream);
+gen.writeStartObject()
+    .write("id", t.getId())
+    .write("name", t.getName())
+    .write("actors", t.getActors())
+    .writeEnd();
+    gen.flush();
 ----
 +
 This method writes a type to an HTTP message. `JsonGenerator` writes JSON
@@ -188,21 +184,20 @@ are used to write different data types to the stream.
 +
 Resolve the imports.
 +
-. In "Web Pages", right-click on "client" folder, select "New",
-"Facelets Template Client".
+. In `Web Pages', right-click on `client' folder, select `New',
+`Facelets Template Client'. Give the File Name as `addmovie'.
+Click on `Browse' next to `Template:', expand `Web Pages',
+`WEB-INF', select `template.xhtml', and click on `Select File'.
+Click on "Finish".
 +
-Give the File Name as "addmovie". Click on "Browse…" next to
-"Template:", expand "Web Pages", "WEB-INF", select "template.xhtml", and
-click on "Select File". Click on "Finish".
-+
-In this file, remove `<ui:define>` sections where name attribute value is
+. In this file, remove `<ui:define>` sections where name attribute value is
 "top" and "left". These sections are inherited from the template.
 +
-Replace the content inside `<ui:define>` with "content" with the code
-fragment shown below:
+Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
+<ui:define name="content">
 <h1>Add a New Movie</h1>
 <h:form>
     <table cellpadding="5" cellspacing="5">
@@ -224,6 +219,7 @@ fragment shown below:
         action="movies"
         actionListener="#{movieClientBean.addMovie()}"/>
 </h:form>
+</ui:define>
 ----
 +
 This code creates a form to accept input of `id`, `name`, and `actors` of a
@@ -244,15 +240,15 @@ String movieName;
 String actors;
 ----
 +
-Generate getters and setters by clicking on the menu item "Source" and
-then "Insert Code...".
+Generate getters and setters by clicking on the menu item `Source' and
+then `Insert Code'.
 +
-. Add the following code to "movies.xhtml"
+. Add the following code to `movies.xhtml'
 +
 [source, xml]
 <h:commandButton value="New Movie" action="addmovie" />
 +
-along with rest of the `<commandButton>`s.
+along with rest of the <commandButton>s.
 +
 . Add the following method in `MovieClientBean`:
 +
@@ -273,8 +269,7 @@ public void addMovie() {
 This method creates a new `Movie` instance, populates it with the values
 from the backing bean, and POSTs the bean to the REST endpoint. The
 register method registers a MovieWriter that provides conversion from
-the POJO to JSON. Media type of "application/json" is specified using
-`MediaType.APPLICATION_JSON`.
+the POJO to JSON. Media type of `application/json` is specified using `MediaType.APPLICATION_JSON`.
 +
 Resolve the imports as shown
 +
@@ -284,13 +279,13 @@ image:images/7.14-imports.png[image]
 +
 image:images/7.15-output.png[image]
 +
-A new movie can be added by clicking on "New Movie" button.
+A new movie can be added by clicking on `New Movie' button.
 +
 . Enter the details as shown:
 +
 image:images/7.16-output.png[image]
 +
-Click on "Add" button. The "Movie Id" value has to be greater than 20
+Click on `Add' button. The `Movie Id' value has to be greater than 20
 otherwise the primary key constraint will be violated. The table
 definition may be updated to generate the primary key based upon a
 sequence; however this is not done in the application.
@@ -300,4 +295,3 @@ The updated page looks like as shown
 image:images/7.16-output2.png[image]
 +
 Note that the newly added movie is now displayed.
-
