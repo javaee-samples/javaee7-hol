@@ -398,8 +398,8 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_appendix">16. Appendix A: Appendix</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</a></li>
-<li><a href="#appendix-wildfly-idea">16.2. Configure WildFly 8 in IntelliJ IDEA</a></li>
+<li><a href="#appendix-glassfish4-netbeans">16.1. Configure GlassFish 4 in NetBeans</a></li>
+<li><a href="#appendix-glassfish4-idea">16.2. Configure GlassFish 4 in IntelliJ IDEA</a></li>
 </ul>
 </li>
 </ul>
@@ -476,7 +476,7 @@ using the following Java EE 7 technologies:</p>
 </li>
 <li>
 <p>Application Server: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
-WildFly 8.</p>
+GlassFish.</p>
 </li>
 <li>
 <p>IDE: NetBeans 8 Beta or IntelliJ IDEA 13 can be used. This document provide instructions for
@@ -491,7 +491,7 @@ snapshot of the downloads page is shown and highlights the exact
 <p><span class="image"><img src="images/1.1-netbeans-download.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>WildFly 8 needs to be downloaded from <a href="http://wildfly.org/downloads/">wildfly.org</a> and configured in NetBeans IDE following the instructions in <a href="#appendix-wildfly-netbeans">Configure WildFly 8 in NetBeans</a>.</p>
+<p>GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from <a href="http://glassfish.org/">glassfish.org</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -500,7 +500,19 @@ snapshot of the downloads page is shown and highlights the exact
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<a href="#appendix-wildfly-idea">Configure WildFly 8 in IntelliJ IDEA</a> explains how to configure WildFly in IntelliJ IDEA.
+If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <a href="#appendix-glassfish4-netbeans">Configure GlassFish 4 in NetBeans</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<a href="#appendix-glassfish4-idea">Configure GlassFish 4 in IntelliJ IDEA</a> explains how to configure GlassFish in IntelliJ IDEA.
 </td>
 </tr>
 </table>
@@ -901,7 +913,7 @@ Web Profile Specification.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>WildFly can be started in Full Platform or Web Profile.</p>
+<p>GlassFish can be downloaded in two different flavors – Full Platform or Web Profile.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -991,7 +1003,8 @@ JTA data source or the default JTA data source must be provided by the
 container.</p>
 </div>
 <div class="paragraph">
-<p>For WildFly 8, the default data source is bound to the JDBC resource <code>what name</code>.</p>
+<p>For GlassFish 4, the default data source is bound to the JDBC resource
+<code>jdbc/__default</code>.</p>
 </div>
 <div class="paragraph">
 <p>Clicking back and forth between &#8216;Design&#8217; and &#8216;Source&#8217; view may prompt
@@ -1176,7 +1189,7 @@ well.</p>
 <p><strong>Run the sample</strong>: Right-click on the project and select &#8216;Run&#8217;.
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on
-WildFly 8
+GlassFish 4
 , and show the URL
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a> in the
 default browser configured in NetBeans. Note that this could take a
@@ -1198,10 +1211,10 @@ correctly after the dependencies are downloaded during project building.
 </div>
 <div class="paragraph">
 <p>During the first run, the IDE will ask you to select a deployment server.
-Choose the configured WildFly server and click on &#8216;OK&#8217;.</p>
+Choose the configured GlassFish server and click on &#8216;OK&#8217;.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.6-wildfly-server.png" alt="image"></span></p>
+<p><span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The output looks like as shown.</p>
@@ -2949,13 +2962,9 @@ processing, possibly storing in the database using JPA.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Right-click on Source Packages, select "New", "Java Package…",
-specify the value as "org.glassfish.movieplex7.points", and click on
-"Finish".</p>
-</li>
-<li>
-<p>Right-click on newly created package, select "New", "Java Class…",
-specify the name as "SendPointsBean".</p>
+<p>Right-click on Source Packages, select &#8216;New&#8217;, &#8216;Java Class&#8217;,
+specify the name as &#8216;SendPointsBean&#8217;, package as &#8216;org.javaee7.movieplex7.points&#8217;,
+and click on &#8216;Finish&#8217;.</p>
 <div class="paragraph">
 <p>Add the following class-level annotations:</p>
 </div>
@@ -2992,7 +3001,7 @@ explicit call to the bean from a JSF page.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">@NotNull
-@Pattern(regexp = "^\\d\{2},\\d\{2}",
+@Pattern(regexp = "^\\d{2},\\d{2}",
          message = "Message format must be 2 digits, comma, 2 digits, e.g.12,12")
 private String message;</code></pre>
 </div>
@@ -3001,8 +3010,8 @@ private String message;</code></pre>
 <p>This field contains the message sent to the queue. This field’s value is
 bound to an inputText in a JSF page (created later). Constraints have
 been specified on this bean that enable validation of data on form
-submit. It requires the data to consists of 2 numerical digits, followed
-by a comma, and then 2 more numerical digits. If the message does not
+submit. It requires the data to consists of two numerical digits, followed
+by a comma, and then two more numerical digits. If the message does not
 meet the validation criteria then the error message to be displayed is
 specified using message attribute.</p>
 </div>
@@ -3012,8 +3021,8 @@ points accrued by that customer.</p>
 </div>
 <div class="paragraph">
 <p>Generate getter/setters for this field. Right-click in the editor pane,
-select "Insert Code" (Ctrl + I shortcut on Mac), select "Getter and
-Setter…", select the field, and click on "Generate".</p>
+select &#8216;Insert Code&#8217; (Ctrl + I shortcut on Mac), select &#8216;Getter and
+Setter&#8217;, select the field, and click on &#8216;Generate&#8217;.</p>
 </div>
 </li>
 <li>
@@ -3026,7 +3035,7 @@ JMSContext context;
 @Resource(lookup = "java:global/jms/pointsQueue")
 Queue pointsQueue;
 
-public void sendMessage() \{
+public void sendMessage() {
     System.out.println("Sending message: " + message);
     context.createProducer().send(pointsQueue, message);
 }</code></pre>
@@ -3089,12 +3098,12 @@ default <code>java.util.Queue</code>.
 </table>
 </div>
 <div class="paragraph">
-<p>Click on "OK".</p>
+<p>Click on &#8216;OK&#8217;.</p>
 </div>
 </li>
 <li>
-<p>Right-click on "org.glassfish.movieplex7.points" package, select
-"New", "Java Class…", specify the name as "ReceivePointsBean".</p>
+<p>Right-click on &#8216;org.javaee7.movieplex7.points&#8217; package, select
+&#8216;New&#8217;, &#8216;Java Class&#8217;, specify the name as &#8216;ReceivePointsBean&#8217;.</p>
 <div class="paragraph">
 <p>Add the following class-level annotations:</p>
 </div>
@@ -3176,43 +3185,41 @@ defaults.</p>
 </div>
 </li>
 <li>
-<p>Right-click on "Web Pages", select "New", "Folder…", specify the
-name as "points", and click on "Finish".</p>
+<p>Right-click on &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Folder&#8217;, specify the
+name as &#8216;points&#8217;, and click on &#8216;Finish&#8217;.</p>
 <div class="paragraph">
-<p>In "Web Pages", right-click on newly created folder, select "Facelets
-Template Client", give the File Name as "points". Click on "Browse…"
-next to "Template:", expand "Web Pages", "WEB-INF", select
-"template.xhtml", and click on "Select File". Click on "Finish".</p>
+<p>In &#8216;Web Pages&#8217;, right-click on newly created folder, select &#8216;Facelets
+Template Client&#8217;, give the File Name as &#8216;points&#8217;. Click on &#8216;Browse&#8217;
+next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select
+&#8216;template.xhtml&#8217;, and click on &#8216;Select File&#8217;. Click on &#8216;Finish&#8217;.</p>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</p>
-</div>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</p>
 <div class="paragraph">
-<p>Replace the content inside <code>&lt;ui:define&gt;</code> with "content" with the code
-fragment shown below:</p>
-</div>
-<div class="paragraph">
-<p>Copy the following code inside <code>&lt;ui:define&gt;</code> with name="content":</p>
+<p>Replace the <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h1&gt;Points&lt;/h1&gt;
-&lt;h:form&gt;
-Queue size:
-    &lt;h:outputText value="#{receivePointsBean.queueSize}"/&gt;&lt;p/&gt;
-    &lt;h:inputText value="#{sendPointsBean.message}"/&gt;
-    &lt;h:commandButton
-        value="Send Message"
-        action="points"
-        actionListener="#{sendPointsBean.sendMessage()}"/&gt;
-&lt;/h:form&gt;
-&lt;h:form&gt;
-    &lt;h:commandButton
-        value="Receive Message"
-        action="points"
-        actionListener="#{receivePointsBean.receiveMessage()}"/&gt;
-&lt;/h:form&gt;</code></pre>
+<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
+    &lt;h1&gt;Points&lt;/h1&gt;
+    &lt;h:form&gt;
+    Queue size:
+        &lt;h:outputText value="#{receivePointsBean.queueSize}"/&gt;&lt;p/&gt;
+        &lt;h:inputText value="#{sendPointsBean.message}"/&gt;
+        &lt;h:commandButton
+            value="Send Message"
+            action="points"
+            actionListener="#{sendPointsBean.sendMessage()}"/&gt;
+    &lt;/h:form&gt;
+    &lt;h:form&gt;
+        &lt;h:commandButton
+            value="Receive Message"
+            action="points"
+            actionListener="#{receivePointsBean.receiveMessage()}"/&gt;
+    &lt;/h:form&gt;
+&lt;/ui:define&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3234,8 +3241,8 @@ message is displayed on the screen.</p>
 </div>
 </li>
 <li>
-<p>Add the following code in "template.xhtml" along with other
-`&lt;outputLink&gt;`s:</p>
+<p>Add the following code in &#8216;template.xhtml&#8217; along with other
+&lt;outputLink&gt;s:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
@@ -3251,14 +3258,14 @@ message is displayed on the screen.</p>
 <p><span class="image"><img src="images/8.10-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Click on "Points" to see the output as:</p>
+<p>Click on &#8216;Points&#8217; to see the output as:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output2.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>The output shows that the queue has 0 messages. Enter a message "1212"
-in the text box and click on "Send Message" to see the output as shown.</p>
+<p>The output shows that the queue has 0 messages. Enter a message &#8216;1212&#8217;
+in the text box and click on &#8216;Send Message&#8217; to see the output as shown.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output3.png" alt="image"></span></p>
@@ -3268,7 +3275,7 @@ in the text box and click on "Send Message" to see the output as shown.</p>
 message is displayed.</p>
 </div>
 <div class="paragraph">
-<p>Enter a message as "12,12" in the text box and click on "Send Message"
+<p>Enter a message as &#8216;12,12&#8217; in the text box and click on &#8216;Send Message&#8217;
 button to see the output as:</p>
 </div>
 <div class="paragraph">
@@ -3276,7 +3283,7 @@ button to see the output as:</p>
 </div>
 <div class="paragraph">
 <p>The updated count now shows that there is 1 message in the queue. Click
-on "Receive Message" button to see output as:</p>
+on &#8216;Receive Message&#8217; button to see output as:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output5.png" alt="image"></span></p>
@@ -3286,14 +3293,14 @@ on "Receive Message" button to see output as:</p>
 queue has 0 messages.</p>
 </div>
 <div class="paragraph">
-<p>Click on "Send Message" 4 times to see the output as:</p>
+<p>Click on &#8216;Send Message&#8217; 4 times to see the output as:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output6.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The updated count now shows that the queue has 4 messages. Click on
-"Receive Message" 2 times to see the output as:</p>
+&#8216;Receive Message&#8217; 2 times to see the output as:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/8.10-output7.png" alt="image"></span></p>
@@ -3361,23 +3368,24 @@ reservation. The flow will contain four pages:</p>
 <li>
 <p>Items in a flow are logically related to each other and so it is
 required to keep them together in a directory. In NetBeans, right-click
-on the "Web Pages", select "New", "Folder…", specify the folder name
-"booking", and click on "Finish".</p>
+on the &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Folder&#8217;, specify the folder name
+&#8216;booking&#8217;, and click on &#8216;Finish&#8217;.</p>
 </li>
 <li>
-<p>Right-click on the newly created folder, select "New", "Facelets
-Template Client", give the File Name as "booking". Click on "Browse…"
-next to "Template:", expand "Web Pages", "WEB-INF", select
-"template.xhtml", and click on "Select File". Click on "Finish".</p>
+<p>Right-click on the newly created folder, select &#8216;New&#8217;, &#8216;Facelets
+Template Client&#8217;, give the File Name as &#8216;booking&#8217;. Click on &#8216;Browse&#8217;
+next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select
+&#8216;template.xhtml&#8217;, and click on &#8216;Select File&#8217;. Click on &#8216;Finish&#8217;.</p>
+</li>
+<li>
+<p>&#8216;booking.xhtml&#8217; is the entry point to the flow (more on this later).</p>
 <div class="paragraph">
-<p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</p>
+<p>In this file, remove <code>&lt;ui:define&gt;</code> sections with &#8216;top&#8217; and &#8216;left&#8217; name
+attributes. These sections are inherited from the template.</p>
 </div>
-</li>
-<li>
-<p>"booking.xhtml" is the entry point to the flow (more on this
-later). Replace the <code>&lt;ui:define&gt;</code> with name="content" section such that it
-looks like:</p>
+<div class="paragraph">
+<p>Replace <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3400,28 +3408,29 @@ looks like:</p>
 </div>
 <div class="paragraph">
 <p>The code builds an HTML form that displays the list of movies as radio
-button choices. The chosen movie is bound to #{booking.movieId} which
+button choices. The chosen movie is bound to <code>#{booking.movieId}</code> which
 will be defined as a flow-scoped bean. The value of action attribute on
 commandButton refers to the next view in the flow, i.e.
-"showtimes.xhtml" in the same directory in our case.</p>
+&#8216;showtimes.xhtml&#8217; in the same directory in our case.</p>
 </div>
 <div class="paragraph">
-<p>Click on the hint (shown as yellow bulb) and click on the suggestion to
-add namespace prefix. Do the same for f: prefix as shown.</p>
+<p>Click on the yellow bulb as shown and click on the suggestion to
+add namespace prefix/URI mapping for <code>h:</code>. Repeat the same for <code>f:</code> prefix as well.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.3-imports.png" alt="image"></span></p>
 </div>
 </li>
 <li>
-<p>Right-click on "Source Packages", select "New", "Java Class…".
-Specify the class name as "Booking" and the package name as
-"org.glassfish.movieplex7.booking".</p>
+<p>Right-click on &#8216;Source Packages&#8217;, select &#8216;New&#8217;, &#8216;Java Class&#8217;.
+Specify the class name as &#8216;Booking&#8217; and the package name as
+&#8216;org.javaee7.movieplex7.booking&#8217;.</p>
 <div class="paragraph">
-<p>Add <code>@Named</code> class-level annotation to make the class EL-injectable. Add
-<code>@FlowScoped("booking")</code> to define the scope of bean as the flow. The bean
-is automatically activated and passivated as the flow is entered or
-exited.</p>
+<p>Add <code>@Named</code> class-level annotation to make the class EL-injectable.</p>
+</div>
+<div class="paragraph">
+<p>Add <code>@FlowScoped("booking")</code> to define the scope of bean as the flow. The bean
+is automatically activated and passivated as the flow is entered or exited.</p>
 </div>
 <div class="paragraph">
 <p>Add the following field:</p>
@@ -3432,8 +3441,8 @@ exited.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>and generate getters/setters by going to "Source", "Insert Code…",
-selecting "Getter and Setter…", and select the field.</p>
+<p>and generate getters/setters by going to &#8216;Source&#8217;, &#8216;Insert Code&#8217;,
+selecting &#8216;Getter and Setter&#8217;, and select the field.</p>
 </div>
 <div class="paragraph">
 <p>Inject <code>EntityManager</code> in this class by adding the following code:</p>
@@ -3469,11 +3478,20 @@ EntityManager em;</code></pre>
 button and parsed in the backing bean. This will reduce an extra trip to
 the database.</p>
 </div>
+<div class="paragraph">
+<p>Resolve the imports.</p>
+</div>
 </li>
 <li>
-<p>Create "showtimes.xhtml" in the "booking" folder following the
-steps in section 9.2. Replace "content" <code>&lt;ui:define&gt;</code> section such that it
-looks like:</p>
+<p>Create &#8216;showtimes.xhtml&#8217; in the &#8216;booking&#8217; folder following the
+steps used to create &#8216;booking.xhtml&#8217;.</p>
+<div class="paragraph">
+<p>In this file, remove <code>&lt;ui:define&gt;</code> sections with &#8216;top&#8217; and &#8216;left&#8217; name
+attributes. These sections are inherited from the template.</p>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3494,10 +3512,10 @@ looks like:</p>
 <p>This code builds an HTML form that displays the chosen movie name and
 all the show times. <code>#{timeslotFacadeREST.all}</code> returns the list of all
 the movies and iterates over them using a <code>c:forEach</code> loop. The id and
-start time of the selected show are bound to <code>#{booking.startTime}</code>. One
-command button (value="Back") allows going back to the previous page and
-the other command button (value="Confirm") takes to next view in the
-flow, "confirm.xhtml" in our case.</p>
+start time of the selected show are bound to <code>#{booking.startTime}</code>.
+Command button with value &#8216;Back&#8217; allows going back to the previous page and
+the other command button with value &#8216;Confirm&#8217; takes to the next view in the
+flow, &#8216;confirm.xhtml&#8217; in our case.</p>
 </div>
 <div class="paragraph">
 <p>Typically a user will expect the show times only for the selected movie
@@ -3506,9 +3524,13 @@ going back and forth within a flow if an incorrect show time for a movie
 is chosen. A different query may be written that displays only the shows
 available for this movie; however this is not part of the application.</p>
 </div>
+<div class="paragraph">
+<p>Right-click on the yellow bulb to fix namespace prefix/URI mapping for
+<code>h:</code>. This needs to be repeated for <code>c:</code> and <code>f:</code> prefix as well.</p>
+</div>
 </li>
 <li>
-<p>Add the following fields to the Booking class:</p>
+<p>Add the following fields to the <code>Booking</code> class:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="java language-java">String startTime;
@@ -3575,11 +3597,20 @@ and show the timing.</p>
 <p>Additionally a list of theaters offering that movie may be shown in a
 separate page.</p>
 </div>
+<div class="paragraph">
+<p>Resolve the imports.</p>
+</div>
 </li>
 <li>
-<p>Create "confirm.xhtml" page in the "booking" folder by following
-the steps defined in 9.2. Replace "content" <code>&lt;ui:define&gt;</code> section such
-that it looks like:</p>
+<p>Create &#8216;confirm.xhtml&#8217; page in the &#8216;booking&#8217; folder by following
+the steps used to create ‘booking.xhtml’.</p>
+<div class="paragraph">
+<p>In this file, remove <code>&lt;ui:define&gt;</code> sections wht &#8216;top&#8217; and &#8216;left&#8217; name
+attributes. These sections are inherited from the template.</p>
+</div>
+<div class="paragraph">
+<p>Replace &#8216;&lt;ui:define&gt;&#8217; section with &#8216;content&#8217; name such that it looks like:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3609,19 +3640,29 @@ that it looks like:</p>
 <div class="paragraph">
 <p>The code displays the selected movie, show timing, and theater if
 available. The reservation can proceed if all three are available.
-"print.xhtml", identified by action of commandButton with "Book" value,
-is the last page that shows the confirmed reservation.</p>
+&#8216;print.xhtml&#8217; is the last page that shows the confirmed reservation
+and is shown when &#8216;Book&#8217; commandButton is clicked.</p>
 </div>
 <div class="paragraph">
 <p><code>actionListener</code> can be added to <code>commandButton</code> to invoke the business
 logic for making the reservation. Additional pages may be added to take
 the credit card details and email address.</p>
 </div>
+<div class="paragraph">
+<p>Right-click on the yellow bulb to fix namespace prefix/URI mapping for ‘c:’.
+This needs to be repeated for ‘h:’ prefix as well.</p>
+</div>
 </li>
 <li>
-<p>Create "print.xhtml" page in the "booking" folder by following the
-steps defined in 9.2 and replace "content" <code>&lt;ui:define&gt;</code> section such that
-it looks like:</p>
+<p>Create &#8216;print.xhtml&#8217; page in the &#8216;booking&#8217; folder by following the
+steps used to create ‘booking.xhtml’.</p>
+<div class="paragraph">
+<p>In this file, remove <code>&lt;ui:define&gt;</code> sections wht &#8216;top&#8217; and &#8216;left&#8217; name
+attributes. These sections are inherited from the template.</p>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
@@ -3630,7 +3671,7 @@ it looks like:</p>
         Movie name: #{booking.movieName}&lt;p/&gt;
         Starts at: #{booking.startTime}&lt;p/&gt;
         Theater: #{booking.theater}&lt;p/&gt;
-        &lt;h:commandButton id="home" value="home" action="goHome" /&gt;&lt;/p&gt;
+        &lt;h:commandButton id="home" value="home" action="goHome" /&gt;&lt;p/&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</code></pre>
 </div>
@@ -3640,21 +3681,34 @@ it looks like:</p>
 theater.</p>
 </div>
 <div class="paragraph">
+<p>Right-click on the yellow bulb to fix namespace prefix/URI mapping for ‘h:’.</p>
+</div>
+<div class="paragraph">
 <p>The <code>commandButton</code> initiates exit from the flow. The <code>action</code> attribute
 defines a navigation rule that will be defined in the next step.</p>
 </div>
 </li>
 <li>
-<p>"booking.xhtml", "showtimes.xhtml", "confirm.xhtml", and
-"print.xhtml" are all in the same directory. Now the runtime needs to be
+<p>&#8216;booking.xhtml&#8217;, &#8216;showtimes.xhtml&#8217;, &#8216;confirm.xhtml&#8217;, and
+&#8216;print.xhtml&#8217; are all in the same directory. Now the runtime needs to be
 informed that the views in this directory are to be treated as view
-nodes in a flow. This can be done by adding "booking/booking-flow.xml"
-or have a class with a method that <code>@Produces @FlowDefinition</code>.</p>
+nodes in a flow. This can be done declaratively by adding &#8216;booking/booking-flow.xml&#8217;
+or programmatically by having a class with a method with the following annotations:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="java language-java">@Produces @FlowDefinition</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Right-click on "Web Pages/booking" folder, select "New", "Other", "XML",
-"XML Document", give the name as "booking-flow", click on "Next&gt;", take
-the default of "Well-formed Document", and click on "Finish". Edit the
-file such that it looks like:</p>
+<p>This lab takes the declarative approach.</p>
+</div>
+<div class="paragraph">
+<p>Right-click on &#8216;Web Pages/booking&#8217; folder, select &#8216;New&#8217;, &#8216;Other&#8217;, &#8216;XML&#8217;,
+&#8216;XML Document&#8217;, give the name as &#8216;booking-flow&#8217;, click on &#8216;Next&gt;&#8217;, take
+the default of &#8216;Well-formed Document&#8217;, and click on &#8216;Finish&#8217;.</p>
+</div>
+<div class="paragraph">
+<p>Replace the generated code with the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3673,8 +3727,8 @@ file such that it looks like:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This defines the flow graph. It uses the standard parent element used in
-any "faces-config.xml" but defines a <code>&lt;flow-definition&gt;</code>.</p>
+<p>This defines the flow graph. It uses the parent element used in
+a standard <code>faces-config.xml</code> but defines a <code>&lt;flow-definition&gt;</code> inside it.</p>
 </div>
 <div class="paragraph">
 <p><code>&lt;flow-return&gt;</code> defines a return node in a flow graph. <code>&lt;from-outcome&gt;</code>
@@ -3683,7 +3737,7 @@ return to. In this case, the navigation returns to the home page.</p>
 </div>
 </li>
 <li>
-<p>Finally, invoke the flow by editing "WEB-INF/template.xhtml" and
+<p>Finally, invoke the flow by editing &#8216;WEB-INF/template.xhtml&#8217; and
 changing:</p>
 <div class="listingblock">
 <div class="content">
@@ -3701,38 +3755,37 @@ changing:</p>
 <div class="paragraph">
 <p><code>commandLink</code> renders an HTML anchor tag that behaves like a form submit
 button. The action attribute points to the directory where all views for
-the flow are stored. This directory already contains "booking-flow.xml"
+the flow are stored. This directory already contains &#8216;booking-flow.xml&#8217;
 which defines the flow of the pages.</p>
 </div>
 </li>
 <li>
 <p>Run the project by right clicking on the project and selecting
-"Run". The browser shows the updated output.</p>
+&#8216;Run&#8217;. The browser shows the updated output.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Click on "Book a movie" to see the page as shown.</p>
+<p>Click on &#8216;Book a movie&#8217; to see the page as shown.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output2.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Select a movie, say "The Shining" and click on "Pick a time" to see the
+<p>Select a movie, say &#8216;The Shiningr and click on `Pick a time&#8217; to see the
 page output as shown.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output3.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Pick a time slot, say "04:00", click
-on "Confirm" to see the output as shown.</p>
+<p>Pick a time slot, say &#8216;04:00&#8217;, click on &#8216;Confirm&#8217; to see the output as shown.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output4.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Click on "Book" to confirm and see the output as:</p>
+<p>Click on &#8216;Book&#8217; to confirm and see the output as:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/9.11-output5.png" alt="image"></span></p>
@@ -3742,7 +3795,7 @@ on "Confirm" to see the output as shown.</p>
 notice how the values in the bean are preserved.</p>
 </div>
 <div class="paragraph">
-<p>Click on "home" takes to the main application page.</p>
+<p>Click on &#8216;home&#8217; takes to the main application page.</p>
 </div>
 </li>
 </ol>
@@ -3856,7 +3909,7 @@ and demonstrated the following features of the platform:</p>
 </div>
 </li>
 <li>
-<p>JavaServer Faces 2.2 (JSR 344)</p>
+<p>JavaServer Faces 2.2</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3866,7 +3919,7 @@ and demonstrated the following features of the platform:</p>
 </div>
 </li>
 <li>
-<p>Bean Validation 1.1 (JSR 349)</p>
+<p>Bean Validation 1.1</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3898,10 +3951,11 @@ and demonstrated the following features of the platform:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Hopefully this has raised your interest enough in trying out Java EE 7 applications using GlassFish 4.</p>
+<p>Hopefully this has raised your interest enough in trying out Java EE 7 applications using
+GlassFish 4.</p>
 </div>
 <div class="paragraph">
-<p>Send us feedback at <a href="mailto:users@glassfish.java.net">users@glassfish.java.net</a>.</p>
+<p>Send us feedback or file issues at <a href="http://github.com/javaee-samples/javaee7-hol">http://github.com/javaee-samples/javaee7-hol</a>.</p>
 </div>
 </div>
 </div>
@@ -3911,17 +3965,23 @@ and demonstrated the following features of the platform:</p>
 <div class="qlist qanda">
 <ol>
 <li>
-<p><em>How can I start/stop/restart GlassFish from within the IDE ?</em></p>
-<p>In the "Services" tab, right-click on "GlassFish Server 4". All the
-commands to start, stop, and restart are available from the pop-up menu.</p>
+<p><em>How can I start/stop/restart the application server from within the IDE ?</em></p>
+<p>In the "Services" tab, right-click on
+&#8216;GlassFish Server 4&#8217;.
+All the commands to start, stop, and restart are available from the pop-up menu.</p>
 </li>
 <li>
-<p><em>I accidentally closed the GlassFish output log window. How do I bring it back ?</em></p>
-<p>In “Services” tab of NetBeans, expand "Servers", choose the GlassFish
-node, and select "View Domain Server Log".
-<span class="image"><img src="images/netbeans-view-log.png" alt="image"></span>
-In addition the web-based administration
-console can be seen by clicking on "View Domain Admin Console".</p>
+<p><em>I accidentally closed the output log window. How do I bring it back ?</em></p>
+<p>In “Services” tab of NetBeans, expand "Servers", choose the application server
+node, and select
+&#8216;View Domain Server Log&#8217;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/netbeans-view-log.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>In addition, the web-based administration console can be seen by clicking on
+&#8216;View Domain Admin Console&#8217;.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -3931,7 +3991,7 @@ console can be seen by clicking on "View Domain Admin Console".</p>
 <h2 id="_acknowledgements">12. Acknowledgements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following Java EE community members graciously reviewed contributed to this hands-on lab:</p>
+<p>The following Java EE community members graciously reviewed and contributed to this hands-on lab:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4014,6 +4074,9 @@ console can be seen by clicking on "View Domain Admin Console".</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros.(Jan 10, 2014)</p>
+</li>
+<li>
 <p>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</p>
 </li>
 </ol>
@@ -4024,29 +4087,9 @@ console can be seen by clicking on "View Domain Admin Console".</p>
 <h2 id="_appendix">16. Appendix A: Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</h3>
+<h3 id="appendix-glassfish4-netbeans">16.1. Configure GlassFish 4 in NetBeans</h3>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>In NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</p>
-</li>
-<li>
-<p>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.
-<span class="image"><img src="images/16-netbeans-add-dev-update-center.png" alt="image"></span></p>
-<div class="paragraph">
-<p>and click on &#8216;OK&#8217;.</p>
-</div>
-</li>
-<li>
-<p>Click on &#8216;Available Plugins&#8217;, type &#8220;wildfly&#8221; in &#8216;Search:&#8217; box, and select the plugin by clicking on the checkbox in &#8216;Install&#8217; column.
-<span class="image"><img src="images/16-netbeans-available-plugins-wildfly.png" alt="image"></span></p>
-<div class="paragraph">
-<p>The exact plugin version and the date may be different.</p>
-</div>
-</li>
-<li>
-<p>Click on &#8216;Install&#8217; button, &#8216;Next &gt;&#8217;, accept the license agreement by clicking on the checkbox, and click on &#8216;Install&#8217; button to install the plugin. Click on &#8216;Finish&#8217; to restart the IDE and complete installation.</p>
-</li>
 <li>
 <p>In NetBeans, click on &#8216;Services&#8217; tab.</p>
 </li>
@@ -4057,26 +4100,92 @@ console can be seen by clicking on "View Domain Admin Console".</p>
 </div>
 </li>
 <li>
-<p>Select &#8216;WildFly Application Server&#8217; in the Add Server Instance wizard, set the
-name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/16-netbeans-add-instance-wildfly.png" alt="image"></span></p>
-</div>
+<p>Select &#8216;GlassFish Server&#8217; in the Add Server Instance wizard, set the
+name to &#8216;GlassFish 4.0&#8217; and click &#8216;Next &gt;&#8217;.</p>
 </li>
 <li>
-<p>Click on &#8216;Browse …&#8217; and select the directory that got created
-when WildFly archive was unzipped. Click on &#8216;Next&#8217; and then &#8216;Finish&#8217;.
-The &#8216;Services&#8217; should show the WildFly instance.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/16-netbeans-wildfly-server.png" alt="image"></span></p>
-</div>
+<p>Click on &#8216;Browse …&#8217; and browse to where you unzipped the GlassFish
+build and point to the &#8216;glassfish4&#8217; directory that got created when you
+unzipped the above archive. Click on ”Finish”.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="appendix-wildfly-idea">16.2. Configure WildFly 8 in IntelliJ IDEA</h3>
-
+<h3 id="appendix-glassfish4-idea">16.2. Configure GlassFish 4 in IntelliJ IDEA</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create an IntelliJ IDEA project in the movieplex7 directory and build the WAR file:</p>
+<div class="literalblock">
+<div class="content">
+<pre>mvn idea:idea
+mvn clean package</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with &#8216;Convert&#8217;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-convertproject.png" alt="Convert Project"></span></p>
+</div>
+</li>
+<li>
+<p>Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on &#8216;Configure&#8217;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-configure-jpa.png" alt="Configure Frameworks"></span></p>
+</div>
+</li>
+<li>
+<p>In the dialog box that shows up make sure the only detected file in there says <code>persistence.xml</code> and is checked and confirm  it with &#8216;Ok&#8217;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-configure-jpa-dialogbox.png" alt="Setup Frameworks"></span></p>
+</div>
+</li>
+<li>
+<p>As a next step we need to build the project. Open the ”Maven Projects” pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with &#8216;Yes&#8217;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-open-mavenprojects-pane.png" alt="Find Maven Project"></span></p>
+</div>
+</li>
+<li>
+<p>When the project is reloaded go to the &#8216;Maven Projects&#8217; pane again and have Maven build and package the project by selecting &#8216;Java EE 7 Hands-on Lab &gt; Lifecycle &gt; package&#8217; and clicking on the green &#8216;play&#8217; arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on &#8216;Enable Auto-Import&#8217; if a green hint pops up.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-mavenprojects-run-package-command.png" alt="Run <code>maven package</code> Command"></span></p>
+</div>
+</li>
+<li>
+<p>In the menu click on &#8216;Run &gt; Edit Configurations&#8217;.</p>
+</li>
+<li>
+<p>In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry <code>(17 more items)</code>. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for &#8216;GlassFish Server&#8217; should show up.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-add-glassfish-server-configuration.png" alt="Add GlassFish Server Configuration"></span></p>
+</div>
+</li>
+<li>
+<p>Pick <code>Local' and in the upcoming dialog box enter a name (e.g. `GlassFish Server 4.0.0</code> - depending on your GlassFish Server version) and uncheck <code>After launch' so the browser doesn't get opened after each redeploy. In the textfield for ”Server Domain” enter `domain1</code> as the name of the domain. Leave the <code>Username' field at `admin</code> and the <code>Password</code> field empty. Then click &#8216;Configure&#8217; next to the &#8216;Application server&#8217; drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-edit-glassfish-server-configuration-servertab.png" alt="Configure GlassFish Server"></span></p>
+</div>
+</li>
+<li>
+<p>Now click on the <code>Deployment' tab, then click on the Plus-sign underneath the large empty white area labeled `Deploy at the server startup' and choose `Artifact</code>. Choose the entry <code>movieplex7:war</code> and click &#8216;Ok&#8217;. Click &#8216;Ok&#8217; again to close the entire configuration dialog. We&#8217;re now done.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/idea-edit-glassfish-server-configuration-deploymenttab.png" alt="Configure Deployment"></span></p>
+</div>
+</li>
+<li>
+<p>As a final step we need to start the database. For NetBeans users this happens automagically but we&#8217;ll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder&#8217;s <code>bin/</code>-directory and enter the following command <code>asadmin start-database</code>, or for Mac/Linux users: <code>./asadmin start-database</code> and you&#8217;re good to go.</p>
+</li>
+<li>
+<p>In the menu now choose &#8216;Run &gt; Run GlassFish Server 4.0.0&#8217; (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.</p>
+</li>
+<li>
+<p>Open <code>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</code> in your browser to see the (mostly empty) starter template.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -4084,7 +4193,7 @@ The &#8216;Services&#8217; should show the WildFly instance.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2014-01-08 21:00:24 PST
+Last updated 2014-01-10 13:57:30 PST
 </div>
 </div>
 </body>

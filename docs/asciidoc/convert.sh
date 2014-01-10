@@ -1,5 +1,6 @@
 echo "Converting to HTML ..."
-asciidoctor -a toc -a numbered javaee7-hol.adoc
+#asciidoctor -a toc -a numbered javaee7-hol.adoc
+asciidoctor -v -a toc -a numbered javaee7-hol.adoc
 echo "done"
 
 #echo "Converting to DocBook ..."

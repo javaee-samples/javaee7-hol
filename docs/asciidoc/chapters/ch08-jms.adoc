@@ -61,8 +61,8 @@ private String message;
 This field contains the message sent to the queue. This field’s value is
 bound to an inputText in a JSF page (created later). Constraints have
 been specified on this bean that enable validation of data on form
-submit. It requires the data to consists of 2 numerical digits, followed
-by a comma, and then 2 more numerical digits. If the message does not
+submit. It requires the data to consists of two numerical digits, followed
+by a comma, and then two more numerical digits. If the message does not
 meet the validation criteria then the error message to be displayed is
 specified using message attribute.
 +
@@ -70,7 +70,7 @@ This could be thought as conveying the customer identifier and the
 points accrued by that customer.
 +
 Generate getter/setters for this field. Right-click in the editor pane,
-select "Insert Code" (Ctrl + I shortcut on Mac), select `Getter and
+select `Insert Code' (Ctrl + I shortcut on Mac), select `Getter and
 Setter', select the field, and click on `Generate'.
 +
 . Add the following code to the class:

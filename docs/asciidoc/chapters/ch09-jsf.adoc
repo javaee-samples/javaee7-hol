@@ -312,8 +312,13 @@ defines a navigation rule that will be defined in the next step.
 . `booking.xhtml', `showtimes.xhtml', `confirm.xhtml', and
 `print.xhtml' are all in the same directory. Now the runtime needs to be
 informed that the views in this directory are to be treated as view
-nodes in a flow. This can be done by adding `booking/booking-flow.xml'
-or have a class with a method with `@Produces @FlowDefinition` annotations.
+nodes in a flow. This can be done declaratively by adding `booking/booking-flow.xml'
+or programmatically by having a class with a method with the following annotations:
++
+[source, java]
+@Produces @FlowDefinition
++
+This lab takes the declarative approach.
 +
 Right-click on `Web Pages/booking' folder, select `New', `Other', `XML',
 `XML Document', give the name as `booking-flow', click on `Next>', take
