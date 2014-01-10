@@ -365,7 +365,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h1>Java EE 7 Hands-on Lab</h1>
 <span id="author" class="author">Arun Gupta</span><br>
 <span id="revnumber">version 2.0,</span>
-<span id="revdate">Dec 3, 2013</span>
+<span id="revdate">Jan 10, 2014</span>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -398,8 +398,8 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_appendix">16. Appendix A: Appendix</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#appendix-glassfish4-netbeans">16.1. Configure GlassFish 4 in NetBeans</a></li>
-<li><a href="#appendix-glassfish4-idea">16.2. Configure GlassFish 4 in IntelliJ IDEA</a></li>
+<li><a href="#appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</a></li>
+<li><a href="#appendix-wildfly-idea">16.2. Configure WildFly 8 in IntelliJ IDEA</a></li>
 </ul>
 </li>
 </ul>
@@ -475,23 +475,23 @@ using the following Java EE 7 technologies:</p>
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.</p>
 </li>
 <li>
-<p>Application Server: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
-GlassFish.</p>
+<p><strong>Application Server</strong>: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
+WildFly 8.</p>
 </li>
 <li>
-<p>IDE: NetBeans 8 Beta or IntelliJ IDEA 13 can be used. This document provide instructions for
+<p><strong>IDE</strong>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
 NetBeans 8 Beta.</p>
 <div class="paragraph">
 <p>Download "All" or "Java EE" version from
 <a href="http://netbeans.org/downloads/">http://netbeans.org/downloads/</a>. A
 snapshot of the downloads page is shown and highlights the exact
-"Download" button to be clicked.</p>
+&#8216;Download&#8217; button to be clicked.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/1.1-netbeans-download.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>GlassFish 4 comes pre-bundled with NetBeans 7.4+ and does not need to be downloaded explicitly. But if you want to download GlassFish 4 then can do so from <a href="http://glassfish.org/">glassfish.org</a>.</p>
+<p>WildFly 8 needs to be downloaded from <a href="http://wildfly.org/downloads/">wildfly.org</a> and configured in NetBeans IDE following the instructions in <a href="#appendix-wildfly-netbeans">Configure WildFly 8 in NetBeans</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -500,19 +500,7 @@ snapshot of the downloads page is shown and highlights the exact
 <div class="title">Tip</div>
 </td>
 <td class="content">
-If you have downloaded GlassFish 4 separately or using a pre-installed version of GlassFish 4, then configure it in NetBeans IDE following the instructions in <a href="#appendix-glassfish4-netbeans">Configure GlassFish 4 in NetBeans</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">
-<a href="#appendix-glassfish4-idea">Configure GlassFish 4 in IntelliJ IDEA</a> explains how to configure GlassFish in IntelliJ IDEA.
+<a href="#appendix-wildfly-idea">Configure WildFly 8 in IntelliJ IDEA</a> explains how to configure WildFly in IntelliJ IDEA.
 </td>
 </tr>
 </table>
@@ -913,7 +901,7 @@ Web Profile Specification.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>GlassFish can be downloaded in two different flavors – Full Platform or Web Profile.</p>
+<p>WildFly can be started in Full Platform or Web Profile.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1003,8 +991,7 @@ JTA data source or the default JTA data source must be provided by the
 container.</p>
 </div>
 <div class="paragraph">
-<p>For GlassFish 4, the default data source is bound to the JDBC resource
-<code>jdbc/__default</code>.</p>
+<p>For WildFly 8, the default data source is bound to the JDBC resource <code>what name</code>.</p>
 </div>
 <div class="paragraph">
 <p>Clicking back and forth between &#8216;Design&#8217; and &#8216;Source&#8217; view may prompt
@@ -1189,7 +1176,7 @@ well.</p>
 <p><strong>Run the sample</strong>: Right-click on the project and select &#8216;Run&#8217;.
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on
-GlassFish 4
+WildFly 8
 , and show the URL
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a> in the
 default browser configured in NetBeans. Note that this could take a
@@ -1211,10 +1198,10 @@ correctly after the dependencies are downloaded during project building.
 </div>
 <div class="paragraph">
 <p>During the first run, the IDE will ask you to select a deployment server.
-Choose the configured GlassFish server and click on &#8216;OK&#8217;.</p>
+Choose the configured WildFly server and click on &#8216;OK&#8217;.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.6-glassfish-server.png" alt="image"></span></p>
+<p><span class="image"><img src="images/3.6-wildfly-server.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>The output looks like as shown.</p>
@@ -3952,7 +3939,7 @@ and demonstrated the following features of the platform:</p>
 </div>
 <div class="paragraph">
 <p>Hopefully this has raised your interest enough in trying out Java EE 7 applications using
-GlassFish 4.</p>
+WildFly 8.</p>
 </div>
 <div class="paragraph">
 <p>Send us feedback or file issues at <a href="http://github.com/javaee-samples/javaee7-hol">http://github.com/javaee-samples/javaee7-hol</a>.</p>
@@ -3967,20 +3954,20 @@ GlassFish 4.</p>
 <li>
 <p><em>How can I start/stop/restart the application server from within the IDE ?</em></p>
 <p>In the "Services" tab, right-click on
-&#8216;GlassFish Server 4&#8217;.
+&#8216;WildFly 8&#8217;.
 All the commands to start, stop, and restart are available from the pop-up menu.</p>
 </li>
 <li>
 <p><em>I accidentally closed the output log window. How do I bring it back ?</em></p>
 <p>In “Services” tab of NetBeans, expand "Servers", choose the application server
 node, and select
-&#8216;View Domain Server Log&#8217;.</p>
+&#8216;View Server Log&#8217;.</p>
 <div class="paragraph">
-<p><span class="image"><img src="images/netbeans-view-log.png" alt="image"></span></p>
+<p><span class="image"><img src="images/11-wildfly-server-log.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>In addition, the web-based administration console can be seen by clicking on
-&#8216;View Domain Admin Console&#8217;.</p>
+&#8216;View Admin Console&#8217;.</p>
 </div>
 </li>
 </ol>
@@ -4087,7 +4074,45 @@ node, and select
 <h2 id="_appendix">16. Appendix A: Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="appendix-glassfish4-netbeans">16.1. Configure GlassFish 4 in NetBeans</h3>
+<h3 id="appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</h3>
+<div class="sect3">
+<h4 id="_configure_update_center_in_netbeans_7_4">16.1.1. Configure Update Center in NetBeans 7.4</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you are using NetBeans 8 then skip this section. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</p>
+</li>
+<li>
+<p>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.
+<span class="image"><img src="images/16-netbeans-add-dev-update-center.png" alt="image"></span></p>
+<div class="paragraph">
+<p>and click on &#8216;OK&#8217;.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_install_wildfly_plugin">16.1.2. Install WildFly plugin</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Available Plugins&#8217;, type &#8220;wildfly&#8221; in &#8216;Search:&#8217; box, and select the plugin by clicking on the checkbox in &#8216;Install&#8217; column.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/16-netbeans-available-plugins-wildfly.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The exact plugin version and the date may be different.</p>
+</div>
+</li>
+<li>
+<p>Click on &#8216;Install&#8217; button, &#8216;Next &gt;&#8217;, accept the license agreement by clicking on the checkbox, and click on &#8216;Install&#8217; button to install the plugin. Click on &#8216;Finish&#8217; to restart the IDE and complete installation.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configure_wildfly_8">16.1.3. Configure WildFly 8</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4100,92 +4125,34 @@ node, and select
 </div>
 </li>
 <li>
-<p>Select &#8216;GlassFish Server&#8217; in the Add Server Instance wizard, set the
-name to &#8216;GlassFish 4.0&#8217; and click &#8216;Next &gt;&#8217;.</p>
+<p>Select &#8216;WildFly Application Server&#8217; in the Add Server Instance wizard, set the
+name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/16-netbeans-add-instance-wildfly.png" alt="image"></span></p>
+</div>
 </li>
 <li>
-<p>Click on &#8216;Browse …&#8217; and browse to where you unzipped the GlassFish
-build and point to the &#8216;glassfish4&#8217; directory that got created when you
-unzipped the above archive. Click on ”Finish”.</p>
+<p>Click on &#8216;Browse&#8217; for &#8216;Server Location&#8217; and select the directory that got created
+when WildFly archive was unzipped. Click on "Browse" for &#8216;Server Configuration&#8217; and
+select the &#8216;standalone/configuration/standalone-full.xml&#8217; file in the unzipped WildFly
+archive.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/16-netbeans-wildfly-full-platform.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Click on &#8216;Next&#8217; and then &#8216;Finish&#8217;. The &#8216;Services&#8217; should show the WildFly instance.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/16-netbeans-wildfly-server.png" alt="image"></span></p>
+</div>
 </li>
 </ol>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="appendix-glassfish4-idea">16.2. Configure GlassFish 4 in IntelliJ IDEA</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Create an IntelliJ IDEA project in the movieplex7 directory and build the WAR file:</p>
-<div class="literalblock">
-<div class="content">
-<pre>mvn idea:idea
-mvn clean package</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with &#8216;Convert&#8217;.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-convertproject.png" alt="Convert Project"></span></p>
-</div>
-</li>
-<li>
-<p>Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on &#8216;Configure&#8217;.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-configure-jpa.png" alt="Configure Frameworks"></span></p>
-</div>
-</li>
-<li>
-<p>In the dialog box that shows up make sure the only detected file in there says <code>persistence.xml</code> and is checked and confirm  it with &#8216;Ok&#8217;.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-configure-jpa-dialogbox.png" alt="Setup Frameworks"></span></p>
-</div>
-</li>
-<li>
-<p>As a next step we need to build the project. Open the ”Maven Projects” pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with &#8216;Yes&#8217;.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-open-mavenprojects-pane.png" alt="Find Maven Project"></span></p>
-</div>
-</li>
-<li>
-<p>When the project is reloaded go to the &#8216;Maven Projects&#8217; pane again and have Maven build and package the project by selecting &#8216;Java EE 7 Hands-on Lab &gt; Lifecycle &gt; package&#8217; and clicking on the green &#8216;play&#8217; arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on &#8216;Enable Auto-Import&#8217; if a green hint pops up.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-mavenprojects-run-package-command.png" alt="Run <code>maven package</code> Command"></span></p>
-</div>
-</li>
-<li>
-<p>In the menu click on &#8216;Run &gt; Edit Configurations&#8217;.</p>
-</li>
-<li>
-<p>In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry <code>(17 more items)</code>. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for &#8216;GlassFish Server&#8217; should show up.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-add-glassfish-server-configuration.png" alt="Add GlassFish Server Configuration"></span></p>
-</div>
-</li>
-<li>
-<p>Pick <code>Local' and in the upcoming dialog box enter a name (e.g. `GlassFish Server 4.0.0</code> - depending on your GlassFish Server version) and uncheck <code>After launch' so the browser doesn't get opened after each redeploy. In the textfield for ”Server Domain” enter `domain1</code> as the name of the domain. Leave the <code>Username' field at `admin</code> and the <code>Password</code> field empty. Then click &#8216;Configure&#8217; next to the &#8216;Application server&#8217; drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-edit-glassfish-server-configuration-servertab.png" alt="Configure GlassFish Server"></span></p>
-</div>
-</li>
-<li>
-<p>Now click on the <code>Deployment' tab, then click on the Plus-sign underneath the large empty white area labeled `Deploy at the server startup' and choose `Artifact</code>. Choose the entry <code>movieplex7:war</code> and click &#8216;Ok&#8217;. Click &#8216;Ok&#8217; again to close the entire configuration dialog. We&#8217;re now done.</p>
-<div class="paragraph">
-<p><span class="image"><img src="images/idea-edit-glassfish-server-configuration-deploymenttab.png" alt="Configure Deployment"></span></p>
-</div>
-</li>
-<li>
-<p>As a final step we need to start the database. For NetBeans users this happens automagically but we&#8217;ll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder&#8217;s <code>bin/</code>-directory and enter the following command <code>asadmin start-database</code>, or for Mac/Linux users: <code>./asadmin start-database</code> and you&#8217;re good to go.</p>
-</li>
-<li>
-<p>In the menu now choose &#8216;Run &gt; Run GlassFish Server 4.0.0&#8217; (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.</p>
-</li>
-<li>
-<p>Open <code>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</code> in your browser to see the (mostly empty) starter template.</p>
-</li>
-</ol>
-</div>
+<h3 id="appendix-wildfly-idea">16.2. Configure WildFly 8 in IntelliJ IDEA</h3>
+
 </div>
 </div>
 </div>
@@ -4193,7 +4160,7 @@ mvn clean package</pre>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2014-01-10 13:57:30 PST
+Last updated 2014-01-10 13:58:43 PST
 </div>
 </div>
 </body>
