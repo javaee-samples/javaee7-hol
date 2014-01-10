@@ -20,12 +20,9 @@ accrued by a customer. These points are submitted to a JMS queue that is
 then read synchronously by another bean. JMS queue for further
 processing, possibly storing in the database using JPA.
 
-. Right-click on Source Packages, select "New", "Java Package…",
-specify the value as "org.glassfish.movieplex7.points", and click on
-"Finish".
-+
-. Right-click on newly created package, select "New", "Java Class…",
-specify the name as "SendPointsBean".
+. Right-click on Source Packages, select `New', `Java Class',
+specify the name as `SendPointsBean', package as `org.javaee7.movieplex7.points',
+and click on `Finish'.
 +
 Add the following class-level annotations:
 +
@@ -56,7 +53,7 @@ Add the following field to the class:
 [source, java]
 ----
 @NotNull
-@Pattern(regexp = "^\\d\{2},\\d\{2}",
+@Pattern(regexp = "^\\d{2},\\d{2}",
          message = "Message format must be 2 digits, comma, 2 digits, e.g.12,12")
 private String message;
 ----
@@ -73,8 +70,8 @@ This could be thought as conveying the customer identifier and the
 points accrued by that customer.
 +
 Generate getter/setters for this field. Right-click in the editor pane,
-select "Insert Code" (Ctrl + I shortcut on Mac), select "Getter and
-Setter…", select the field, and click on "Generate".
+select "Insert Code" (Ctrl + I shortcut on Mac), select `Getter and
+Setter', select the field, and click on `Generate'.
 +
 . Add the following code to the class:
 +
@@ -86,7 +83,7 @@ JMSContext context;
 @Resource(lookup = "java:global/jms/pointsQueue")
 Queue pointsQueue;
 
-public void sendMessage() \{
+public void sendMessage() {
     System.out.println("Sending message: " + message);
     context.createProducer().send(pointsQueue, message);
 }
@@ -131,10 +128,10 @@ Resolve the imports.
 WARNING: Make sure `Queue` class is imported from `javax.jms.Queue` instead of the
 default `java.util.Queue`.
 +
-Click on "OK".
+Click on `OK'.
 +
-. Right-click on "org.glassfish.movieplex7.points" package, select
-"New", "Java Class…", specify the name as "ReceivePointsBean".
+. Right-click on `org.javaee7.movieplex7.points' package, select
+`New', `Java Class', specify the name as `ReceivePointsBean'.
 +
 Add the following class-level annotations:
 +
@@ -207,40 +204,39 @@ messages in the queue.
 Make sure to resolve the import from `javax.jms.Queue`, take all other
 defaults.
 +
-. Right-click on "Web Pages", select "New", "Folder…", specify the
-name as "points", and click on "Finish".
+. Right-click on `Web Pages', select `New', `Folder', specify the
+name as `points', and click on `Finish'.
 +
-In "Web Pages", right-click on newly created folder, select "Facelets
-Template Client", give the File Name as "points". Click on "Browse…"
-next to "Template:", expand "Web Pages", "WEB-INF", select
-"template.xhtml", and click on "Select File". Click on "Finish".
+In `Web Pages', right-click on newly created folder, select `Facelets
+Template Client', give the File Name as `points'. Click on `Browse'
+next to `Template:', expand `Web Pages', `WEB-INF', select
+`template.xhtml', and click on `Select File'. Click on `Finish'.
 +
-In this file, remove `<ui:define>` sections where name attribute value is
-"top" and "left". These sections are inherited from the template.
+. In this file, remove `<ui:define>` sections where name attribute value is
+`top' and `left'. These sections are inherited from the template.
 +
-Replace the content inside `<ui:define>` with "content" with the code
-fragment shown below:
-+
-Copy the following code inside `<ui:define>` with name="content":
+Replace the `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<h1>Points</h1>
-<h:form>
-Queue size:
-    <h:outputText value="#{receivePointsBean.queueSize}"/><p/>
-    <h:inputText value="#{sendPointsBean.message}"/>
-    <h:commandButton
-        value="Send Message"
-        action="points"
-        actionListener="#{sendPointsBean.sendMessage()}"/>
-</h:form>
-<h:form>
-    <h:commandButton
-        value="Receive Message"
-        action="points"
-        actionListener="#{receivePointsBean.receiveMessage()}"/>
-</h:form>
+<ui:define name="content">
+    <h1>Points</h1>
+    <h:form>
+    Queue size:
+        <h:outputText value="#{receivePointsBean.queueSize}"/><p/>
+        <h:inputText value="#{sendPointsBean.message}"/>
+        <h:commandButton
+            value="Send Message"
+            action="points"
+            actionListener="#{sendPointsBean.sendMessage()}"/>
+    </h:form>
+    <h:form>
+        <h:commandButton
+            value="Receive Message"
+            action="points"
+            actionListener="#{receivePointsBean.receiveMessage()}"/>
+    </h:form>
+</ui:define>
 ----
 +
 Click on the yellow bulb to resolve namespace prefix/URI mapping for `h:`
@@ -257,8 +253,8 @@ queue count is updated again, decremented by 1 in this case.
 If the message does not meet the validation criteria then the error
 message is displayed on the screen.
 +
-. Add the following code in "template.xhtml" along with other
-`<outputLink>`s:
+. Add the following code in `template.xhtml' along with other
+<outputLink>s:
 +
 [source, xml]
 ----
@@ -272,37 +268,37 @@ message is displayed on the screen.
 +
 image:images/8.10-output.png[image]
 +
-Click on "Points" to see the output as:
+Click on `Points' to see the output as:
 +
 image:images/8.10-output2.png[image]
 +
-The output shows that the queue has 0 messages. Enter a message "1212"
-in the text box and click on "Send Message" to see the output as shown.
+The output shows that the queue has 0 messages. Enter a message `1212'
+in the text box and click on `Send Message' to see the output as shown.
 +
 image:images/8.10-output3.png[image]
 +
 This message is not meeting the validation criteria and so the error
 message is displayed.
 +
-Enter a message as "12,12" in the text box and click on "Send Message"
+Enter a message as `12,12' in the text box and click on `Send Message'
 button to see the output as:
 +
 image:images/8.10-output4.png[image]
 +
 The updated count now shows that there is 1 message in the queue. Click
-on "Receive Message" button to see output as:
+on `Receive Message' button to see output as:
 +
 image:images/8.10-output5.png[image]
 +
 The updated count now shows that the message has been consumed and the
 queue has 0 messages.
 +
-Click on "Send Message" 4 times to see the output as:
+Click on `Send Message' 4 times to see the output as:
 +
 image:images/8.10-output6.png[image]
 +
 The updated count now shows that the queue has 4 messages. Click on
-"Receive Message" 2 times to see the output as:
+`Receive Message' 2 times to see the output as:
 +
 image:images/8.10-output7.png[image]
 +

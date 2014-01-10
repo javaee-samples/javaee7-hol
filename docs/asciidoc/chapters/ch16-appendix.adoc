@@ -28,9 +28,14 @@ name to `WildFly 8' and click `Next >'.
 +
 image:images/16-netbeans-add-instance-wildfly.png[image]
 +
-. Click on `Browse …' and select the directory that got created
-when WildFly archive was unzipped. Click on `Next' and then `Finish'. 
-The `Services' should show the WildFly instance.
+. Click on `Browse' for `Server Location' and select the directory that got created
+when WildFly archive was unzipped. Click on "Browse" for `Server Configuration' and
+select the `standalone/configuration/standalone-full.xml' file in the unzipped WildFly
+archive.
++
+image:images/16-netbeans-wildfly-full-platform.png[image]
++
+Click on `Next' and then `Finish'. The `Services' should show the WildFly instance.
 +
 image:images/16-netbeans-wildfly-server.png[image]
 
