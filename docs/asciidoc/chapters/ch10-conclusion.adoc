@@ -27,16 +27,22 @@ and demonstrated the following features of the platform:
 . Contexts and Dependency Injection 1.1
 .. Automatic discovery of beans
 .. Injection of beans
-. JavaServer Faces 2.2 (JSR 344)
+. JavaServer Faces 2.2
 .. Faces Flow
-. Bean Validation 1.1 (JSR 349)
+. Bean Validation 1.1
 .. Integration with JavaServer Faces
 . Java Transaction API 1.2
 .. @Transactional
 . Java Persistence API 2.1
 .. Schema generation properties
 
-Hopefully this has raised your interest enough in trying out Java EE 7 applications using GlassFish 4.
+Hopefully this has raised your interest enough in trying out Java EE 7 applications using 
+ifdef::server-glassfish[]
+GlassFish 4.
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+WildFly 8.
+endif::server-wildfly[]
 
-Send us feedback at users@glassfish.java.net.
+Send us feedback or file issues at http://github.com/javaee-samples/javaee7-hol.
 

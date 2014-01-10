@@ -1,14 +1,35 @@
 == Troubleshooting
 
 [qanda]
-How can I start/stop/restart GlassFish from within the IDE ?::
-In the "Services" tab, right-click on "GlassFish Server 4". All the
-commands to start, stop, and restart are available from the pop-up menu.
+How can I start/stop/restart the application server from within the IDE ?::
+In the "Services" tab, right-click on
+ifdef::server-glassfish[]
+`GlassFish Server 4'.
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+`WildFly 8'.
+endif::server-wildfly[]
+All the commands to start, stop, and restart are available from the pop-up menu.
 
-I accidentally closed the GlassFish output log window. How do I bring it back ?::
-In “Services” tab of NetBeans, expand "Servers", choose the GlassFish
-node, and select "View Domain Server Log".
+I accidentally closed the output log window. How do I bring it back ?::
+In “Services” tab of NetBeans, expand "Servers", choose the application server
+node, and select
+ifdef::server-glassfish[]
+`View Domain Server Log'.
++
 image:images/netbeans-view-log.png[image]
-In addition the web-based administration
-console can be seen by clicking on "View Domain Admin Console".
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+`View Server Log'.
++
+image:images/11-wildfly-server-log.png[image]
+endif::server-wildfly[]
++
+In addition, the web-based administration console can be seen by clicking on
+ifdef::server-glassfish[]
+`View Domain Admin Console'.
+endif::server-glassfish[]
+ifdef::server-wildfly[]
+`View Admin Console'.
+endif::server-wildfly[]
 
