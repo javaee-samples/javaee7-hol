@@ -16,7 +16,7 @@ content there.
 unzipped directory, and click on `Open Project'. The project structure
 is shown.
 +
-image:images/3.2-project-structure.png[Project Structure in NetBeans, height=300]
+image:images/3.2-project-structure.png[Project Structure in NetBeans]
 +
 . Maven Coordinates: Expand `Project Files' and double click on
 `pom.xml'. In the `pom.xml', the Java EE 7 API is specified as a
