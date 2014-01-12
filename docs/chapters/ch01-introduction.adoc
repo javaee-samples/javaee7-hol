@@ -42,14 +42,14 @@ GlassFish.
 endif::server-glassfish[]
 * *IDE*: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
 ifdef::ide-netbeans[]
-NetBeans 8 Beta.
+NetBeans 8.
 +
 Download "All" or "Java EE" version from
 http://netbeans.org/downloads/[http://netbeans.org/downloads/]. A
 snapshot of the downloads page is shown and highlights the exact
 `Download' button to be clicked.
 +
-image:images/1.1-netbeans-download.png[image]
+image:images/1.1-netbeans-download.png[NetBeans Download]
 endif::ide-netbeans[]
 +
 ifdef::server-glassfish[]
