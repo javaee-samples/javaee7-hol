@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="Asciidoctor 1.5.0.preview.1">
+<meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Java EE 7 Hands-on Lab</title>
 <style>
@@ -10,11 +10,9 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 audio, canvas, video { display: inline-block; }
 audio:not([controls]) { display: none; height: 0; }
-[hidden], template { display: none; }
-script { display: none !important; }
-html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+[hidden] { display: none; }
+html { background: #fff; color: #000; font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
-a { background: transparent; }
 a:focus { outline: thin dotted; }
 a:active, a:hover { outline: 0; }
 h1 { font-size: 2em; margin: 0.67em 0; }
@@ -46,13 +44,11 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; }
 table { border-collapse: collapse; border-spacing: 0; }
-meta.foundation-mq-small { font-family: "only screen and (min-width: 768px)"; width: 768px; }
-meta.foundation-mq-medium { font-family: "only screen and (min-width:1280px)"; width: 1280px; }
-meta.foundation-mq-large { font-family: "only screen and (min-width:1440px)"; width: 1440px; }
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 html, body { font-size: 100%; }
 body { background: white; color: #222222; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
 a:hover { cursor: pointer; }
+a:focus { outline: none; }
 img, object, embed { max-width: 100%; height: auto; }
 object, embed { height: 100%; }
 img { -ms-interpolation-mode: bicubic; }
@@ -69,7 +65,7 @@ img { display: inline-block; vertical-align: middle; }
 textarea { height: auto; min-height: 50px; }
 select { width: 100%; }
 p.lead, .paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
-.subheader, #content #toctitle, .admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .mathblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, .tableblock > caption { line-height: 1.4; color: #7a2518; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
+.subheader, #content #toctitle, .admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, .tableblock > caption { line-height: 1.4; color: #7a2518; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; direction: ltr; }
 a { color: #005498; text-decoration: underline; line-height: inherit; }
 a:hover, a:focus { color: #00467f; }
@@ -91,7 +87,6 @@ small { font-size: 60%; line-height: inherit; }
 code { font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; color: #6d180b; }
 ul, ol, dl { font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; list-style-position: outside; font-family: inherit; }
 ul, ol { margin-left: 1.5em; }
-ul.no-bullet, ol.no-bullet { margin-left: 1.5em; }
 ul li ul, ul li ol { margin-left: 1.25em; margin-bottom: 0; font-size: 1em; }
 ul.square li ul, ul.circle li ul, ul.disc li ul { list-style: inherit; }
 ul.square { list-style-type: square; }
@@ -150,8 +145,6 @@ kbd:not(.keyseq) { display: inline-block; color: #222222; font-size: 0.75em; lin
 kbd kbd:first-child { margin-left: 0; }
 kbd kbd:last-child { margin-right: 0; }
 .menuseq, .menu { color: #090909; }
-b.button:before { content: '[ '; }
-b.button:after { content: ' ]'; }
 p a > code:hover { color: #561309; }
 #header, #content, #footnotes, #footer { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; position: relative; padding-left: 0.9375em; padding-right: 0.9375em; }
 #header:before, #header:after, #content:before, #content:after, #footnotes:before, #footnotes:after, #footer:before, #footer:after { content: " "; display: table; }
@@ -171,20 +164,14 @@ p a > code:hover { color: #561309; }
 #toc ul.sectlevel0 ul.sectlevel1 { margin-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
 #toc ul { list-style-type: none; }
 #toctitle { color: #7a2518; }
-@media only screen and (min-width: 768px) { body.toc2 { padding-left: 15em; padding-right: 0; }
-  #toc.toc2 { position: fixed; width: 15em; left: 0; top: 0; border-right: 1px solid #ebebeb; border-bottom: 0; z-index: 1000; padding: 1em; height: 100%; overflow: auto; }
-  #toc.toc2 #toctitle { margin-top: 0; font-size: 1.2em; }
-  #toc.toc2 > ul { font-size: .90em; }
-  #toc.toc2 ul ul { margin-left: 0; padding-left: 1em; }
+@media only screen and (min-width: 1280px) { body.toc2 { padding-left: 20em; }
+  #toc.toc2 { position: fixed; width: 20em; left: 0; top: 0; border-right: 1px solid #ebebeb; border-bottom: 0; z-index: 1000; padding: 1em; height: 100%; overflow: auto; }
+  #toc.toc2 #toctitle { margin-top: 0; }
+  #toc.toc2 > ul { font-size: .95em; }
+  #toc.toc2 ul ul { margin-left: 0; padding-left: 1.25em; }
   #toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
-  body.toc2.toc-right { padding-left: 0; padding-right: 15em; }
+  body.toc2.toc-right { padding-left: 0; padding-right: 20em; }
   body.toc2.toc-right #toc.toc2 { border-right: 0; border-left: 1px solid #ebebeb; left: auto; right: 0; } }
-@media only screen and (min-width: 1280px) { body.toc2 { padding-left: 20em; padding-right: 0; }
-  #toc.toc2 { width: 20em; }
-  #toc.toc2 #toctitle { font-size: 1.375em; }
-  #toc.toc2 > ul { font-size: 0.95em; }
-  #toc.toc2 ul ul { padding-left: 1.25em; }
-  body.toc2.toc-right { padding-left: 0; padding-right: 20em; } }
 #content #toc { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; border-width: 0; -webkit-border-radius: 4px; border-radius: 4px; }
 #content #toc > :first-child { margin-top: 0; }
 #content #toc > :last-child { margin-bottom: 0; }
@@ -199,8 +186,8 @@ p a > code:hover { color: #561309; }
 #content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover { visibility: visible; }
 #content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link { color: #ba3925; text-decoration: none; }
 #content h1 > a.link:hover, h2 > a.link:hover, h3 > a.link:hover, #toctitle > a.link:hover, .sidebarblock > .content > .title > a.link:hover, h4 > a.link:hover, h5 > a.link:hover, h6 > a.link:hover { color: #a53221; }
-.imageblock, .literalblock, .listingblock, .mathblock, .verseblock, .videoblock { margin-bottom: 1.25em; }
-.admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .mathblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-align: left; font-weight: bold; }
+.imageblock, .literalblock, .listingblock, .verseblock, .videoblock { margin-bottom: 1.25em; }
+.admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-align: left; font-weight: bold; }
 .tableblock > caption { text-align: left; font-weight: bold; white-space: nowrap; overflow: visible; max-width: 0; }
 table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-size: inherit; }
 .admonitionblock > table { border: 0; background: none; width: 100%; }
@@ -224,15 +211,12 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-si
 .sidebarblock h1.subheader, .sidebarblock h2.subheader, .sidebarblock h3.subheader, .sidebarblock .subheader#toctitle, .sidebarblock > .content > .subheader.title, .sidebarblock h4.subheader, .sidebarblock h5.subheader, .sidebarblock h6.subheader { line-height: 1.4; }
 .sidebarblock > .content > .title { color: #7a2518; margin-top: 0; line-height: 1.6; }
 .exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child { margin-bottom: 0; }
-.literalblock pre:not([class]), .listingblock pre:not([class]) { background: none; }
-.literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { border-width: 1px 0; border-style: dotted; border-color: #bfbfbf; -webkit-border-radius: 4px; border-radius: 4px; padding: 0.75em 0.75em 0.5em 0.75em; word-wrap: break-word; }
-.literalblock pre.nowrap, .literalblock pre[class].nowrap, .listingblock pre.nowrap, .listingblock pre[class].nowrap { overflow-x: auto; white-space: pre; word-wrap: normal; }
-.literalblock pre > code, .literalblock pre[class] > code, .listingblock pre > code, .listingblock pre[class] > code { display: block; }
-@media only screen { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 0.8em; } }
-@media only screen and (min-width: 768px) { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 0.9em; } }
-@media only screen and (min-width: 1280px) { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 1em; } }
-.listingblock pre.highlight { padding: 0; }
-.listingblock pre.highlight > code { padding: 0.75em 0.75em 0.5em 0.75em; }
+.literalblock > .content pre, .listingblock > .content pre { background: none; border-width: 1px 0; border-style: dotted; border-color: #bfbfbf; -webkit-border-radius: 4px; border-radius: 4px; padding: 0.75em 0.75em 0.5em 0.75em; word-wrap: break-word; }
+.literalblock > .content pre.nowrap, .listingblock > .content pre.nowrap { overflow-x: auto; white-space: pre; word-wrap: normal; }
+.literalblock > .content pre > code, .listingblock > .content pre > code { display: block; }
+@media only screen { .literalblock > .content pre, .listingblock > .content pre { font-size: 0.8em; } }
+@media only screen and (min-width: 768px) { .literalblock > .content pre, .listingblock > .content pre { font-size: 0.9em; } }
+@media only screen and (min-width: 1280px) { .literalblock > .content pre, .listingblock > .content pre { font-size: 1em; } }
 .listingblock > .content { position: relative; }
 .listingblock:hover code[class*=" language-"]:before { text-transform: uppercase; font-size: 0.9em; color: #999; position: absolute; top: 0.375em; right: 0.375em; }
 .listingblock:hover code.asciidoc:before { content: "asciidoc"; }
@@ -244,7 +228,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-si
 .listingblock:hover code.javascript:before { content: "javascript"; }
 .listingblock:hover code.python:before { content: "python"; }
 .listingblock:hover code.ruby:before { content: "ruby"; }
-.listingblock:hover code.sass:before { content: "sass"; }
 .listingblock:hover code.scss:before { content: "scss"; }
 .listingblock:hover code.xml:before { content: "xml"; }
 .listingblock:hover code.yaml:before { content: "yaml"; }
@@ -266,15 +249,14 @@ table thead th, table tfoot th { font-weight: bold; }
 table.tableblock.grid-all { border-collapse: separate; border-spacing: 1px; -webkit-border-radius: 4px; border-radius: 4px; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd; }
 table.tableblock.frame-topbot, table.tableblock.frame-none { border-left: 0; border-right: 0; }
 table.tableblock.frame-sides, table.tableblock.frame-none { border-top: 0; border-bottom: 0; }
-table.tableblock td .paragraph:last-child p > p:last-child, table.tableblock th > p:last-child, table.tableblock td > p:last-child { margin-bottom: 0; }
+table.tableblock td .paragraph:last-child p, table.tableblock td > p:last-child { margin-bottom: 0; }
 th.tableblock.halign-left, td.tableblock.halign-left { text-align: left; }
 th.tableblock.halign-right, td.tableblock.halign-right { text-align: right; }
 th.tableblock.halign-center, td.tableblock.halign-center { text-align: center; }
 th.tableblock.valign-top, td.tableblock.valign-top { vertical-align: top; }
 th.tableblock.valign-bottom, td.tableblock.valign-bottom { vertical-align: bottom; }
 th.tableblock.valign-middle, td.tableblock.valign-middle { vertical-align: middle; }
-tbody tr th { display: table-cell; line-height: 1.6; background: whitesmoke; }
-tbody tr th, tbody tr th p, tfoot tr th, tfoot tr th p { color: #222222; font-weight: bold; }
+p.tableblock.header { color: #222222; font-weight: bold; }
 td > div.verse { white-space: pre; }
 ol { margin-left: 1.75em; }
 ul li ol { margin-left: 1.5em; }
@@ -383,7 +365,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h1>Java EE 7 Hands-on Lab</h1>
 <span id="author" class="author">Arun Gupta</span><br>
 <span id="revnumber">version 2.0,</span>
-<span id="revdate">Jan 10, 2014</span>
+<span id="revdate">Jan 14, 2014</span>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -413,11 +395,11 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_completed_solutions">13. Completed Solutions</a></li>
 <li><a href="#_todo">14. TODO</a></li>
 <li><a href="#_revision_history">15. Revision History</a></li>
-<li><a href="#_appendix">Appendix A: Appendix</a></li>
+<li><a href="#_appendix">16. Appendix A: Appendix</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#appendix-wildfly-netbeans">A.1. Configure WildFly 8 in NetBeans</a></li>
-<li><a href="#appendix-wildfly-idea">A.2. Configure WildFly 8 in IntelliJ IDEA</a></li>
+<li><a href="#appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</a></li>
+<li><a href="#appendix-wildfly-idea">16.2. Configure WildFly 8 in IntelliJ IDEA</a></li>
 </ul>
 </li>
 </ul>
@@ -563,10 +545,10 @@ flows.</p>
 <p>The table below details the components and the selected technology used
 in its’ implementation.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width:20%;">
+<col style="width:80%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -605,6 +587,7 @@ using Java Persistence API</p></td>
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>This document is not a comprehensive tutorial of Java EE. The attendees
 are expected to know the basic Java EE concepts such as EJB, JPA,
@@ -677,10 +660,10 @@ and selecting “Format” as shown.</p>
 <p>This functionality is also accessible using the following keyboard
 shortcuts:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 50%;">
+<table class="tableblock frame-all grid-all" style="width:50%; ">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width:50%;">
+<col style="width:50%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -703,6 +686,7 @@ shortcuts:</p>
 </tr>
 </tbody>
 </table>
+
 <div class="ulist">
 <ul>
 <li>
@@ -727,10 +711,10 @@ editor pane and selecting "Fix Imports" as shown.</p>
 <p>This functionality is also accessible using the following keyboard
 shortcuts:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 50%;">
+<table class="tableblock frame-all grid-all" style="width:50%; ">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width:50%;">
+<col style="width:50%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -753,6 +737,7 @@ shortcuts:</p>
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>The defaults may work in most of the cases. Choices are shown in case a
 class is available to import from multiple packages. If multiple
@@ -778,10 +763,10 @@ pre-requisite for <a href="#json">Add Movie (Java API for JSON Processing)</a>.<
 <div class="paragraph">
 <p>Here is an approximate time estimate for each section:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
-<col style="width: 66%;">
-<col style="width: 33%;">
+<col style="width:66%;">
+<col style="width:33%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -820,6 +805,7 @@ pre-requisite for <a href="#json">Add Movie (Java API for JSON Processing)</a>.<
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
@@ -866,7 +852,7 @@ content there.</p>
 unzipped directory, and click on &#8216;Open Project&#8217;. The project structure
 is shown.</p>
 <div class="paragraph">
-<p><span class="image"><img src="images/3.2-project-structure.png" alt="Project Structure in NetBeans" height="300"></span></p>
+<p><span class="image"><img src="images/3.2-project-structure.png" alt="Project Structure in NetBeans"></span></p>
 </div>
 </li>
 <li>
@@ -1033,11 +1019,11 @@ generated schema may need to be tuned for actual production environment.</p>
 <code>javax.persistence.schema-generation.*</code> properties. Their meaning and
 possible values are explained:</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
-<col style="width: 33%;">
-<col style="width: 33%;">
-<col style="width: 33%;">
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -1078,6 +1064,7 @@ script.</p></td>
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>Refer to the <a href="http://jcp.org/en/jsr/detail?id=338">JPA 2.1 Specification</a>
 for a complete understanding of these properties.</p>
@@ -1120,11 +1107,11 @@ same as the JPA entity class name.</p>
 <p>The mapping between JPA entity classes, EJB classes, and the URI of the
 corresponding REST endpoint is shown.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
-<col style="width: 33%;">
-<col style="width: 33%;">
-<col style="width: 33%;">
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -1161,6 +1148,7 @@ corresponding REST endpoint is shown.</p>
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>Feel free to browse through the code.</p>
 </div>
@@ -1505,10 +1493,10 @@ WebSocket is initialized by calling new <code>WebSocket(…)</code>. Event handl
 registered for lifecycle events using <code>onXXX</code> messages. The listeners
 registered in this script are explained in the table.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width:25%;">
+<col style="width:75%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -1535,6 +1523,7 @@ registered in this script are explained in the table.</p>
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>Any relevant data is passed along as parameter to the function. Each
 method prints the status on the browser using <code>writeToScreen</code> utility
@@ -4082,20 +4071,22 @@ node, and select
 </div>
 </div>
 <div class="sect1">
-<h2 id="_appendix">Appendix A: Appendix</h2>
+<h2 id="_appendix">16. Appendix A: Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="appendix-wildfly-netbeans">A.1. Configure WildFly 8 in NetBeans</h3>
+<h3 id="appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</h3>
 <div class="sect3">
-<h4 id="_configure_update_center_in_netbeans_7_4">A.1.1. Configure Update Center in NetBeans 7.4</h4>
+<h4 id="_configure_update_center">16.1.1. Configure Update Center</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>If you are using NetBeans 8 development build then go to <a href="#install-wildfly-plugin">Install WildFly plugin</a>. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</p>
+<p>If you are using NetBeans development build then skip this section and go to <a href="#install-wildfly-plugin">Install WildFly plugin</a>. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</p>
 </li>
 <li>
-<p>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;<a href="http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;">http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;</a>.
-<span class="image"><img src="images/16-netbeans-add-dev-update-center.png" alt="image"></span></p>
+<p>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/16-netbeans-add-dev-update-center.png" alt="image"></span></p>
+</div>
 <div class="paragraph">
 <p>and click on &#8216;OK&#8217;.</p>
 </div>
@@ -4104,7 +4095,7 @@ node, and select
 </div>
 </div>
 <div class="sect3">
-<h4 id="install-wildfly-plugin">A.1.2. Install WildFly plugin</h4>
+<h4 id="install-wildfly-plugin">16.1.2. Install WildFly plugin</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4123,7 +4114,7 @@ node, and select
 </div>
 </div>
 <div class="sect3">
-<h4 id="_configure_wildfly_8">A.1.3. Configure WildFly 8</h4>
+<h4 id="_configure_wildfly_8">16.1.3. Configure WildFly 8</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4162,7 +4153,7 @@ archive.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="appendix-wildfly-idea">A.2. Configure WildFly 8 in IntelliJ IDEA</h3>
+<h3 id="appendix-wildfly-idea">16.2. Configure WildFly 8 in IntelliJ IDEA</h3>
 
 </div>
 </div>
@@ -4171,7 +4162,7 @@ archive.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2014-01-10 22:58:43 CET
+Last updated 2014-01-14 11:15:18 CET
 </div>
 </div>
 </body>

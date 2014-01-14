@@ -5,7 +5,7 @@
 <book xmlns="http://docbook.org/ns/docbook" lang="en">
 <bookinfo>
 <title>Java EE 7 Hands-on Lab</title>
-<date>Dec 3, 2013</date>
+<date>Jan 14, 2014</date>
 <author>
 <firstname>Arun</firstname>
 
@@ -17,7 +17,7 @@
 <revhistory>
 <revision>
 <revnumber>2.0</revnumber>
-<date>Dec 3, 2013</date>
+<date>Jan 14, 2014</date>
 <authorinitials>AG</authorinitials>
 
 </revision>
@@ -82,21 +82,21 @@ using the following Java EE 7 technologies:</simpara>
 <ulink url="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</ulink>.</simpara>
 </listitem>
 <listitem>
-<simpara>Application Server: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
+<simpara><emphasis role="strong">Application Server</emphasis>: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
 WildFly 8.</simpara>
 </listitem>
 <listitem>
-<simpara>IDE: NetBeans 8 Beta or IntelliJ IDEA 13 can be used. This document provide instructions for
-NetBeans 8 Beta.</simpara>
+<simpara><emphasis role="strong">IDE</emphasis>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
+NetBeans 8.</simpara>
 <simpara>Download "All" or "Java EE" version from
 <ulink url="http://netbeans.org/downloads/">http://netbeans.org/downloads/</ulink>. A
 snapshot of the downloads page is shown and highlights the exact
-"Download" button to be clicked.</simpara>
+&#8216;Download&#8217; button to be clicked.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/1.1-netbeans-download.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>NetBeans Download</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>WildFly 8 needs to be downloaded from <ulink url="http://wildfly.org/downloads/">wildfly.org</ulink> and configured in NetBeans IDE following the instructions in <xref linkend="appendix-wildfly-netbeans"/>.</simpara>
 <tip>
@@ -120,7 +120,7 @@ also accrue points for watching movies.</simpara>
   <imageobject>
     <imagedata fileref="images/2.0-problem-statement.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Problem Statement</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>This figure shows the key components of the application. The User
 Interface initiates all the flows in the application. Show Booking,
@@ -135,7 +135,7 @@ flows.</simpara>
   <imageobject>
     <imagedata fileref="images/2.0-technologies.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Technologies</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>The table below details the components and the selected technology used
 in its’ implementation.</simpara>
@@ -271,7 +271,7 @@ and selecting “Format” as shown.</simpara>
   <imageobject>
     <imagedata fileref="images/2.1-format.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Format Code in NetBeans</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>This functionality is also accessible using the following keyboard
 shortcuts:</simpara>
@@ -345,7 +345,7 @@ import statement by clicking on the yellow bulb shown in the side bar.</simpara>
   <imageobject>
     <imagedata fileref="images/2.1-server-endpoint.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Server Endpoint</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Alternatively all the imports can be resolved by right-clicking on the
 editor pane and selecting "Fix Imports" as shown.</simpara>
@@ -353,7 +353,7 @@ editor pane and selecting "Fix Imports" as shown.</simpara>
   <imageobject>
     <imagedata fileref="images/2.1-fix-imports.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Fix Imports in NetBeans</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>This functionality is also accessible using the following keyboard
 shortcuts:</simpara>
@@ -548,7 +548,7 @@ is shown.</simpara>
   <imageobject>
     <imagedata fileref="images/3.2-project-structure.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Project Structure in NetBeans</phrase></textobject>
 </inlinemediaobject></simpara>
 </listitem>
 <listitem>
@@ -596,7 +596,7 @@ to view the XML source.</simpara>
   <imageobject>
     <imagedata fileref="images/3.2-persistence-xml.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>persistence.xml</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>It looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -655,7 +655,7 @@ the error shown below:</simpara>
   <imageobject>
     <imagedata fileref="images/3.4-missing-server.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Missing Server for persistence.xml</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>This will get resolved when we run the application. Click on &#8216;OK&#8217; to
 dismiss the dialog.</simpara>
@@ -765,7 +765,7 @@ through the SQL scripts. The database schema is shown.</simpara>
   <imageobject>
     <imagedata fileref="images/3.5-schema.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Database Schema</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>This folder also contains &#8216;sales.csv&#8217; which carries some comma-separated
 data, and is used later in the application.</simpara>
@@ -907,14 +907,14 @@ Choose the configured WildFly server and click on &#8216;OK&#8217;.</simpara>
   <imageobject>
     <imagedata fileref="images/3.6-wildfly-server.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>WildFly Server</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>The output looks like as shown.</simpara>
 <simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/3.8-first-page.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Application&#8217;s First Page</phrase></textobject>
 </inlinemediaobject></simpara>
 </listitem>
 </orderedlist>
@@ -1016,7 +1016,7 @@ Windows).</simpara>
   <imageobject>
     <imagedata fileref="images/4.2-imports.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Imports</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Right-click again in the editor pane and select &#8216;Format&#8217; to format your
 code.</simpara>
@@ -1038,7 +1038,7 @@ code.</simpara>
   <imageobject>
     <imagedata fileref="images/4.4-template.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Template</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 "top" and "left". These sections are inherited from the template.</simpara>
@@ -1249,7 +1249,7 @@ allows the links in the left navigation bar to be fully-qualified URLs.</simpara
   <imageobject>
     <imagedata fileref="images/4.6-chatroom.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Chatroom</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Click on "Chat Room" to see the output.</simpara>
 <simpara>The "CONNECTED" status message is shown and indicates that the WebSocket
@@ -1258,7 +1258,7 @@ connection with the endpoint is established.</simpara>
   <imageobject>
     <imagedata fileref="images/4.8-chatroom.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Chatroom</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Please make sure your browser supports WebSocket in order for this page
 to show up successfully. Chrome 14.0+, Firefox 11.0+, Safari 6.0+, and
@@ -1272,7 +1272,7 @@ browser and click &#8216;Join&#8217;.</simpara>
   <imageobject>
     <imagedata fileref="images/4.8-chatroom-joined.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Chatroom</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Notice that the user list and the status message in both the browsers
 gets updated. Enter &#8216;James&#8217; in the text box of the second browser and
@@ -1285,7 +1285,7 @@ like as shown.</simpara>
   <imageobject>
     <imagedata fileref="images/4.8-chatroom-two-browsers.png"/>
   </imageobject>
-  <textobject><phrase>image</phrase></textobject>
+  <textobject><phrase>Chatroom Two Browsers</phrase></textobject>
 </inlinemediaobject></simpara>
 <simpara>Here it shows output from Chrome on the top and Firefox on the bottom.</simpara>
 <simpara>Chrome Developer Tools or Firebug in Firefox can be used to monitor
@@ -2328,14 +2328,14 @@ private String message;</programlisting>
 <simpara>This field contains the message sent to the queue. This field’s value is
 bound to an inputText in a JSF page (created later). Constraints have
 been specified on this bean that enable validation of data on form
-submit. It requires the data to consists of 2 numerical digits, followed
-by a comma, and then 2 more numerical digits. If the message does not
+submit. It requires the data to consists of two numerical digits, followed
+by a comma, and then two more numerical digits. If the message does not
 meet the validation criteria then the error message to be displayed is
 specified using message attribute.</simpara>
 <simpara>This could be thought as conveying the customer identifier and the
 points accrued by that customer.</simpara>
 <simpara>Generate getter/setters for this field. Right-click in the editor pane,
-select "Insert Code" (Ctrl + I shortcut on Mac), select &#8216;Getter and
+select &#8216;Insert Code&#8217; (Ctrl + I shortcut on Mac), select &#8216;Getter and
 Setter&#8217;, select the field, and click on &#8216;Generate&#8217;.</simpara>
 </listitem>
 <listitem>
@@ -2829,11 +2829,14 @@ theater.</simpara>
 defines a navigation rule that will be defined in the next step.</simpara>
 </listitem>
 <listitem>
-<simpara><literal>booking.xhtml', `showtimes.xhtml', `confirm.xhtml', and
-`print.xhtml' are all in the same directory. Now the runtime needs to be
+<simpara>&#8216;booking.xhtml&#8217;, &#8216;showtimes.xhtml&#8217;, &#8216;confirm.xhtml&#8217;, and
+&#8216;print.xhtml&#8217; are all in the same directory. Now the runtime needs to be
 informed that the views in this directory are to be treated as view
-nodes in a flow. This can be done by adding `booking/booking-flow.xml'
-or have a class with a method with `@Produces @FlowDefinition</literal> annotations.</simpara>
+nodes in a flow. This can be done declaratively by adding &#8216;booking/booking-flow.xml&#8217;
+or programmatically by having a class with a method with the following annotations:</simpara>
+<programlisting language="java" linenumbering="unnumbered">@Produces @FlowDefinition</programlisting>
+
+<simpara>This lab takes the declarative approach.</simpara>
 <simpara>Right-click on &#8216;Web Pages/booking&#8217; folder, select &#8216;New&#8217;, &#8216;Other&#8217;, &#8216;XML&#8217;,
 &#8216;XML Document&#8217;, give the name as &#8216;booking-flow&#8217;, click on &#8216;Next&gt;&#8217;, take
 the default of &#8216;Well-formed Document&#8217;, and click on &#8216;Finish&#8217;.</simpara>
@@ -3156,7 +3159,7 @@ node, and select
 <title>Revision History</title>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>Added macros to generate WildFly and GlassFish-server specific instructions. (Jan 10, 2014)</simpara>
+<simpara>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros.(Jan 10, 2014)</simpara>
 </listitem>
 <listitem>
 <simpara>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</simpara>
@@ -3168,13 +3171,15 @@ node, and select
 <title>Appendix</title>
 <section id="appendix-wildfly-netbeans">
 <title>Configure WildFly 8 in NetBeans</title>
+<section id="_configure_update_center">
+<title>Configure Update Center</title>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>In NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</simpara>
+<simpara>If you are using NetBeans development build then skip this section and go to <xref linkend="install-wildfly-plugin"/>. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</simpara>
 </listitem>
 <listitem>
-<simpara>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.
-<inlinemediaobject>
+<simpara>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.</simpara>
+<simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/16-netbeans-add-dev-update-center.png"/>
   </imageobject>
@@ -3182,9 +3187,15 @@ node, and select
 </inlinemediaobject></simpara>
 <simpara>and click on &#8216;OK&#8217;.</simpara>
 </listitem>
+</orderedlist>
+
+</section>
+<section id="install-wildfly-plugin">
+<title>Install WildFly plugin</title>
+<orderedlist numeration="arabic">
 <listitem>
-<simpara>Click on &#8216;Available Plugins&#8217;, type &#8220;wildfly&#8221; in &#8216;Search:&#8217; box, and select the plugin by clicking on the checkbox in &#8216;Install&#8217; column.
-<inlinemediaobject>
+<simpara>In NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Available Plugins&#8217;, type &#8220;wildfly&#8221; in &#8216;Search:&#8217; box, and select the plugin by clicking on the checkbox in &#8216;Install&#8217; column.</simpara>
+<simpara><inlinemediaobject>
   <imageobject>
     <imagedata fileref="images/16-netbeans-available-plugins-wildfly.png"/>
   </imageobject>
@@ -3195,6 +3206,12 @@ node, and select
 <listitem>
 <simpara>Click on &#8216;Install&#8217; button, &#8216;Next &gt;&#8217;, accept the license agreement by clicking on the checkbox, and click on &#8216;Install&#8217; button to install the plugin. Click on &#8216;Finish&#8217; to restart the IDE and complete installation.</simpara>
 </listitem>
+</orderedlist>
+
+</section>
+<section id="_configure_wildfly_8">
+<title>Configure WildFly 8</title>
+<orderedlist numeration="arabic">
 <listitem>
 <simpara>In NetBeans, click on &#8216;Services&#8217; tab.</simpara>
 </listitem>
@@ -3238,6 +3255,7 @@ archive.</simpara>
 </listitem>
 </orderedlist>
 
+</section>
 </section>
 <section id="appendix-wildfly-idea">
 <title>Configure WildFly 8 in IntelliJ IDEA</title>
