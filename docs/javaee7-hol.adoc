@@ -1,11 +1,10 @@
-:revnumber: 2.0
-:author: Arun Gupta
-:revdate: Jan 14, 2014
+= Java EE 7 Hands-on Lab
+Arun Gupta
+v2.0, Jan 14, 2014
 :toc:
+:toclevels: 3
 :ide-netbeans: true
 :server-wildfly: true
-
-= Java EE 7 Hands-on Lab
 
 include::chapters/ch01-introduction.adoc[]
 
