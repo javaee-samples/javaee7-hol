@@ -10,6 +10,7 @@ The following Java EE community members graciously reviewed and contributed to t
 * John Clingan (@jclingan)
 * Reza Rahman (@reza_rahman)
 * Marian Muller (@mullermarian)
+* Dan Allen (@mojavelinux)
 
 Thank you very much for providing the valuable feedback!
 
