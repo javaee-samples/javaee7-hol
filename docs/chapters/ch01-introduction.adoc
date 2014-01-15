@@ -49,7 +49,7 @@ http://netbeans.org/downloads/[http://netbeans.org/downloads/]. A
 snapshot of the downloads page is shown and highlights the exact
 `Download' button to be clicked.
 +
-image:images/1.1-netbeans-download.png[NetBeans Download]
+image::images/1.1-netbeans-download.png[NetBeans Download]
 endif::ide-netbeans[]
 +
 ifdef::server-glassfish[]

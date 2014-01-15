@@ -13,7 +13,7 @@ Applications for the Java Platform (JSR 352) will define a programming
 model for batch applications and a runtime for scheduling and executing
 jobs.
 
-image:images/5.0-batch-intro.png[image]
+image::images/5.0-batch-intro.png[image]
 
 The core concepts of Batch Processing are:
 
@@ -303,7 +303,7 @@ the bean to be injectable in an EL expression.
 +
 Resolve the imports.
 +
-image:images/5.10-imports.png[image]
+image::images/5.10-imports.png[image]
 +
 . Inject `EntityManagerFactory` in the class as:
 +
@@ -392,13 +392,13 @@ needs to be repeated for `f:` prefix.
 +
 . Run the project to see the output as shown.
 +
-image:images/5.14-sales.png[image]
+image::images/5.14-sales.png[image]
 +
 Notice, a new `Sales' entry is displayed in the left navigation bar.
 +
 . Click on `Sales' to see the output as shown.
 +
-image:images/5.15-sales.png[image]
+image::images/5.15-sales.png[image]
 +
 The empty table indicates that there is no sales data in the database.
 +
@@ -407,7 +407,7 @@ file. Look for `Waiting for localhost' in the browser status bar,
 wait for a couple of seconds for the processing to finish, and then
 click on `Refresh' button to see the updated output as shown.
 +
-image:images/5.16-sales-output.png[image]
+image::images/5.16-sales-output.png[image]
 +
 Now the table is populated with the sales data.
 +

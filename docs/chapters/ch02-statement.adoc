@@ -7,7 +7,7 @@ existing movies. Customers can discuss the movie in a chat room. Total
 sales from each showing are calculated at the end of the day. Customers
 also accrue points for watching movies.
 
-image:images/2.0-problem-statement.png[Problem Statement]
+image::images/2.0-problem-statement.png[Problem Statement]
 
 This figure shows the key components of the application. The User
 Interface initiates all the flows in the application. Show Booking,
@@ -20,7 +20,7 @@ various Java technologies and web standards in their implementation. The
 following figure shows how Java EE technologies are used in different
 flows.
 
-image:images/2.0-technologies.png[Technologies]
+image::images/2.0-technologies.png[Technologies]
 
 The table below details the components and the selected technology used
 in its’ implementation.
@@ -91,7 +91,7 @@ to the editor. This keeps the code legible.
 This functionality can be accessed by right-clicking in the editor pane
 and selecting “Format” as shown.
 
-image:images/2.1-format.png[Format Code in NetBeans]
+image::images/2.1-format.png[Format Code in NetBeans]
 
 This functionality is also accessible using the following keyboard
 shortcuts:
@@ -115,12 +115,12 @@ not auto-import the classes. This is required to be done manually in
 order for the classes to compile. This can be fixed for each missing
 import statement by clicking on the yellow bulb shown in the side bar.
 
-image:images/2.1-server-endpoint.png[Server Endpoint]
+image::images/2.1-server-endpoint.png[Server Endpoint]
 
 Alternatively all the imports can be resolved by right-clicking on the
 editor pane and selecting "Fix Imports" as shown.
 
-image:images/2.1-fix-imports.png[Fix Imports in NetBeans]
+image::images/2.1-fix-imports.png[Fix Imports in NetBeans]
 
 This functionality is also accessible using the following keyboard
 shortcuts:
