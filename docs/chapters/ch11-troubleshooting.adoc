@@ -2,7 +2,7 @@
 
 [qanda]
 How can I start/stop/restart the application server from within the IDE ?::
-In the "Services" tab, right-click on
+In the `Services' tab, right-click on
 ifdef::server-glassfish[]
 `GlassFish Server 4'.
 endif::server-glassfish[]
@@ -12,7 +12,7 @@ endif::server-wildfly[]
 All the commands to start, stop, and restart are available from the pop-up menu.
 
 I accidentally closed the output log window. How do I bring it back ?::
-In “Services” tab of NetBeans, expand "Servers", choose the application server
+In “Services” tab of NetBeans, expand `Servers', choose the application server
 node, and select
 ifdef::server-glassfish[]
 `View Domain Server Log'.

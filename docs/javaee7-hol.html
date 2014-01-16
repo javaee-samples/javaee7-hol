@@ -507,7 +507,7 @@ WildFly 8.</p>
 <p><strong>IDE</strong>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
 NetBeans 8.</p>
 <div class="paragraph">
-<p>Download "All" or "Java EE" version from
+<p>Download &#8220;All&#8221; or &#8220;Java EE&#8221; version from
 <a href="http://netbeans.org/downloads/">http://netbeans.org/downloads/</a>. A
 snapshot of the downloads page is shown and highlights the exact
 &#8216;Download&#8217; button to be clicked.</p>
@@ -735,7 +735,7 @@ import statement by clicking on the yellow bulb shown in the side bar.</p>
 </div>
 <div class="paragraph">
 <p>Alternatively all the imports can be resolved by right-clicking on the
-editor pane and selecting "Fix Imports" as shown.</p>
+editor pane and selecting &#8220;Fix Imports&#8221; as shown.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1054,7 +1054,7 @@ or as part of <code>EntityManagerFactory</code> creation. This feature will allo
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.</p>
 <div class="paragraph">
-<p>The "persistence.xml" in the application has the following
+<p>The &#8220;persistence.xml&#8221; in the application has the following
 <code>javax.persistence.schema-generation.*</code> properties. Their meaning and
 possible values are explained:</p>
 </div>
@@ -1195,7 +1195,7 @@ corresponding REST endpoint is shown.</p>
 <li>
 <p><strong>JSF pages</strong>: &#8216;WEB-INF/template.xhtml&#8217; defines the template of the
 web page and has a header, left navigation bar, and a main content
-section. "index.xhtml" uses this template and the EJBs to display the
+section. &#8216;index.xhtml&#8217; uses this template and the EJBs to display the
 number of movies and theaters.</p>
 <div class="paragraph">
 <p>Java EE 7 enables CDI discovery of beans by default. No &#8216;beans.xml&#8217; is
@@ -1393,7 +1393,7 @@ code.</p>
 </li>
 <li>
 <p>In &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Folder&#8217;, give the folder name as
-"chat" and click on &#8216;Finish&#8217;.</p>
+&#8216;chat&#8217; and click on &#8216;Finish&#8217;.</p>
 </li>
 <li>
 <p>Right-click on the newly created folder, select &#8216;New&#8217;, &#8216;Other&#8217;,
@@ -1408,10 +1408,10 @@ code.</p>
 </div>
 <div class="paragraph">
 <p>In this file, remove &lt;ui:define&gt; sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</p>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</p>
 </div>
 <div class="paragraph">
-<p>Replace <code>&lt;ui:define&gt;</code> section with "content" name such that it looks like:</p>
+<p>Replace <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1448,8 +1448,8 @@ code.</p>
 <p>The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
-Clicking on "Join" button takes the value as user name and clicking on
-"Send" takes the value as chat message.</p>
+Clicking on &#8216;Join&#8217; button takes the value as user name and clicking on
+&#8216;Send&#8217; takes the value as chat message.</p>
 </div>
 <div class="paragraph">
 <p>JavaScript methods are invoked
@@ -1536,7 +1536,7 @@ function writeToScreen(message) {
 <div class="paragraph">
 <p>The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the <code>ChatServer</code> class.
-WebSocket is initialized by calling new <code>WebSocket(…)</code>. Event handlers are
+WebSocket is initialized by calling new <code>WebSocket(...)</code>. Event handlers are
 registered for lifecycle events using <code>onXXX</code> messages. The listeners
 registered in this script are explained in the table.</p>
 </div>
@@ -1582,7 +1582,7 @@ logged in users as well.</p>
 </div>
 </li>
 <li>
-<p>Edit "WEB-INF/template.xhtml" and change:</p>
+<p>Edit &#8216;WEB-INF/template.xhtml&#8217; and change:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="xml language-xml">&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</code></pre>
@@ -1608,7 +1608,7 @@ allows the links in the left navigation bar to be fully-qualified URLs.</p>
 </li>
 <li>
 <p>Run the project by right clicking on the project and selecting
-"Run". The browser shows
+&#8216;Run&#8217;. The browser shows
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a>.</p>
 <div class="imageblock">
 <div class="content">
@@ -1616,10 +1616,10 @@ allows the links in the left navigation bar to be fully-qualified URLs.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Click on "Chat Room" to see the output.</p>
+<p>Click on &#8216;Chat Room&#8217; to see the output.</p>
 </div>
 <div class="paragraph">
-<p>The "CONNECTED" status message is shown and indicates that the WebSocket
+<p>The &#8216;CONNECTED&#8217; status message is shown and indicates that the WebSocket
 connection with the endpoint is established.</p>
 </div>
 <div class="imageblock">
@@ -2354,7 +2354,7 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 </li>
 <li>
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</p>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</p>
 <div class="paragraph">
 <p>Replace <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
 </div>
@@ -2487,14 +2487,14 @@ the get method.</p>
 </div>
 </li>
 <li>
-<p>Right-click on "client" folder, select &#8216;New&#8217;, &#8216;Facelets Template
+<p>Right-click on &#8216;client&#8217; folder, select &#8216;New&#8217;, &#8216;Facelets Template
 Client&#8217;, give the File Name as &#8216;movie&#8217;. Click on &#8216;Browse&#8217; next to
 &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xhtml&#8217;, and
 click on &#8216;Select File&#8217;. Click on &#8216;Finish&#8217;.</p>
 </li>
 <li>
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</p>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</p>
 <div class="paragraph">
 <p>Replace <code>&lt;ui:define&gt;</code> with &#8216;content&#8217; name such that it looks like:</p>
 </div>
@@ -2853,11 +2853,11 @@ are used to write different data types to the stream.</p>
 &#8216;Facelets Template Client&#8217;. Give the File Name as &#8216;addmovie&#8217;.
 Click on &#8216;Browse&#8217; next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;,
 &#8216;WEB-INF&#8217;, select &#8216;template.xhtml&#8217;, and click on &#8216;Select File&#8217;.
-Click on "Finish".</p>
+Click on &#8216;Finish&#8217;.</p>
 </li>
 <li>
 <p>In this file, remove <code>&lt;ui:define&gt;</code> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</p>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</p>
 <div class="paragraph">
 <p>Replace <code>&lt;ui:define&gt;</code> section with &#8216;content&#8217; name such that it looks like:</p>
 </div>
@@ -2892,7 +2892,7 @@ Click on "Finish".</p>
 <p>This code creates a form to accept input of <code>id</code>, <code>name</code>, and <code>actors</code> of a
 movie. These values are bound to fields in <code>MovieBackingBean</code>. The click
 of command button invokes the addMovie method from <code>MovieClientBean</code> and
-then renders "movies.xhtml".</p>
+then renders &#8216;movies.xhtml&#8217;.</p>
 </div>
 <div class="paragraph">
 <p>Click on the hint (show as yellow bulb) to resolve the namespace
@@ -4073,13 +4073,13 @@ WildFly 8.</p>
 <ol>
 <li>
 <p><em>How can I start/stop/restart the application server from within the IDE ?</em></p>
-<p>In the "Services" tab, right-click on
+<p>In the &#8216;Services&#8217; tab, right-click on
 &#8216;WildFly 8&#8217;.
 All the commands to start, stop, and restart are available from the pop-up menu.</p>
 </li>
 <li>
 <p><em>I accidentally closed the output log window. How do I bring it back ?</em></p>
-<p>In “Services” tab of NetBeans, expand "Servers", choose the application server
+<p>In “Services” tab of NetBeans, expand &#8216;Servers&#8217;, choose the application server
 node, and select
 &#8216;View Server Log&#8217;.</p>
 <div class="imageblock">
@@ -4127,6 +4127,12 @@ node, and select
 </li>
 <li>
 <p>Marian Muller (@mullermarian)</p>
+</li>
+<li>
+<p>Jason Porter (@lightguardjp)</p>
+</li>
+<li>
+<p>Dan Allen (@mojavelinux)</p>
 </li>
 </ul>
 </div>
@@ -4265,7 +4271,7 @@ name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</p>
 </li>
 <li>
 <p>Click on &#8216;Browse&#8217; for &#8216;Server Location&#8217; and select the directory that got created
-when WildFly archive was unzipped. Click on "Browse" for &#8216;Server Configuration&#8217; and
+when WildFly archive was unzipped. Click on &#8216;Browse&#8217; for &#8216;Server Configuration&#8217; and
 select the &#8216;standalone/configuration/standalone-full.xml&#8217; file in the unzipped WildFly
 archive.</p>
 <div class="imageblock">

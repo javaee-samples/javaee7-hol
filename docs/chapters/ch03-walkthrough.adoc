@@ -148,7 +148,7 @@ or as part of `EntityManagerFactory` creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.
 +
-The "persistence.xml" in the application has the following
+The ``persistence.xml'' in the application has the following
 `javax.persistence.schema-generation.*` properties. Their meaning and
 possible values are explained:
 +
@@ -244,7 +244,7 @@ Feel free to browse through the code.
 +
 . *JSF pages*: `WEB-INF/template.xhtml' defines the template of the
 web page and has a header, left navigation bar, and a main content
-section. "index.xhtml" uses this template and the EJBs to display the
+section. `index.xhtml' uses this template and the EJBs to display the
 number of movies and theaters.
 +
 Java EE 7 enables CDI discovery of beans by default. No `beans.xml' is

@@ -44,7 +44,7 @@ endif::server-glassfish[]
 ifdef::ide-netbeans[]
 NetBeans 8.
 +
-Download "All" or "Java EE" version from
+Download ``All'' or ``Java EE'' version from
 http://netbeans.org/downloads/[http://netbeans.org/downloads/]. A
 snapshot of the downloads page is shown and highlights the exact
 `Download' button to be clicked.

@@ -86,7 +86,7 @@ Right-click again in the editor pane and select `Format' to format your
 code.
 +
 . In `Web Pages', select `New', `Folder', give the folder name as
-"chat" and click on `Finish'.
+`chat' and click on `Finish'.
 +
 . Right-click on the newly created folder, select `New', `Other',
 `Java Server Faces', `Facelets Template Client', give the File Name as
@@ -97,9 +97,9 @@ code.
 image::images/4.4-template.png[Template]
 +
 In this file, remove <ui:define> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.
+`top' and `left'. These sections are inherited from the template.
 +
-Replace `<ui:define>` section with "content" name such that it looks like:
+Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source,xml]
 <ui:define name="content">
@@ -133,8 +133,8 @@ Replace `<ui:define>` section with "content" name such that it looks like:
 The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
-Clicking on "Join" button takes the value as user name and clicking on
-"Send" takes the value as chat message.
+Clicking on `Join' button takes the value as user name and clicking on
+`Send' takes the value as chat message.
 +
 JavaScript methods are invoked
 when these buttons are clicked and these are explained in the next
@@ -216,7 +216,7 @@ function writeToScreen(message) {
 +
 The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the `ChatServer` class.
-WebSocket is initialized by calling new `WebSocket(…)`. Event handlers are
+WebSocket is initialized by calling new `WebSocket(...)`. Event handlers are
 registered for lifecycle events using `onXXX` messages. The listeners
 registered in this script are explained in the table.
 +
@@ -242,7 +242,7 @@ the logged in user name and the value of the text field and broadcasts
 to all the clients similarly. The `onMessage` method updates the list of
 logged in users as well.
 +
-. Edit "WEB-INF/template.xhtml" and change:
+. Edit `WEB-INF/template.xhtml' and change:
 +
 [source,xml]
 <h:outputLink value="item2.xhtml">Item 2</h:outputLink>
@@ -261,14 +261,14 @@ URI that identifies the web application context for this request. This
 allows the links in the left navigation bar to be fully-qualified URLs.
 +
 . Run the project by right clicking on the project and selecting
-"Run". The browser shows
+`Run'. The browser shows
 http://localhost:8080/movieplex7[localhost:8080/movieplex7].
 +
 image::images/4.6-chatroom.png[Chatroom]
 +
-Click on "Chat Room" to see the output.
+Click on `Chat Room' to see the output.
 +
-The "CONNECTED" status message is shown and indicates that the WebSocket
+The `CONNECTED' status message is shown and indicates that the WebSocket
 connection with the endpoint is established.
 +
 image::images/4.8-chatroom.png[Chatroom]

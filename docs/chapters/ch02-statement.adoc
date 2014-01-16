@@ -118,7 +118,7 @@ import statement by clicking on the yellow bulb shown in the side bar.
 image::images/2.1-server-endpoint.png[Server Endpoint]
 
 Alternatively all the imports can be resolved by right-clicking on the
-editor pane and selecting "Fix Imports" as shown.
+editor pane and selecting ``Fix Imports'' as shown.
 
 image::images/2.1-fix-imports.png[Fix Imports in NetBeans]
 

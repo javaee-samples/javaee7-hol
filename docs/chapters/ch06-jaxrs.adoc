@@ -97,7 +97,7 @@ expand `Web Pages', `WEB-INF', select `template.xhtml', and click on
 `Select File'. Click on `Finish'.
 +
 . In this file, remove `<ui:define>` sections where name attribute value is
-"top" and "left". These sections are inherited from the template.
+`top' and `left'. These sections are inherited from the template.
 +
 Replace `<ui:define>` section with `content' name such that it looks like:
 +
@@ -196,13 +196,13 @@ endpoint, defined using `{movie}`, and binds it to a concrete value using
 `resolveTemplate` method. The return type is specified as a parameter to
 the get method.
 +
-. Right-click on "client" folder, select `New', `Facelets Template
+. Right-click on `client' folder, select `New', `Facelets Template
 Client', give the File Name as `movie'. Click on `Browse' next to
 `Template:', expand `Web Pages', `WEB-INF', select `template.xhtml', and
 click on `Select File'. Click on `Finish'.
 +
 . In this file, remove `<ui:define>` sections where name attribute value is
-"top" and "left". These sections are inherited from the template.
+`top' and `left'. These sections are inherited from the template.
 +
 Replace `<ui:define>` with `content' name such that it looks like:
 +

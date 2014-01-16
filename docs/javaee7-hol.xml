@@ -88,7 +88,7 @@ WildFly 8.</simpara>
 <listitem>
 <simpara><emphasis role="strong">IDE</emphasis>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
 NetBeans 8.</simpara>
-<simpara>Download "All" or "Java EE" version from
+<simpara>Download &#8220;All&#8221; or &#8220;Java EE&#8221; version from
 <ulink url="http://netbeans.org/downloads/">http://netbeans.org/downloads/</ulink>. A
 snapshot of the downloads page is shown and highlights the exact
 &#8216;Download&#8217; button to be clicked.</simpara>
@@ -361,7 +361,7 @@ import statement by clicking on the yellow bulb shown in the side bar.</simpara>
 </figure>
 
 <simpara>Alternatively all the imports can be resolved by right-clicking on the
-editor pane and selecting "Fix Imports" as shown.</simpara>
+editor pane and selecting &#8220;Fix Imports&#8221; as shown.</simpara>
 <figure>
   <mediaobject>
     <imageobject>
@@ -688,7 +688,7 @@ required artifacts are generated either prior to application deployment
 or as part of <literal>EntityManagerFactory</literal> creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.</simpara>
-<simpara>The "persistence.xml" in the application has the following
+<simpara>The &#8220;persistence.xml&#8221; in the application has the following
 <literal>javax.persistence.schema-generation.*</literal> properties. Their meaning and
 possible values are explained:</simpara>
 <informaltable frame="all"
@@ -895,7 +895,7 @@ corresponding REST endpoint is shown.</simpara>
 <listitem>
 <simpara><emphasis role="strong">JSF pages</emphasis>: &#8216;WEB-INF/template.xhtml&#8217; defines the template of the
 web page and has a header, left navigation bar, and a main content
-section. "index.xhtml" uses this template and the EJBs to display the
+section. &#8216;index.xhtml&#8217; uses this template and the EJBs to display the
 number of movies and theaters.</simpara>
 <simpara>Java EE 7 enables CDI discovery of beans by default. No &#8216;beans.xml&#8217; is
 required in &#8216;WEB-INF&#8217;. This allows all beans with bean defining
@@ -1052,7 +1052,7 @@ code.</simpara>
 </listitem>
 <listitem>
 <simpara>In &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Folder&#8217;, give the folder name as
-"chat" and click on &#8216;Finish&#8217;.</simpara>
+&#8216;chat&#8217; and click on &#8216;Finish&#8217;.</simpara>
 </listitem>
 <listitem>
 <simpara>Right-click on the newly created folder, select &#8216;New&#8217;, &#8216;Other&#8217;,
@@ -1070,8 +1070,8 @@ code.</simpara>
 </figure>
 
 <simpara>In this file, remove &lt;ui:define&gt; sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</simpara>
-<simpara>Replace <literal>&lt;ui:define&gt;</literal> section with "content" name such that it looks like:</simpara>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
+<simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
     &lt;form action=""&gt;
         &lt;table&gt;
@@ -1102,8 +1102,8 @@ code.</simpara>
 <simpara>The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
-Clicking on "Join" button takes the value as user name and clicking on
-"Send" takes the value as chat message.</simpara>
+Clicking on &#8216;Join&#8217; button takes the value as user name and clicking on
+&#8216;Send&#8217; takes the value as chat message.</simpara>
 <simpara>JavaScript methods are invoked
 when these buttons are clicked and these are explained in the next
 section. The chat messages are sent and received as WebSocket payloads.
@@ -1180,7 +1180,7 @@ function writeToScreen(message) {
 }</programlisting>
 <simpara>The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the <literal>ChatServer</literal> class.
-WebSocket is initialized by calling new <literal>WebSocket(…)</literal>. Event handlers are
+WebSocket is initialized by calling new <literal>WebSocket(...)</literal>. Event handlers are
 registered for lifecycle events using <literal>onXXX</literal> messages. The listeners
 registered in this script are explained in the table.</simpara>
 <informaltable frame="all"
@@ -1254,7 +1254,7 @@ to all the clients similarly. The <literal>onMessage</literal> method updates th
 logged in users as well.</simpara>
 </listitem>
 <listitem>
-<simpara>Edit "WEB-INF/template.xhtml" and change:</simpara>
+<simpara>Edit &#8216;WEB-INF/template.xhtml&#8217; and change:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</programlisting>
 <simpara>to</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:outputLink
@@ -1268,7 +1268,7 @@ allows the links in the left navigation bar to be fully-qualified URLs.</simpara
 </listitem>
 <listitem>
 <simpara>Run the project by right clicking on the project and selecting
-"Run". The browser shows
+&#8216;Run&#8217;. The browser shows
 <ulink url="http://localhost:8080/movieplex7">localhost:8080/movieplex7</ulink>.</simpara>
 <figure>
   <mediaobject>
@@ -1279,8 +1279,8 @@ allows the links in the left navigation bar to be fully-qualified URLs.</simpara
   </mediaobject>
 </figure>
 
-<simpara>Click on "Chat Room" to see the output.</simpara>
-<simpara>The "CONNECTED" status message is shown and indicates that the WebSocket
+<simpara>Click on &#8216;Chat Room&#8217; to see the output.</simpara>
+<simpara>The &#8216;CONNECTED&#8217; status message is shown and indicates that the WebSocket
 connection with the endpoint is established.</simpara>
 <figure>
   <mediaobject>
@@ -1816,7 +1816,7 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 </listitem>
 <listitem>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</simpara>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
     &lt;h:form prependId="false"&gt;
@@ -1906,14 +1906,14 @@ endpoint, defined using <literal>{movie}</literal>, and binds it to a concrete v
 the get method.</simpara>
 </listitem>
 <listitem>
-<simpara>Right-click on "client" folder, select &#8216;New&#8217;, &#8216;Facelets Template
+<simpara>Right-click on &#8216;client&#8217; folder, select &#8216;New&#8217;, &#8216;Facelets Template
 Client&#8217;, give the File Name as &#8216;movie&#8217;. Click on &#8216;Browse&#8217; next to
 &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xhtml&#8217;, and
 click on &#8216;Select File&#8217;. Click on &#8216;Finish&#8217;.</simpara>
 </listitem>
 <listitem>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</simpara>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> with &#8216;content&#8217; name such that it looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
     &lt;h1&gt;Movie Details&lt;/h1&gt;
@@ -2187,11 +2187,11 @@ are used to write different data types to the stream.</simpara>
 &#8216;Facelets Template Client&#8217;. Give the File Name as &#8216;addmovie&#8217;.
 Click on &#8216;Browse&#8217; next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;,
 &#8216;WEB-INF&#8217;, select &#8216;template.xhtml&#8217;, and click on &#8216;Select File&#8217;.
-Click on "Finish".</simpara>
+Click on &#8216;Finish&#8217;.</simpara>
 </listitem>
 <listitem>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
-"top" and "left". These sections are inherited from the template.</simpara>
+&#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
 &lt;h1&gt;Add a New Movie&lt;/h1&gt;
@@ -2219,7 +2219,7 @@ Click on "Finish".</simpara>
 <simpara>This code creates a form to accept input of <literal>id</literal>, <literal>name</literal>, and <literal>actors</literal> of a
 movie. These values are bound to fields in <literal>MovieBackingBean</literal>. The click
 of command button invokes the addMovie method from <literal>MovieClientBean</literal> and
-then renders "movies.xhtml".</simpara>
+then renders &#8216;movies.xhtml&#8217;.</simpara>
 <simpara>Click on the hint (show as yellow bulb) to resolve the namespace
 prefix/URI mapping as shown.</simpara>
 <figure>
@@ -3117,7 +3117,7 @@ WildFly 8.</simpara>
 <simpara>How can I start/stop/restart the application server from within the IDE ?</simpara>
 </question>
 <answer>
-<simpara>In the "Services" tab, right-click on
+<simpara>In the &#8216;Services&#8217; tab, right-click on
 &#8216;WildFly 8&#8217;.
 All the commands to start, stop, and restart are available from the pop-up menu.</simpara>
 </answer>
@@ -3127,7 +3127,7 @@ All the commands to start, stop, and restart are available from the pop-up menu.
 <simpara>I accidentally closed the output log window. How do I bring it back ?</simpara>
 </question>
 <answer>
-<simpara>In “Services” tab of NetBeans, expand "Servers", choose the application server
+<simpara>In “Services” tab of NetBeans, expand &#8216;Servers&#8217;, choose the application server
 node, and select
 &#8216;View Server Log&#8217;.</simpara>
 <figure>
@@ -3173,6 +3173,12 @@ node, and select
 </listitem>
 <listitem>
 <simpara>Marian Muller (@mullermarian)</simpara>
+</listitem>
+<listitem>
+<simpara>Jason Porter (@lightguardjp)</simpara>
+</listitem>
+<listitem>
+<simpara>Dan Allen (@mojavelinux)</simpara>
 </listitem>
 </itemizedlist>
 
@@ -3300,7 +3306,7 @@ name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</simpara>
 </listitem>
 <listitem>
 <simpara>Click on &#8216;Browse&#8217; for &#8216;Server Location&#8217; and select the directory that got created
-when WildFly archive was unzipped. Click on "Browse" for &#8216;Server Configuration&#8217; and
+when WildFly archive was unzipped. Click on &#8216;Browse&#8217; for &#8216;Server Configuration&#8217; and
 select the &#8216;standalone/configuration/standalone-full.xml&#8217; file in the unzipped WildFly
 archive.</simpara>
 <figure>

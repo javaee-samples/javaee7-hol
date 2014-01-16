@@ -188,10 +188,10 @@ Resolve the imports.
 `Facelets Template Client'. Give the File Name as `addmovie'.
 Click on `Browse' next to `Template:', expand `Web Pages',
 `WEB-INF', select `template.xhtml', and click on `Select File'.
-Click on "Finish".
+Click on `Finish'.
 +
 . In this file, remove `<ui:define>` sections where name attribute value is
-"top" and "left". These sections are inherited from the template.
+`top' and `left'. These sections are inherited from the template.
 +
 Replace `<ui:define>` section with `content' name such that it looks like:
 +
@@ -225,7 +225,7 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 This code creates a form to accept input of `id`, `name`, and `actors` of a
 movie. These values are bound to fields in `MovieBackingBean`. The click
 of command button invokes the addMovie method from `MovieClientBean` and
-then renders "movies.xhtml".
+then renders `movies.xhtml'.
 +
 Click on the hint (show as yellow bulb) to resolve the namespace
 prefix/URI mapping as shown.
