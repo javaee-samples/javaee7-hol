@@ -5,34 +5,49 @@ ifdef::server-wildfly[]
 [[appendix-wildfly-netbeans]]
 === Configure WildFly 8 in NetBeans
 
-. In NetBeans, click on `Tools', `Plugins', `Settings', and click on `Add'.
+==== Configure Update Center
+
+. If you are using NetBeans development build then skip this section and go to <<install-wildfly-plugin>>. Otherwise in NetBeans, click on `Tools', `Plugins', `Settings', and click on `Add'.
 +
 . Specify the name as ``Dev Update Center'' and the URL as ``http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz''.
-image:images/16-netbeans-add-dev-update-center.png[image]
++
+image::images/16-netbeans-add-dev-update-center.png[image]
 +
 and click on `OK'.
-. Click on `Available Plugins', type ``wildfly'' in `Search:' box, and select the plugin by clicking on the checkbox in `Install' column.
-image:images/16-netbeans-available-plugins-wildfly.png[image]
+
+[[install-wildfly-plugin]]
+==== Install WildFly plugin
+
+. In NetBeans, click on `Tools', `Plugins', `Available Plugins', type ``wildfly'' in `Search:' box, and select the plugin by clicking on the checkbox in `Install' column.
++
+image::images/16-netbeans-available-plugins-wildfly.png[image]
 +
 The exact plugin version and the date may be different.
 . Click on `Install' button, `Next >', accept the license agreement by clicking on the checkbox, and click on `Install' button to install the plugin. Click on `Finish' to restart the IDE and complete installation.
-+
+
+==== Configure WildFly 8
+
 . In NetBeans, click on `Services' tab.
 +
 . Right-click on Servers, choose `Add Server...' in the pop-up menu.
 +
-image:images/netbeans-addserver.png[image]
+image::images/netbeans-addserver.png[image]
 +
 . Select `WildFly Application Server' in the Add Server Instance wizard, set the
 name to `WildFly 8' and click `Next >'.
 +
-image:images/16-netbeans-add-instance-wildfly.png[image]
+image::images/16-netbeans-add-instance-wildfly.png[image]
 +
-. Click on `Browse …' and select the directory that got created
-when WildFly archive was unzipped. Click on `Next' and then `Finish'. 
-The `Services' should show the WildFly instance.
+. Click on `Browse' for `Server Location' and select the directory that got created
+when WildFly archive was unzipped. Click on `Browse' for `Server Configuration' and
+select the `standalone/configuration/standalone-full.xml' file in the unzipped WildFly
+archive.
 +
-image:images/16-netbeans-wildfly-server.png[image]
+image::images/16-netbeans-wildfly-full-platform.png[image]
++
+Click on `Next' and then `Finish'. The `Services' should show the WildFly instance.
++
+image::images/16-netbeans-wildfly-server.png[image]
 
 [[appendix-wildfly-idea]]
 // === Configure WildFly 8 in IntelliJ IDEA
@@ -183,13 +198,13 @@ image:images/i13-jboss-fix-extension.png[image]
 image:images/i13-jboss-url-fixed.png[image]
 
 The *Application Servers* tool window opens in the lower part of the workspace. Shown in this window are the server run/debug configuration and the associated deployment artifact. Now you are ready to run the application.
- 
+
 [[run-app-wildfly-idea]]
 ==== Run the application
 
 In the *Application Servers* tool window, select the server run/debug configuration (_WildFly8 [local]_) and click *Run* image:images/i13-run-icon.png[image].
 
-image:images/i13-run-wildfly.png[image] 
+image:images/i13-run-wildfly.png[image]
 
 IntelliJ IDEA compiles the code, builds the artifact, starts WildFly and deploys the artifact to the server. You can monitor this process in the *Run* tool window that opens in the lower part of the workspace.
 
@@ -211,7 +226,7 @@ ifdef::server-glassfish[]
 +
 . Right-click on Servers, choose `Add Server...' in the pop-up menu.
 +
-image:images/netbeans-addserver.png[image]
+image::images/netbeans-addserver.png[image]
 +
 . Select `GlassFish Server' in the Add Server Instance wizard, set the
 name to `GlassFish 4.0' and click `Next >'.
@@ -364,15 +379,15 @@ image:images/i13-glassfish-fix-deployment.png[image]
 image:images/i13-glassfish-fix-url.png[image]
 
 The *Application Servers* tool window opens in the lower part of the workspace. Shown in this window are the server run/debug configuration and the associated deployment artifact. Now you are ready to run the application.
- 
+
 [[run-app-glassfish-idea]]
 ==== Run the application
 
 Before executing the run/debug configuration you have to make sure that the GlassFish server's database is running.
 
-(The sample application requires a database. The GlassFish server's database doesn't start automatically when the server is started. So the database has to be started separately.) 
+(The sample application requires a database. The GlassFish server's database doesn't start automatically when the server is started. So the database has to be started separately.)
 
-You can start the database right from IntelliJ IDEA by running the +asadmin start-database+ command in the *Terminal* tool window. (The +asadmin+ utility is located in the +$$<$$GlassFish_installation_folder$$>$$\bin+ directory.) 
+You can start the database right from IntelliJ IDEA by running the +asadmin start-database+ command in the *Terminal* tool window. (The +asadmin+ utility is located in the +$$<$$GlassFish_installation_folder$$>$$\bin+ directory.)
 
 . Open the *Terminal* tool window. You can do that, for example, like this: point to image:images/i13-show-tool-windows-icon.png[image] on the Status bar and select *Terminal*.
 +
@@ -446,8 +461,6 @@ image:images/idea-edit-glassfish-server-configuration-deploymenttab.png[Configur
 . In the menu now choose `Run > Run GlassFish Server 4.0.0' (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
 
 . Open `http://localhost:8080/movieplex7-1.0-SNAPSHOT/` in your browser to see the (mostly empty) starter template.
-
-////
 
 endif::server-glassfish[]
 
