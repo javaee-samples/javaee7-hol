@@ -12,6 +12,7 @@ The following Java EE community members graciously reviewed and contributed to t
 * Marian Muller (@mullermarian)
 * Jason Porter (@lightguardjp)
 * Dan Allen (@mojavelinux)
+* Andrey Cheptsov (@andrey_cheptsov)
 
 Thank you very much for providing the valuable feedback!
 
