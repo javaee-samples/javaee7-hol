@@ -424,7 +424,16 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_configure_wildfly_8">A.1.3. Configure WildFly 8</a></li>
 </ul>
 </li>
-<li><a href="#appendix-wildfly-idea">A.2. Configure WildFly 8 in IntelliJ IDEA</a></li>
+<li><a href="#appendix-wildfly-idea">A.2. Prepare IntelliJ IDEA for working with WildFly 8</a></li>
+<li>
+<ul class="sectlevel3">
+<li><a href="#specify-jdk-wildfly-idea">A.2.1. Specify the JDK</a></li>
+<li><a href="#define-wildfly-idea">A.2.2. Define WildFly</a></li>
+<li><a href="#create-project-wildfly-idea">A.2.3. Create a project</a></li>
+<li><a href="#create-run-config-wildfly-idea">A.2.4. Create a run/debug configuration</a></li>
+<li><a href="#run-app-wildfly-idea">A.2.5. Run the application</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -527,7 +536,7 @@ snapshot of the downloads page is shown and highlights the exact
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<a href="#appendix-wildfly-idea">Configure WildFly 8 in IntelliJ IDEA</a> explains how to configure WildFly in IntelliJ IDEA.
+<a href="#appendix-wildfly-idea">Prepare IntelliJ IDEA for working with WildFly 8</a> explains how to configure WildFly in IntelliJ IDEA.
 </td>
 </tr>
 </table>
@@ -4134,6 +4143,9 @@ node, and select
 <li>
 <p>Dan Allen (@mojavelinux)</p>
 </li>
+<li>
+<p>Andrey Cheptsov (@andrey_cheptsov)</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -4293,8 +4305,264 @@ archive.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="appendix-wildfly-idea">A.2. Configure WildFly 8 in IntelliJ IDEA</h3>
-
+<h3 id="appendix-wildfly-idea">A.2. Prepare IntelliJ IDEA for working with WildFly 8</h3>
+<div class="paragraph">
+<p>To be able to perform the exercises discussed in this tutorial, you need the Ultimate Edition of IntelliJ IDEA. Keep that in mind when downloading IntelliJ IDEA from <a href="http://www.jetbrains.com/idea/download/">http://www.jetbrains.com/idea/download/</a>.</p>
+</div>
+<div class="paragraph">
+<p>When the appropriate edition of IntelliJ IDEA is installed, you can start preparing the IDE for the exercises:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#specify-jdk-wildfly-idea">Specify the JDK</a></p>
+</li>
+<li>
+<p><a href="#define-wildfly-idea">Define WildFly</a></p>
+</li>
+<li>
+<p><a href="#create-project-wildfly-idea">Create a project</a></p>
+</li>
+<li>
+<p><a href="#create-run-config-wildfly-idea">Create a run/debug configuration</a></p>
+</li>
+<li>
+<p><a href="#run-app-wildfly-idea">Run the application</a></p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="specify-jdk-wildfly-idea">A.2.1. Specify the JDK</h4>
+<div class="paragraph">
+<p>First of all, you should specify the JDK that you are going to use. In IntelliJ IDEA, this is done in the <strong>Project Structure</strong> dialog:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start IntelliJ IDEA. If, as a result, a project opens, close the project (<strong>File | Close Project</strong>).</p>
+</li>
+<li>
+<p>On the Welcome screen, under <strong>Quick Start</strong>, click <strong>Configure</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-welcome-configure.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>Under <strong>Configure</strong>, click <strong>Project Defaults</strong>, and then, under <strong>Project Defaults</strong>, click <strong>Project Structure</strong>.</p>
+</li>
+<li>
+<p>In the left-hand pane of the <strong>Project Structure</strong> dialog, under <strong>Platform Settings</strong>, select <strong>SDKs</strong>. Click <span class="image"><img src="images/i13-plus-icon.png" alt="image"></span> and select <strong>JDK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-plus-jdk.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Select Home Directory for JDK</strong> dialog, select the folder in which the JDK that you are going to use is installed, and click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jdk-home.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Project Structure</strong> dialog, click <strong>Apply</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jdk-defined.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Now, let&#8217;s make the JDK that we have specified the default SDK.</p>
+</div>
+</li>
+<li>
+<p>In the left-hand pane, under <strong>Project Settings</strong>, select <strong>Project</strong>. In the right-hand part of the dialog, under <strong>Project SDK</strong>, select the JDK from the list.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-project-sdk.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="define-wildfly-idea">A.2.2. Define WildFly</h4>
+<div class="paragraph">
+<p>Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the <strong>Settings</strong> dialog. (On Mac OS, this dialog is called <strong>Preferences</strong>.)</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the Welcome screen, to the left of <strong>Project Defaults</strong>, click <strong>Back</strong> <span class="image"><img src="images/i13-back-icon.png" alt="image"></span>.</p>
+</li>
+<li>
+<p>Under <strong>Configure</strong>, click <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>In the left-hand pane of the <strong>Settings</strong> (<strong>Preferences</strong>) dialog, under <strong>IDE Settings</strong>, select <strong>Application Servers</strong>. On the <strong>Application Servers</strong> page, click <span class="image"><img src="images/i13-plus-icon.png" alt="image"></span> and select <strong>JBoss Server</strong>. (WildFly is a server from the "JBoss family".)</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-plus-jboss.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>JBoss Server</strong> dialog, click <span class="image"><img src="images/i13-ellipsis-button.png" alt="image"></span> to the right of the <strong>JBoss Home</strong> field.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-server-dialog-initial.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>JBoss Home Directory</strong> dialog, select the folder in which you have the WildFly server installed, and click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-home-directory.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>OK</strong> in the <strong>JBoss Server</strong> dialog.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-server-dialog-final.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Settings</strong> (<strong>Preferences</strong>) dialog, click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-defined.png" alt="image"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="create-project-wildfly-idea">A.2.3. Create a project</h4>
+<div class="paragraph">
+<p>The sample application is supplied as a Maven project with an associated <a href="http://maven.apache.org/pom.html">pom.xml</a> file that contains all the necessary project definitions. The corresponding IntelliJ IDEA project in such a case can be created by simply "opening" the <code>pom.xml</code> file. (Obviously, this isn&#8217;t the only way to create projects in IDEA. You can create projects for existing collections of source files, import Eclipse and Flash Builder projects, and Gradle build scripts. Finally, you can create projects from scratch.)</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the Welcome screen, to the left of <strong>Configure</strong>, click <strong>Back</strong> <span class="image"><img src="images/i13-back-icon.png" alt="image"></span>.</p>
+</li>
+<li>
+<p>Under <strong>Quick Start</strong>, click <strong>Open Project</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-open-project.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Open Project</strong> dialog, select the <code>pom.xml</code> file associated with the sample application, and click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-select-pom.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Wait while IntelliJ IDEA is processing <code>pom.xml</code> and creating the project. When this process is complete, the following message is shown:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jpa-detected.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Configure</strong> in the message box. (If by now the message has disappeared, click <span class="image"><img src="images/i13-exclamation-mark-icon.png" alt="image"></span> on the Status bar.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jpa-detected-status-bar.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The <strong>Event Log</strong> tool window will open. Click <strong>Configure</strong> in this window.)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jpa-detected-event-log.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Setup Frameworks</strong> dialog, just click <strong>OK</strong>. (By doing so you confirm that the file <code>persistence.xml</code> found in the project belongs to the JPA framework.)</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-setup-frameworks-jpa.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Now, as an intermediate check, make sure that the project structure looks something similar to this:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-initial-project-structure.png" alt="image"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="create-run-config-wildfly-idea">A.2.4. Create a run/debug configuration</h4>
+<div class="paragraph">
+<p>Applications in IntelliJ IDEA are run and debugged according to what is called run/debug configurations. Now we are going to create the configuration for running and debugging the sample application in the context of WildFly.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the main menu, select <strong>Run | Edit Configurations</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-run-edit-configurations.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Run/Debug Configurations</strong> dialog, click <span class="image"><img src="images/i13-plus-icon.png" alt="image"></span>, select <strong>JBoss Server</strong>, and then select <strong>Local</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-run-configs-plus-jboss.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>As a result, the run/debug configuration for the WildFly server is created and its settings are shown in the right-hand part of the dialog.</p>
+</div>
+</li>
+<li>
+<p>Change the name of the run/debug configuration to <code>WildFly8</code> (optional).</p>
+</li>
+<li>
+<p>In the lower part of the dialog, within the line <em>Warning: No artifacts marked for deployment</em>, click <strong>Fix</strong> and select <strong>movieplex7:war exploded</strong>. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (<em>movieplex7:war</em> and <em>movieplex7:war exploded</em>). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. <em>movieplex7:war</em> corresponds to a Web archive (WAR). <em>movieplex7:war exploded</em> corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-fix-deployment.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>Within the line <em>Error: Artifact 'movieplex7: exploded' has invalid extension</em>, click <strong>Fix</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-invalid-extension.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Project Structure</strong> dialog, add <code>.war</code> at the end of the output directory path, and click <strong>OK</strong>. (For the servers of the JBoss family, the application root directory has to have <code>.war</code> at the end.)</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-fix-extension.png" alt="image"></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>Run/Debug Configurations</strong> dialog, switch to the <strong>Server</strong> tab. In the field for the application starting page URL, replace <code>http://localhost:8080/movieplex7-1/</code> with <code>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</code> and click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-jboss-url-fixed.png" alt="image"></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <strong>Application Servers</strong> tool window opens in the lower part of the workspace. Shown in this window are the server run/debug configuration and the associated deployment artifact. Now you are ready to run the application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="run-app-wildfly-idea">A.2.5. Run the application</h4>
+<div class="paragraph">
+<p>In the <strong>Application Servers</strong> tool window, select the server run/debug configuration (<em>WildFly8 [local]</em>) and click <strong>Run</strong> <span class="image"><img src="images/i13-run-icon.png" alt="image"></span>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-run-wildfly.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>IntelliJ IDEA compiles the code, builds the artifact, starts WildFly and deploys the artifact to the server. You can monitor this process in the <strong>Run</strong> tool window that opens in the lower part of the workspace.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-run-tool-window-wildfly.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Finally, your default Web browser opens and the starting page of the application is shown.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/i13-starting-page-in-browser.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>At this step IntelliJ IDEA is fully prepared for your development work, and you can continue with your exercises.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -4302,7 +4570,7 @@ archive.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2014-01-15 17:37:28 CET
+Last updated 2014-01-15 22:07:28 IST
 </div>
 </div>
 </body>
