@@ -1,4 +1,5 @@
 :imagesdir: ../images
+:experimental:
 
 [[jaxrs]]
 == View and Delete Movie (Java API for RESTful Web Services)
@@ -153,7 +154,7 @@ Add the following field:
 int movieId;
 +
 Add getters/setters by right-clicking on the editor pane and selecting
-`Insert Code' (Ctrl + I shortcut on Mac). Select the field and click on
+`Insert Code' (kbd:[Ctrl+I] shortcut on OSX). Select the field and click on
 `Generate'.
 +
 Add `@Named` and `@SessionScoped` class-level annotations and implements
@@ -173,7 +174,7 @@ WARNING: Make sure to import `javax.enterprise.context.SessionScoped`.
     </h:outputLink>
 ----
 +
-Running the project (Fn + F6 shortcut on Mac) and clicking on `Movies'
+Running the project (kbd:[Fn+F6] shortcut on OSX) and clicking on `Movies'
 in the left navigation bar shows the output as shown.
 +
 image::6.8-output.png[title="List of movies output page"]

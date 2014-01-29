@@ -105,7 +105,7 @@ image::i13-project-sdk.png[title="Project SDK in IntelliJ IDEA"]
 [[define-wildfly-idea]]
 ==== Define WildFly
 
-Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the *Settings* dialog. (On Mac OS, this dialog is called *Preferences*.)
+Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the *Settings* dialog. (On OSX, this dialog is called *Preferences*.)
 
 . On the Welcome screen, to the left of *Project Defaults*, click *Back* image:images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].
 +
@@ -290,7 +290,7 @@ image::i13-project-sdk.png[image]
 [[define-glassfish-idea]]
 ==== Define GlassFish
 
-Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the *Settings* dialog. (On Mac OS, this dialog is called *Preferences*.)
+Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the *Settings* dialog. (On OSX, this dialog is called *Preferences*.)
 
 . On the Welcome screen, to the left of *Project Defaults*, click *Back* image:images/i13-back-icon.png[image].
 +
@@ -458,7 +458,7 @@ image::idea-edit-glassfish-server-configuration-servertab.png[Configure GlassFis
 +
 image::idea-edit-glassfish-server-configuration-deploymenttab.png[Configure Deployment]
 +
-. As a final step we need to start the database. For NetBeans users this happens automagically but we'll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder's `bin/`-directory and enter the following command `asadmin start-database`, or for Mac/Linux users: `./asadmin start-database` and you're good to go.
+. As a final step we need to start the database. For NetBeans users this happens automagically but we'll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder's `bin/`-directory and enter the following command `asadmin start-database`, or for OSX/Linux users: `./asadmin start-database` and you're good to go.
 
 . In the menu now choose `Run > Run GlassFish Server 4.0.0' (or whatever you named your GlassFish Server configuration) and your GlassFish Server will start up and deploy the project.
 

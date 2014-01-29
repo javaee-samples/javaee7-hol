@@ -1,4 +1,5 @@
 :imagesdir: ../images
+:experimental:
 
 [[websocket]]
 == Chat Room (Java API for WebSocket)
@@ -77,7 +78,7 @@ connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.
 +
 Resolve the imports by right-clicking in the editor and selecting `Fix
-Imports' or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
+Imports' or (kbd:[Command+Shift+I] shortcut on OSX or kbd:[Ctrl+Shift+I] on
 Windows).
 +
 WARNING: Make sure to pick `java.websocket.Session` for resolving imports. This is not the default option shown by NetBeans.

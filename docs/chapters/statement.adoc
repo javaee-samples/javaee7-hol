@@ -1,4 +1,5 @@
 :imagesdir: ../images
+:experimental:
 
 == Problem Statement
 
@@ -98,17 +99,17 @@ image::2.1-format.png[title="Format code in NetBeans"]
 This functionality is also accessible using the following keyboard
 shortcuts:
 
-[width="50%", options="header"]
+[width="50%"]
 |===
-| Shortcut | Operating System
+|Shortcut | Operating System
 
-|Ctrl + Shift + F
-|Mac
+|kbd:[Ctrl+Shift+F]
+|OSX
 
-|Alt + Shift + F
+|kbd:[Alt+Shift+F]
 |Windows
 
-|Alt + Shift + F
+|kbd:[Alt+Shift+F]
 |Linux
 |===
 
@@ -127,18 +128,18 @@ image::2.1-fix-imports.png[title="Fix Imports in NetBeans"]
 This functionality is also accessible using the following keyboard
 shortcuts:
 
-[width="50%", options="header"]
+[width="50%"]
 |===
-| Shortcut | Operating System
+|Shortcut | Operating System
 
-| Command + Shift + I
-| Mac
+|kbd:[Command+Shift+I]
+|OSX
 
-| Ctrl + Shift + I
-| Windows
+|kbd:[Ctrl+Shift+I]
+|Windows
 
-| Ctrl + Shift + I
-| Linux
+|kbd:[Ctrl+Shift+I]
+|Linux
 |===
 
 The defaults may work in most of the cases. Choices are shown in case a

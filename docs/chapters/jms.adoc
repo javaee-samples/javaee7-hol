@@ -1,4 +1,5 @@
 :imagesdir: ../images
+:experimental:
 
 [[jms]]
 == Movie Points (Java Message Service)
@@ -72,7 +73,7 @@ This could be thought as conveying the customer identifier and the
 points accrued by that customer.
 +
 Generate getter/setters for this field. Right-click in the editor pane,
-select `Insert Code' (Ctrl + I shortcut on Mac), select `Getter and
+select `Insert Code' (kbd:[Ctrl+I] shortcut on OSX), select `Getter and
 Setter', select the field, and click on `Generate'.
 +
 . Add the following code to the class:
