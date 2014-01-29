@@ -72,7 +72,7 @@ public class MovieClientBean {
     public void init() {
         client = ClientBuilder.newClient();
         target = client
-        .target("http://" +
+                .target("http://" +
                 httpServletRequest.getLocalName() +
                 ":" +
                 httpServletRequest.getLocalPort() +
