@@ -3221,9 +3221,6 @@ node, and select
 <simpara>Disable errors in persistence.xml</simpara>
 </listitem>
 <listitem>
-<simpara>How to override .m2/repository in NetBeans?</simpara>
-</listitem>
-<listitem>
 <simpara>Add icons for Fix Imports, Format, Fix namespaces, Run the Project.</simpara>
 </listitem>
 <listitem>
@@ -3235,7 +3232,10 @@ node, and select
 <title>Revision History</title>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros.(Jan 10, 2014)</simpara>
+<simpara>Added IntelliJ IDEA specific instructions. (Jan 22, 2014)</simpara>
+</listitem>
+<listitem>
+<simpara>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros. (Jan 10, 2014)</simpara>
 </listitem>
 <listitem>
 <simpara>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</simpara>
