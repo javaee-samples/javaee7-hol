@@ -14,13 +14,15 @@
 ASCIIDOCTOR=asciidoctor
 FOPUB=~/tools/asciidoctor-fopub/fopub
 ASCIIDOCTOR_PDF=~/tools/asciidoctor-pdf/bin/asciidoctor-pdf
+#FOPUB=~/projects/asciidoctor/fopub/fopub
+#ASCIIDOCTOR_PDF=~/projects/asciidoctor/asciidoctor-pdf/bin/asciidoctor-pdf
 
 # File names
 MASTER_ADOC=javaee7-hol.adoc
 MASTER_DOCBOOK=${MASTER_ADOC/.adoc/.xml}
 
 # Command options
-SHARED_OPTIONS='-a numbered -a experimental -a imagesdir=images'
+SHARED_OPTIONS='-a numbered -a experimental -a source-highlighter=coderay -a imagesdir=images'
 
 # Formats
 if [ ! -z $1 ]; then
