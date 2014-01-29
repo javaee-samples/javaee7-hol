@@ -1,40 +1,40 @@
 = Java EE 7 Hands-on Lab
 Arun Gupta
-v2.0, Jan 14, 2014
+v2.0, Jan 28, 2014
 :toc:
 :toclevels: 3
 :ide-netbeans: true
 :server-wildfly: true
 
-include::chapters/ch01-introduction.adoc[]
+include::chapters/introduction.adoc[]
 
-include::chapters/ch02-statement.adoc[]
+include::chapters/statement.adoc[]
 
-include::chapters/ch03-walkthrough.adoc[]
+include::chapters/walkthrough.adoc[]
 
-include::chapters/ch04-websocket.adoc[]
+include::chapters/websocket.adoc[]
 
-include::chapters/ch05-batch.adoc[]
+include::chapters/batch.adoc[]
 
-include::chapters/ch06-jaxrs.adoc[]
+include::chapters/jaxrs.adoc[]
 
-include::chapters/ch07-json.adoc[]
+include::chapters/json.adoc[]
 
-include::chapters/ch08-jms.adoc[]
+include::chapters/jms.adoc[]
 
-include::chapters/ch09-jsf.adoc[]
+include::chapters/jsf.adoc[]
 
-include::chapters/ch10-conclusion.adoc[]
+include::chapters/conclusion.adoc[]
 
-include::chapters/ch11-troubleshooting.adoc[]
+include::chapters/troubleshooting.adoc[]
 
-include::chapters/ch12-acks.adoc[]
+include::chapters/acks.adoc[]
 
-include::chapters/ch13-solutions.adoc[]
+include::chapters/solutions.adoc[]
 
-include::chapters/ch14-todo.adoc[]
+include::chapters/todo.adoc[]
 
-include::chapters/ch15-revision.adoc[]
+include::chapters/revision.adoc[]
 
-include::chapters/ch16-appendix.adoc[]
+include::chapters/appendix.adoc[]
 

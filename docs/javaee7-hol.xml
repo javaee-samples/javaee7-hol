@@ -5,7 +5,7 @@
 <book xmlns="http://docbook.org/ns/docbook" lang="en">
 <bookinfo>
 <title>Java EE 7 Hands-on Lab</title>
-<date>Jan 14, 2014</date>
+<date>Jan 28, 2014</date>
 <author>
 <firstname>Arun</firstname>
 
@@ -17,7 +17,7 @@
 <revhistory>
 <revision>
 <revnumber>2.0</revnumber>
-<date>Jan 14, 2014</date>
+<date>Jan 28, 2014</date>
 <authorinitials>AG</authorinitials>
 
 </revision>
@@ -1773,10 +1773,20 @@ to be automatically activated and passivated with the request.</simpara>
 <programlisting language="java" linenumbering="unnumbered">Client client;
 WebTarget target;
 
+@Inject HttpServletRequest httpServletRequest;
+
 @PostConstruct
 public void init() {
     client = ClientBuilder.newClient();
-    target = client.target("http://localhost:8080/movieplex7/webresources/movie/");
+    target = client
+                .target("http://" +
+                httpServletRequest.getLocalName() +
+                ":" +
+                httpServletRequest.getLocalPort() +
+                "/" +
+                httpServletRequest.getContextPath() +
+                "/webresources/movie/");
+
 }
 
 @PreDestroy
@@ -1792,7 +1802,9 @@ recommended to create only required number of instances of Client and
 close it appropriately.</simpara>
 <simpara>In this case, <literal>Client</literal> instance is created and destroyed in the lifecycle
 callback methods. The endpoint URI is set on this instance by calling
-the target method.</simpara>
+the target method. Note that the endpoint address is dynamically created
+by injecting an instance of <literal>HttpServletRequest</literal>. This is a new feature
+added in CDI 1.1</simpara>
 </listitem>
 <listitem>
 <simpara>Add the following method to the class:</simpara>

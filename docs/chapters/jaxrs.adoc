@@ -47,10 +47,20 @@ image::images/6.2-imports.png[image]
 Client client;
 WebTarget target;
 
+@Inject HttpServletRequest httpServletRequest;
+
 @PostConstruct
 public void init() {
     client = ClientBuilder.newClient();
-    target = client.target("http://localhost:8080/movieplex7/webresources/movie/");
+    target = client
+                .target("http://" +
+                httpServletRequest.getLocalName() +
+                ":" +
+                httpServletRequest.getLocalPort() +
+                "/" +
+                httpServletRequest.getContextPath() +
+                "/webresources/movie/");
+
 }
 
 @PreDestroy
@@ -69,7 +79,9 @@ close it appropriately.
 +
 In this case, `Client` instance is created and destroyed in the lifecycle
 callback methods. The endpoint URI is set on this instance by calling
-the target method.
+the target method. Note that the endpoint address is dynamically created
+by injecting an instance of `HttpServletRequest`. This is a new feature
+added in CDI 1.1
 +
 . Add the following method to the class:
 +
