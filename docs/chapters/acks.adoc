@@ -2,17 +2,17 @@
 
 The following Java EE community members graciously reviewed and contributed to this hands-on lab:
 
-* Antonio Goncalves (@agoncal)
-* Markus Eisele (@myfear)
-* Craig Sharpe (@dapugs)
-* Marcus Vinicius Margarites (@mvfm)
-* David Delabasse (@delabasse)
-* John Clingan (@jclingan)
-* Reza Rahman (@reza_rahman)
-* Marian Muller (@mullermarian)
-* Jason Porter (@lightguardjp)
-* Dan Allen (@mojavelinux)
-* Andrey Cheptsov (@andrey_cheptsov)
+* Antonio Goncalves (http://twitter.com/agoncal[@agoncal])
+* Markus Eisele (http://twitter.com/myfear[@myfear])
+* Craig Sharpe (http://twitter.com/dapugs[@dapugs])
+* Marcus Vinicius Margarites (http://twitter.com/mvfm[@mvfm])
+* David Delabasse (http://twitter.com/delabasse[@delabasse])
+* John Clingan (http://twitter.com/jclingan[@jclingan])
+* Reza Rahman (http://twitter.com/reza_rahman[@reza_rahman])
+* Marian Muller (http://twitter.com/mullermarian[@mullermarian])
+* Jason Porter (http://twitter.com/lightguardjp[@lightguardjp])
+* Dan Allen (http://twitter.com/mojavelinux[@mojavelinux])
+* Andrey Cheptsov (http://twitter.com/andrey_cheptsov[@andrey_cheptsov])
 
 Thank you very much for providing the valuable feedback!
 

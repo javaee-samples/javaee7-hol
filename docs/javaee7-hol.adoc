@@ -1,5 +1,5 @@
 = Java EE 7 Hands-on Lab
-Arun Gupta
+Arun Gupta <arungupta@redhat.com>
 v2.0, Jan 28, 2014
 :toc:
 :toclevels: 3

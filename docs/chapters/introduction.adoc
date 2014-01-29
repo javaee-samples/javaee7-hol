@@ -25,7 +25,7 @@ using the following Java EE 7 technologies:
 
 Together these APIs will allow you to be more productive by simplifying enterprise development.
 
-The latest version of this document can be downloaded from https://github.com/javaee-samples/javaee7-hol/blob/master/docs/asciidoc/javaee7-hol.html[javaee7-hol.html].
+The latest version of this document can be downloaded from https://github.com/javaee-samples/javaee7-hol/blob/master/docs/asciidoc/javaee7-hol.html[javaee7-hol.html]. Please file issues or send pull requests for any updates.
 
 === Software Requirement
 
