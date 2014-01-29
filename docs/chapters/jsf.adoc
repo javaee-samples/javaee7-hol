@@ -76,7 +76,7 @@ commandButton refers to the next view in the flow, i.e.
 Click on the yellow bulb as shown and click on the suggestion to
 add namespace prefix/URI mapping for `h:`. Repeat the same for `f:` prefix as well.
 +
-image::images/9.3-imports.png[image]
+image::images/9.3-imports.png[title="Namespace prefix mapping imports"]
 +
 . Right-click on `Source Packages', select `New', `Java Class'.
 Specify the class name as `Booking' and the package name as
@@ -368,24 +368,24 @@ which defines the flow of the pages.
 . Run the project by right clicking on the project and selecting
 `Run'. The browser shows the updated output.
 +
-image::images/9.11-output.png[image]
+image::images/9.11-output.png[title="Book a movie link on main page"]
 +
 Click on `Book a movie' to see the page as shown.
 +
-image::images/9.11-output2.png[image]
+image::images/9.11-output2.png[title="Book a movie page"]
 +
 Select a movie, say `The Shiningr and click on `Pick a time' to see the
 page output as shown.
 +
-image::images/9.11-output3.png[image]
+image::images/9.11-output3.png[title="Show Timings page"]
 +
 Pick a time slot, say `04:00', click on `Confirm' to see the output as shown.
 +
-image::images/9.11-output4.png[image]
+image::images/9.11-output4.png[title="Confirm? page"]
 +
 Click on `Book' to confirm and see the output as:
 +
-image::images/9.11-output5.png[image]
+image::images/9.11-output5.png[title="Reservation Confirmed page"]
 +
 Feel free to enter other combinations, go back and forth in the flow and
 notice how the values in the bean are preserved.

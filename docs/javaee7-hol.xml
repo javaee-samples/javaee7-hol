@@ -93,11 +93,12 @@ NetBeans 8.</simpara>
 snapshot of the downloads page is shown and highlights the exact
 &#8216;Download&#8217; button to be clicked.</simpara>
 <figure>
+<title>NetBeans download</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/1.1-netbeans-download.png"/>
     </imageobject>
-    <textobject><phrase>NetBeans Download</phrase></textobject>
+    <textobject><phrase>1.1 netbeans download</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -119,11 +120,12 @@ existing movies. Customers can discuss the movie in a chat room. Total
 sales from each showing are calculated at the end of the day. Customers
 also accrue points for watching movies.</simpara>
 <figure>
+<title>Architecture diagram</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/2.0-problem-statement.png"/>
     </imageobject>
-    <textobject><phrase>Problem Statement</phrase></textobject>
+    <textobject><phrase>2.0 problem statement</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -137,11 +139,12 @@ various Java technologies and web standards in their implementation. The
 following figure shows how Java EE technologies are used in different
 flows.</simpara>
 <figure>
+<title>Technologies used in the application</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/2.0-technologies.png"/>
     </imageobject>
-    <textobject><phrase>Technologies</phrase></textobject>
+    <textobject><phrase>2.0 technologies</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -275,11 +278,12 @@ to the editor. This keeps the code legible.</simpara>
 <simpara>This functionality can be accessed by right-clicking in the editor pane
 and selecting “Format” as shown.</simpara>
 <figure>
+<title>Format code in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/2.1-format.png"/>
     </imageobject>
-    <textobject><phrase>Format Code in NetBeans</phrase></textobject>
+    <textobject><phrase>2.1 format</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -352,22 +356,24 @@ import statement by clicking on the yellow bulb shown in the side bar.</simpara>
 </itemizedlist>
 
 <figure>
+<title>ServerEndpoint import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/2.1-server-endpoint.png"/>
     </imageobject>
-    <textobject><phrase>Server Endpoint</phrase></textobject>
+    <textobject><phrase>2.1 server endpoint</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Alternatively all the imports can be resolved by right-clicking on the
 editor pane and selecting &#8220;Fix Imports&#8221; as shown.</simpara>
 <figure>
+<title>Fix Imports in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/2.1-fix-imports.png"/>
     </imageobject>
-    <textobject><phrase>Fix Imports in NetBeans</phrase></textobject>
+    <textobject><phrase>2.1 fix imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -560,11 +566,12 @@ content there.</simpara>
 unzipped directory, and click on &#8216;Open Project&#8217;. The project structure
 is shown.</simpara>
 <figure>
+<title>Project structure in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/3.2-project-structure.png"/>
     </imageobject>
-    <textobject><phrase>Project Structure in NetBeans</phrase></textobject>
+    <textobject><phrase>3.2 project structure</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -608,11 +615,12 @@ Platform, can be deployed on Web Profile.</simpara>
 By default, NetBeans opens the file in Design View. Click on &#8216;Source&#8217; tab
 to view the XML source.</simpara>
 <figure>
+<title>persistence.xml</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/3.2-persistence-xml.png"/>
     </imageobject>
-    <textobject><phrase>persistence.xml</phrase></textobject>
+    <textobject><phrase>3.2 persistence xml</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -668,11 +676,12 @@ container.</simpara>
 <simpara>Clicking back and forth between &#8216;Design&#8217; and &#8216;Source&#8217; view may prompt
 the error shown below:</simpara>
 <figure>
+<title>Missing server error from persistence.xml</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/3.4-missing-server.png"/>
     </imageobject>
-    <textobject><phrase>Missing Server for persistence.xml</phrase></textobject>
+    <textobject><phrase>3.4 missing server</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -781,11 +790,12 @@ URL, the scripts may be loaded from outside the WAR file as well.</simpara>
 <simpara>Feel free to open &#8216;create.sql&#8217;, &#8216;drop.sql&#8217; and &#8216;load.sql&#8217; and read
 through the SQL scripts. The database schema is shown.</simpara>
 <figure>
+<title>Database schema</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/3.5-schema.png"/>
     </imageobject>
-    <textobject><phrase>Database Schema</phrase></textobject>
+    <textobject><phrase>3.5 schema</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -925,21 +935,23 @@ correctly after the dependencies are downloaded during project building.</simpar
 <simpara>During the first run, the IDE will ask you to select a deployment server.
 Choose the configured WildFly server and click on &#8216;OK&#8217;.</simpara>
 <figure>
+<title>WildFly deployment server</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/3.6-wildfly-server.png"/>
     </imageobject>
-    <textobject><phrase>WildFly Server</phrase></textobject>
+    <textobject><phrase>3.6 wildfly server</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>The output looks like as shown.</simpara>
 <figure>
+<title>Application main page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/3.8-first-page.png"/>
     </imageobject>
-    <textobject><phrase>Application's First Page</phrase></textobject>
+    <textobject><phrase>3.8 first page</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1037,11 +1049,12 @@ Windows).</simpara>
 <simpara>Make sure to pick <literal>java.websocket.Session</literal> for resolving imports. This is not the default option shown by NetBeans.</simpara>
 </warning>
 <figure>
+<title>javax.websocket.Session import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/4.2-imports.png"/>
     </imageobject>
-    <textobject><phrase>Imports</phrase></textobject>
+    <textobject><phrase>4.2 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1061,11 +1074,12 @@ code.</simpara>
 &#8216;WEB-INF&#8217;, select &#8216;template.xhtml&#8217;, and click on &#8216;Select File&#8217;. Click on
 &#8216;Finish&#8217;.</simpara>
 <figure>
+<title>Choose template</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/4.4-template.png"/>
     </imageobject>
-    <textobject><phrase>Template</phrase></textobject>
+    <textobject><phrase>4.4 template</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1271,11 +1285,12 @@ allows the links in the left navigation bar to be fully-qualified URLs.</simpara
 &#8216;Run&#8217;. The browser shows
 <ulink url="http://localhost:8080/movieplex7">localhost:8080/movieplex7</ulink>.</simpara>
 <figure>
+<title>Chatroom link on main page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/4.6-chatroom.png"/>
     </imageobject>
-    <textobject><phrase>Chatroom</phrase></textobject>
+    <textobject><phrase>4.6 chatroom</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1283,11 +1298,12 @@ allows the links in the left navigation bar to be fully-qualified URLs.</simpara
 <simpara>The &#8216;CONNECTED&#8217; status message is shown and indicates that the WebSocket
 connection with the endpoint is established.</simpara>
 <figure>
+<title>Chatroom output</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/4.8-chatroom.png"/>
     </imageobject>
-    <textobject><phrase>Chatroom</phrase></textobject>
+    <textobject><phrase>4.8 chatroom</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1300,11 +1316,12 @@ supported browsers is available at
 in another browser window. Enter &#8216;Duke&#8217; in the text box in the first
 browser and click &#8216;Join&#8217;.</simpara>
 <figure>
+<title>Chatroom with single user</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/4.8-chatroom-joined.png"/>
     </imageobject>
-    <textobject><phrase>Chatroom</phrase></textobject>
+    <textobject><phrase>4.8 chatroom joined</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1316,11 +1333,12 @@ browser and click on &#8216;Send&#8217; to send the message.</simpara>
 <simpara>The output from two different browsers after the initial greeting looks
 like as shown.</simpara>
 <figure>
+<title>Chatroom with two users</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/4.8-chatroom-two-browsers.png"/>
     </imageobject>
-    <textobject><phrase>Chatroom Two Browsers</phrase></textobject>
+    <textobject><phrase>4.8 chatroom two browsers</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1342,11 +1360,12 @@ Applications for the Java Platform (JSR 352) will define a programming
 model for batch applications and a runtime for scheduling and executing
 jobs.</simpara>
 <figure>
+<title>Introduction to Batch</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/5.0-batch-intro.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>5.0 batch intro</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1591,11 +1610,12 @@ currently running and what jobs have previously run.</simpara>
 the bean to be injectable in an EL expression.</simpara>
 <simpara>Resolve the imports.</simpara>
 <figure>
+<title>RequestScoped import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/5.10-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>5.10 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1668,11 +1688,12 @@ needs to be repeated for <literal>f:</literal> prefix.</simpara>
 <listitem>
 <simpara>Run the project to see the output as shown.</simpara>
 <figure>
+<title>Sales link on main page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/5.14-sales.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>5.14 sales</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1681,11 +1702,12 @@ needs to be repeated for <literal>f:</literal> prefix.</simpara>
 <listitem>
 <simpara>Click on &#8216;Sales&#8217; to see the output as shown.</simpara>
 <figure>
+<title>Movie Sales page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/5.15-sales.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>5.15 sales</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1697,11 +1719,12 @@ file. Look for &#8216;Waiting for localhost&#8217; in the browser status bar,
 wait for a couple of seconds for the processing to finish, and then
 click on &#8216;Refresh&#8217; button to see the updated output as shown.</simpara>
 <figure>
+<title>Movie Sales output page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/5.16-sales-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>5.16 sales output</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1759,11 +1782,12 @@ to be automatically activated and passivated with the request.</simpara>
 <simpara>Make sure to pick <literal>javax.enterprise.context.RequestScoped</literal> class.</simpara>
 </warning>
 <figure>
+<title>RequestScoped import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/6.2-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>6.2 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1850,11 +1874,12 @@ the EL expression <literal>#{movieBackingBean.movieId}</literal>.</simpara>
 prefix-to-URI resolution. This needs to be completed for <literal>h:</literal>, <literal>c:</literal>,
 and <literal>f:</literal> prefixes.</simpara>
 <figure>
+<title>Namespace prefix imports</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/6.6-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>6.6 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1884,11 +1909,12 @@ on &#8216;Finish&#8217;.</simpara>
 <simpara>Running the project (Fn + F6 shortcut on Mac) and clicking on &#8216;Movies&#8217;
 in the left navigation bar shows the output as shown.</simpara>
 <figure>
+<title>List of movies output page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/6.8-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>6.8 output</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1957,11 +1983,12 @@ using the <literal>id</literal>, <literal>name</literal>, and <literal>actors</l
 select a radio button next to any movie, and click on details to see the
 output as shown.</simpara>
 <figure>
+<title>Movie Details page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/6.12-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>6.12 output</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -1994,11 +2021,12 @@ prepared and then delete method is called to delete the resource.</simpara>
 <simpara>Make sure to resolve the imports.</simpara>
 <simpara>Running the project shows the output shown.</simpara>
 <figure>
+<title>Delete button</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/6.14-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>6.14 output</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2056,11 +2084,12 @@ runtime during the provider scanning phase. <literal>@Consumes</literal> indicat
 this implementation will consume a JSON representation of the resource.</simpara>
 <simpara>Make sure to resolve imports from the appropriate package as shown.</simpara>
 <figure>
+<title>Provider import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.2-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.2 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2068,11 +2097,12 @@ this implementation will consume a JSON representation of the resource.</simpara
 <listitem>
 <simpara>Make the class implements <literal>MessageBodyReader&lt;Movie&gt;</literal>.</simpara>
 <figure>
+<title>Implement abstract methods for MessageBodyReader</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.3-implements.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.3 implements</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2140,11 +2170,12 @@ runtime during the provider scanning phase. <literal>@Produces</literal> indicat
 this implementation will produce a JSON representation of the resource.</simpara>
 <simpara>Resolve the imports as shown.</simpara>
 <figure>
+<title>Provider import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.6-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.6 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2155,11 +2186,12 @@ this implementation will produce a JSON representation of the resource.</simpara
 <simpara>Resolve the imports.</simpara>
 <simpara>The IDE provide a hint to implement abstract methods as:</simpara>
 <figure>
+<title>Implement abstract methods for MessageBodyWriter</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.7-implements.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.7 implements</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2235,11 +2267,12 @@ then renders &#8216;movies.xhtml&#8217;.</simpara>
 <simpara>Click on the hint (show as yellow bulb) to resolve the namespace
 prefix/URI mapping as shown.</simpara>
 <figure>
+<title>Namespace prefix mapping imports</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.11-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.11 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2274,11 +2307,12 @@ register method registers a MovieWriter that provides conversion from
 the POJO to JSON. Media type of <literal>application/json</literal> is specified using <literal>MediaType.APPLICATION_JSON</literal>.</simpara>
 <simpara>Resolve the imports as shown</simpara>
 <figure>
+<title>Entity import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.14-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.14 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2286,11 +2320,12 @@ the POJO to JSON. Media type of <literal>application/json</literal> is specified
 <listitem>
 <simpara>Run the project to see the updated main page as:</simpara>
 <figure>
+<title>New Movie button</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.15-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.15 output</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2299,11 +2334,12 @@ the POJO to JSON. Media type of <literal>application/json</literal> is specified
 <listitem>
 <simpara>Enter the details as shown:</simpara>
 <figure>
+<title>Add a New Movie page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.16-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.16 output</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2313,11 +2349,12 @@ definition may be updated to generate the primary key based upon a
 sequence; however this is not done in the application.</simpara>
 <simpara>The updated page looks like as shown</simpara>
 <figure>
+<title>Newly added movie</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/7.16-output2.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>7.16 output2</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2366,11 +2403,12 @@ and click on &#8216;Finish&#8217;.</simpara>
 passivated with the request.</simpara>
 <simpara>Resolve the imports.</simpara>
 <figure>
+<title>RequestScoped import</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.2-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.2 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2556,32 +2594,35 @@ message is displayed on the screen.</simpara>
 <listitem>
 <simpara>Run the project. The update page looks like as shown:</simpara>
 <figure>
+<title>Points link on main page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Click on &#8216;Points&#8217; to see the output as:</simpara>
 <figure>
+<title>Points output page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output2.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output2</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>The output shows that the queue has 0 messages. Enter a message &#8216;1212&#8217;
 in the text box and click on &#8216;Send Message&#8217; to see the output as shown.</simpara>
 <figure>
+<title>Validation message on Points page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output3.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output3</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2590,22 +2631,24 @@ message is displayed.</simpara>
 <simpara>Enter a message as &#8216;12,12&#8217; in the text box and click on &#8216;Send Message&#8217;
 button to see the output as:</simpara>
 <figure>
+<title>Correct input for Points page - Send Message (queue size=1)</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output4.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output4</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>The updated count now shows that there is 1 message in the queue. Click
 on &#8216;Receive Message&#8217; button to see output as:</simpara>
 <figure>
+<title>Correct input for Points page - Receive Message (queue size=0)</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output5.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output5</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2613,22 +2656,24 @@ on &#8216;Receive Message&#8217; button to see output as:</simpara>
 queue has 0 messages.</simpara>
 <simpara>Click on &#8216;Send Message&#8217; 4 times to see the output as:</simpara>
 <figure>
+<title>Correct input for Points page - Send Message (queue size=4)</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output6.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output6</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>The updated count now shows that the queue has 4 messages. Click on
 &#8216;Receive Message&#8217; 2 times to see the output as:</simpara>
 <figure>
+<title>Correct input for Points page - Receive Message (queue size=2)</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/8.10-output7.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>8.10 output7</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2714,11 +2759,12 @@ commandButton refers to the next view in the flow, i.e.
 <simpara>Click on the yellow bulb as shown and click on the suggestion to
 add namespace prefix/URI mapping for <literal>h:</literal>. Repeat the same for <literal>f:</literal> prefix as well.</simpara>
 <figure>
+<title>Namespace prefix mapping imports</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/9.3-imports.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>9.3 imports</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -2941,52 +2987,57 @@ which defines the flow of the pages.</simpara>
 <simpara>Run the project by right clicking on the project and selecting
 &#8216;Run&#8217;. The browser shows the updated output.</simpara>
 <figure>
+<title>Book a movie link on main page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/9.11-output.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>9.11 output</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Click on &#8216;Book a movie&#8217; to see the page as shown.</simpara>
 <figure>
+<title>Book a movie page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/9.11-output2.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>9.11 output2</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Select a movie, say &#8216;The Shiningr and click on `Pick a time&#8217; to see the
 page output as shown.</simpara>
 <figure>
+<title>Show Timings page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/9.11-output3.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>9.11 output3</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Pick a time slot, say &#8216;04:00&#8217;, click on &#8216;Confirm&#8217; to see the output as shown.</simpara>
 <figure>
+<title>Confirm? page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/9.11-output4.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>9.11 output4</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Click on &#8216;Book&#8217; to confirm and see the output as:</simpara>
 <figure>
+<title>Reservation Confirmed page</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/9.11-output5.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>9.11 output5</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -3143,11 +3194,12 @@ All the commands to start, stop, and restart are available from the pop-up menu.
 node, and select
 &#8216;View Server Log&#8217;.</simpara>
 <figure>
+<title>View WildFly server log in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/11-wildfly-server-log.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>11 wildfly server log</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -3255,11 +3307,12 @@ node, and select
 <listitem>
 <simpara>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;<ulink url="http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;">http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;</ulink>.</simpara>
 <figure>
+<title>NetBeans Update Center</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/16-netbeans-add-dev-update-center.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>16 netbeans add dev update center</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -3273,11 +3326,12 @@ node, and select
 <listitem>
 <simpara>In NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Available Plugins&#8217;, type &#8220;wildfly&#8221; in &#8216;Search:&#8217; box, and select the plugin by clicking on the checkbox in &#8216;Install&#8217; column.</simpara>
 <figure>
+<title>Available Plugins in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/16-netbeans-available-plugins-wildfly.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>16 netbeans available plugins wildfly</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -3297,11 +3351,12 @@ node, and select
 <listitem>
 <simpara>Right-click on Servers, choose &#8216;Add Server&#8230;&#8217; in the pop-up menu.</simpara>
 <figure>
+<title>Add Server in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/netbeans-addserver.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>netbeans addserver</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -3310,11 +3365,12 @@ node, and select
 <simpara>Select &#8216;WildFly Application Server&#8217; in the Add Server Instance wizard, set the
 name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</simpara>
 <figure>
+<title>Add WildFly instance to NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/16-netbeans-add-instance-wildfly.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>16 netbeans add instance wildfly</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -3325,21 +3381,23 @@ when WildFly archive was unzipped. Click on &#8216;Browse&#8217; for &#8216;Serv
 select the &#8216;standalone/configuration/standalone-full.xml&#8217; file in the unzipped WildFly
 archive.</simpara>
 <figure>
+<title>Configure WildFly full instance in NetBeans</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/16-netbeans-wildfly-full-platform.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>16 netbeans wildfly full platform</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Click on &#8216;Next&#8217; and then &#8216;Finish&#8217;. The &#8216;Services&#8217; should show the WildFly instance.</simpara>
 <figure>
+<title>WildFly instance in NetBeans Services tab</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/16-netbeans-wildfly-server.png"/>
     </imageobject>
-    <textobject><phrase>image</phrase></textobject>
+    <textobject><phrase>16 netbeans wildfly server</phrase></textobject>
   </mediaobject>
 </figure>
 

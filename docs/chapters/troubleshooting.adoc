@@ -17,12 +17,12 @@ node, and select
 ifdef::server-glassfish[]
 `View Domain Server Log'.
 +
-image::images/netbeans-view-log.png[image]
+image::images/netbeans-view-log.png[title="View GlassFish server log in NetBeans"]
 endif::server-glassfish[]
 ifdef::server-wildfly[]
 `View Server Log'.
 +
-image::images/11-wildfly-server-log.png[image]
+image::images/11-wildfly-server-log.png[title="View WildFly server log in NetBeans"]
 endif::server-wildfly[]
 +
 In addition, the web-based administration console can be seen by clicking on

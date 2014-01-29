@@ -50,11 +50,11 @@ this implementation will consume a JSON representation of the resource.
 +
 Make sure to resolve imports from the appropriate package as shown.
 +
-image::images/7.2-imports.png[image]
+image::images/7.2-imports.png[title="Provider import"]
 +
 . Make the class implements `MessageBodyReader<Movie>`.
 +
-image::images/7.3-implements.png[image]
+image::images/7.3-implements.png[title="Implement abstract methods for MessageBodyReader"]
 +
 Click on the hint (shown as yellow bulb) on the class definition and
 select `Implement all abstract methods'.
@@ -132,7 +132,7 @@ this implementation will produce a JSON representation of the resource.
 +
 Resolve the imports as shown.
 +
-image::images/7.6-imports.png[image]
+image::images/7.6-imports.png[title="Provider import"]
 +
 . Make this class implement `MessageBodyWriter` interface by adding the following code:
 [source, java]
@@ -142,7 +142,7 @@ Resolve the imports.
 +
 The IDE provide a hint to implement abstract methods as:
 +
-image::images/7.7-implements.png[image]
+image::images/7.7-implements.png[title="Implement abstract methods for MessageBodyWriter"]
 +
 Click on the hint (show as yellow bulb) on the class definition and
 select `Implement all abstract methods'.
@@ -230,7 +230,7 @@ then renders `movies.xhtml'.
 Click on the hint (show as yellow bulb) to resolve the namespace
 prefix/URI mapping as shown.
 +
-image::images/7.11-imports.png[image]
+image::images/7.11-imports.png[title="Namespace prefix mapping imports"]
 +
 . Add `movieName` and `actors` field to `MovieBackingBean` as:
 +
@@ -273,17 +273,17 @@ the POJO to JSON. Media type of `application/json` is specified using `MediaType
 +
 Resolve the imports as shown
 +
-image::images/7.14-imports.png[image]
+image::images/7.14-imports.png[title="Entity import"]
 +
 . Run the project to see the updated main page as:
 +
-image::images/7.15-output.png[image]
+image::images/7.15-output.png[title="New Movie button"]
 +
 A new movie can be added by clicking on `New Movie' button.
 +
 . Enter the details as shown:
 +
-image::images/7.16-output.png[image]
+image::images/7.16-output.png[title="Add a New Movie page"]
 +
 Click on `Add' button. The `Movie Id' value has to be greater than 20
 otherwise the primary key constraint will be violated. The table
@@ -292,6 +292,6 @@ sequence; however this is not done in the application.
 +
 The updated page looks like as shown
 +
-image::images/7.16-output2.png[image]
+image::images/7.16-output2.png[title="Newly added movie"]
 +
 Note that the newly added movie is now displayed.
