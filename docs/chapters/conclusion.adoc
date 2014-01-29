@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 == Conclusion
 
 This hands-on lab built a trivial 3-tier web application using Java EE 7

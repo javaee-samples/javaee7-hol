@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 [[walk-through]]
 == Walk-through of Sample Application
 
@@ -16,7 +18,7 @@ content there.
 unzipped directory, and click on `Open Project'. The project structure
 is shown.
 +
-image::images/3.2-project-structure.png[title="Project structure in NetBeans"]
+image::3.2-project-structure.png[title="Project structure in NetBeans"]
 +
 . Maven Coordinates: Expand `Project Files' and double click on
 `pom.xml'. In the `pom.xml', the Java EE 7 API is specified as a
@@ -65,7 +67,7 @@ Platform, can be deployed on Web Profile.
 By default, NetBeans opens the file in Design View. Click on `Source' tab
 to view the XML source.
 +
-image::images/3.2-persistence-xml.png[title="persistence.xml"]
+image::3.2-persistence-xml.png[title="persistence.xml"]
 +
 It looks like:
 +
@@ -134,7 +136,7 @@ endif::server-glassfish[]
 Clicking back and forth between `Design' and `Source' view may prompt
 the error shown below:
 +
-image::images/3.4-missing-server.png[title="Missing server error from persistence.xml"]
+image::3.4-missing-server.png[title="Missing server error from persistence.xml"]
 +
 This will get resolved when we run the application. Click on `OK' to
 dismiss the dialog.
@@ -192,7 +194,7 @@ URL, the scripts may be loaded from outside the WAR file as well.
 Feel free to open `create.sql', `drop.sql' and `load.sql' and read
 through the SQL scripts. The database schema is shown.
 +
-image::images/3.5-schema.png[title="Database schema"]
+image::3.5-schema.png[title="Database schema"]
 +
 This folder also contains `sales.csv' which carries some comma-separated
 data, and is used later in the application.
@@ -281,15 +283,15 @@ During the first run, the IDE will ask you to select a deployment server.
 ifdef::server-wildfly[]
 Choose the configured WildFly server and click on `OK'.
 +
-image::images/3.6-wildfly-server.png[title="WildFly deployment server"]
+image::3.6-wildfly-server.png[title="WildFly deployment server"]
 endif::server-wildfly[]
 ifdef::server-glassfish[]
 Choose the configured GlassFish server and click on `OK'.
 +
-image::images/3.6-glassfish-server.png[title="GlassFish server"]
+image::3.6-glassfish-server.png[title="GlassFish server"]
 endif::server-glassfish[]
 +
 The output looks like as shown.
 +
-image::images/3.8-first-page.png[title="Application main page"]
+image::3.8-first-page.png[title="Application main page"]
 

@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 [appendix]
 == Appendix
 
@@ -11,7 +13,7 @@ ifdef::server-wildfly[]
 +
 . Specify the name as ``Dev Update Center'' and the URL as ``http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz''.
 +
-image::images/16-netbeans-add-dev-update-center.png[title="NetBeans Update Center"]
+image::16-netbeans-add-dev-update-center.png[title="NetBeans Update Center"]
 +
 and click on `OK'.
 
@@ -20,7 +22,7 @@ and click on `OK'.
 
 . In NetBeans, click on `Tools', `Plugins', `Available Plugins', type ``wildfly'' in `Search:' box, and select the plugin by clicking on the checkbox in `Install' column.
 +
-image::images/16-netbeans-available-plugins-wildfly.png[title="Available Plugins in NetBeans"]
+image::16-netbeans-available-plugins-wildfly.png[title="Available Plugins in NetBeans"]
 +
 The exact plugin version and the date may be different.
 . Click on `Install' button, `Next >', accept the license agreement by clicking on the checkbox, and click on `Install' button to install the plugin. Click on `Finish' to restart the IDE and complete installation.
@@ -31,23 +33,23 @@ The exact plugin version and the date may be different.
 +
 . Right-click on Servers, choose `Add Server...' in the pop-up menu.
 +
-image::images/netbeans-addserver.png[title="Add Server in NetBeans"]
+image::netbeans-addserver.png[title="Add Server in NetBeans"]
 +
 . Select `WildFly Application Server' in the Add Server Instance wizard, set the
 name to `WildFly 8' and click `Next >'.
 +
-image::images/16-netbeans-add-instance-wildfly.png[title="Add WildFly instance to NetBeans"]
+image::16-netbeans-add-instance-wildfly.png[title="Add WildFly instance to NetBeans"]
 +
 . Click on `Browse' for `Server Location' and select the directory that got created
 when WildFly archive was unzipped. Click on `Browse' for `Server Configuration' and
 select the `standalone/configuration/standalone-full.xml' file in the unzipped WildFly
 archive.
 +
-image::images/16-netbeans-wildfly-full-platform.png[title="Configure WildFly full instance in NetBeans"]
+image::16-netbeans-wildfly-full-platform.png[title="Configure WildFly full instance in NetBeans"]
 +
 Click on `Next' and then `Finish'. The `Services' should show the WildFly instance.
 +
-image::images/16-netbeans-wildfly-server.png[title="WildFly instance in NetBeans Services tab"]
+image::16-netbeans-wildfly-server.png[title="WildFly instance in NetBeans Services tab"]
 
 [[appendix-wildfly-idea]]
 // === Configure WildFly 8 in IntelliJ IDEA
@@ -76,27 +78,27 @@ First of all, you should specify the JDK that you are going to use. In IntelliJ 
 +
 . On the Welcome screen, under *Quick Start*, click *Configure*.
 +
-image::images/i13-welcome-configure.png[title="Welcome to IntelliJ IDEA"]
+image::i13-welcome-configure.png[title="Welcome to IntelliJ IDEA"]
 +
 . Under *Configure*, click *Project Defaults*, and then, under *Project Defaults*, click *Project Structure*.
 +
-. In the left-hand pane of the *Project Structure* dialog, under *Platform Settings*, select *SDKs*. Click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select *JDK*.
+. In the left-hand pane of the *Project Structure* dialog, under *Platform Settings*, select *SDKs*. Click image:images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select *JDK*.
 +
-image::images/i13-plus-jdk.png[title="Add JDK in IntelliJ IDEA"]
+image::i13-plus-jdk.png[title="Add JDK in IntelliJ IDEA"]
 +
 . In the *Select Home Directory for JDK* dialog, select the folder in which the JDK that you are going to use is installed, and click *OK*.
 +
-image::images/i13-jdk-home.png[title="JDK home in IntelliJ IDEA"]
+image::i13-jdk-home.png[title="JDK home in IntelliJ IDEA"]
 +
 . In the *Project Structure* dialog, click *Apply*.
 +
-image::images/i13-jdk-defined.png[title="JDK defined in IntelliJ IDEA"]
+image::i13-jdk-defined.png[title="JDK defined in IntelliJ IDEA"]
 +
 Now, let's make the JDK that we have specified the default SDK.
 +
 . In the left-hand pane, under *Project Settings*, select *Project*. In the right-hand part of the dialog, under *Project SDK*, select the JDK from the list.
 +
-image::images/i13-project-sdk.png[title="Project SDK in IntelliJ IDEA"]
+image::i13-project-sdk.png[title="Project SDK in IntelliJ IDEA"]
 +
 . Click *OK*.
 
@@ -105,64 +107,64 @@ image::images/i13-project-sdk.png[title="Project SDK in IntelliJ IDEA"]
 
 Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the *Settings* dialog. (On Mac OS, this dialog is called *Preferences*.)
 
-. On the Welcome screen, to the left of *Project Defaults*, click *Back* image::images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].
+. On the Welcome screen, to the left of *Project Defaults*, click *Back* image:images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].
 +
 . Under *Configure*, click *Settings*.
 +
-. In the left-hand pane of the *Settings* (*Preferences*) dialog, under *IDE Settings*, select *Application Servers*. On the *Application Servers* page, click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select *JBoss Server*. (WildFly is a server from the "JBoss family".)
+. In the left-hand pane of the *Settings* (*Preferences*) dialog, under *IDE Settings*, select *Application Servers*. On the *Application Servers* page, click image:images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select *JBoss Server*. (WildFly is a server from the "JBoss family".)
 +
-image::images/i13-plus-jboss.png[title="Add WildFly in IntelliJ IDEA"]
+image::i13-plus-jboss.png[title="Add WildFly in IntelliJ IDEA"]
 +
-. In the *JBoss Server* dialog, click image::images/i13-ellipsis-button.png[title="Ellipsis button in IntelliJ IDEA"] to the right of the *JBoss Home* field.
+. In the *JBoss Server* dialog, click image:images/i13-ellipsis-button.png[title="Ellipsis button in IntelliJ IDEA"] to the right of the *JBoss Home* field.
 +
-image::images/i13-jboss-server-dialog-initial.png[title="WildFly server dialog in IntelliJ IDEA"]
+image::i13-jboss-server-dialog-initial.png[title="WildFly server dialog in IntelliJ IDEA"]
 +
 . In the *JBoss Home Directory* dialog, select the folder in which you have the WildFly server installed, and click *OK*.
 +
-image::images/i13-jboss-home-directory.png[title="WildFly home in IntelliJ IDEA"]
+image::i13-jboss-home-directory.png[title="WildFly home in IntelliJ IDEA"]
 +
 . Click *OK* in the *JBoss Server* dialog.
 +
-image::images/i13-jboss-server-dialog-final.png[title="WildFly final dialog in IntelliJ IDEA"]
+image::i13-jboss-server-dialog-final.png[title="WildFly final dialog in IntelliJ IDEA"]
 +
 . In the *Settings* (*Preferences*) dialog, click *OK*.
 +
-image::images/i13-jboss-defined.png[title="WildFly defined in IntelliJ IDEA"]
+image::i13-jboss-defined.png[title="WildFly defined in IntelliJ IDEA"]
 
 [[create-project-wildfly-idea]]
 ==== Create a project
 
 The sample application is supplied as a Maven project with an associated http://maven.apache.org/pom.html[pom.xml] file that contains all the necessary project definitions. The corresponding IntelliJ IDEA project in such a case can be created by simply "opening" the +pom.xml+ file. (Obviously, this isn't the only way to create projects in IDEA. You can create projects for existing collections of source files, import Eclipse and Flash Builder projects, and Gradle build scripts. Finally, you can create projects from scratch.)
 
-. On the Welcome screen, to the left of *Configure*, click *Back* image::images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].
+. On the Welcome screen, to the left of *Configure*, click *Back* image:images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].
 +
 . Under *Quick Start*, click *Open Project*.
 +
-image::images/i13-open-project.png[title="Open project in IntelliJ IDEA"]
+image::i13-open-project.png[title="Open project in IntelliJ IDEA"]
 +
 . In the *Open Project* dialog, select the +pom.xml+ file associated with the sample application, and click *OK*.
 +
-image::images/i13-select-pom.png[title="Select pom in IntelliJ IDEA"]
+image::i13-select-pom.png[title="Select pom in IntelliJ IDEA"]
 +
 Wait while IntelliJ IDEA is processing +pom.xml+ and creating the project. When this process is complete, the following message is shown:
 +
-image::images/i13-jpa-detected.png[title="Configure JPA in IntelliJ IDEA"]
+image::i13-jpa-detected.png[title="Configure JPA in IntelliJ IDEA"]
 +
-. Click *Configure* in the message box. (If by now the message has disappeared, click image::images/i13-exclamation-mark-icon.png[title="Mark icon in IntelliJ IDEA"] on the Status bar.
+. Click *Configure* in the message box. (If by now the message has disappeared, click image:images/i13-exclamation-mark-icon.png[title="Mark icon in IntelliJ IDEA"] on the Status bar.
 +
-image::images/i13-jpa-detected-status-bar.png[title="JPA detected in status bar in IntelliJ IDEA"]
+image::i13-jpa-detected-status-bar.png[title="JPA detected in status bar in IntelliJ IDEA"]
 +
 The *Event Log* tool window will open. Click *Configure* in this window.)
 +
-image::images/i13-jpa-detected-event-log.png[title="JPA detected event log in IntelliJ IDEA"]
+image::i13-jpa-detected-event-log.png[title="JPA detected event log in IntelliJ IDEA"]
 +
 . In the *Setup Frameworks* dialog, just click *OK*. (By doing so you confirm that the file +persistence.xml+ found in the project belongs to the JPA framework.)
 +
-image::images/i13-setup-frameworks-jpa.png[title="Setup frameworks in IntelliJ IDEA"]
+image::i13-setup-frameworks-jpa.png[title="Setup frameworks in IntelliJ IDEA"]
 +
 Now, as an intermediate check, make sure that the project structure looks something similar to this:
 +
-image::images/i13-initial-project-structure.png[title="Project structure in IntelliJ IDEA"]
+image::i13-initial-project-structure.png[title="Project structure in IntelliJ IDEA"]
 
 [[create-run-config-wildfly-idea]]
 ==== Create a run/debug configuration
@@ -171,11 +173,11 @@ Applications in IntelliJ IDEA are run and debugged according to what is called r
 
 . In the main menu, select *Run | Edit Configurations*.
 +
-image::images/i13-run-edit-configurations.png[title="Edit configurations in IntelliJ IDEA"]
+image::i13-run-edit-configurations.png[title="Edit configurations in IntelliJ IDEA"]
 +
-. In the *Run/Debug Configurations* dialog, click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"], select *JBoss Server*, and then select *Local*.
+. In the *Run/Debug Configurations* dialog, click image:images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"], select *JBoss Server*, and then select *Local*.
 +
-image::images/i13-run-configs-plus-jboss.png[title="WildFly configuration in IntelliJ IDEA"]
+image::i13-run-configs-plus-jboss.png[title="WildFly configuration in IntelliJ IDEA"]
 +
 As a result, the run/debug configuration for the WildFly server is created and its settings are shown in the right-hand part of the dialog.
 +
@@ -183,36 +185,36 @@ As a result, the run/debug configuration for the WildFly server is created and i
 +
 . In the lower part of the dialog, within the line _Warning: No artifacts marked for deployment_, click *Fix* and select *movieplex7:war exploded*. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (_movieplex7:war_ and _movieplex7:war exploded_). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. _movieplex7:war_ corresponds to a Web archive (WAR). _movieplex7:war exploded_ corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)
 +
-image::images/i13-jboss-fix-deployment.png[title="Fixing deployment warning in IntelliJ IDEA"]
+image::i13-jboss-fix-deployment.png[title="Fixing deployment warning in IntelliJ IDEA"]
 +
 . Within the line _Error: Artifact $$'movieplex7: exploded'$$ has invalid extension_, click *Fix*.
 +
-image::images/i13-jboss-invalid-extension.png[title="Invalid extension error message in IntelliJ IDEA"]
+image::i13-jboss-invalid-extension.png[title="Invalid extension error message in IntelliJ IDEA"]
 +
 . In the *Project Structure* dialog, add +.war+ at the end of the output directory path, and click *OK*. (For the servers of the JBoss family, the application root directory has to have +.war+ at the end.)
 +
-image::images/i13-jboss-fix-extension.png[title="Extension error fix in IntelliJ IDEA"]
+image::i13-jboss-fix-extension.png[title="Extension error fix in IntelliJ IDEA"]
 +
 . In the *Run/Debug Configurations* dialog, switch to the *Server* tab. In the field for the application starting page URL, replace +$$http://localhost:8080/movieplex7-1/$$+ with +$$http://localhost:8080/movieplex7-1.0-SNAPSHOT/$$+ and click *OK*.
 +
-image::images/i13-jboss-url-fixed.png[title="Fixing application URL in IntelliJ IDEA"]
+image::i13-jboss-url-fixed.png[title="Fixing application URL in IntelliJ IDEA"]
 
 The *Application Servers* tool window opens in the lower part of the workspace. Shown in this window are the server run/debug configuration and the associated deployment artifact. Now you are ready to run the application.
 
 [[run-app-wildfly-idea]]
 ==== Run the application
 
-In the *Application Servers* tool window, select the server run/debug configuration (_WildFly8 [local]_) and click *Run* image::images/i13-run-icon.png[title="Run icon in IntelliJ IDEA"].
+In the *Application Servers* tool window, select the server run/debug configuration (_WildFly8 [local]_) and click *Run* image:images/i13-run-icon.png[title="Run icon in IntelliJ IDEA"].
 
-image::images/i13-run-wildfly.png[title="Run WildFly in IntelliJ IDEA"]
+image::i13-run-wildfly.png[title="Run WildFly in IntelliJ IDEA"]
 
 IntelliJ IDEA compiles the code, builds the artifact, starts WildFly and deploys the artifact to the server. You can monitor this process in the *Run* tool window that opens in the lower part of the workspace.
 
-image::images/i13-run-tool-window-wildfly.png[title="Run tool window in IntelliJ IDEA"]
+image::i13-run-tool-window-wildfly.png[title="Run tool window in IntelliJ IDEA"]
 
 Finally, your default Web browser opens and the starting page of the application is shown.
 
-image::images/i13-starting-page-in-browser.png[title="Starting page in browser from IntelliJ IDEA"]
+image::i13-starting-page-in-browser.png[title="Starting page in browser from IntelliJ IDEA"]
 
 At this step IntelliJ IDEA is fully prepared for your development work, and you can continue with your exercises.
 
@@ -226,7 +228,7 @@ ifdef::server-glassfish[]
 +
 . Right-click on Servers, choose `Add Server...' in the pop-up menu.
 +
-image::images/netbeans-addserver.png[title="Add Server in NetBeans"]
+image::netbeans-addserver.png[title="Add Server in NetBeans"]
 +
 . Select `GlassFish Server' in the Add Server Instance wizard, set the
 name to `GlassFish 4.0' and click `Next >'.
@@ -261,27 +263,27 @@ First of all, you should specify the JDK that you are going to use. In IntelliJ 
 +
 . On the Welcome screen, under *Quick Start*, click *Configure*.
 +
-image::images/i13-welcome-configure.png[image]
+image::i13-welcome-configure.png[image]
 +
 . Under *Configure*, click *Project Defaults*, and then, under *Project Defaults*, click *Project Structure*.
 +
-. In the left-hand pane of the *Project Structure* dialog, under *Platform Settings*, select *SDKs*. Click image::images/i13-plus-icon.png[image] and select *JDK*.
+. In the left-hand pane of the *Project Structure* dialog, under *Platform Settings*, select *SDKs*. Click image:images/i13-plus-icon.png[image] and select *JDK*.
 +
-image::images/i13-plus-jdk.png[image]
+image::i13-plus-jdk.png[image]
 +
 . In the *Select Home Directory for JDK* dialog, select the folder in which the JDK that you are going to use is installed, and click *OK*.
 +
-image::images/i13-jdk-home.png[image]
+image::i13-jdk-home.png[image]
 +
 . In the *Project Structure* dialog, click *Apply*.
 +
-image::images/i13-jdk-defined.png[image]
+image::i13-jdk-defined.png[image]
 +
 Now, let's make the JDK that we have specified the default SDK.
 +
 . In the left-hand pane, under *Project Settings*, select *Project*. In the right-hand part of the dialog, under *Project SDK*, select the JDK from the list.
 +
-image::images/i13-project-sdk.png[image]
+image::i13-project-sdk.png[image]
 +
 . Click *OK*.
 
@@ -290,64 +292,64 @@ image::images/i13-project-sdk.png[image]
 
 Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the *Settings* dialog. (On Mac OS, this dialog is called *Preferences*.)
 
-. On the Welcome screen, to the left of *Project Defaults*, click *Back* image::images/i13-back-icon.png[image].
+. On the Welcome screen, to the left of *Project Defaults*, click *Back* image:images/i13-back-icon.png[image].
 +
 . Under *Configure*, click *Settings*.
 +
-. In the left-hand pane of the *Settings* (*Preferences*) dialog, under *IDE Settings*, select *Application Servers*. On the *Application Servers* page, click image::images/i13-plus-icon.png[image] and select *GlassFish Server*.
+. In the left-hand pane of the *Settings* (*Preferences*) dialog, under *IDE Settings*, select *Application Servers*. On the *Application Servers* page, click image:images/i13-plus-icon.png[image] and select *GlassFish Server*.
 +
-image::images/i13-plus-glassfish.png[image]
+image::i13-plus-glassfish.png[image]
 +
-. In the *GlassFish Server* dialog, click image::images/i13-ellipsis-button.png[image] to the right of the *GlassFish Home* field.
+. In the *GlassFish Server* dialog, click image:images/i13-ellipsis-button.png[image] to the right of the *GlassFish Home* field.
 +
-image::images/i13-glassfish-server-dialog-initial.png[image]
+image::i13-glassfish-server-dialog-initial.png[image]
 +
 . In the *GlassFish Home Directory* dialog, select the folder in which you have the GlassFish server installed, and click *OK*.
 +
-image::images/i13-glassfish-home-directory.png[image]
+image::i13-glassfish-home-directory.png[image]
 +
 . Click *OK* in the *GlassFish Server* dialog.
 +
-image::images/i13-glassfish-server-dialog-final.png[image]
+image::i13-glassfish-server-dialog-final.png[image]
 +
 . In the *Settings* (*Preferences*) dialog, click *OK*.
 +
-image::images/i13-glassfish-defined.png[image]
+image::i13-glassfish-defined.png[image]
 
 [[create-project-glassfish-idea]]
 ==== Create a project
 
 The sample application is supplied as a Maven project with an associated http://maven.apache.org/pom.html[pom.xml] file that contains all the necessary project definitions. The corresponding IntelliJ IDEA project in such a case can be created by simply "opening" the +pom.xml+ file. (Obviously, this isn't the only way to create projects in IDEA. You can create projects for existing collections of source files, import Eclipse and Flash Builder projects, and Gradle build scripts. Finally, you can create projects from scratch.)
 
-. On the Welcome screen, to the left of *Configure*, click *Back* image::images/i13-back-icon.png[image].
+. On the Welcome screen, to the left of *Configure*, click *Back* image:images/i13-back-icon.png[image].
 +
 . Under *Quick Start*, click *Open Project*.
 +
-image::images/i13-open-project.png[image]
+image::i13-open-project.png[image]
 +
 . In the *Open Project* dialog, select the +pom.xml+ file associated with the sample application, and click *OK*.
 +
-image::images/i13-select-pom.png[image]
+image::i13-select-pom.png[image]
 +
 Wait while IntelliJ IDEA is processing +pom.xml+ and creating the project. When this process is complete, the following message is shown:
 +
-image::images/i13-jpa-detected.png[image]
+image::i13-jpa-detected.png[image]
 +
-. Click *Configure* in the message box. (If by now the message has disappeared, click image::images/i13-exclamation-mark-icon.png[image] on the Status bar.
+. Click *Configure* in the message box. (If by now the message has disappeared, click image:images/i13-exclamation-mark-icon.png[image] on the Status bar.
 +
-image::images/i13-jpa-detected-status-bar.png[image]
+image::i13-jpa-detected-status-bar.png[image]
 +
 The *Event Log* tool window will open. Click *Configure* in this window.)
 +
-image::images/i13-jpa-detected-event-log.png[image]
+image::i13-jpa-detected-event-log.png[image]
 +
 . In the *Setup Frameworks* dialog, just click *OK*. (By doing so you confirm that the file +persistence.xml+ found in the project belongs to the JPA framework.)
 +
-image::images/i13-setup-frameworks-jpa.png[image]
+image::i13-setup-frameworks-jpa.png[image]
 +
 Now, as an intermediate check, make sure that the project structure looks something similar to this:
 +
-image::images/i13-initial-project-structure.png[image]
+image::i13-initial-project-structure.png[image]
 
 [[create-run-config-glassfish-idea]]
 ==== Create a run/debug configuration
@@ -356,11 +358,11 @@ Applications in IntelliJ IDEA are run and debugged according to what is called r
 
 . In the main menu, select *Run | Edit Configurations*.
 +
-image::images/i13-run-edit-configurations.png[image]
+image::i13-run-edit-configurations.png[image]
 +
-. In the *Run/Debug Configurations* dialog, click image::images/i13-plus-icon.png[image], select *GlassFish Server*, and then select *Local*.
+. In the *Run/Debug Configurations* dialog, click image:images/i13-plus-icon.png[image], select *GlassFish Server*, and then select *Local*.
 +
-image::images/i13-run-configs-plus-glassfish.png[image]
+image::i13-run-configs-plus-glassfish.png[image]
 +
 As a result, the run/debug configuration for the GlassFish server is created and its settings are shown in the right-hand part of the dialog.
 +
@@ -368,15 +370,15 @@ As a result, the run/debug configuration for the GlassFish server is created and
 +
 . Note the error message in the lower part of the dialog: _Error: Domain not specified_. To fix this, select *domain1* from the *Server Domain* list.
 +
-image::images/i13-glassfish-fix-domain.png[image]
+image::i13-glassfish-fix-domain.png[image]
 +
 . In the lower part of the dialog, within the line _Warning: No artifacts marked for deployment_, click *Fix* and select *movieplex7:war exploded*. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (_movieplex7:war_ and _movieplex7:war exploded_). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. _movieplex7:war_ corresponds to a Web archive (WAR). _movieplex7:war exploded_ corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)
 +
-image::images/i13-glassfish-fix-deployment.png[image]
+image::i13-glassfish-fix-deployment.png[image]
 +
 . Switch to the *Server* tab. In the field for the application starting page URL, replace +$$http://localhost:8080/movieplex7-1/$$+ with +$$http://localhost:8080/movieplex7-1.0-SNAPSHOT/$$+ and click *OK*.
 +
-image::images/i13-glassfish-fix-url.png[image]
+image::i13-glassfish-fix-url.png[image]
 
 The *Application Servers* tool window opens in the lower part of the workspace. Shown in this window are the server run/debug configuration and the associated deployment artifact. Now you are ready to run the application.
 
@@ -389,27 +391,27 @@ Before executing the run/debug configuration you have to make sure that the Glas
 
 You can start the database right from IntelliJ IDEA by running the +asadmin start-database+ command in the *Terminal* tool window. (The +asadmin+ utility is located in the +$$<$$GlassFish_installation_folder$$>$$\bin+ directory.)
 
-. Open the *Terminal* tool window. You can do that, for example, like this: point to image::images/i13-show-tool-windows-icon.png[image] on the Status bar and select *Terminal*.
+. Open the *Terminal* tool window. You can do that, for example, like this: point to image:images/i13-show-tool-windows-icon.png[image] on the Status bar and select *Terminal*.
 +
-image::images/i13-open-terminal.png[image]
+image::i13-open-terminal.png[image]
 +
 . Run the +asadmin start-database+ command.
 +
-image::images/i13-glassfish-start-database.png[image]
+image::i13-glassfish-start-database.png[image]
 +
 As a result, the database will start, or you will be told that the database is already running.
 +
 . Execute the run/debug configuration. You can do that, for example, by selecting *Run | Run $$'$$GlassFish4$$'$$* from the main menu.
 +
-image::images/i13-run-glassfish.png[image]
+image::i13-run-glassfish.png[image]
 +
 IntelliJ IDEA compiles the code, builds the artifact, starts FlassFish and deploys the artifact to the server. You can monitor this process in the *Run* tool window that opens in the lower part of the workspace.
 +
-image::images/i13-run-tool-window-glassfish.png[image]
+image::i13-run-tool-window-glassfish.png[image]
 +
 Finally, your default Web browser opens and the starting page of the application is shown.
 +
-image::images/i13-starting-page-in-browser.png[image]
+image::i13-starting-page-in-browser.png[image]
 
 At this step IntelliJ IDEA is fully prepared for your development work, and you can continue with your exercises.
 
@@ -424,37 +426,37 @@ At this step IntelliJ IDEA is fully prepared for your development work, and you 
 +
 . Open the project in IntelliJ IDEA. If your IDEA version is new it will need to use the new project format. In that case IDEA will ask you to convert the project. Just confirm that with `Convert'.
 +
-image::images/idea-convertproject.png[Convert Project]
+image::idea-convertproject.png[Convert Project]
 +
 . Once the project was opened IDEA will detect the JPA framework usage and offer you to configure it. Click on `Configure'.
 +
-image::images/idea-configure-jpa.png[Configure Frameworks]
+image::idea-configure-jpa.png[Configure Frameworks]
 +
 . In the dialog box that shows up make sure the only detected file in there says `persistence.xml` and is checked and confirm  it with `Ok'.
 +
-image::images/idea-configure-jpa-dialogbox.png[Setup Frameworks]
+image::idea-configure-jpa-dialogbox.png[Setup Frameworks]
 +
 . As a next step we need to build the project. Open the ”Maven Projects” pane on the right-hand side of your IDEA window and click on the two arrows (top left-hand side) pointing at each other. The Maven project will be detected and it will ask you if the project may be reopened now due to a language level change. Confirm with `Yes'.
 +
-image::images/idea-open-mavenprojects-pane.png[Find Maven Project]
+image::idea-open-mavenprojects-pane.png[Find Maven Project]
 +
 . When the project is reloaded go to the `Maven Projects' pane again and have Maven build and package the project by selecting `Java EE 7 Hands-on Lab > Lifecycle > package' and clicking on the green `play' arrow. When you do that you might have to configure your Maven installation - in that case just choose the Maven home directory in the configuration dialog that is offered. Afterwards also click on `Enable Auto-Import' if a green hint pops up.
 +
-image::images/idea-mavenprojects-run-package-command.png[Run `maven package` Command]
+image::idea-mavenprojects-run-package-command.png[Run `maven package` Command]
 +
 . In the menu click on `Run > Edit Configurations'.
 +
 . In the dialog box that comes up click on the Plus-sign in the top-left corner and at the bottom select the entry `(17 more items)`. Your mileage may vary here, depending on your IntelliJ IDEA setup. A configuration option for `GlassFish Server' should show up.
 +
-image::images/idea-add-glassfish-server-configuration.png[Add GlassFish Server Configuration]
+image::idea-add-glassfish-server-configuration.png[Add GlassFish Server Configuration]
 +
 . Pick `Local' and in the upcoming dialog box enter a name (e.g. `GlassFish Server 4.0.0` - depending on your GlassFish Server version) and uncheck `After launch' so the browser doesn't get opened after each redeploy. In the textfield for ”Server Domain” enter `domain1` as the name of the domain. Leave the `Username' field at `admin` and the `Password` field empty. Then click `Configure' next to the `Application server' drop down list, in the upcoming dialog box click on the Plus-sign in the top-left corner and enter the root path of your GlassFish Server installation. If you also have NetBeans 7.4 on your computer then it will show up under the NetBeans folder. Confirm this dialog box to have it closed.
 +
-image::images/idea-edit-glassfish-server-configuration-servertab.png[Configure GlassFish Server]
+image::idea-edit-glassfish-server-configuration-servertab.png[Configure GlassFish Server]
 +
 . Now click on the `Deployment' tab, then click on the Plus-sign underneath the large empty white area labeled `Deploy at the server startup' and choose `Artifact`. Choose the entry `movieplex7:war` and click `Ok'. Click `Ok' again to close the entire configuration dialog. We're now done.
 +
-image::images/idea-edit-glassfish-server-configuration-deploymenttab.png[Configure Deployment]
+image::idea-edit-glassfish-server-configuration-deploymenttab.png[Configure Deployment]
 +
 . As a final step we need to start the database. For NetBeans users this happens automagically but we'll have to do that manually when using IDEA. Just go to your GlassFish Server installation folder's `bin/`-directory and enter the following command `asadmin start-database`, or for Mac/Linux users: `./asadmin start-database` and you're good to go.
 

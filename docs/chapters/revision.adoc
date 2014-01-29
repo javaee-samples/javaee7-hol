@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 == Revision History
 
 . Added IntelliJ IDEA specific instructions. (Jan 22, 2014)
