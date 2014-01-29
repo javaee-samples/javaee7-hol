@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 == Completed Solutions
 
 The completed solution can be downloaded from https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip[javaee7-hol].

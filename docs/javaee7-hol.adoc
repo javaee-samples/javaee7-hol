@@ -1,6 +1,7 @@
 = Java EE 7 Hands-on Lab
 Arun Gupta <arungupta@redhat.com>
 v2.0, Jan 28, 2014
+:doctype: book
 :toc:
 :toclevels: 3
 :ide-netbeans: true

@@ -1,3 +1,6 @@
+:imagesdir: ../images
+:experimental:
+
 == Problem Statement
 
 This hands-on lab builds a typical 3-tier Java EE 7 Web application that
@@ -7,7 +10,8 @@ existing movies. Customers can discuss the movie in a chat room. Total
 sales from each showing are calculated at the end of the day. Customers
 also accrue points for watching movies.
 
-image::images/2.0-problem-statement.png[title="Architecture diagram"]
+.Architecture diagram
+image::2.0-problem-statement.png[]
 
 This figure shows the key components of the application. The User
 Interface initiates all the flows in the application. Show Booking,
@@ -20,35 +24,36 @@ various Java technologies and web standards in their implementation. The
 following figure shows how Java EE technologies are used in different
 flows.
 
-image::images/2.0-technologies.png[title="Technologies used in the application"]
+.Technologies used in the application
+image::2.0-technologies.png[]
 
 The table below details the components and the selected technology used
 in its’ implementation.
 
-[cols="2,8", options="header"]
+[cols="2,8"]
 |===
-| Flow | Description
+|Flow | Description
 
-| User Interface
-| Written entirely in _JavaServer Faces_ (JSF)
+|User Interface
+|Written entirely in _JavaServer Faces_ (JSF)
 
-| Chat Room
-| Utilizes client-side JavaScript and JSON to communicate with a _WebSocket_ endpoint
+|Chat Room
+|Utilizes client-side JavaScript and JSON to communicate with a _WebSocket_ endpoint
 
-| Ticket Sales
-| Uses _Batch Applications for the Java Platform_ to calculate the total
+|Ticket Sales
+|Uses _Batch Applications for the Java Platform_ to calculate the total
 sales and persist to the database.
 
-| Add/Delete Movie
-| Implemented using RESTful Web Services. JSON is used as on-the-wire data format
+|Add/Delete Movie
+|Implemented using RESTful Web Services. JSON is used as on-the-wire data format
 
-| Movie Points
-| Uses _Java Message Service_ (JMS) to update and obtain loyalty reward
+|Movie Points
+|Uses _Java Message Service_ (JMS) to update and obtain loyalty reward
 points; an optional implementation using database technology may be
 performed
 
-| Show Booking
-| Uses lightweight _Enterprise JavaBeans_ to communicate with the database
+|Show Booking
+|Uses lightweight _Enterprise JavaBeans_ to communicate with the database
 using Java Persistence API
 |===
 
@@ -82,67 +87,76 @@ While you are copy/pasting the code from this document into NetBeans,
 here are couple of tips that will be really useful and make your
 experience enjoyable!
 
-* NetBeans provides capability to neatly format the source code
+Source Code Formatting::
+NetBeans provides capability to neatly format the source code
 following conventions. This can be done for any type of source code,
 whether its XML or Java or something else. It is highly recommended to
 use this functionality after the code is copy/pasted from this document
 to the editor. This keeps the code legible.
-
++
+--
 This functionality can be accessed by right-clicking in the editor pane
 and selecting “Format” as shown.
 
-image::images/2.1-format.png[title="Format code in NetBeans"]
+.Format code in NetBeans
+image::2.1-format.png[]
 
 This functionality is also accessible using the following keyboard
 shortcuts:
 
-[width="50%", options="header"]
+[width="50%"]
 |===
-| Shortcut | Operating System
+|Shortcut | Operating System
 
-|Ctrl + Shift + F
-|Mac
+|kbd:[Ctrl+Shift+F]
+|OSX
 
-|Alt + Shift + F
+|kbd:[Alt+Shift+F]
 |Windows
 
-|Alt + Shift + F
+|kbd:[Alt+Shift+F]
 |Linux
 |===
+--
 
-* Copy/pasting the Java code from this document in NetBeans editor does
+Automatic Imports::
+Copy/pasting the Java code from this document in NetBeans editor does
 not auto-import the classes. This is required to be done manually in
 order for the classes to compile. This can be fixed for each missing
 import statement by clicking on the yellow bulb shown in the side bar.
-
-image::images/2.1-server-endpoint.png[title="ServerEndpoint import"]
++
+--
+.ServerEndpoint import
+image::2.1-server-endpoint.png[]
 
 Alternatively all the imports can be resolved by right-clicking on the
 editor pane and selecting ``Fix Imports'' as shown.
 
-image::images/2.1-fix-imports.png[title="Fix Imports in NetBeans"]
+.Fix Imports in NetBeans
+image::2.1-fix-imports.png[]
 
 This functionality is also accessible using the following keyboard
 shortcuts:
 
-[width="50%", options="header"]
+[width="50%"]
 |===
-| Shortcut | Operating System
+|Shortcut | Operating System
 
-| Command + Shift + I
-| Mac
+|kbd:[Command+Shift+I]
+|OSX
 
-| Ctrl + Shift + I
-| Windows
+|kbd:[Ctrl+Shift+I]
+|Windows
 
-| Ctrl + Shift + I
-| Linux
+|kbd:[Ctrl+Shift+I]
+|Linux
 |===
 
 The defaults may work in most of the cases. Choices are shown in case a
 class is available to import from multiple packages. If multiple
 packages are available then specific packages to import from are clearly
 marked in the document.
+--
 
 === Estimated Time
 
@@ -159,25 +173,31 @@ pre-requisite for <<json>>.
 
 Here is an approximate time estimate for each section:
 
-[cols="4,2" options="header"]
+[cols="4,2"]
 |===
-| Section Title | Estimated Time
+|Section Title |Estimated Time
 
-| <<walk-through>> | 15 - 30 mins
+|<<walk-through>>
+|15 - 30 mins
 
-| <<websocket>> | 30 - 45 mins
+|<<websocket>>
+|30 - 45 mins
 
-| <<batch>> | 30 - 45 mins
+|<<batch>>
+|30 - 45 mins
 
-| <<jaxrs>> | 30 - 45 mins
+|<<jaxrs>>
+|30 - 45 mins
 
-| <<json>> | 30 - 45 mins
+|<<json>>
+|30 - 45 mins
 
-| <<jms>> | 30 - 45 mins
+|<<jms>>
+|30 - 45 mins
 
-| <<jsf>> | 30 - 45 mins
+|<<jsf>>
+|30 - 45 mins
 |===
-
 
 The listed time for each section is only an estimate and by no means
 restrict you within that. These sections have been completed in much
@@ -186,4 +206,3 @@ shorter time, and you can do it too!
 TIP: The listed time for each section also allows you to create a custom
 version of the lab depending upon your target audience and available
 time.
-

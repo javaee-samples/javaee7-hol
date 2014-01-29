@@ -1,3 +1,6 @@
+:imagesdir: ../images
+:experimental:
+
 [[jms]]
 == Movie Points (Java Message Service)
 
@@ -37,7 +40,7 @@ passivated with the request.
 +
 Resolve the imports.
 +
-image::images/8.2-imports.png[title="RequestScoped import"]
+image::8.2-imports.png[title="RequestScoped import"]
 +
 . A message to a JMS Queue is sent after the customer has bought the
 tickets. Another bean will then retrieve this message and update the
@@ -70,7 +73,7 @@ This could be thought as conveying the customer identifier and the
 points accrued by that customer.
 +
 Generate getter/setters for this field. Right-click in the editor pane,
-select `Insert Code' (Ctrl + I shortcut on Mac), select `Getter and
+select `Insert Code' (kbd:[Ctrl+I] shortcut on OSX), select `Getter and
 Setter', select the field, and click on `Generate'.
 +
 . Add the following code to the class:
@@ -266,16 +269,16 @@ message is displayed on the screen.
 +
 . Run the project. The update page looks like as shown:
 +
-image::images/8.10-output.png[title="Points link on main page"]
+image::8.10-output.png[title="Points link on main page"]
 +
 Click on `Points' to see the output as:
 +
-image::images/8.10-output2.png[title="Points output page"]
+image::8.10-output2.png[title="Points output page"]
 +
 The output shows that the queue has 0 messages. Enter a message `1212'
 in the text box and click on `Send Message' to see the output as shown.
 +
-image::images/8.10-output3.png[title="Validation message on Points page"]
+image::8.10-output3.png[title="Validation message on Points page"]
 +
 This message is not meeting the validation criteria and so the error
 message is displayed.
@@ -283,24 +286,24 @@ message is displayed.
 Enter a message as `12,12' in the text box and click on `Send Message'
 button to see the output as:
 +
-image::images/8.10-output4.png[title="Correct input for Points page - Send Message (queue size=1)"]
+image::8.10-output4.png[title="Correct input for Points page - Send Message (queue size=1)"]
 +
 The updated count now shows that there is 1 message in the queue. Click
 on `Receive Message' button to see output as:
 +
-image::images/8.10-output5.png[title="Correct input for Points page - Receive Message (queue size=0)"]
+image::8.10-output5.png[title="Correct input for Points page - Receive Message (queue size=0)"]
 +
 The updated count now shows that the message has been consumed and the
 queue has 0 messages.
 +
 Click on `Send Message' 4 times to see the output as:
 +
-image::images/8.10-output6.png[title="Correct input for Points page - Send Message (queue size=4)"]
+image::8.10-output6.png[title="Correct input for Points page - Send Message (queue size=4)"]
 +
 The updated count now shows that the queue has 4 messages. Click on
 `Receive Message' 2 times to see the output as:
 +
-image::images/8.10-output7.png[title="Correct input for Points page - Receive Message (queue size=2)"]
+image::8.10-output7.png[title="Correct input for Points page - Receive Message (queue size=2)"]
 +
 The count is once again updated to reflect the 2 consumed and 2
 remaining messages in the queue.

@@ -1,3 +1,6 @@
+:imagesdir: ../images
+:experimental:
+
 [[websocket]]
 == Chat Room (Java API for WebSocket)
 
@@ -75,12 +78,12 @@ connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.
 +
 Resolve the imports by right-clicking in the editor and selecting `Fix
-Imports' or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
+Imports' or (kbd:[Command+Shift+I] shortcut on OSX or kbd:[Ctrl+Shift+I] on
 Windows).
 +
 WARNING: Make sure to pick `java.websocket.Session` for resolving imports. This is not the default option shown by NetBeans.
 +
-image::images/4.2-imports.png[title="javax.websocket.Session import"]
+image::4.2-imports.png[title="javax.websocket.Session import"]
 +
 Right-click again in the editor pane and select `Format' to format your
 code.
@@ -94,7 +97,7 @@ code.
 `WEB-INF', select `template.xhtml', and click on `Select File'. Click on
 `Finish'.
 +
-image::images/4.4-template.png[title="Choose template"]
+image::4.4-template.png[title="Choose template"]
 +
 In this file, remove <ui:define> sections where name attribute value is
 `top' and `left'. These sections are inherited from the template.
@@ -264,14 +267,14 @@ allows the links in the left navigation bar to be fully-qualified URLs.
 `Run'. The browser shows
 http://localhost:8080/movieplex7[localhost:8080/movieplex7].
 +
-image::images/4.6-chatroom.png[title="Chatroom link on main page"]
+image::4.6-chatroom.png[title="Chatroom link on main page"]
 +
 Click on `Chat Room' to see the output.
 +
 The `CONNECTED' status message is shown and indicates that the WebSocket
 connection with the endpoint is established.
 +
-image::images/4.8-chatroom.png[title="Chatroom output"]
+image::4.8-chatroom.png[title="Chatroom output"]
 +
 Please make sure your browser supports WebSocket in order for this page
 to show up successfully. Chrome 14.0+, Firefox 11.0+, Safari 6.0+, and
@@ -283,7 +286,7 @@ Open the URI http://localhost:8080/movieplex7[localhost:8080/movieplex7]
 in another browser window. Enter `Duke' in the text box in the first
 browser and click `Join'.
 +
-image::images/4.8-chatroom-joined.png[title="Chatroom with single user"]
+image::4.8-chatroom-joined.png[title="Chatroom with single user"]
 +
 Notice that the user list and the status message in both the browsers
 gets updated. Enter `James' in the text box of the second browser and
@@ -294,7 +297,7 @@ browser and click on `Send' to send the message.
 The output from two different browsers after the initial greeting looks
 like as shown.
 +
-image::images/4.8-chatroom-two-browsers.png[title="Chatroom with two users"]
+image::4.8-chatroom-two-browsers.png[title="Chatroom with two users"]
 +
 Here it shows output from Chrome on the top and Firefox on the bottom.
 +

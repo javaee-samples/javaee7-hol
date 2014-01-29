@@ -1,3 +1,6 @@
+:imagesdir: ../images
+:experimental:
+
 [[jaxrs]]
 == View and Delete Movie (Java API for RESTful Web Services)
 
@@ -38,7 +41,7 @@ Resolve the imports.
 +
 WARNING: Make sure to pick `javax.enterprise.context.RequestScoped` class.
 +
-image::images/6.2-imports.png[title="RequestScoped import"]
+image::6.2-imports.png[title="RequestScoped import"]
 +
 . Add the following code to the class:
 +
@@ -139,7 +142,7 @@ Click on the yellow bulb in the left bar to resolve the namespace
 prefix-to-URI resolution. This needs to be completed for `h:`, `c:`,
 and `f:` prefixes.
 +
-image::images/6.6-imports.png[title="Namespace prefix imports"]
+image::6.6-imports.png[title="Namespace prefix imports"]
 +
 . Right-click on `org.javaee7.movieplex7.client' package, select
 `New', `Java Class', specify the value as `MovieBackingBean' and click
@@ -151,7 +154,7 @@ Add the following field:
 int movieId;
 +
 Add getters/setters by right-clicking on the editor pane and selecting
-`Insert Code' (Ctrl + I shortcut on Mac). Select the field and click on
+`Insert Code' (kbd:[Ctrl+I] shortcut on OSX). Select the field and click on
 `Generate'.
 +
 Add `@Named` and `@SessionScoped` class-level annotations and implements
@@ -171,10 +174,10 @@ WARNING: Make sure to import `javax.enterprise.context.SessionScoped`.
     </h:outputLink>
 ----
 +
-Running the project (Fn + F6 shortcut on Mac) and clicking on `Movies'
+Running the project (kbd:[Fn+F6] shortcut on OSX) and clicking on `Movies'
 in the left navigation bar shows the output as shown.
 +
-image::images/6.8-output.png[title="List of movies output page"]
+image::6.8-output.png[title="List of movies output page"]
 +
 The list of all the movies with a radio button next to them is
 displayed.
@@ -252,7 +255,7 @@ using the `id`, `name`, and `actors` property values.
 select a radio button next to any movie, and click on details to see the
 output as shown.
 +
-image::images/6.12-output.png[title="Movie Details page"]
+image::6.12-output.png[title="Movie Details page"]
 +
 Click on the `Back' button to select another movie.
 +
@@ -293,7 +296,7 @@ Make sure to resolve the imports.
 +
 Running the project shows the output shown.
 +
-image::images/6.14-output.png[title="Delete button"]
+image::6.14-output.png[title="Delete button"]
 +
 Select a movie and click on Delete button. This deletes the movie from
 the database and refreshes list on the page. Note that a redeploy of the

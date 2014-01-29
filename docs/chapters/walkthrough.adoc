@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 [[walk-through]]
 == Walk-through of Sample Application
 
@@ -11,17 +13,19 @@ performed to provide an understanding of the application architecture.
 https://github.com/javaee-samples/javaee7-hol/blob/master/starting-template/movieplex7-starting-template.zip?raw=true[movieplex7-starting-template.zip]
 and unzip. This will create a `movieplex7' directory and unzips all the
 content there.
-+
+
 . In NetBeans IDE, select `File', `Open Project', select the
 unzipped directory, and click on `Open Project'. The project structure
 is shown.
 +
-image::images/3.2-project-structure.png[title="Project structure in NetBeans"]
-+
+.Project structure in NetBeans
+image::3.2-project-structure.png[]
+
 . Maven Coordinates: Expand `Project Files' and double click on
 `pom.xml'. In the `pom.xml', the Java EE 7 API is specified as a
 <dependency>:
 +
+--
 [source,xml]
 <dependencies>
     <dependency>
@@ -31,10 +35,10 @@ image::images/3.2-project-structure.png[title="Project structure in NetBeans"]
         <scope>provided</scope>
     </dependency>
 </dependencies>
-+
+
 This will ensure that Java EE 7 APIs are retrieved from the central
 Maven repository.
-+
+
 [NOTE]
 =================
 The Java EE 6 platform introduced the notion of `profiles'. A profile is
@@ -55,20 +59,23 @@ endif::server-glassfish[]
 ifdef::server-wildfly[]
 WildFly can be started in Full Platform or Web Profile.
 endif::server-wildfly[]
-+
+
 IMPORTANT: This lab requires Full Platform download. All technologies used in this
 lab, except Java Message Service and Batch Applications for the Java
 Platform, can be deployed on Web Profile.
-+
+--
+
 . *Default Data Source*: Expand `Other Sources',
 `src/main/resources', `META-INF', and double-click on `persistence.xml'.
 By default, NetBeans opens the file in Design View. Click on `Source' tab
 to view the XML source.
 +
-image::images/3.2-persistence-xml.png[title="persistence.xml"]
-+
+--
+.persistence.xml
+image::3.2-persistence-xml.png[]
+
 It looks like:
-+
+
 [source,xml]
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence
@@ -106,23 +113,23 @@ It looks like:
         </properties>
     </persistence-unit>
 </persistence>
-+
+
 Notice `<jta-data-source>` is commented out, i.e. no data source element
 is specified. This element identifies the JDBC resource to connect to in
 the runtime environment of the underlying application server.
-+
+
 The Java EE 7 platform defines a new default data source that must be
 provided by the runtime. This pre-configured data source is accessible
 under the JNDI name
-+
+
 [source,java]
 java:comp/DefaultDataSource
-+
+
 The JPA 2.1 specification says if neither `jta-data-source` nor
 `non-jta-data-source` elements are specified, the deployer must specify a
 JTA data source or the default JTA data source must be provided by the
 container.
-+
+
 ifdef::server-wildfly[]
 For WildFly 8, the default data source is bound to the JDBC resource `what name`.
 endif::server-wildfly[]
@@ -130,15 +137,17 @@ ifdef::server-glassfish[]
 For GlassFish 4, the default data source is bound to the JDBC resource
 `jdbc/__default`.
 endif::server-glassfish[]
-+
+
 Clicking back and forth between `Design' and `Source' view may prompt
 the error shown below:
-+
-image::images/3.4-missing-server.png[title="Missing server error from persistence.xml"]
-+
+
+.Missing server error from persistence.xml
+image::3.4-missing-server.png[]
+
 This will get resolved when we run the application. Click on `OK' to
 dismiss the dialog.
-+
+--
+
 . *Schema Generation:* JPA 2.1 defines a new set of
 `javax.persistence.schema-generation.*` properties that can be used to
 generate database artifacts like tables, indexes, and constraints in a
@@ -148,116 +157,122 @@ or as part of `EntityManagerFactory` creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.
 +
+--
 The ``persistence.xml'' in the application has the following
 `javax.persistence.schema-generation.*` properties. Their meaning and
 possible values are explained:
-+
-[options="header"]
+
 |===
 |Property |Meaning |Values
 
-| `javax.persistence.schema-generation.database.action`
-| Specifies the action to be taken by the persistence provider with regard
+|`javax.persistence.schema-generation.database.action`
+|Specifies the action to be taken by the persistence provider with regard
 to the database artifacts.
-| `none`, `create`, `drop-and-create`, `drop`
+|`none`, `create`, `drop-and-create`, `drop`
 
-| `javax.persistence.schema-generation.create-source`
- `javax.persistence.schema-generation.drop-source`
-| Specifies whether the creation or deletion of database artifacts is to
+|`javax.persistence.schema-generation.create-source`
+`javax.persistence.schema-generation.drop-source`
+|Specifies whether the creation or deletion of database artifacts is to
 occur on the basis of the object/relational mapping metadata, DDL
 script, or a combination of the two.
-| `metadata`, `script`, `metadata-then-script`, `script-then-metadata`
+|`metadata`, `script`, `metadata-then-script`, `script-then-metadata`
 
-| `javax.persistence.schema-generation.create-script-source`
- `javax.persistence.schema-generation.drop-script-source`
-| Specifies a `java.IO.Reader` configured for reading of the SQL script or a
+|`javax.persistence.schema-generation.create-script-source`
+`javax.persistence.schema-generation.drop-script-source`
+|Specifies a `java.IO.Reader` configured for reading of the SQL script or a
 string designating a file URL for the SQL script to create or delete
 database artifacts.
 |
 
-| `javax.persistence.sql-load-script-source`
-| Specifies a `java.IO.Reader` configured for reading of the SQL load script
+|`javax.persistence.sql-load-script-source`
+|Specifies a `java.IO.Reader` configured for reading of the SQL load script
 for database initialization or a string designating a file URL for the
 script.
 |
 |===
-+
+
 Refer to the http://jcp.org/en/jsr/detail?id=338[JPA 2.1 Specification]
 for a complete understanding of these properties.
-+
+
 In the application, the scripts are bundled in the WAR file in
 `META-INF' directory. As the location of these scripts is specified as a
 URL, the scripts may be loaded from outside the WAR file as well.
-+
+
 Feel free to open `create.sql', `drop.sql' and `load.sql' and read
 through the SQL scripts. The database schema is shown.
-+
-image::images/3.5-schema.png[title="Database schema"]
-+
+
+.Database schema
+image::3.5-schema.png[]
+
 This folder also contains `sales.csv' which carries some comma-separated
 data, and is used later in the application.
-+
+--
+
 . *JPA entities, Stateless EJBs, and REST endpoints*: Expand `Source
 Packages'. The package `org.javaee7.movieplex7.entities` contains the
 JPA entities corresponding to the database table definitions. Each JPA
 entity has several convenient `@NamedQuery` defined and uses Bean
 Validation constraints to enforce validation.
 +
+--
 The package `org.javaee7.movieplex7.rest` contains stateless EJBs
 corresponding to different JPA entities.
-+
+
 Each EJB has methods to perform CRUD operations on the JPA entity and
 convenience query methods. Each EJB is also EL-injectable (@Named) and
 published as a REST endpoint (@Path). The AplicationConfig class defines
 the base path of REST endpoint. The path for the REST endpoint is the
 same as the JPA entity class name.
-+
+
 The mapping between JPA entity classes, EJB classes, and the URI of the
 corresponding REST endpoint is shown.
-+
-[options="header"]
+
+[cols="1m,1m,1e"]
 |===
-| JPA Entity Class | EJB Class | RESTful Path
+|JPA Entity Class |EJB Class |RESTful Path
 
-| `Movie`
-| `MovieFacadeREST`
-| /webresources/movie
+|Movie
+|MovieFacadeREST
+|/webresources/movie
 
-| `Sales`
-| `SalesFacadeREST`
-| /webresources/sales
+|Sales
+|SalesFacadeREST
+|/webresources/sales
 
-| `ShowTiming`
-| `ShowTimingFacadeREST`
-| /webresources/showtiming
+|ShowTiming
+|ShowTimingFacadeREST
+|/webresources/showtiming
 
-| `Theater`
-| `TheaterFacadeREST`
-| /webresources/theater
+|Theater
+|TheaterFacadeREST
+|/webresources/theater
 
-| `Timeslot`
-| `TimeslotFacadeREST`
-| /webresources/timeslot
+|Timeslot
+|TimeslotFacadeREST
+|/webresources/timeslot
 |===
-+
+
 Feel free to browse through the code.
-+
+--
+
 . *JSF pages*: `WEB-INF/template.xhtml' defines the template of the
 web page and has a header, left navigation bar, and a main content
 section. `index.xhtml' uses this template and the EJBs to display the
 number of movies and theaters.
 +
+--
 Java EE 7 enables CDI discovery of beans by default. No `beans.xml' is
 required in `WEB-INF'. This allows all beans with bean defining
 annotation, i.e. either a bean with an explicit CDI scope or EJBs to be
 available for injection.
-+
+
 Note, `template.xhtml' is in `WEB-INF' folder as it allows the template
 to be accessible from the pages bundled with the application only. If it
 were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.
-+
+--
+
 . *Run the sample*: Right-click on the project and select `Run'.
 This will download all the maven dependencies on your machine, build a
 WAR file, deploy on 
@@ -272,24 +287,28 @@ http://localhost:8080/movieplex7[localhost:8080/movieplex7] in the
 default browser configured in NetBeans. Note that this could take a
 while if you have never built a Maven application on your machine.
 +
+--
 TIP: The project will show red squiggly lines in the source code indicating
 that the classes cannot be resolved. This is expected before the
 dependencies are downloaded. However these references will be resolved
 correctly after the dependencies are downloaded during project building.
-+
+
 During the first run, the IDE will ask you to select a deployment server.
 ifdef::server-wildfly[]
 Choose the configured WildFly server and click on `OK'.
-+
-image::images/3.6-wildfly-server.png[title="WildFly deployment server"]
+
+.WildFly deployment server
+image::3.6-wildfly-server.png[]
 endif::server-wildfly[]
 ifdef::server-glassfish[]
 Choose the configured GlassFish server and click on `OK'.
-+
-image::images/3.6-glassfish-server.png[title="GlassFish server"]
-endif::server-glassfish[]
-+
-The output looks like as shown.
-+
-image::images/3.8-first-page.png[title="Application main page"]
 
+.GlassFish server
+image::3.6-glassfish-server.png[]
+endif::server-glassfish[]
+
+The output looks like as shown.
+
+.Application main page
+image::3.8-first-page.png[]
+--
