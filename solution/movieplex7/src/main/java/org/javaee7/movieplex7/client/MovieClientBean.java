@@ -44,6 +44,7 @@ import javax.annotation.PreDestroy;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -64,12 +65,20 @@ public class MovieClientBean {
     
     Client client;
     WebTarget target;
+    
+    @Inject HttpServletRequest httpServletRequest;
 
     @PostConstruct
     public void init() {
         client = ClientBuilder.newClient();
         target = client
-                .target("http://localhost:8080/movieplex7/webresources/movie/");
+        .target("http://" +
+                httpServletRequest.getLocalName() +
+                ":" +
+                httpServletRequest.getLocalPort() +
+                "/" +
+                httpServletRequest.getContextPath() +
+                "/webresources/movie/");
     }
 
     @PreDestroy
