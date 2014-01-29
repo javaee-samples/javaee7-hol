@@ -18,14 +18,14 @@ content there.
 unzipped directory, and click on `Open Project'. The project structure
 is shown.
 +
---
 .Project structure in NetBeans
 image::3.2-project-structure.png[]
 
 . Maven Coordinates: Expand `Project Files' and double click on
 `pom.xml'. In the `pom.xml', the Java EE 7 API is specified as a
 <dependency>:
-
++
+--
 [source,xml]
 <dependencies>
     <dependency>
