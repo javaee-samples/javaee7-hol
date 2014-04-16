@@ -10,7 +10,7 @@
 <firstname>Arun</firstname>
 
 <surname>Gupta</surname>
-<email>arungupta@redhat.com</email>
+<email>https://twitter.com/arungupta[@arungupta]</email>
 </author>
 
 <authorinitials>AG</authorinitials>
@@ -82,11 +82,11 @@ using the following Java EE 7 technologies:</simpara>
 <ulink url="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</ulink>.</simpara>
 </listitem>
 <listitem>
-<simpara><emphasis role="strong">Application Server</emphasis>: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
+<simpara><emphasis role="strong">Application Server</emphasis>: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provides instructions for
 WildFly 8.</simpara>
 </listitem>
 <listitem>
-<simpara><emphasis role="strong">IDE</emphasis>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
+<simpara><emphasis role="strong">IDE</emphasis>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
 NetBeans 8.</simpara>
 <simpara>Download &#8220;All&#8221; or &#8220;Java EE&#8221; version from
 <ulink url="http://netbeans.org/downloads/">http://netbeans.org/downloads/</ulink>. A
@@ -265,16 +265,15 @@ platform.</simpara>
 <simpara>While you are copy/pasting the code from this document into NetBeans,
 here are couple of tips that will be really useful and make your
 experience enjoyable!</simpara>
-<itemizedlist>
+<variablelist>
+<varlistentry>
+<term>Source Code Formatting</term>
 <listitem>
 <simpara>NetBeans provides capability to neatly format the source code
 following conventions. This can be done for any type of source code,
 whether its XML or Java or something else. It is highly recommended to
 use this functionality after the code is copy/pasted from this document
 to the editor. This keeps the code legible.</simpara>
-</listitem>
-</itemizedlist>
-
 <simpara>This functionality can be accessed by right-clicking in the editor pane
 and selecting “Format” as shown.</simpara>
 <figure>
@@ -319,15 +318,15 @@ shortcuts:</simpara>
       
       <row>
         
-        <entry align="left" valign="top"><simpara>Ctrl + Shift + F</simpara></entry>
+        <entry align="left" valign="top"><simpara><keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>F</keycap></keycombo></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>Mac</simpara></entry>
+        <entry align="left" valign="top"><simpara>OSX</simpara></entry>
         
       </row>
       
       <row>
         
-        <entry align="left" valign="top"><simpara>Alt + Shift + F</simpara></entry>
+        <entry align="left" valign="top"><simpara><keycombo><keycap>Alt</keycap><keycap>Shift</keycap><keycap>F</keycap></keycombo></simpara></entry>
         
         <entry align="left" valign="top"><simpara>Windows</simpara></entry>
         
@@ -335,7 +334,7 @@ shortcuts:</simpara>
       
       <row>
         
-        <entry align="left" valign="top"><simpara>Alt + Shift + F</simpara></entry>
+        <entry align="left" valign="top"><simpara><keycombo><keycap>Alt</keycap><keycap>Shift</keycap><keycap>F</keycap></keycombo></simpara></entry>
         
         <entry align="left" valign="top"><simpara>Linux</simpara></entry>
         
@@ -346,15 +345,15 @@ shortcuts:</simpara>
   </tgroup>
 </informaltable>
 
-<itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Automatic Imports</term>
 <listitem>
 <simpara>Copy/pasting the Java code from this document in NetBeans editor does
 not auto-import the classes. This is required to be done manually in
 order for the classes to compile. This can be fixed for each missing
 import statement by clicking on the yellow bulb shown in the side bar.</simpara>
-</listitem>
-</itemizedlist>
-
 <figure>
 <title>ServerEndpoint import</title>
   <mediaobject>
@@ -409,15 +408,15 @@ shortcuts:</simpara>
       
       <row>
         
-        <entry align="left" valign="top"><simpara>Command + Shift + I</simpara></entry>
+        <entry align="left" valign="top"><simpara><keycombo><keycap>Command</keycap><keycap>Shift</keycap><keycap>I</keycap></keycombo></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>Mac</simpara></entry>
+        <entry align="left" valign="top"><simpara>OSX</simpara></entry>
         
       </row>
       
       <row>
         
-        <entry align="left" valign="top"><simpara>Ctrl + Shift + I</simpara></entry>
+        <entry align="left" valign="top"><simpara><keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>I</keycap></keycombo></simpara></entry>
         
         <entry align="left" valign="top"><simpara>Windows</simpara></entry>
         
@@ -425,7 +424,7 @@ shortcuts:</simpara>
       
       <row>
         
-        <entry align="left" valign="top"><simpara>Ctrl + Shift + I</simpara></entry>
+        <entry align="left" valign="top"><simpara><keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>I</keycap></keycombo></simpara></entry>
         
         <entry align="left" valign="top"><simpara>Linux</simpara></entry>
         
@@ -440,6 +439,10 @@ shortcuts:</simpara>
 class is available to import from multiple packages. If multiple
 packages are available then specific packages to import from are clearly
 marked in the document.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+
 </section>
 <section id="_estimated_time">
 <title>Estimated Time</title>
@@ -742,7 +745,7 @@ to the database artifacts.</simpara></entry>
       <row>
         
         <entry align="left" valign="top"><simpara><literal>javax.persistence.schema-generation.create-source</literal>
- <literal>javax.persistence.schema-generation.drop-source</literal></simpara></entry>
+<literal>javax.persistence.schema-generation.drop-source</literal></simpara></entry>
         
         <entry align="left" valign="top"><simpara>Specifies whether the creation or deletion of database artifacts is to
 occur on the basis of the object/relational mapping metadata, DDL
@@ -755,7 +758,7 @@ script, or a combination of the two.</simpara></entry>
       <row>
         
         <entry align="left" valign="top"><simpara><literal>javax.persistence.schema-generation.create-script-source</literal>
- <literal>javax.persistence.schema-generation.drop-script-source</literal></simpara></entry>
+<literal>javax.persistence.schema-generation.drop-script-source</literal></simpara></entry>
         
         <entry align="left" valign="top"><simpara>Specifies a <literal>java.IO.Reader</literal> configured for reading of the SQL script or a
 string designating a file URL for the SQL script to create or delete
@@ -851,7 +854,7 @@ corresponding REST endpoint is shown.</simpara>
         
         <entry align="left" valign="top"><simpara><literal>MovieFacadeREST</literal></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>/webresources/movie</simpara></entry>
+        <entry align="left" valign="top"><simpara><emphasis>/webresources/movie</emphasis></simpara></entry>
         
       </row>
       
@@ -861,7 +864,7 @@ corresponding REST endpoint is shown.</simpara>
         
         <entry align="left" valign="top"><simpara><literal>SalesFacadeREST</literal></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>/webresources/sales</simpara></entry>
+        <entry align="left" valign="top"><simpara><emphasis>/webresources/sales</emphasis></simpara></entry>
         
       </row>
       
@@ -871,7 +874,7 @@ corresponding REST endpoint is shown.</simpara>
         
         <entry align="left" valign="top"><simpara><literal>ShowTimingFacadeREST</literal></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>/webresources/showtiming</simpara></entry>
+        <entry align="left" valign="top"><simpara><emphasis>/webresources/showtiming</emphasis></simpara></entry>
         
       </row>
       
@@ -881,7 +884,7 @@ corresponding REST endpoint is shown.</simpara>
         
         <entry align="left" valign="top"><simpara><literal>TheaterFacadeREST</literal></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>/webresources/theater</simpara></entry>
+        <entry align="left" valign="top"><simpara><emphasis>/webresources/theater</emphasis></simpara></entry>
         
       </row>
       
@@ -891,7 +894,7 @@ corresponding REST endpoint is shown.</simpara>
         
         <entry align="left" valign="top"><simpara><literal>TimeslotFacadeREST</literal></simpara></entry>
         
-        <entry align="left" valign="top"><simpara>/webresources/timeslot</simpara></entry>
+        <entry align="left" valign="top"><simpara><emphasis>/webresources/timeslot</emphasis></simpara></entry>
         
       </row>
       
@@ -1043,7 +1046,7 @@ The second parameter, <literal>client</literal>, defines the other end of the We
 connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.</simpara>
 <simpara>Resolve the imports by right-clicking in the editor and selecting &#8216;Fix
-Imports&#8217; or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
+Imports&#8217; or (<keycombo><keycap>Command</keycap><keycap>Shift</keycap><keycap>I</keycap></keycombo> shortcut on OSX or <keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>I</keycap></keycombo> on
 Windows).</simpara>
 <warning>
 <simpara>Make sure to pick <literal>java.websocket.Session</literal> for resolving imports. This is not the default option shown by NetBeans.</simpara>
@@ -1891,7 +1894,7 @@ on &#8216;Finish&#8217;.</simpara>
 <simpara>Add the following field:</simpara>
 <programlisting language="java" linenumbering="unnumbered">int movieId;</programlisting>
 <simpara>Add getters/setters by right-clicking on the editor pane and selecting
-&#8216;Insert Code&#8217; (Ctrl + I shortcut on Mac). Select the field and click on
+&#8216;Insert Code&#8217; (<keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo> shortcut on OSX). Select the field and click on
 &#8216;Generate&#8217;.</simpara>
 <simpara>Add <literal>@Named</literal> and <literal>@SessionScoped</literal> class-level annotations and implements
 <literal>Serializable</literal>.</simpara>
@@ -1906,7 +1909,7 @@ on &#8216;Finish&#8217;.</simpara>
         value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml"&gt;
         Movies
     &lt;/h:outputLink&gt;</programlisting>
-<simpara>Running the project (Fn + F6 shortcut on Mac) and clicking on &#8216;Movies&#8217;
+<simpara>Running the project (<keycombo><keycap>Fn</keycap><keycap>F6</keycap></keycombo> shortcut on OSX) and clicking on &#8216;Movies&#8217;
 in the left navigation bar shows the output as shown.</simpara>
 <figure>
 <title>List of movies output page</title>
@@ -2436,7 +2439,7 @@ specified using message attribute.</simpara>
 <simpara>This could be thought as conveying the customer identifier and the
 points accrued by that customer.</simpara>
 <simpara>Generate getter/setters for this field. Right-click in the editor pane,
-select &#8216;Insert Code&#8217; (Ctrl + I shortcut on Mac), select &#8216;Getter and
+select &#8216;Insert Code&#8217; (<keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo> shortcut on OSX), select &#8216;Getter and
 Setter&#8217;, select the field, and click on &#8216;Generate&#8217;.</simpara>
 </listitem>
 <listitem>
@@ -3316,7 +3319,7 @@ node, and select
   </mediaobject>
 </figure>
 
-<simpara>and click on &#8216;OK&#8217;.</simpara>
+<simpara>and click on <guibutton>OK</guibutton>.</simpara>
 </listitem>
 </orderedlist>
 </section>
@@ -3338,7 +3341,7 @@ node, and select
 <simpara>The exact plugin version and the date may be different.</simpara>
 </listitem>
 <listitem>
-<simpara>Click on &#8216;Install&#8217; button, &#8216;Next &gt;&#8217;, accept the license agreement by clicking on the checkbox, and click on &#8216;Install&#8217; button to install the plugin. Click on &#8216;Finish&#8217; to restart the IDE and complete installation.</simpara>
+<simpara>Click the <guibutton>Install</guibutton> button, then <guibutton>Next &gt;</guibutton>, accept the license agreement by clicking on the checkbox, then click the <guibutton>Install</guibutton> button to install the plugin. Click the <guibutton>Finish</guibutton> button to restart the IDE and complete installation.</simpara>
 </listitem>
 </orderedlist>
 </section>
@@ -3363,7 +3366,7 @@ node, and select
 </listitem>
 <listitem>
 <simpara>Select &#8216;WildFly Application Server&#8217; in the Add Server Instance wizard, set the
-name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</simpara>
+name to &#8216;WildFly 8&#8217; and click <guibutton>Next &gt;</guibutton>.</simpara>
 <figure>
 <title>Add WildFly instance to NetBeans</title>
   <mediaobject>
@@ -3376,8 +3379,8 @@ name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</simpara>
 
 </listitem>
 <listitem>
-<simpara>Click on &#8216;Browse&#8217; for &#8216;Server Location&#8217; and select the directory that got created
-when WildFly archive was unzipped. Click on &#8216;Browse&#8217; for &#8216;Server Configuration&#8217; and
+<simpara>Click on <guibutton>Browse&#8230;</guibutton> for &#8216;Server Location&#8217; and select the directory that got created
+when WildFly archive was unzipped. Click on <guibutton>Browse&#8230;</guibutton> for &#8216;Server Configuration&#8217; and
 select the &#8216;standalone/configuration/standalone-full.xml&#8217; file in the unzipped WildFly
 archive.</simpara>
 <figure>
@@ -3390,7 +3393,7 @@ archive.</simpara>
   </mediaobject>
 </figure>
 
-<simpara>Click on &#8216;Next&#8217; and then &#8216;Finish&#8217;. The &#8216;Services&#8217; should show the WildFly instance.</simpara>
+<simpara>Click on <guibutton>Next</guibutton> and then <guibutton>Finish</guibutton>. The &#8216;Services&#8217; should show the WildFly instance.</simpara>
 <figure>
 <title>WildFly instance in NetBeans Services tab</title>
   <mediaobject>
@@ -3431,7 +3434,7 @@ archive.</simpara>
 <simpara>First of all, you should specify the JDK that you are going to use. In IntelliJ IDEA, this is done in the <emphasis role="strong">Project Structure</emphasis> dialog:</simpara>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>Start IntelliJ IDEA. If, as a result, a project opens, close the project (<emphasis role="strong">File | Close Project</emphasis>).</simpara>
+<simpara>Start IntelliJ IDEA. If, as a result, a project opens, close the project (<menuchoice><guimenu>File</guimenu> <guimenuitem>Close Project</guimenuitem></menuchoice>).</simpara>
 </listitem>
 <listitem>
 <simpara>On the Welcome screen, under <emphasis role="strong">Quick Start</emphasis>, click <emphasis role="strong">Configure</emphasis>.</simpara>
@@ -3450,7 +3453,12 @@ archive.</simpara>
 <simpara>Under <emphasis role="strong">Configure</emphasis>, click <emphasis role="strong">Project Defaults</emphasis>, and then, under <emphasis role="strong">Project Defaults</emphasis>, click <emphasis role="strong">Project Structure</emphasis>.</simpara>
 </listitem>
 <listitem>
-<simpara>In the left-hand pane of the <emphasis role="strong">Project Structure</emphasis> dialog, under <emphasis role="strong">Platform Settings</emphasis>, select <emphasis role="strong">SDKs</emphasis>. Click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select <emphasis role="strong">JDK</emphasis>.</simpara>
+<simpara>In the left-hand pane of the <emphasis role="strong">Project Structure</emphasis> dialog, under <emphasis role="strong">Platform Settings</emphasis>, select <emphasis role="strong">SDKs</emphasis>. Click <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-plus-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-plus-icon</phrase></textobject>
+</inlinemediaobject> and select <emphasis role="strong">JDK</emphasis>.</simpara>
 <figure>
 <title>Add JDK in IntelliJ IDEA</title>
   <mediaobject>
@@ -3463,7 +3471,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Select Home Directory for JDK</emphasis> dialog, select the folder in which the JDK that you are going to use is installed, and click <emphasis role="strong">OK</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">Select Home Directory for JDK</emphasis> dialog, select the folder in which the JDK that you are going to use is installed, and click <guibutton>OK</guibutton>.</simpara>
 <figure>
 <title>JDK home in IntelliJ IDEA</title>
   <mediaobject>
@@ -3476,7 +3484,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Project Structure</emphasis> dialog, click <emphasis role="strong">Apply</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">Project Structure</emphasis> dialog, click <guibutton>Apply</guibutton>.</simpara>
 <figure>
 <title>JDK defined in IntelliJ IDEA</title>
   <mediaobject>
@@ -3503,22 +3511,32 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>Click <emphasis role="strong">OK</emphasis>.</simpara>
+<simpara>Click <guibutton>OK</guibutton>.</simpara>
 </listitem>
 </orderedlist>
 </section>
 <section id="define-wildfly-idea">
 <title>Define WildFly</title>
-<simpara>Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the <emphasis role="strong">Settings</emphasis> dialog. (On Mac OS, this dialog is called <emphasis role="strong">Preferences</emphasis>.)</simpara>
+<simpara>Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the <emphasis role="strong">Settings</emphasis> dialog. (On OSX, this dialog is called <emphasis role="strong">Preferences</emphasis>.)</simpara>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>On the Welcome screen, to the left of <emphasis role="strong">Project Defaults</emphasis>, click <emphasis role="strong">Back</emphasis> image::images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].</simpara>
+<simpara>On the Welcome screen, to the left of <emphasis role="strong">Project Defaults</emphasis>, click <emphasis role="strong">Back</emphasis> <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-back-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-back-icon</phrase></textobject>
+</inlinemediaobject>.</simpara>
 </listitem>
 <listitem>
 <simpara>Under <emphasis role="strong">Configure</emphasis>, click <emphasis role="strong">Settings</emphasis>.</simpara>
 </listitem>
 <listitem>
-<simpara>In the left-hand pane of the <emphasis role="strong">Settings</emphasis> (<emphasis role="strong">Preferences</emphasis>) dialog, under <emphasis role="strong">IDE Settings</emphasis>, select <emphasis role="strong">Application Servers</emphasis>. On the <emphasis role="strong">Application Servers</emphasis> page, click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select <emphasis role="strong">JBoss Server</emphasis>. (WildFly is a server from the "JBoss family".)</simpara>
+<simpara>In the left-hand pane of the <emphasis role="strong">Settings</emphasis> (<emphasis role="strong">Preferences</emphasis>) dialog, under <emphasis role="strong">IDE Settings</emphasis>, select <emphasis role="strong">Application Servers</emphasis>. On the <emphasis role="strong">Application Servers</emphasis> page, click <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-plus-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-plus-icon</phrase></textobject>
+</inlinemediaobject> and select <emphasis role="strong">JBoss Server</emphasis>. (WildFly is a server from the "JBoss family".)</simpara>
 <figure>
 <title>Add WildFly in IntelliJ IDEA</title>
   <mediaobject>
@@ -3531,7 +3549,12 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">JBoss Server</emphasis> dialog, click image::images/i13-ellipsis-button.png[title="Ellipsis button in IntelliJ IDEA"] to the right of the <emphasis role="strong">JBoss Home</emphasis> field.</simpara>
+<simpara>In the <emphasis role="strong">JBoss Server</emphasis> dialog, click <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-ellipsis-button.png"/>
+  </imageobject>
+  <textobject><phrase>i13-ellipsis-button</phrase></textobject>
+</inlinemediaobject> to the right of the <emphasis role="strong">JBoss Home</emphasis> field.</simpara>
 <figure>
 <title>WildFly server dialog in IntelliJ IDEA</title>
   <mediaobject>
@@ -3544,7 +3567,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">JBoss Home Directory</emphasis> dialog, select the folder in which you have the WildFly server installed, and click <emphasis role="strong">OK</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">JBoss Home Directory</emphasis> dialog, select the folder in which you have the WildFly server installed, and click <guibutton>OK</guibutton>.</simpara>
 <figure>
 <title>WildFly home in IntelliJ IDEA</title>
   <mediaobject>
@@ -3570,7 +3593,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Settings</emphasis> (<emphasis role="strong">Preferences</emphasis>) dialog, click <emphasis role="strong">OK</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">Settings</emphasis> (<emphasis role="strong">Preferences</emphasis>) dialog, click <guibutton>OK</guibutton>.</simpara>
 <figure>
 <title>WildFly defined in IntelliJ IDEA</title>
   <mediaobject>
@@ -3589,7 +3612,12 @@ archive.</simpara>
 <simpara>The sample application is supplied as a Maven project with an associated <ulink url="http://maven.apache.org/pom.html">pom.xml</ulink> file that contains all the necessary project definitions. The corresponding IntelliJ IDEA project in such a case can be created by simply "opening" the <literal>pom.xml</literal> file. (Obviously, this isn&#8217;t the only way to create projects in IDEA. You can create projects for existing collections of source files, import Eclipse and Flash Builder projects, and Gradle build scripts. Finally, you can create projects from scratch.)</simpara>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>On the Welcome screen, to the left of <emphasis role="strong">Configure</emphasis>, click <emphasis role="strong">Back</emphasis> image::images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].</simpara>
+<simpara>On the Welcome screen, to the left of <emphasis role="strong">Configure</emphasis>, click <emphasis role="strong">Back</emphasis> <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-back-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-back-icon</phrase></textobject>
+</inlinemediaobject>.</simpara>
 </listitem>
 <listitem>
 <simpara>Under <emphasis role="strong">Quick Start</emphasis>, click <emphasis role="strong">Open Project</emphasis>.</simpara>
@@ -3605,7 +3633,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Open Project</emphasis> dialog, select the <literal>pom.xml</literal> file associated with the sample application, and click <emphasis role="strong">OK</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">Open Project</emphasis> dialog, select the <literal>pom.xml</literal> file associated with the sample application, and click <guibutton>OK</guibutton>.</simpara>
 <figure>
 <title>Select pom in IntelliJ IDEA</title>
   <mediaobject>
@@ -3629,7 +3657,12 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>Click <emphasis role="strong">Configure</emphasis> in the message box. (If by now the message has disappeared, click image::images/i13-exclamation-mark-icon.png[title="Mark icon in IntelliJ IDEA"] on the Status bar.</simpara>
+<simpara>Click <emphasis role="strong">Configure</emphasis> in the message box. (If by now the message has disappeared, click <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-exclamation-mark-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-exclamation-mark-icon</phrase></textobject>
+</inlinemediaobject> on the Status bar.</simpara>
 <figure>
 <title>JPA detected in status bar in IntelliJ IDEA</title>
   <mediaobject>
@@ -3653,7 +3686,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Setup Frameworks</emphasis> dialog, just click <emphasis role="strong">OK</emphasis>. (By doing so you confirm that the file <literal>persistence.xml</literal> found in the project belongs to the JPA framework.)</simpara>
+<simpara>In the <emphasis role="strong">Setup Frameworks</emphasis> dialog, just click <guibutton>OK</guibutton>. (By doing so you confirm that the file <literal>persistence.xml</literal> found in the project belongs to the JPA framework.)</simpara>
 <figure>
 <title>Setup frameworks in IntelliJ IDEA</title>
   <mediaobject>
@@ -3683,7 +3716,7 @@ archive.</simpara>
 <simpara>Applications in IntelliJ IDEA are run and debugged according to what is called run/debug configurations. Now we are going to create the configuration for running and debugging the sample application in the context of WildFly.</simpara>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>In the main menu, select <emphasis role="strong">Run | Edit Configurations</emphasis>.</simpara>
+<simpara>In the main menu, select <menuchoice><guimenu>Run</guimenu> <guimenuitem>Edit Configurations&#8230;</guimenuitem></menuchoice>.</simpara>
 <figure>
 <title>Edit configurations in IntelliJ IDEA</title>
   <mediaobject>
@@ -3696,7 +3729,12 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Run/Debug Configurations</emphasis> dialog, click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"], select <emphasis role="strong">JBoss Server</emphasis>, and then select <emphasis role="strong">Local</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">Run/Debug Configurations</emphasis> dialog, click <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-plus-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-plus-icon</phrase></textobject>
+</inlinemediaobject>, select <emphasis role="strong">JBoss Server</emphasis>, and then select <emphasis role="strong">Local</emphasis>.</simpara>
 <figure>
 <title>WildFly configuration in IntelliJ IDEA</title>
   <mediaobject>
@@ -3713,7 +3751,7 @@ archive.</simpara>
 <simpara>Change the name of the run/debug configuration to <literal>WildFly8</literal> (optional).</simpara>
 </listitem>
 <listitem>
-<simpara>In the lower part of the dialog, within the line <emphasis>Warning: No artifacts marked for deployment</emphasis>, click <emphasis role="strong">Fix</emphasis> and select <emphasis role="strong">movieplex7:war exploded</emphasis>. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (<emphasis>movieplex7:war</emphasis> and <emphasis>movieplex7:war exploded</emphasis>). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. <emphasis>movieplex7:war</emphasis> corresponds to a Web archive (WAR). <emphasis>movieplex7:war exploded</emphasis> corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)</simpara>
+<simpara>In the lower part of the dialog, within the line <emphasis>Warning: No artifacts marked for deployment</emphasis>, click <guibutton>Fix</guibutton> and select <emphasis role="strong">movieplex7:war exploded</emphasis>. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (<emphasis>movieplex7:war</emphasis> and <emphasis>movieplex7:war exploded</emphasis>). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. <emphasis>movieplex7:war</emphasis> corresponds to a Web archive (WAR). <emphasis>movieplex7:war exploded</emphasis> corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)</simpara>
 <figure>
 <title>Fixing deployment warning in IntelliJ IDEA</title>
   <mediaobject>
@@ -3726,7 +3764,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>Within the line <emphasis>Error: Artifact 'movieplex7: exploded' has invalid extension</emphasis>, click <emphasis role="strong">Fix</emphasis>.</simpara>
+<simpara>Within the line <emphasis>Error: Artifact 'movieplex7: exploded' has invalid extension</emphasis>, click <guibutton>Fix</guibutton>.</simpara>
 <figure>
 <title>Invalid extension error message in IntelliJ IDEA</title>
   <mediaobject>
@@ -3739,7 +3777,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Project Structure</emphasis> dialog, add <literal>.war</literal> at the end of the output directory path, and click <emphasis role="strong">OK</emphasis>. (For the servers of the JBoss family, the application root directory has to have <literal>.war</literal> at the end.)</simpara>
+<simpara>In the <emphasis role="strong">Project Structure</emphasis> dialog, add <literal>.war</literal> at the end of the output directory path, and click <guibutton>OK</guibutton>. (For the servers of the JBoss family, the application root directory has to have <literal>.war</literal> at the end.)</simpara>
 <figure>
 <title>Extension error fix in IntelliJ IDEA</title>
   <mediaobject>
@@ -3752,7 +3790,7 @@ archive.</simpara>
 
 </listitem>
 <listitem>
-<simpara>In the <emphasis role="strong">Run/Debug Configurations</emphasis> dialog, switch to the <emphasis role="strong">Server</emphasis> tab. In the field for the application starting page URL, replace <literal>http://localhost:8080/movieplex7-1/</literal> with <literal>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</literal> and click <emphasis role="strong">OK</emphasis>.</simpara>
+<simpara>In the <emphasis role="strong">Run/Debug Configurations</emphasis> dialog, switch to the <emphasis role="strong">Server</emphasis> tab. In the field for the application starting page URL, replace <literal>http://localhost:8080/movieplex7-1/</literal> with <literal>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</literal> and click <guibutton>OK</guibutton>.</simpara>
 <figure>
 <title>Fixing application URL in IntelliJ IDEA</title>
   <mediaobject>
@@ -3769,7 +3807,12 @@ archive.</simpara>
 </section>
 <section id="run-app-wildfly-idea">
 <title>Run the application</title>
-<simpara>In the <emphasis role="strong">Application Servers</emphasis> tool window, select the server run/debug configuration (<emphasis>WildFly8 [local]</emphasis>) and click <emphasis role="strong">Run</emphasis> image::images/i13-run-icon.png[title="Run icon in IntelliJ IDEA"].</simpara>
+<simpara>In the <emphasis role="strong">Application Servers</emphasis> tool window, select the server run/debug configuration (<emphasis>WildFly8 [local]</emphasis>) and click <emphasis role="strong">Run</emphasis> <inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/i13-run-icon.png"/>
+  </imageobject>
+  <textobject><phrase>i13-run-icon</phrase></textobject>
+</inlinemediaobject>.</simpara>
 <figure>
 <title>Run WildFly in IntelliJ IDEA</title>
   <mediaobject>

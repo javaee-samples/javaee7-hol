@@ -1,5 +1,5 @@
 = Java EE 7 Hands-on Lab
-Arun Gupta <arungupta@redhat.com>
+Arun Gupta <https://twitter.com/arungupta[@arungupta]>
 v2.0, Jan 28, 2014
 :doctype: book
 :toc:

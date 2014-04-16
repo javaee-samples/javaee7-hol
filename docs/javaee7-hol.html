@@ -377,12 +377,101 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .literalblock > .content > pre, .listingblock > .content > pre { -webkit-border-radius: 0; border-radius: 0; }
 
 </style>
+<style>
+/* Foundation stylesheet for CodeRay (to match GitHub theme) | MIT License | http://foundation.zurb.com */
+table.CodeRay { border-collapse: collapse; padding: 2px; margin-bottom: 0; border: 0; background: transparent; }
+table.CodeRay td { padding: 0 .5em; vertical-align: top; }
+table.CodeRay td.line-numbers { text-align: right; color: #999; border-right: 1px solid #e5e5e5; padding-left: 0; }
+span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inline-block; margin-right: 0.5em; padding-right: 0.5em; }
+.CodeRay td.line-numbers strong, .CodeRay span.line-numbers strong { font-weight: normal; }
+.CodeRay .debug { color: white !important; background: blue !important; }
+.CodeRay .annotation { color: #007; }
+.CodeRay .attribute-name { color: #f08; }
+.CodeRay .attribute-value { color: #700; }
+.CodeRay .binary { color: #509; }
+.CodeRay .comment  { color: #999; font-style: italic; }
+.CodeRay .char { color: #04D; }
+.CodeRay .char .content { color: #04D; }
+.CodeRay .char .delimiter { color: #039; }
+.CodeRay .class { color: #458; }
+.CodeRay .complex { color: #A08; }
+.CodeRay .constant { color: teal; }
+.CodeRay .color { color: #0A0; }
+.CodeRay .class-variable { color: #369; }
+.CodeRay .decorator { color: #B0B; }
+.CodeRay .definition { color: #099; }
+.CodeRay .directive { color: #088; }
+.CodeRay .delimiter { color: black; }
+.CodeRay .doc { color: #970; }
+.CodeRay .doctype { color: #34b; }
+.CodeRay .doc-string { color: #D42; }
+.CodeRay .escape  { color: #666; }
+.CodeRay .entity { color: #800; }
+.CodeRay .error { color: #808; }
+.CodeRay .exception { color: #C00; }
+.CodeRay .filename { color: #099; }
+.CodeRay .function { color: #900; }
+.CodeRay .global-variable { color: teal; }
+.CodeRay .hex { color: #058; }
+.CodeRay .integer  { color: #099; }
+.CodeRay .include { color: #B44; }
+.CodeRay .inline { color: black; }
+.CodeRay .inline .inline { background: #ccc; }
+.CodeRay .inline .inline .inline { background: #bbb; }
+.CodeRay .inline .inline-delimiter { color: #D14; }
+.CodeRay .inline-delimiter { color: #D14; }
+.CodeRay .important { color: #f00; }
+.CodeRay .interpreted { color: #B2B; }
+.CodeRay .instance-variable { color: teal; }
+.CodeRay .label { color: #970; }
+.CodeRay .local-variable { color: #963; }
+.CodeRay .octal { color: #40E; }
+.CodeRay .predefined { color: #369; }
+.CodeRay .preprocessor { color: #579; }
+.CodeRay .pseudo-class { color: #00C; }
+.CodeRay .predefined-type { color: #074; }
+.CodeRay .reserved, .keyword  { color: #000; }
+.CodeRay .key { color: #808; }
+.CodeRay .key .delimiter { color: #606; }
+.CodeRay .key .char { color: #80f; }
+.CodeRay .value { color: #088; }
+.CodeRay .regexp { background-color: #fff0ff; }
+.CodeRay .regexp .content { color: #808; }
+.CodeRay .regexp .delimiter { color: #404; }
+.CodeRay .regexp .modifier { color: #C2C; }
+.CodeRay .regexp .function  { color: #404; font-weight: bold; }
+.CodeRay .string { color: #D20; }
+.CodeRay .string .string { }
+.CodeRay .string .string .string { background-color: #ffd0d0; }
+.CodeRay .string .content { color: #D14; }
+.CodeRay .string .char { color: #D14; }
+.CodeRay .string .delimiter { color: #D14; }
+.CodeRay .shell { color: #D14; }
+.CodeRay .shell .content { }
+.CodeRay .shell .delimiter { color: #D14; }
+.CodeRay .symbol { color: #990073; }
+.CodeRay .symbol .content { color: #A60; }
+.CodeRay .symbol .delimiter { color: #630; }
+.CodeRay .tag, .CodeRay .attribute-name { color: #070; }
+.CodeRay .tag-special { color: #D70; }
+.CodeRay .type { color: #339; }
+.CodeRay .variable  { color: #036; }
+.CodeRay .insert { background: #afa; }
+.CodeRay .delete { background: #faa; }
+.CodeRay .change { color: #aaf; background: #007; }
+.CodeRay .head { color: #f8f; background: #505; }
+.CodeRay .insert .insert { color: #080; }
+.CodeRay .delete .delete { color: #800; }
+.CodeRay .change .change { color: #66f; }
+.CodeRay .head .head { color: #f4f; }
+
+</style>
 </head>
-<body class="article">
+<body class="book">
 <div id="header">
 <h1>Java EE 7 Hands-on Lab</h1>
 <span id="author" class="author">Arun Gupta</span><br>
-<span id="email" class="email"><a href="mailto:arungupta@redhat.com">arungupta@redhat.com</a></span><br>
+<span id="email" class="email"><a href="https://twitter.com/arungupta">@arungupta</a></span><br>
 <span id="revnumber">version 2.0,</span>
 <span id="revdate">Jan 28, 2014</span>
 <div id="toc" class="toc">
@@ -510,11 +599,11 @@ using the following Java EE 7 technologies:</p>
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.</p>
 </li>
 <li>
-<p><strong>Application Server</strong>: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provide instructions for
+<p><strong>Application Server</strong>: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provides instructions for
 WildFly 8.</p>
 </li>
 <li>
-<p><strong>IDE</strong>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provide instructions for
+<p><strong>IDE</strong>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
 NetBeans 8.</p>
 <div class="paragraph">
 <p>Download &#8220;All&#8221; or &#8220;Java EE&#8221; version from
@@ -681,17 +770,17 @@ platform.</p>
 here are couple of tips that will be really useful and make your
 experience enjoyable!</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Source Code Formatting</dt>
+<dd>
 <p>NetBeans provides capability to neatly format the source code
 following conventions. This can be done for any type of source code,
 whether its XML or Java or something else. It is highly recommended to
 use this functionality after the code is copy/pasted from this document
 to the editor. This keeps the code legible.</p>
-</li>
-</ul>
-</div>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>This functionality can be accessed by right-clicking in the editor pane
 and selecting “Format” as shown.</p>
@@ -719,29 +808,30 @@ shortcuts:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OSX</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alt + Shift + F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd class="keyseq"><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></kbd></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alt + Shift + F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd class="keyseq"><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></kbd></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Linux</p></td>
 </tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Automatic Imports</dt>
+<dd>
 <p>Copy/pasting the Java code from this document in NetBeans editor does
 not auto-import the classes. This is required to be done manually in
 order for the classes to compile. This can be fixed for each missing
 import statement by clicking on the yellow bulb shown in the side bar.</p>
-</li>
-</ul>
-</div>
+<div class="openblock">
+<div class="content">
 <div class="imageblock">
 <div class="content">
 <img src="images/2.1-server-endpoint.png" alt="2.1 server endpoint">
@@ -775,15 +865,15 @@ shortcuts:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Command + Shift + I</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd class="keyseq"><kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OSX</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></kbd></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></kbd></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Linux</p></td>
 </tr>
 </tbody>
@@ -793,6 +883,11 @@ shortcuts:</p>
 class is available to import from multiple packages. If multiple
 packages are available then specific packages to import from are clearly
 marked in the document.</p>
+</div>
+</div>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -911,16 +1006,18 @@ is shown.</p>
 <p>Maven Coordinates: Expand &#8216;Project Files&#8217; and double click on
 &#8216;pom.xml&#8217;. In the &#8216;pom.xml&#8217;, the Java EE 7 API is specified as a
 &lt;dependency&gt;:</p>
+<div class="openblock">
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;javax&lt;/groupId&gt;
-        &lt;artifactId&gt;javaee-api&lt;/artifactId&gt;
-        &lt;version&gt;7.0&lt;/version&gt;
-        &lt;scope&gt;provided&lt;/scope&gt;
-    &lt;/dependency&gt;
-&lt;/dependencies&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;dependencies&gt;</span>
+    <span class="tag">&lt;dependency&gt;</span>
+        <span class="tag">&lt;groupId&gt;</span>javax<span class="tag">&lt;/groupId&gt;</span>
+        <span class="tag">&lt;artifactId&gt;</span>javaee-api<span class="tag">&lt;/artifactId&gt;</span>
+        <span class="tag">&lt;version&gt;</span>7.0<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
+    <span class="tag">&lt;/dependency&gt;</span>
+<span class="tag">&lt;/dependencies&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -969,12 +1066,16 @@ Platform, can be deployed on Web Profile.
 </tr>
 </table>
 </div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>Default Data Source</strong>: Expand &#8216;Other Sources&#8217;,
 &#8216;src/main/resources&#8217;, &#8216;META-INF&#8217;, and double-click on &#8216;persistence.xml&#8217;.
 By default, NetBeans opens the file in Design View. Click on &#8216;Source&#8217; tab
 to view the XML source.</p>
+<div class="openblock">
+<div class="content">
 <div class="imageblock">
 <div class="content">
 <img src="images/3.2-persistence-xml.png" alt="3.2 persistence xml">
@@ -986,42 +1087,42 @@ to view the XML source.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;persistence
-    version="2.1"
-    xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;
-    &lt;persistence-unit name="movieplex7PU" transaction-type="JTA"&gt;
-        &lt;!--
+<pre class="CodeRay"><code class="xml language-xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="tag">&lt;persistence</span>
+    <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">2.1</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://xmlns.jcp.org/xml/ns/persistence</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://xmlns.jcp.org/xml/ns/persistence</span>
+    <span class="content">http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;persistence-unit</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movieplex7PU</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">transaction-type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">JTA</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="comment">&lt;!--
             &lt;jta-data-source&gt;java:comp/DefaultDataSource&lt;/jta-data-source&gt;
-        --&gt;
-        &lt;properties&gt;
-            &lt;property
-                name="javax.persistence.schema-generation.database.action"
-                value="drop-and-create"/&gt;
-            &lt;property
-                name="javax.persistence.schema-generation.create-source"
-                value="script"/&gt;
-            &lt;property
-                name="javax.persistence.schema-generation.drop-source"
-                value="script"/&gt;
-            &lt;property
-                name="javax.persistence.schema-generation.drop-script-source"
-                value="META-INF/drop.sql"/&gt;
-            &lt;property
-                name="javax.persistence.sql-load-script-source"
-                value="META-INF/load.sql"/&gt;
-            &lt;property
-                name="eclipselink.deploy-on-startup"
-                value="true"/&gt;
-            &lt;property
-                name="eclipselink.logging.exceptions"
-                value="false"/&gt;
-        &lt;/properties&gt;
-    &lt;/persistence-unit&gt;
-&lt;/persistence&gt;</code></pre>
+        --&gt;</span>
+        <span class="tag">&lt;properties&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javax.persistence.schema-generation.database.action</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">drop-and-create</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javax.persistence.schema-generation.create-source</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">script</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javax.persistence.schema-generation.drop-source</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">script</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javax.persistence.schema-generation.drop-script-source</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">META-INF/drop.sql</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javax.persistence.sql-load-script-source</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">META-INF/load.sql</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">eclipselink.deploy-on-startup</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;property</span>
+                <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">eclipselink.logging.exceptions</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/properties&gt;</span>
+    <span class="tag">&lt;/persistence-unit&gt;</span>
+<span class="tag">&lt;/persistence&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1036,7 +1137,7 @@ under the JNDI name</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">java:comp/DefaultDataSource</code></pre>
+<pre class="CodeRay"><code class="java language-java">java:comp/DefaultDataSource</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1062,6 +1163,8 @@ the error shown below:</p>
 <p>This will get resolved when we run the application. Click on &#8216;OK&#8217; to
 dismiss the dialog.</p>
 </div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>Schema Generation:</strong> JPA 2.1 defines a new set of
@@ -1072,6 +1175,8 @@ required artifacts are generated either prior to application deployment
 or as part of <code>EntityManagerFactory</code> creation. This feature will allow
 your JPA domain object model to be directly generated in a database. The
 generated schema may need to be tuned for actual production environment.</p>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>The &#8220;persistence.xml&#8221; in the application has the following
 <code>javax.persistence.schema-generation.*</code> properties. Their meaning and
@@ -1099,7 +1204,7 @@ to the database artifacts.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-source</code>
- <code>javax.persistence.schema-generation.drop-source</code></p></td>
+<code>javax.persistence.schema-generation.drop-source</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies whether the creation or deletion of database artifacts is to
 occur on the basis of the object/relational mapping metadata, DDL
 script, or a combination of the two.</p></td>
@@ -1107,7 +1212,7 @@ script, or a combination of the two.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.persistence.schema-generation.create-script-source</code>
- <code>javax.persistence.schema-generation.drop-script-source</code></p></td>
+<code>javax.persistence.schema-generation.drop-script-source</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a <code>java.IO.Reader</code> configured for reading of the SQL script or a
 string designating a file URL for the SQL script to create or delete
 database artifacts.</p></td>
@@ -1145,6 +1250,8 @@ through the SQL scripts. The database schema is shown.</p>
 <p>This folder also contains &#8216;sales.csv&#8217; which carries some comma-separated
 data, and is used later in the application.</p>
 </div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>JPA entities, Stateless EJBs, and REST endpoints</strong>: Expand <code>Source
@@ -1152,6 +1259,8 @@ Packages'. The package `org.javaee7.movieplex7.entities</code> contains the
 JPA entities corresponding to the database table definitions. Each JPA
 entity has several convenient <code>@NamedQuery</code> defined and uses Bean
 Validation constraints to enforce validation.</p>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>The package <code>org.javaee7.movieplex7.rest</code> contains stateless EJBs
 corresponding to different JPA entities.</p>
@@ -1184,32 +1293,34 @@ corresponding REST endpoint is shown.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Movie</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MovieFacadeREST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/movie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>/webresources/movie</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Sales</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SalesFacadeREST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/sales</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>/webresources/sales</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ShowTiming</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ShowTimingFacadeREST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/showtiming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>/webresources/showtiming</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Theater</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TheaterFacadeREST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/theater</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>/webresources/theater</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Timeslot</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TimeslotFacadeREST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/webresources/timeslot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>/webresources/timeslot</em></p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>Feel free to browse through the code.</p>
+</div>
+</div>
 </div>
 </li>
 <li>
@@ -1217,6 +1328,8 @@ corresponding REST endpoint is shown.</p>
 web page and has a header, left navigation bar, and a main content
 section. &#8216;index.xhtml&#8217; uses this template and the EJBs to display the
 number of movies and theaters.</p>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>Java EE 7 enables CDI discovery of beans by default. No &#8216;beans.xml&#8217; is
 required in &#8216;WEB-INF&#8217;. This allows all beans with bean defining
@@ -1230,6 +1343,8 @@ were bundled with rest of the pages then it would be accessible outside
 the application and thus allowing other external pages to use it as
 well.</p>
 </div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>Run the sample</strong>: Right-click on the project and select &#8216;Run&#8217;.
@@ -1240,6 +1355,8 @@ WildFly 8
 <a href="http://localhost:8080/movieplex7">localhost:8080/movieplex7</a> in the
 default browser configured in NetBeans. Note that this could take a
 while if you have never built a Maven application on your machine.</p>
+<div class="openblock">
+<div class="content">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1273,6 +1390,8 @@ Choose the configured WildFly server and click on &#8216;OK&#8217;.</p>
 <img src="images/3.8-first-page.png" alt="3.8 first page">
 </div>
 <div class="title">Figure 12. Application main page</div>
+</div>
+</div>
 </div>
 </li>
 </ol>
@@ -1338,25 +1457,25 @@ Give the class name as &#8216;ChatServer&#8217;, package as
 <p>Change the class such that it looks like:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@ServerEndpoint("/websocket")
-public class ChatServer {
-    private static final Set&lt;Session&gt; peers =
-               Collections.synchronizedSet(new HashSet&lt;Session&gt;());
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@ServerEndpoint</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">/websocket</span><span class="delimiter">&quot;</span></span>)
+<span class="directive">public</span> <span class="type">class</span> <span class="class">ChatServer</span> {
+    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">Set</span>&lt;Session&gt; peers =
+               <span class="predefined-type">Collections</span>.synchronizedSet(<span class="keyword">new</span> <span class="predefined-type">HashSet</span>&lt;Session&gt;());
 
-    @OnOpen
-    public void onOpen(Session peer) {
+    <span class="annotation">@OnOpen</span>
+    <span class="directive">public</span> <span class="type">void</span> onOpen(Session peer) {
         peers.add(peer);
     }
 
-    @OnClose
-    public void onClose(Session peer) {
+    <span class="annotation">@OnClose</span>
+    <span class="directive">public</span> <span class="type">void</span> onClose(Session peer) {
         peers.remove(peer);
     }
 
-    @OnMessage
-    public void message(String message, Session client)
-           throws IOException, EncodeException {
-        for (Session peer : peers) {
+    <span class="annotation">@OnMessage</span>
+    <span class="directive">public</span> <span class="type">void</span> message(<span class="predefined-type">String</span> message, Session client)
+           <span class="directive">throws</span> <span class="exception">IOException</span>, EncodeException {
+        <span class="keyword">for</span> (Session peer : peers) {
             peer.getBasicRemote().sendText(message);
         }
     }
@@ -1385,7 +1504,7 @@ connection. The method implementation transmits the received text message to
 all clients connected to this endpoint.</p>
 <div class="paragraph">
 <p>Resolve the imports by right-clicking in the editor and selecting &#8216;Fix
-Imports&#8217; or (Command + Shift + I shortcut on Mac or Ctrl + Shift + I on
+Imports&#8217; or (<kbd class="keyseq"><kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></kbd> shortcut on OSX or <kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></kbd> on
 Windows).</p>
 </div>
 <div class="admonitionblock warning">
@@ -1439,33 +1558,33 @@ code.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;form action=""&gt;
-        &lt;table&gt;
-            &lt;tr&gt;
-                &lt;td&gt;
-                    Chat Log&lt;br/&gt;
-                    &lt;textarea readonly="true" rows="6" cols="50" id="chatlog"&gt;&lt;/textarea&gt;
-                &lt;/td&gt;
-                &lt;td&gt;
-                    Users&lt;br/&gt;
-                    &lt;textarea readonly="true" rows="6" cols="20" id="users"&gt;&lt;/textarea&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td colspan="2"&gt;
-                    &lt;input id="textField" name="name" value="Duke" type="text"/&gt;
-                    &lt;input onclick="join();" value="Join" type="button"/&gt;
-                    &lt;input onclick="send_message();" value="Send" type="button"/&gt;&lt;p/&gt;
-                    &lt;input onclick="disconnect();" value="Disconnect" type="button"/&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/form&gt;
-    &lt;div id="output"&gt;&lt;/div&gt;
-        &lt;script language="javascript" type="text/javascript"
-            src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"&gt;&lt;/script&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;form</span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;table&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;td&gt;</span>
+                    Chat Log<span class="tag">&lt;br</span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;textarea</span> <span class="attribute-name">readonly</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">rows</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cols</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">50</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">chatlog</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+                <span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;td&gt;</span>
+                    Users<span class="tag">&lt;br</span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;textarea</span> <span class="attribute-name">readonly</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">rows</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cols</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">users</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+                <span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;td</span> <span class="attribute-name">colspan</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">textField</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Duke</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>join();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Join</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>send_message();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Send</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>disconnect();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Disconnect</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;/table&gt;</span>
+    <span class="tag">&lt;/form&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">output</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;script</span> <span class="attribute-name">language</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javascript</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/javascript</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/chat/websocket.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1496,62 +1615,62 @@ categories, &#8216;JavaScript File&#8217; file type. Click on &#8216;Next&#8217;
 <p>Edit the contents of &#8216;websocket.js&#8217; such that it looks like:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="javascript language-javascript">var wsUri = 'ws://' + document.location.host
-            + document.location.pathname.substr(0,
-              document.location.pathname.indexOf("/faces")) +
-              '/websocket';
+<pre class="CodeRay"><code class="javascript language-javascript"><span class="keyword">var</span> wsUri = <span class="string"><span class="delimiter">'</span><span class="content">ws://</span><span class="delimiter">'</span></span> + document.location.host
+            + document.location.pathname.substr(<span class="integer">0</span>,
+              document.location.pathname.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content">/faces</span><span class="delimiter">&quot;</span></span>)) +
+              <span class="string"><span class="delimiter">'</span><span class="content">/websocket</span><span class="delimiter">'</span></span>;
 console.log(wsUri);
 
-var websocket = new WebSocket(wsUri);
-var textField = document.getElementById("textField");
-var users = document.getElementById("users");
-var chatlog = document.getElementById("chatlog");
-var username;
+<span class="keyword">var</span> websocket = <span class="keyword">new</span> WebSocket(wsUri);
+<span class="keyword">var</span> textField = document.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">textField</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">var</span> users = document.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">users</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">var</span> chatlog = document.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">chatlog</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">var</span> username;
 
-websocket.onopen = function(evt) { onOpen(evt); };
-websocket.onmessage = function(evt) { onMessage(evt); };
-websocket.onerror = function(evt) { onError(evt); };
-websocket.onclose = function(evt) { onClose(evt); };
+websocket.<span class="function">onopen</span> = <span class="keyword">function</span>(evt) { onOpen(evt); };
+websocket.<span class="function">onmessage</span> = <span class="keyword">function</span>(evt) { onMessage(evt); };
+websocket.<span class="function">onerror</span> = <span class="keyword">function</span>(evt) { onError(evt); };
+websocket.<span class="function">onclose</span> = <span class="keyword">function</span>(evt) { onClose(evt); };
 
-var output = document.getElementById("output");
+<span class="keyword">var</span> output = document.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">output</span><span class="delimiter">&quot;</span></span>);
 
-function join() {
+<span class="keyword">function</span> <span class="function">join</span>() {
     username = textField.value;
-    websocket.send(username + " joined");
+    websocket.send(username + <span class="string"><span class="delimiter">&quot;</span><span class="content"> joined</span><span class="delimiter">&quot;</span></span>);
 }
 
-function send_message() {
-    websocket.send(username + ": " + textField.value);
+<span class="keyword">function</span> <span class="function">send_message</span>() {
+    websocket.send(username + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + textField.value);
 }
 
-function onOpen() {
-    writeToScreen("CONNECTED");
+<span class="keyword">function</span> <span class="function">onOpen</span>() {
+    writeToScreen(<span class="string"><span class="delimiter">&quot;</span><span class="content">CONNECTED</span><span class="delimiter">&quot;</span></span>);
 }
 
-function onClose() {
-    writeToScreen("DISCONNECTED");
+<span class="keyword">function</span> <span class="function">onClose</span>() {
+    writeToScreen(<span class="string"><span class="delimiter">&quot;</span><span class="content">DISCONNECTED</span><span class="delimiter">&quot;</span></span>);
 }
 
-function onMessage(evt) {
-    writeToScreen("RECEIVED: " + evt.data);
-    if (evt.data.indexOf("joined") !== -1) {
-        users.innerHTML += evt.data.substring(0, evt.data.indexOf(" joined")) + "\n";
-    } else {
-        chatlog.innerHTML += evt.data + "\n";
+<span class="keyword">function</span> <span class="function">onMessage</span>(evt) {
+    writeToScreen(<span class="string"><span class="delimiter">&quot;</span><span class="content">RECEIVED: </span><span class="delimiter">&quot;</span></span> + evt.data);
+    <span class="keyword">if</span> (evt.data.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content">joined</span><span class="delimiter">&quot;</span></span>) !== -<span class="integer">1</span>) {
+        users.innerHTML += evt.data.substring(<span class="integer">0</span>, evt.data.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content"> joined</span><span class="delimiter">&quot;</span></span>)) + <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
+    } <span class="keyword">else</span> {
+        chatlog.innerHTML += evt.data + <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
     }
 }
 
-function onError(evt) {
-    writeToScreen('&lt;span style="color: red;"&gt;ERROR:&lt;/span&gt; ' + evt.data);
+<span class="keyword">function</span> <span class="function">onError</span>(evt) {
+    writeToScreen(<span class="string"><span class="delimiter">'</span><span class="content">&lt;span style=&quot;color: red;&quot;&gt;ERROR:&lt;/span&gt; </span><span class="delimiter">'</span></span> + evt.data);
 }
 
-function disconnect() {
+<span class="keyword">function</span> <span class="function">disconnect</span>() {
     websocket.close();
 }
 
-function writeToScreen(message) {
-    var pre = document.createElement("p");
-    pre.style.wordWrap = "break-word";
+<span class="keyword">function</span> <span class="function">writeToScreen</span>(message) {
+    <span class="keyword">var</span> pre = document.createElement(<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>);
+    pre.style.wordWrap = <span class="string"><span class="delimiter">&quot;</span><span class="content">break-word</span><span class="delimiter">&quot;</span></span>;
     pre.innerHTML = message;
     output.appendChild(pre);
 }</code></pre>
@@ -1609,7 +1728,7 @@ logged in users as well.</p>
 <p>Edit &#8216;WEB-INF/template.xhtml&#8217; and change:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;h:outputLink</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item2.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Item 2<span class="tag">&lt;/h:outputLink&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1617,10 +1736,10 @@ logged in users as well.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:outputLink
-    value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml"&gt;
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;h:outputLink</span>
+    <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
     Chat Room
-&lt;/h:outputLink&gt;</code></pre>
+<span class="tag">&lt;/h:outputLink&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1777,7 +1896,7 @@ specify the name as &#8216;SalesReader&#8217;. Make this class extend from
 &#8216;AbstractItemReader&#8217; by changing the class definition and add:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">extends AbstractItemReader</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="directive">extends</span> AbstractItemReader</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1800,14 +1919,14 @@ available for injection.</p>
 <p>Override <code>open()</code> method to initialize the reader by adding the following code:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">private BufferedReader reader;
+<pre class="CodeRay"><code class="java language-java"><span class="directive">private</span> <span class="predefined-type">BufferedReader</span> reader;
 
-public void open(Serializable checkpoint) throws Exception {
-    reader = new BufferedReader(
-        new InputStreamReader(
-        Thread.currentThread()
+<span class="directive">public</span> <span class="type">void</span> open(<span class="predefined-type">Serializable</span> checkpoint) <span class="directive">throws</span> <span class="exception">Exception</span> {
+    reader = <span class="keyword">new</span> <span class="predefined-type">BufferedReader</span>(
+        <span class="keyword">new</span> <span class="predefined-type">InputStreamReader</span>(
+        <span class="predefined-type">Thread</span>.currentThread()
             .getContextClassLoader()
-            .getResourceAsStream("META-INF/sales.csv")));
+            .getResourceAsStream(<span class="string"><span class="delimiter">&quot;</span><span class="content">META-INF/sales.csv</span><span class="delimiter">&quot;</span></span>)));
 }</code></pre>
 </div>
 </div>
@@ -1820,7 +1939,7 @@ is bundled with the application.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="csv language-csv">1,500.00
+<pre class="CodeRay"><code class="csv language-csv">1,500.00
 2,660.00
 3,80.00
 4,470.00
@@ -1839,15 +1958,15 @@ errors.</p>
 <p>Override the following method from the abstract class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Override
-public String readItem() {
-    String string = null;
-    try {
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Override</span>
+<span class="directive">public</span> <span class="predefined-type">String</span> readItem() {
+    <span class="predefined-type">String</span> string = <span class="predefined-constant">null</span>;
+    <span class="keyword">try</span> {
         string = reader.readLine();
-    } catch (IOException ex) {
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
         ex.printStackTrace();
     }
-    return string;
+    <span class="keyword">return</span> string;
 }</code></pre>
 </div>
 </div>
@@ -1866,7 +1985,7 @@ so the current chunk will be committed and the step will end.</p>
 class definition and add:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">implements ItemProcessor</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="directive">implements</span> ItemProcessor</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1888,14 +2007,14 @@ the bean to be injected in Job XML.</p>
 <p>Add implementation of the abstract method from the interface as:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Override
-public Sales processItem(Object s) {
-    Sales sales = new Sales();
-    StringTokenizer tokens = new StringTokenizer((String)s, ",");
-    sales.setId(Integer.parseInt(tokens.nextToken()));
-    sales.setAmount(Float.parseFloat(tokens.nextToken()));
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Override</span>
+<span class="directive">public</span> Sales processItem(<span class="predefined-type">Object</span> s) {
+    Sales sales = <span class="keyword">new</span> Sales();
+    <span class="predefined-type">StringTokenizer</span> tokens = <span class="keyword">new</span> <span class="predefined-type">StringTokenizer</span>((<span class="predefined-type">String</span>)s, <span class="string"><span class="delimiter">&quot;</span><span class="content">,</span><span class="delimiter">&quot;</span></span>);
+    sales.setId(<span class="predefined-type">Integer</span>.parseInt(tokens.nextToken()));
+    sales.setAmount(<span class="predefined-type">Float</span>.parseFloat(tokens.nextToken()));
 
-    return sales;
+    <span class="keyword">return</span> sales;
 }</code></pre>
 </div>
 </div>
@@ -1922,7 +2041,7 @@ particular record is skipped from aggregation as well (shown later).</p>
 class definition and add:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">extends AbstractItemWriter</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="directive">extends</span> AbstractItemWriter</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1943,7 +2062,7 @@ the bean to be injected in Job XML.</p>
 <p>Inject <code>EntityManager</code> as:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@PersistenceContext EntityManager em;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@PersistenceContext</span> EntityManager em;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1951,10 +2070,10 @@ the bean to be injected in Job XML.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Override
-@Transactional
-public void writeItems(List list) {
-    for (Sales s : (List&lt;Sales&gt;)list) {
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Override</span>
+<span class="annotation">@Transactional</span>
+<span class="directive">public</span> <span class="type">void</span> writeItems(<span class="predefined-type">List</span> list) {
+    <span class="keyword">for</span> (Sales s : (<span class="predefined-type">List</span>&lt;Sales&gt;)list) {
         em.persist(s);
     }
 }</code></pre>
@@ -2017,20 +2136,20 @@ click on &#8216;Next&#8217;, take the default, and click on &#8216;Finish&#8217;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;job id="endOfDaySales"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee[http://xmlns.jcp.org/xml/ns/javaee]"
-    version="1.0"&gt;
-    &lt;step id="populateSales"&gt;
-        &lt;chunk item-count="3" skip-limit="5"&gt;
-            &lt;reader ref="salesReader"/&gt;
-            &lt;processor ref="salesProcessor"/&gt;
-            &lt;writer ref="salesWriter"/&gt;
-            &lt;skippable-exception-classes&gt;
-                &lt;include class="java.lang.NumberFormatException"/&gt;
-            &lt;/skippable-exception-classes&gt;
-        &lt;/chunk&gt;
-    &lt;/step&gt;
-&lt;/job&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;job</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endOfDaySales</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://xmlns.jcp.org/xml/ns/javaee[http://xmlns.jcp.org/xml/ns/javaee]</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;step</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">populateSales</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;chunk</span> <span class="attribute-name">item-count</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">skip-limit</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;reader</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">salesReader</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;processor</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">salesProcessor</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;writer</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">salesWriter</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;skippable-exception-classes&gt;</span>
+                <span class="tag">&lt;include</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">java.lang.NumberFormatException</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;/skippable-exception-classes&gt;</span>
+        <span class="tag">&lt;/chunk&gt;</span>
+    <span class="tag">&lt;/step&gt;</span>
+<span class="tag">&lt;/job&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2066,12 +2185,12 @@ button.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public void runJob() {
-    try {
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="type">void</span> runJob() {
+    <span class="keyword">try</span> {
         JobOperator jo = BatchRuntime.getJobOperator();
-        long jobId = jo.start("eod-sales", new Properties());
-        System.out.println("Started job: with id: " + jobId);
-    } catch (JobStartException ex) {
+        <span class="type">long</span> jobId = jo.start(<span class="string"><span class="delimiter">&quot;</span><span class="content">eod-sales</span><span class="delimiter">&quot;</span></span>, <span class="keyword">new</span> <span class="predefined-type">Properties</span>());
+        <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Started job: with id: </span><span class="delimiter">&quot;</span></span> + jobId);
+    } <span class="keyword">catch</span> (JobStartException ex) {
         ex.printStackTrace();
     }
 }</code></pre>
@@ -2102,7 +2221,7 @@ the bean to be injectable in an EL expression.</p>
 <p>Inject <code>EntityManagerFactory</code> in the class as:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@PersistenceUnit EntityManagerFactory emf;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@PersistenceUnit</span> EntityManagerFactory emf;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2110,10 +2229,10 @@ the bean to be injectable in an EL expression.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public List&lt;Sales&gt; getSalesData() {
-    return emf.
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="predefined-type">List</span>&lt;Sales&gt; getSalesData() {
+    <span class="keyword">return</span> emf.
         createEntityManager().
-        createNamedQuery("Sales.findAll", Sales.class).
+        createNamedQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sales.findAll</span><span class="delimiter">&quot;</span></span>, Sales.class).
         getResultList();
 }</code></pre>
 </div>
@@ -2147,32 +2266,32 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h1&gt;Movie Sales&lt;/h1&gt;
-    &lt;h:form&gt;
-        &lt;h:dataTable value="#{salesBean.salesData}" var="s" border="1"&gt;
-            &lt;h:column&gt;
-                &lt;f:facet name="header"&gt;
-                    &lt;h:outputText value="Show ID" /&gt;
-                &lt;/f:facet&gt;
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Movie Sales<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
+        <span class="tag">&lt;h:dataTable</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{salesBean.salesData}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">border</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h:column&gt;</span>
+                <span class="tag">&lt;f:facet</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">header</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Show ID</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+                <span class="tag">&lt;/f:facet&gt;</span>
                 #{s.id}
-            &lt;/h:column&gt;
-            &lt;h:column&gt;
-                &lt;f:facet name="header"&gt;
-                    &lt;h:outputText value="Sales" /&gt;
-                &lt;/f:facet&gt;
+            <span class="tag">&lt;/h:column&gt;</span>
+            <span class="tag">&lt;h:column&gt;</span>
+                <span class="tag">&lt;f:facet</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">header</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Sales</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+                <span class="tag">&lt;/f:facet&gt;</span>
                 #{s.amount}
-            &lt;/h:column&gt;
-        &lt;/h:dataTable&gt;
-        &lt;h:commandButton
-            value="Run Job"
-            action="sales"
-            actionListener="#{salesBean.runJob()}"/&gt;
-        &lt;h:commandButton
-            value="Refresh"
-            action="sales" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+            <span class="tag">&lt;/h:column&gt;</span>
+        <span class="tag">&lt;/h:dataTable&gt;</span>
+        <span class="tag">&lt;h:commandButton</span>
+            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Run Job</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sales</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{salesBean.runJob()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;h:commandButton</span>
+            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Refresh</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sales</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2190,10 +2309,10 @@ needs to be repeated for <code>f:</code> prefix.</p>
 <p>Add the following code in <code>template.xhtml</code> along with other &lt;outputLink&gt;s:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
-    value="${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml"&gt;
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;p</span><span class="tag">/&gt;</span><span class="tag">&lt;h:outputLink</span>
+    <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
     Sales
-    &lt;/h:outputLink&gt;</code></pre>
+    <span class="tag">&lt;/h:outputLink&gt;</span></code></pre>
 </div>
 </div>
 </li>
@@ -2326,27 +2445,27 @@ Make sure to pick <code>javax.enterprise.context.RequestScoped</code> class.
 <p>Add the following code to the class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">Client client;
+<pre class="CodeRay"><code class="java language-java">Client client;
 WebTarget target;
 
-@Inject HttpServletRequest httpServletRequest;
+<span class="annotation">@Inject</span> HttpServletRequest httpServletRequest;
 
-@PostConstruct
-public void init() {
+<span class="annotation">@PostConstruct</span>
+<span class="directive">public</span> <span class="type">void</span> init() {
     client = ClientBuilder.newClient();
     target = client
-                .target("http://" +
+                .target(<span class="string"><span class="delimiter">&quot;</span><span class="content">http://</span><span class="delimiter">&quot;</span></span> +
                 httpServletRequest.getLocalName() +
-                ":" +
+                <span class="string"><span class="delimiter">&quot;</span><span class="content">:</span><span class="delimiter">&quot;</span></span> +
                 httpServletRequest.getLocalPort() +
-                "/" +
+                <span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span> +
                 httpServletRequest.getContextPath() +
-                "/webresources/movie/");
+                <span class="string"><span class="delimiter">&quot;</span><span class="content">/webresources/movie/</span><span class="delimiter">&quot;</span></span>);
 
 }
 
-@PreDestroy
-public void destroy() {
+<span class="annotation">@PreDestroy</span>
+<span class="directive">public</span> <span class="type">void</span> destroy() {
     client.close();
 }</code></pre>
 </div>
@@ -2372,10 +2491,10 @@ added in CDI 1.1</p>
 <p>Add the following method to the class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public Movie[] getMovies() {
-    return target
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> Movie<span class="type">[]</span> getMovies() {
+    <span class="keyword">return</span> target
         .request()
-        .get(Movie[].class);
+        .get(Movie<span class="type">[]</span>.class);
 }</code></pre>
 </div>
 </div>
@@ -2406,16 +2525,16 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h:form prependId="false"&gt;
-        &lt;h:selectOneRadio value="#{movieBackingBean.movieId}" layout="pageDirection"&gt;
-            &lt;c:forEach items="#{movieClientBean.movies}" var="m"&gt;
-                &lt;f:selectItem itemValue="#{m.id}" itemLabel="#{m.name}"/&gt;
-            &lt;/c:forEach&gt;
-        &lt;/h:selectOneRadio&gt;
-        &lt;h:commandButton value="Details" action="movie" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h:form</span> <span class="attribute-name">prependId</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h:selectOneRadio</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieId}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;c:forEach</span> <span class="attribute-name">items</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.movies}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;f:selectItem</span> <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.id}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.name}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;/c:forEach&gt;</span>
+        <span class="tag">&lt;/h:selectOneRadio&gt;</span>
+        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Details</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movie</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2449,12 +2568,12 @@ on &#8216;Finish&#8217;.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">int movieId;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="type">int</span> movieId;</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Add getters/setters by right-clicking on the editor pane and selecting
-&#8216;Insert Code&#8217; (Ctrl + I shortcut on Mac). Select the field and click on
+&#8216;Insert Code&#8217; (<kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>I</kbd></kbd> shortcut on OSX). Select the field and click on
 &#8216;Generate&#8217;.</p>
 </div>
 <div class="paragraph">
@@ -2481,14 +2600,14 @@ Make sure to import <code>javax.enterprise.context.SessionScoped</code>.
 <p>In &#8216;template.xhtml&#8217;, add the following code along with other &lt;outputLink&gt;s:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
-        value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml"&gt;
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;p</span><span class="tag">/&gt;</span><span class="tag">&lt;h:outputLink</span>
+        <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
         Movies
-    &lt;/h:outputLink&gt;</code></pre>
+    <span class="tag">&lt;/h:outputLink&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Running the project (Fn + F6 shortcut on Mac) and clicking on &#8216;Movies&#8217;
+<p>Running the project (<kbd class="keyseq"><kbd>Fn</kbd>+<kbd>F6</kbd></kbd> shortcut on OSX) and clicking on &#8216;Movies&#8217;
 in the left navigation bar shows the output as shown.</p>
 </div>
 <div class="imageblock">
@@ -2507,7 +2626,7 @@ displayed.</p>
 of selected movie from the page. Add the following code:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Inject
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Inject</span>
 MovieBackingBean bean;</code></pre>
 </div>
 </div>
@@ -2516,13 +2635,13 @@ MovieBackingBean bean;</code></pre>
 <p>In <code>MovieClientBean</code>, add the following method:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public Movie getMovie() {
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> Movie getMovie() {
     Movie m = target
-        .path("{movie}")
-        .resolveTemplate("movie", bean.getMovieId())
+        .path(<span class="string"><span class="delimiter">&quot;</span><span class="content">{movie}</span><span class="delimiter">&quot;</span></span>)
+        .resolveTemplate(<span class="string"><span class="delimiter">&quot;</span><span class="content">movie</span><span class="delimiter">&quot;</span></span>, bean.getMovieId())
         .request()
         .get(Movie.class);
-    return m;
+    <span class="keyword">return</span> m;
 }</code></pre>
 </div>
 </div>
@@ -2548,26 +2667,26 @@ click on &#8216;Select File&#8217;. Click on &#8216;Finish&#8217;.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h1&gt;Movie Details&lt;/h1&gt;
-    &lt;h:form&gt;
-        &lt;table cellpadding="5" cellspacing="5"&gt;
-            &lt;tr&gt;
-                &lt;th align="left"&gt;Movie Id:&lt;/th&gt;
-                &lt;td&gt;#{movieClientBean.movie.id}&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;th align="left"&gt;Movie Name:&lt;/th&gt;
-                &lt;td&gt;#{movieClientBean.movie.name}&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;th align="left"&gt;Movie Actors:&lt;/th&gt;
-                &lt;td&gt;#{movieClientBean.movie.actors}&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-        &lt;h:commandButton value="Back" action="movies" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Movie Details<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
+        <span class="tag">&lt;table</span> <span class="attribute-name">cellpadding</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cellspacing</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Id:<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;td&gt;</span>#{movieClientBean.movie.id}<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Name:<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;td&gt;</span>#{movieClientBean.movie.name}<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Actors:<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;td&gt;</span>#{movieClientBean.movie.actors}<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;/table&gt;</span>
+        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movies</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2598,10 +2717,10 @@ output as shown.</p>
 following code with other &lt;commandButton&gt;.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:commandButton
-    value="Delete"
-    action="movies"
-    actionListener="#{movieClientBean.deleteMovie()}"/&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;h:commandButton</span>
+    <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Delete</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movies</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.deleteMovie()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2613,10 +2732,10 @@ from &#8216;MovieClientBean&#8217;, and then renders &#8216;movies.xhtml&#8217;.
 <p>Add the following code to &#8216;MovieClientBean&#8217;:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public void deleteMovie() {
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="type">void</span> deleteMovie() {
     target
-        .path("{movieId}")
-        .resolveTemplate("movieId", bean.getMovieId())
+        .path(<span class="string"><span class="delimiter">&quot;</span><span class="content">{movieId}</span><span class="delimiter">&quot;</span></span>)
+        .resolveTemplate(<span class="string"><span class="delimiter">&quot;</span><span class="content">movieId</span><span class="delimiter">&quot;</span></span>, bean.getMovieId())
         .request()
         .delete();
 }</code></pre>
@@ -2709,8 +2828,8 @@ specify the name as &#8216;MovieReader&#8217;, and click on &#8216;Finish&#8217;
 following class-level annotations:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Provider
-@Consumes(MediaType.APPLICATION_JSON)</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Provider</span>
+<span class="annotation">@Consumes</span>(MediaType.APPLICATION_JSON)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2745,7 +2864,7 @@ select &#8216;Implement all abstract methods&#8217;.</p>
 <p>Change implementation of the <code>isReadable</code> method as:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">return Movie.class.isAssignableFrom(type);</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="keyword">return</span> Movie.class.isAssignableFrom(type);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2757,42 +2876,42 @@ of a particular type.</p>
 <p>Replace the <code>readFrom</code> method with:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Override
-public Movie readFrom(
-    Class&lt;Movie&gt; type,
-    Type type1,
-    Annotation[] antns,
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Override</span>
+<span class="directive">public</span> Movie readFrom(
+    <span class="predefined-type">Class</span>&lt;Movie&gt; type,
+    <span class="predefined-type">Type</span> type1,
+    <span class="predefined-type">Annotation</span><span class="type">[]</span> antns,
     MediaType mt,
-    MultivaluedMap&lt;String, String&gt; mm,
-    InputStream in)
-      throws IOException, WebApplicationException {
+    MultivaluedMap&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; mm,
+    <span class="predefined-type">InputStream</span> in)
+      <span class="directive">throws</span> <span class="exception">IOException</span>, WebApplicationException {
 
-    Movie movie = new Movie();
+    Movie movie = <span class="keyword">new</span> Movie();
     JsonParser parser = Json.createParser(in);
-    while (parser.hasNext()) {
-        switch (parser.next()) {
-            case KEY_NAME:
-                String key = parser.getString();
+    <span class="keyword">while</span> (parser.hasNext()) {
+        <span class="keyword">switch</span> (parser.next()) {
+            <span class="keyword">case</span> KEY_NAME:
+                <span class="predefined-type">String</span> key = parser.getString();
                 parser.next();
-                switch (key) {
-                    case "id":
+                <span class="keyword">switch</span> (key) {
+                    <span class="keyword">case</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:
                         movie.setId(parser.getInt());
-                        break;
-                    case "name":
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>:
                         movie.setName(parser.getString());
-                        break;
-                    case "actors":
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">actors</span><span class="delimiter">&quot;</span></span>:
                         movie.setActors(parser.getString());
-                        break;
-                    default:
-                        break;
+                        <span class="keyword">break</span>;
+                    <span class="keyword">default</span>:
+                        <span class="keyword">break</span>;
                 }
-                break;
-            default:
-                break;
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                <span class="keyword">break</span>;
         }
     }
-    return movie;
+    <span class="keyword">return</span> movie;
 }</code></pre>
 </div>
 </div>
@@ -2811,8 +2930,8 @@ specify the name as &#8216;MovieWriter&#8217;, and click on &#8216;Finish&#8217;
 following class-level annotations:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Provider
-@Produces(MediaType.APPLICATION_JSON)</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Provider</span>
+<span class="annotation">@Produces</span>(MediaType.APPLICATION_JSON)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2834,7 +2953,7 @@ this implementation will produce a JSON representation of the resource.</p>
 <p>Make this class implement <code>MessageBodyWriter</code> interface by adding the following code:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">implements MessageBodyWriter&lt;Movie&gt;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="directive">implements</span> MessageBodyWriter&lt;Movie&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2858,7 +2977,7 @@ select &#8216;Implement all abstract methods&#8217;.</p>
 <p>Change implementation of the <code>isWritable</code> method to:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">return Movie.class.isAssignableFrom(type);</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="keyword">return</span> Movie.class.isAssignableFrom(type);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2870,7 +2989,7 @@ type.</p>
 <p>Add implementation of the <code>getSize</code> method as:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">return -1;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="keyword">return</span> -<span class="integer">1</span>;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2884,11 +3003,11 @@ the value returned by the method is ignored by a JAX-RS runtime. All
 <p>Change implementation of the <code>writeTo</code> method to:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">JsonGenerator gen = Json.createGenerator(entityStream);
+<pre class="CodeRay"><code class="java language-java">JsonGenerator gen = Json.createGenerator(entityStream);
 gen.writeStartObject()
-    .write("id", t.getId())
-    .write("name", t.getName())
-    .write("actors", t.getActors())
+    .write(<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, t.getId())
+    .write(<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>, t.getName())
+    .write(<span class="string"><span class="delimiter">&quot;</span><span class="content">actors</span><span class="delimiter">&quot;</span></span>, t.getActors())
     .writeEnd();
     gen.flush();</code></pre>
 </div>
@@ -2917,29 +3036,29 @@ Click on &#8216;Finish&#8217;.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-&lt;h1&gt;Add a New Movie&lt;/h1&gt;
-&lt;h:form&gt;
-    &lt;table cellpadding="5" cellspacing="5"&gt;
-        &lt;tr&gt;
-            &lt;th align="left"&gt;Movie Id:&lt;/th&gt;
-            &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.movieId}"/&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;th align="left"&gt;Movie Name:&lt;/th&gt;
-            &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.movieName}"/&gt; &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;th align="left"&gt;Movie Actors:&lt;/th&gt;
-            &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.actors}"/&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;h:commandButton
-        value="Add"
-        action="movies"
-        actionListener="#{movieClientBean.addMovie()}"/&gt;
-&lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;h1&gt;</span>Add a New Movie<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h:form&gt;</span>
+    <span class="tag">&lt;table</span> <span class="attribute-name">cellpadding</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cellspacing</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Id:<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieId}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Name:<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieName}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> <span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Actors:<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.actors}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/table&gt;</span>
+    <span class="tag">&lt;h:commandButton</span>
+        <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Add</span><span class="delimiter">&quot;</span></span>
+        <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movies</span><span class="delimiter">&quot;</span></span>
+        <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.addMovie()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2963,8 +3082,8 @@ prefix/URI mapping as shown.</p>
 <p>Add <code>movieName</code> and <code>actors</code> field to <code>MovieBackingBean</code> as:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">String movieName;
-String actors;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="predefined-type">String</span> movieName;
+<span class="predefined-type">String</span> actors;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2976,7 +3095,7 @@ then &#8216;Insert Code&#8217;.</p>
 <p>Add the following code to &#8216;movies.xhtml&#8217;</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:commandButton value="New Movie" action="addmovie" /&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">New Movie</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">addmovie</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2987,15 +3106,15 @@ then &#8216;Insert Code&#8217;.</p>
 <p>Add the following method in <code>MovieClientBean</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public void addMovie() {
-    Movie m = new Movie();
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="type">void</span> addMovie() {
+    Movie m = <span class="keyword">new</span> Movie();
     m.setId(bean.getMovieId());
     m.setName(bean.getMovieName());
     m.setActors(bean.getActors());
     target
         .register(MovieWriter.class)
         .request()
-        .post(Entity.entity(m, MediaType.APPLICATION_JSON));
+        .post(<span class="predefined-type">Entity</span>.entity(m, MediaType.APPLICATION_JSON));
 }</code></pre>
 </div>
 </div>
@@ -3108,8 +3227,8 @@ and click on &#8216;Finish&#8217;.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Named
-@RequestScoped</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Named</span>
+<span class="annotation">@RequestScoped</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3141,10 +3260,10 @@ explicit call to the bean from a JSF page.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@NotNull
-@Pattern(regexp = "^\\d{2},\\d{2}",
-         message = "Message format must be 2 digits, comma, 2 digits, e.g.12,12")
-private String message;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@NotNull</span>
+<span class="annotation">@Pattern</span>(regexp = <span class="string"><span class="delimiter">&quot;</span><span class="content">^</span><span class="char">\\</span><span class="content">d{2},</span><span class="char">\\</span><span class="content">d{2}</span><span class="delimiter">&quot;</span></span>,
+         message = <span class="string"><span class="delimiter">&quot;</span><span class="content">Message format must be 2 digits, comma, 2 digits, e.g.12,12</span><span class="delimiter">&quot;</span></span>)
+<span class="directive">private</span> <span class="predefined-type">String</span> message;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3162,7 +3281,7 @@ points accrued by that customer.</p>
 </div>
 <div class="paragraph">
 <p>Generate getter/setters for this field. Right-click in the editor pane,
-select &#8216;Insert Code&#8217; (Ctrl + I shortcut on Mac), select &#8216;Getter and
+select &#8216;Insert Code&#8217; (<kbd class="keyseq"><kbd>Ctrl</kbd>+<kbd>I</kbd></kbd> shortcut on OSX), select &#8216;Getter and
 Setter&#8217;, select the field, and click on &#8216;Generate&#8217;.</p>
 </div>
 </li>
@@ -3170,14 +3289,14 @@ Setter&#8217;, select the field, and click on &#8216;Generate&#8217;.</p>
 <p>Add the following code to the class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Inject
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Inject</span>
 JMSContext context;
 
-@Resource(lookup = "java:global/jms/pointsQueue")
-Queue pointsQueue;
+<span class="annotation">@Resource</span>(lookup = <span class="string"><span class="delimiter">&quot;</span><span class="content">java:global/jms/pointsQueue</span><span class="delimiter">&quot;</span></span>)
+<span class="predefined-type">Queue</span> pointsQueue;
 
-public void sendMessage() {
-    System.out.println("Sending message: " + message);
+<span class="directive">public</span> <span class="type">void</span> sendMessage() {
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sending message: </span><span class="delimiter">&quot;</span></span> + message);
     context.createProducer().send(pointsQueue, message);
 }</code></pre>
 </div>
@@ -3191,7 +3310,7 @@ default anyway, a container-managed <code>JMSContext</code> can be injected as:<
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Inject
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Inject</span>
 JMSContext context;</code></pre>
 </div>
 </div>
@@ -3250,10 +3369,10 @@ default <code>java.util.Queue</code>.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@JMSDestinationDefinition(name = "java:global/jms/pointsQueue",
-interfaceName = "javax.jms.Queue")
-@Named
-@RequestScoped</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@JMSDestinationDefinition</span>(name = <span class="string"><span class="delimiter">&quot;</span><span class="content">java:global/jms/pointsQueue</span><span class="delimiter">&quot;</span></span>,
+interfaceName = <span class="string"><span class="delimiter">&quot;</span><span class="content">javax.jms.Queue</span><span class="delimiter">&quot;</span></span>)
+<span class="annotation">@Named</span>
+<span class="annotation">@RequestScoped</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3272,17 +3391,17 @@ name <code>java:global/jms/pointsQueue</code>.</p>
 <p>Add the following code to the class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Inject
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Inject</span>
 JMSContext context;
 
-@Resource(lookup="java:global/jms/pointsQueue")
-Queue pointsQueue;
+<span class="annotation">@Resource</span>(lookup=<span class="string"><span class="delimiter">&quot;</span><span class="content">java:global/jms/pointsQueue</span><span class="delimiter">&quot;</span></span>)
+<span class="predefined-type">Queue</span> pointsQueue;
 
-public String receiveMessage() {
-    try (JMSConsumer consumer = context.createConsumer(pointsQueue)) {
-        String message = consumer.receiveBody(String.class);
-        System.out.println("Received message: " + message);
-        return message;
+<span class="directive">public</span> <span class="predefined-type">String</span> receiveMessage() {
+    <span class="keyword">try</span> (JMSConsumer consumer = context.createConsumer(pointsQueue)) {
+        <span class="predefined-type">String</span> message = consumer.receiveBody(<span class="predefined-type">String</span>.class);
+        <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Received message: </span><span class="delimiter">&quot;</span></span> + message);
+        <span class="keyword">return</span> message;
     }
 }</code></pre>
 </div>
@@ -3299,19 +3418,19 @@ using Message Driven Beans. However that is not covered in this lab.</p>
 <p>Add the following method to the class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public int getQueueSize() {
-    int count = 0;
-    try {
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="type">int</span> getQueueSize() {
+    <span class="type">int</span> count = <span class="integer">0</span>;
+    <span class="keyword">try</span> {
         QueueBrowser browser = context.createBrowser(pointsQueue);
-        Enumeration elems = browser.getEnumeration();
-        while (elems.hasMoreElements()) {
+        <span class="predefined-type">Enumeration</span> elems = browser.getEnumeration();
+        <span class="keyword">while</span> (elems.hasMoreElements()) {
             elems.nextElement();
             count++;
         }
-    } catch (JMSException ex) {
+    } <span class="keyword">catch</span> (JMSException ex) {
         ex.printStackTrace();
     }
-    return count;
+    <span class="keyword">return</span> count;
 }</code></pre>
 </div>
 </div>
@@ -3343,24 +3462,24 @@ next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h1&gt;Points&lt;/h1&gt;
-    &lt;h:form&gt;
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Points<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
     Queue size:
-        &lt;h:outputText value="#{receivePointsBean.queueSize}"/&gt;&lt;p/&gt;
-        &lt;h:inputText value="#{sendPointsBean.message}"/&gt;
-        &lt;h:commandButton
-            value="Send Message"
-            action="points"
-            actionListener="#{sendPointsBean.sendMessage()}"/&gt;
-    &lt;/h:form&gt;
-    &lt;h:form&gt;
-        &lt;h:commandButton
-            value="Receive Message"
-            action="points"
-            actionListener="#{receivePointsBean.receiveMessage()}"/&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+        <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{receivePointsBean.queueSize}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{sendPointsBean.message}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;h:commandButton</span>
+            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Send Message</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">points</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{sendPointsBean.sendMessage()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
+        <span class="tag">&lt;h:commandButton</span>
+            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Receive Message</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">points</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{receivePointsBean.receiveMessage()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3386,10 +3505,10 @@ message is displayed on the screen.</p>
 &lt;outputLink&gt;s:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;p/&gt;&lt;h:outputLink
-        value="${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml"&gt;
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;p</span><span class="tag">/&gt;</span><span class="tag">&lt;h:outputLink</span>
+        <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
         Points
-    &lt;/h:outputLink&gt;</code></pre>
+    <span class="tag">&lt;/h:outputLink&gt;</span></code></pre>
 </div>
 </div>
 </li>
@@ -3550,22 +3669,22 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h2&gt;Pick a movie&lt;/h2&gt;
-    &lt;h:form prependId="false"&gt;
-        &lt;h:selectOneRadio
-            value="#{booking.movieId}"
-            layout="pageDirection"
-            required="true"&gt;
-            &lt;f:selectItems
-                value="#{movieFacadeREST.all}"
-                var="m"
-                itemValue="#{m.id}"
-                itemLabel="#{m.name}"/&gt;
-        &lt;/h:selectOneRadio&gt;
-        &lt;h:commandButton id="shows" value="Pick a time" action="showtimes" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2&gt;</span>Pick a movie<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;h:form</span> <span class="attribute-name">prependId</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h:selectOneRadio</span>
+            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.movieId}</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">required</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;f:selectItems</span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieFacadeREST.all}</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.id}</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.name}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:selectOneRadio&gt;</span>
+        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">shows</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Pick a time</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3602,7 +3721,7 @@ is automatically activated and passivated as the flow is entered or exited.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">int movieId;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="type">int</span> movieId;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3614,7 +3733,7 @@ selecting &#8216;Getter and Setter&#8217;, and select the field.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@PersistenceContext
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@PersistenceContext</span>
 EntityManager em;</code></pre>
 </div>
 </div>
@@ -3623,14 +3742,14 @@ EntityManager em;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public String getMovieName() {
-    try {
-        return em.createNamedQuery("Movie.findById", Movie.class)
-                  .setParameter("id", movieId)
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="predefined-type">String</span> getMovieName() {
+    <span class="keyword">try</span> {
+        <span class="keyword">return</span> em.createNamedQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">Movie.findById</span><span class="delimiter">&quot;</span></span>, Movie.class)
+                  .setParameter(<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, movieId)
                   .getSingleResult()
                   .getName();
-    } catch (NoResultException e) {
-        return "";
+    } <span class="keyword">catch</span> (NoResultException e) {
+        <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
     }
 }</code></pre>
 </div>
@@ -3659,18 +3778,18 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h2&gt;Show Timings for &lt;font color="red"&gt;#{booking.movieName}&lt;/font&gt;&lt;/h2&gt;
-    &lt;h:form&gt;
-        &lt;h:selectOneRadio value="#{booking.startTime}" layout="pageDirection" required="true"&gt;
-            &lt;c:forEach items="#{timeslotFacadeREST.all}" var="s"&gt;
-                &lt;f:selectItem itemValue="#{s.id},#{s.startTime}" itemLabel="#{s.startTime}"/&gt;
-            &lt;/c:forEach&gt;
-        &lt;/h:selectOneRadio&gt;
-        &lt;h:commandButton value="Confirm" action="confirm" /&gt;
-        &lt;h:commandButton id="back" value="Back" action="booking" immediate="true"/&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2&gt;</span>Show Timings for <span class="tag">&lt;font</span> <span class="attribute-name">color</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">red</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#{booking.movieName}<span class="tag">&lt;/font&gt;</span><span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
+        <span class="tag">&lt;h:selectOneRadio</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.startTime}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">required</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;c:forEach</span> <span class="attribute-name">items</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{timeslotFacadeREST.all}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;f:selectItem</span> <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{s.id},#{s.startTime}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{s.startTime}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;/c:forEach&gt;</span>
+        <span class="tag">&lt;/h:selectOneRadio&gt;</span>
+        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Confirm</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">confirm</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">booking</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">immediate</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3698,8 +3817,8 @@ available for this movie; however this is not part of the application.</p>
 <p>Add the following fields to the <code>Booking</code> class:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">String startTime;
-int startTimeId;</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="predefined-type">String</span> startTime;
+<span class="type">int</span> startTimeId;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3707,18 +3826,18 @@ int startTimeId;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public String getStartTime() {
-    return startTime;
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="predefined-type">String</span> getStartTime() {
+    <span class="keyword">return</span> startTime;
 }
 
-public void setStartTime(String startTime) {
-    StringTokenizer tokens = new StringTokenizer(startTime, ",");
-    startTimeId = Integer.parseInt(tokens.nextToken());
-    this.startTime = tokens.nextToken();
+<span class="directive">public</span> <span class="type">void</span> setStartTime(<span class="predefined-type">String</span> startTime) {
+    <span class="predefined-type">StringTokenizer</span> tokens = <span class="keyword">new</span> <span class="predefined-type">StringTokenizer</span>(startTime, <span class="string"><span class="delimiter">&quot;</span><span class="content">,</span><span class="delimiter">&quot;</span></span>);
+    startTimeId = <span class="predefined-type">Integer</span>.parseInt(tokens.nextToken());
+    <span class="local-variable">this</span>.startTime = tokens.nextToken();
 }
 
-public int getStartTimeId() {
-    return startTimeId;
+<span class="directive">public</span> <span class="type">int</span> getStartTimeId() {
+    <span class="keyword">return</span> startTimeId;
 }</code></pre>
 </div>
 </div>
@@ -3728,28 +3847,28 @@ following method:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public String getTheater() {
-    // for a movie and show
-    try {
+<pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="predefined-type">String</span> getTheater() {
+    <span class="comment">// for a movie and show</span>
+    <span class="keyword">try</span> {
 
-        // Always return the first theater
-        List&lt;ShowTiming&gt; list =
-            em.createNamedQuery("ShowTiming.findByMovieAndTimingId",
+        <span class="comment">// Always return the first theater</span>
+        <span class="predefined-type">List</span>&lt;ShowTiming&gt; list =
+            em.createNamedQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">ShowTiming.findByMovieAndTimingId</span><span class="delimiter">&quot;</span></span>,
                 ShowTiming.class)
-                .setParameter("movieId", movieId)
-                .setParameter("timingId", startTimeId)
+                .setParameter(<span class="string"><span class="delimiter">&quot;</span><span class="content">movieId</span><span class="delimiter">&quot;</span></span>, movieId)
+                .setParameter(<span class="string"><span class="delimiter">&quot;</span><span class="content">timingId</span><span class="delimiter">&quot;</span></span>, startTimeId)
                 .getResultList();
 
-        if (list.isEmpty())
-            return "none";
+        <span class="keyword">if</span> (list.isEmpty())
+            <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">none</span><span class="delimiter">&quot;</span></span>;
 
-        return list
-                .get(0)
+        <span class="keyword">return</span> list
+                .get(<span class="integer">0</span>)
                 .getTheaterId()
                 .getId()
                 .toString();
-    } catch (NoResultException e) {
-        return "none";
+    } <span class="keyword">catch</span> (NoResultException e) {
+        <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">none</span><span class="delimiter">&quot;</span></span>;
     }
 }</code></pre>
 </div>
@@ -3778,28 +3897,28 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;c:choose&gt;
-        &lt;c:when test="#{booking.theater == 'none'}"&gt;
-            &lt;h2&gt;No theater found, choose a different time&lt;/h2&gt;
-            &lt;h:form&gt;
-                Movie name: #{booking.movieName}&lt;p/&gt;
-                Starts at: #{booking.startTime}&lt;p/&gt;
-                &lt;h:commandButton id="back" value="Back" action="showtimes"/&gt;
-            &lt;/h:form&gt;
-        &lt;/c:when&gt;
-        &lt;c:otherwise&gt;
-            &lt;h2&gt;Confirm ?&lt;/h2&gt;
-            &lt;h:form&gt;
-                Movie name: #{booking.movieName}&lt;p/&gt;
-                Starts at: #{booking.startTime}&lt;p/&gt;
-                Theater: #{booking.theater}&lt;p/&gt;
-                &lt;h:commandButton id="next" value="Book" action="print"/&gt;
-                &lt;h:commandButton id="back" value="Back" action="showtimes"/&gt;
-            &lt;/h:form&gt;
-        &lt;/c:otherwise&gt;
-    &lt;/c:choose&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;c:choose&gt;</span>
+        <span class="tag">&lt;c:when</span> <span class="attribute-name">test</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.theater == 'none'}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>No theater found, choose a different time<span class="tag">&lt;/h2&gt;</span>
+            <span class="tag">&lt;h:form&gt;</span>
+                Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;/h:form&gt;</span>
+        <span class="tag">&lt;/c:when&gt;</span>
+        <span class="tag">&lt;c:otherwise&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>Confirm ?<span class="tag">&lt;/h2&gt;</span>
+            <span class="tag">&lt;h:form&gt;</span>
+                Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                Theater: #{booking.theater}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">next</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Book</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">print</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;/h:form&gt;</span>
+        <span class="tag">&lt;/c:otherwise&gt;</span>
+    <span class="tag">&lt;/c:choose&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3830,15 +3949,15 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;ui:define name="content"&gt;
-    &lt;h2&gt;Reservation Confirmed&lt;/h2&gt;
-    &lt;h:form&gt;
-        Movie name: #{booking.movieName}&lt;p/&gt;
-        Starts at: #{booking.startTime}&lt;p/&gt;
-        Theater: #{booking.theater}&lt;p/&gt;
-        &lt;h:commandButton id="home" value="home" action="goHome" /&gt;&lt;p/&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2&gt;</span>Reservation Confirmed<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
+        Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+        Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+        Theater: #{booking.theater}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">home</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">home</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">goHome</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+<span class="tag">&lt;/ui:define&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3861,7 +3980,7 @@ nodes in a flow. This can be done declaratively by adding &#8216;booking/booking
 or programmatically by having a class with a method with the following annotations:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">@Produces @FlowDefinition</code></pre>
+<pre class="CodeRay"><code class="java language-java"><span class="annotation">@Produces</span> <span class="annotation">@FlowDefinition</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3877,18 +3996,18 @@ the default of &#8216;Well-formed Document&#8217;, and click on &#8216;Finish&#8
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;faces-config
-    version="2.2"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"&gt;
-    &lt;flow-definition id="booking"&gt;
-        &lt;flow-return id="goHome"&gt;
-        &lt;from-outcome&gt;/index&lt;/from-outcome&gt;
-        &lt;/flow-return&gt;
-    &lt;/flow-definition&gt;
-&lt;/faces-config&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;faces-config</span>
+    <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">2.2</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://xmlns.jcp.org/xml/ns/javaee</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://xmlns.jcp.org/xml/ns/javaee</span>
+        <span class="content">http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;flow-definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">booking</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;flow-return</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">goHome</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;from-outcome&gt;</span>/index<span class="tag">&lt;/from-outcome&gt;</span>
+        <span class="tag">&lt;/flow-return&gt;</span>
+    <span class="tag">&lt;/flow-definition&gt;</span>
+<span class="tag">&lt;/faces-config&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3906,7 +4025,7 @@ return to. In this case, the navigation returns to the home page.</p>
 changing:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:commandLink action="item1"&gt;Item 1&lt;/h:commandLink&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;h:commandLink</span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Item 1<span class="tag">&lt;/h:commandLink&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3914,7 +4033,7 @@ changing:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="xml language-xml">&lt;h:commandLink action="booking"&gt;Book a movie&lt;/h:commandLink&gt;</code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;h:commandLink</span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">booking</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Book a movie<span class="tag">&lt;/h:commandLink&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4296,7 +4415,7 @@ node, and select
 <div class="title">Figure 53. NetBeans Update Center</div>
 </div>
 <div class="paragraph">
-<p>and click on &#8216;OK&#8217;.</p>
+<p>and click on <b class="button">OK</b>.</p>
 </div>
 </li>
 </ol>
@@ -4319,7 +4438,7 @@ node, and select
 </div>
 </li>
 <li>
-<p>Click on &#8216;Install&#8217; button, &#8216;Next &gt;&#8217;, accept the license agreement by clicking on the checkbox, and click on &#8216;Install&#8217; button to install the plugin. Click on &#8216;Finish&#8217; to restart the IDE and complete installation.</p>
+<p>Click the <b class="button">Install</b> button, then <b class="button">Next &gt;</b>, accept the license agreement by clicking on the checkbox, then click the <b class="button">Install</b> button to install the plugin. Click the <b class="button">Finish</b> button to restart the IDE and complete installation.</p>
 </li>
 </ol>
 </div>
@@ -4342,7 +4461,7 @@ node, and select
 </li>
 <li>
 <p>Select &#8216;WildFly Application Server&#8217; in the Add Server Instance wizard, set the
-name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</p>
+name to &#8216;WildFly 8&#8217; and click <b class="button">Next &gt;</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/16-netbeans-add-instance-wildfly.png" alt="16 netbeans add instance wildfly">
@@ -4351,8 +4470,8 @@ name to &#8216;WildFly 8&#8217; and click &#8216;Next &gt;&#8217;.</p>
 </div>
 </li>
 <li>
-<p>Click on &#8216;Browse&#8217; for &#8216;Server Location&#8217; and select the directory that got created
-when WildFly archive was unzipped. Click on &#8216;Browse&#8217; for &#8216;Server Configuration&#8217; and
+<p>Click on <b class="button">Browse&#8230;</b> for &#8216;Server Location&#8217; and select the directory that got created
+when WildFly archive was unzipped. Click on <b class="button">Browse&#8230;</b> for &#8216;Server Configuration&#8217; and
 select the &#8216;standalone/configuration/standalone-full.xml&#8217; file in the unzipped WildFly
 archive.</p>
 <div class="imageblock">
@@ -4362,7 +4481,7 @@ archive.</p>
 <div class="title">Figure 57. Configure WildFly full instance in NetBeans</div>
 </div>
 <div class="paragraph">
-<p>Click on &#8216;Next&#8217; and then &#8216;Finish&#8217;. The &#8216;Services&#8217; should show the WildFly instance.</p>
+<p>Click on <b class="button">Next</b> and then <b class="button">Finish</b>. The &#8216;Services&#8217; should show the WildFly instance.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4410,7 +4529,7 @@ archive.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Start IntelliJ IDEA. If, as a result, a project opens, close the project (<strong>File | Close Project</strong>).</p>
+<p>Start IntelliJ IDEA. If, as a result, a project opens, close the project (<span class="menuseq"><span class="menu">File</span>&#160;&#9656; <span class="menuitem">Close Project</span></span>).</p>
 </li>
 <li>
 <p>On the Welcome screen, under <strong>Quick Start</strong>, click <strong>Configure</strong>.</p>
@@ -4425,7 +4544,7 @@ archive.</p>
 <p>Under <strong>Configure</strong>, click <strong>Project Defaults</strong>, and then, under <strong>Project Defaults</strong>, click <strong>Project Structure</strong>.</p>
 </li>
 <li>
-<p>In the left-hand pane of the <strong>Project Structure</strong> dialog, under <strong>Platform Settings</strong>, select <strong>SDKs</strong>. Click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select <strong>JDK</strong>.</p>
+<p>In the left-hand pane of the <strong>Project Structure</strong> dialog, under <strong>Platform Settings</strong>, select <strong>SDKs</strong>. Click <span class="image"><img src="images/i13-plus-icon.png" alt="i13-plus-icon" title="Plus icon in IntelliJ IDEA"></span> and select <strong>JDK</strong>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-plus-jdk.png" alt="i13 plus jdk">
@@ -4434,7 +4553,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Select Home Directory for JDK</strong> dialog, select the folder in which the JDK that you are going to use is installed, and click <strong>OK</strong>.</p>
+<p>In the <strong>Select Home Directory for JDK</strong> dialog, select the folder in which the JDK that you are going to use is installed, and click <b class="button">OK</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jdk-home.png" alt="i13 jdk home">
@@ -4443,7 +4562,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Project Structure</strong> dialog, click <strong>Apply</strong>.</p>
+<p>In the <strong>Project Structure</strong> dialog, click <b class="button">Apply</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jdk-defined.png" alt="i13 jdk defined">
@@ -4464,7 +4583,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>Click <strong>OK</strong>.</p>
+<p>Click <b class="button">OK</b>.</p>
 </li>
 </ol>
 </div>
@@ -4472,18 +4591,18 @@ archive.</p>
 <div class="sect3">
 <h4 id="define-wildfly-idea">A.2.2. Define WildFly</h4>
 <div class="paragraph">
-<p>Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the <strong>Settings</strong> dialog. (On Mac OS, this dialog is called <strong>Preferences</strong>.)</p>
+<p>Defining an application server in IntelliJ IDEA, normally, is just telling the IDE where the server is installed. The servers are defined in the <strong>Settings</strong> dialog. (On OSX, this dialog is called <strong>Preferences</strong>.)</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>On the Welcome screen, to the left of <strong>Project Defaults</strong>, click <strong>Back</strong> image::images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].</p>
+<p>On the Welcome screen, to the left of <strong>Project Defaults</strong>, click <strong>Back</strong> <span class="image"><img src="images/i13-back-icon.png" alt="i13-back-icon" title="Back icon in IntelliJ IDEA"></span>.</p>
 </li>
 <li>
 <p>Under <strong>Configure</strong>, click <strong>Settings</strong>.</p>
 </li>
 <li>
-<p>In the left-hand pane of the <strong>Settings</strong> (<strong>Preferences</strong>) dialog, under <strong>IDE Settings</strong>, select <strong>Application Servers</strong>. On the <strong>Application Servers</strong> page, click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"] and select <strong>JBoss Server</strong>. (WildFly is a server from the "JBoss family".)</p>
+<p>In the left-hand pane of the <strong>Settings</strong> (<strong>Preferences</strong>) dialog, under <strong>IDE Settings</strong>, select <strong>Application Servers</strong>. On the <strong>Application Servers</strong> page, click <span class="image"><img src="images/i13-plus-icon.png" alt="i13-plus-icon" title="Plus icon in IntelliJ IDEA"></span> and select <strong>JBoss Server</strong>. (WildFly is a server from the "JBoss family".)</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-plus-jboss.png" alt="i13 plus jboss">
@@ -4492,7 +4611,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>JBoss Server</strong> dialog, click image::images/i13-ellipsis-button.png[title="Ellipsis button in IntelliJ IDEA"] to the right of the <strong>JBoss Home</strong> field.</p>
+<p>In the <strong>JBoss Server</strong> dialog, click <span class="image"><img src="images/i13-ellipsis-button.png" alt="i13-ellipsis-button" title="Ellipsis button in IntelliJ IDEA"></span> to the right of the <strong>JBoss Home</strong> field.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-server-dialog-initial.png" alt="i13 jboss server dialog initial">
@@ -4501,7 +4620,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>JBoss Home Directory</strong> dialog, select the folder in which you have the WildFly server installed, and click <strong>OK</strong>.</p>
+<p>In the <strong>JBoss Home Directory</strong> dialog, select the folder in which you have the WildFly server installed, and click <b class="button">OK</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-home-directory.png" alt="i13 jboss home directory">
@@ -4519,7 +4638,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Settings</strong> (<strong>Preferences</strong>) dialog, click <strong>OK</strong>.</p>
+<p>In the <strong>Settings</strong> (<strong>Preferences</strong>) dialog, click <b class="button">OK</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-defined.png" alt="i13 jboss defined">
@@ -4538,7 +4657,7 @@ archive.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>On the Welcome screen, to the left of <strong>Configure</strong>, click <strong>Back</strong> image::images/i13-back-icon.png[title="Back icon in IntelliJ IDEA"].</p>
+<p>On the Welcome screen, to the left of <strong>Configure</strong>, click <strong>Back</strong> <span class="image"><img src="images/i13-back-icon.png" alt="i13-back-icon" title="Back icon in IntelliJ IDEA"></span>.</p>
 </li>
 <li>
 <p>Under <strong>Quick Start</strong>, click <strong>Open Project</strong>.</p>
@@ -4550,7 +4669,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Open Project</strong> dialog, select the <code>pom.xml</code> file associated with the sample application, and click <strong>OK</strong>.</p>
+<p>In the <strong>Open Project</strong> dialog, select the <code>pom.xml</code> file associated with the sample application, and click <b class="button">OK</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-select-pom.png" alt="i13 select pom">
@@ -4568,7 +4687,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>Click <strong>Configure</strong> in the message box. (If by now the message has disappeared, click image::images/i13-exclamation-mark-icon.png[title="Mark icon in IntelliJ IDEA"] on the Status bar.</p>
+<p>Click <strong>Configure</strong> in the message box. (If by now the message has disappeared, click <span class="image"><img src="images/i13-exclamation-mark-icon.png" alt="i13-exclamation-mark-icon" title="Mark icon in IntelliJ IDEA"></span> on the Status bar.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jpa-detected-status-bar.png" alt="i13 jpa detected status bar">
@@ -4586,7 +4705,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Setup Frameworks</strong> dialog, just click <strong>OK</strong>. (By doing so you confirm that the file <code>persistence.xml</code> found in the project belongs to the JPA framework.)</p>
+<p>In the <strong>Setup Frameworks</strong> dialog, just click <b class="button">OK</b>. (By doing so you confirm that the file <code>persistence.xml</code> found in the project belongs to the JPA framework.)</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-setup-frameworks-jpa.png" alt="i13 setup frameworks jpa">
@@ -4614,7 +4733,7 @@ archive.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>In the main menu, select <strong>Run | Edit Configurations</strong>.</p>
+<p>In the main menu, select <span class="menuseq"><span class="menu">Run</span>&#160;&#9656; <span class="menuitem">Edit Configurations&#8230;</span></span>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-run-edit-configurations.png" alt="i13 run edit configurations">
@@ -4623,7 +4742,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Run/Debug Configurations</strong> dialog, click image::images/i13-plus-icon.png[title="Plus icon in IntelliJ IDEA"], select <strong>JBoss Server</strong>, and then select <strong>Local</strong>.</p>
+<p>In the <strong>Run/Debug Configurations</strong> dialog, click <span class="image"><img src="images/i13-plus-icon.png" alt="i13-plus-icon" title="Plus icon in IntelliJ IDEA"></span>, select <strong>JBoss Server</strong>, and then select <strong>Local</strong>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-run-configs-plus-jboss.png" alt="i13 run configs plus jboss">
@@ -4638,7 +4757,7 @@ archive.</p>
 <p>Change the name of the run/debug configuration to <code>WildFly8</code> (optional).</p>
 </li>
 <li>
-<p>In the lower part of the dialog, within the line <em>Warning: No artifacts marked for deployment</em>, click <strong>Fix</strong> and select <strong>movieplex7:war exploded</strong>. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (<em>movieplex7:war</em> and <em>movieplex7:war exploded</em>). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. <em>movieplex7:war</em> corresponds to a Web archive (WAR). <em>movieplex7:war exploded</em> corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)</p>
+<p>In the lower part of the dialog, within the line <em>Warning: No artifacts marked for deployment</em>, click <b class="button">Fix</b> and select <strong>movieplex7:war exploded</strong>. (Artifacts in IntelliJ IDEA are deployment-ready project outputs and also the configurations according to which such outputs are produced. In our case, there are two configurations for the sample application (<em>movieplex7:war</em> and <em>movieplex7:war exploded</em>). Both configurations represent a format suitable for deployment onto a Java EE 7-enabled application server. <em>movieplex7:war</em> corresponds to a Web archive (WAR). <em>movieplex7:war exploded</em> corresponds to the sample application directory structure (a decompressed archive). The second of the formats is more suitable at the development stage because manipulations with it are faster.)</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-fix-deployment.png" alt="i13 jboss fix deployment">
@@ -4647,7 +4766,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>Within the line <em>Error: Artifact 'movieplex7: exploded' has invalid extension</em>, click <strong>Fix</strong>.</p>
+<p>Within the line <em>Error: Artifact 'movieplex7: exploded' has invalid extension</em>, click <b class="button">Fix</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-invalid-extension.png" alt="i13 jboss invalid extension">
@@ -4656,7 +4775,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Project Structure</strong> dialog, add <code>.war</code> at the end of the output directory path, and click <strong>OK</strong>. (For the servers of the JBoss family, the application root directory has to have <code>.war</code> at the end.)</p>
+<p>In the <strong>Project Structure</strong> dialog, add <code>.war</code> at the end of the output directory path, and click <b class="button">OK</b>. (For the servers of the JBoss family, the application root directory has to have <code>.war</code> at the end.)</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-fix-extension.png" alt="i13 jboss fix extension">
@@ -4665,7 +4784,7 @@ archive.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Run/Debug Configurations</strong> dialog, switch to the <strong>Server</strong> tab. In the field for the application starting page URL, replace <code>http://localhost:8080/movieplex7-1/</code> with <code>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</code> and click <strong>OK</strong>.</p>
+<p>In the <strong>Run/Debug Configurations</strong> dialog, switch to the <strong>Server</strong> tab. In the field for the application starting page URL, replace <code>http://localhost:8080/movieplex7-1/</code> with <code>http://localhost:8080/movieplex7-1.0-SNAPSHOT/</code> and click <b class="button">OK</b>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/i13-jboss-url-fixed.png" alt="i13 jboss url fixed">
@@ -4682,7 +4801,7 @@ archive.</p>
 <div class="sect3">
 <h4 id="run-app-wildfly-idea">A.2.5. Run the application</h4>
 <div class="paragraph">
-<p>In the <strong>Application Servers</strong> tool window, select the server run/debug configuration (<em>WildFly8 [local]</em>) and click <strong>Run</strong> image::images/i13-run-icon.png[title="Run icon in IntelliJ IDEA"].</p>
+<p>In the <strong>Application Servers</strong> tool window, select the server run/debug configuration (<em>WildFly8 [local]</em>) and click <strong>Run</strong> <span class="image"><img src="images/i13-run-icon.png" alt="i13-run-icon" title="Run icon in IntelliJ IDEA"></span>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4719,7 +4838,7 @@ archive.</p>
 <div id="footer">
 <div id="footer-text">
 Version 2.0<br>
-Last updated 2014-01-29 13:10:55 IST
+Last updated 2014-01-29 17:43:53 IST
 </div>
 </div>
 </body>
