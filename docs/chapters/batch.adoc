@@ -241,7 +241,7 @@ Replace contents of the file with the following:
 [source, xml]
 ----
 <job id="endOfDaySales"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee[http://xmlns.jcp.org/xml/ns/javaee]"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
     version="1.0">
     <step id="populateSales">
         <chunk item-count="3" skip-limit="5">
