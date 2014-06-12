@@ -147,7 +147,7 @@ There is an explicit button to disconnect the WebSocket connection.
 initialization occurs in `websocket.js' included at the bottom of the
 fragment.
 +
-. Right-click on `chat' in `Web Pages', select `New', `Web' 
+. Right-click on `chat' in `Web Pages', select `New', `Other', `Web' 
 categories, `JavaScript File' file type. Click on `Next'.
 +
 Give the name as `websocket' and click on `Finish'.

@@ -106,6 +106,7 @@ snapshot of the downloads page is shown and highlights the exact
 <tip>
 <simpara><xref linkend="appendix-wildfly-idea"/> explains how to configure WildFly in IntelliJ IDEA.</simpara>
 </tip>
+
 </listitem>
 </itemizedlist>
 
@@ -246,6 +247,7 @@ to stay focused on explaining the technology. It is highly recommended
 to make sure that the code copied from this sample application is
 updated to meet those requirements.</simpara>
 </warning>
+
 <section id="_lab_flow">
 <title>Lab Flow</title>
 <simpara>The attendees will start with an existing maven application and by
@@ -549,6 +551,7 @@ shorter time, and you can do it too!</simpara>
 version of the lab depending upon your target audience and available
 time.</simpara>
 </tip>
+
 </section>
 </chapter>
 <chapter id="walk-through">
@@ -591,6 +594,7 @@ is shown.</simpara>
         &lt;scope&gt;provided&lt;/scope&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;</programlisting>
+
 <simpara>This will ensure that Java EE 7 APIs are retrieved from the central
 Maven repository.</simpara>
 <note>
@@ -605,12 +609,14 @@ specifically targeted at modern web applications. The complete set of
 specifications defined in the Web Profile is defined in the Java EE 7
 Web Profile Specification.</simpara>
 </note>
+
 <simpara>WildFly can be started in Full Platform or Web Profile.</simpara>
 <important>
 <simpara>This lab requires Full Platform download. All technologies used in this
 lab, except Java Message Service and Batch Applications for the Java
 Platform, can be deployed on Web Profile.</simpara>
 </important>
+
 </listitem>
 <listitem>
 <simpara><emphasis role="strong">Default Data Source</emphasis>: Expand &#8216;Other Sources&#8217;,
@@ -664,6 +670,7 @@ to view the XML source.</simpara>
         &lt;/properties&gt;
     &lt;/persistence-unit&gt;
 &lt;/persistence&gt;</programlisting>
+
 <simpara>Notice <literal>&lt;jta-data-source&gt;</literal> is commented out, i.e. no data source element
 is specified. This element identifies the JDBC resource to connect to in
 the runtime environment of the underlying application server.</simpara>
@@ -671,6 +678,7 @@ the runtime environment of the underlying application server.</simpara>
 provided by the runtime. This pre-configured data source is accessible
 under the JNDI name</simpara>
 <programlisting language="java" linenumbering="unnumbered">java:comp/DefaultDataSource</programlisting>
+
 <simpara>The JPA 2.1 specification says if neither <literal>jta-data-source</literal> nor
 <literal>non-jta-data-source</literal> elements are specified, the deployer must specify a
 JTA data source or the default JTA data source must be provided by the
@@ -935,6 +943,7 @@ that the classes cannot be resolved. This is expected before the
 dependencies are downloaded. However these references will be resolved
 correctly after the dependencies are downloaded during project building.</simpara>
 </tip>
+
 <simpara>During the first run, the IDE will ask you to select a deployment server.
 Choose the configured WildFly server and click on &#8216;OK&#8217;.</simpara>
 <figure>
@@ -960,6 +969,7 @@ Choose the configured WildFly server and click on &#8216;OK&#8217;.</simpara>
 
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="websocket">
 <title>Chat Room (Java API for WebSocket)</title>
@@ -1028,6 +1038,7 @@ public class ChatServer {
         }
     }
 }</programlisting>
+
 <simpara>In this code:</simpara>
 <orderedlist numeration="loweralpha">
 <listitem>
@@ -1051,6 +1062,7 @@ Windows).</simpara>
 <warning>
 <simpara>Make sure to pick <literal>java.websocket.Session</literal> for resolving imports. This is not the default option shown by NetBeans.</simpara>
 </warning>
+
 <figure>
 <title>javax.websocket.Session import</title>
   <mediaobject>
@@ -1065,6 +1077,7 @@ Windows).</simpara>
 code.</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>In &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Folder&#8217;, give the folder name as
@@ -1116,6 +1129,7 @@ code.</simpara>
         &lt;script language="javascript" type="text/javascript"
             src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"&gt;&lt;/script&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
 single text box is used to take the user name or the chat message.
@@ -1130,7 +1144,7 @@ initialization occurs in &#8216;websocket.js&#8217; included at the bottom of th
 fragment.</simpara>
 </listitem>
 <listitem>
-<simpara>Right-click on &#8216;chat&#8217; in &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Web&#8217;
+<simpara>Right-click on &#8216;chat&#8217; in &#8216;Web Pages&#8217;, select &#8216;New&#8217;, &#8216;Other&#8217;, &#8216;Web&#8217;
 categories, &#8216;JavaScript File&#8217; file type. Click on &#8216;Next&#8217;.</simpara>
 <simpara>Give the name as &#8216;websocket&#8217; and click on &#8216;Finish&#8217;.</simpara>
 </listitem>
@@ -1195,6 +1209,7 @@ function writeToScreen(message) {
     pre.innerHTML = message;
     output.appendChild(pre);
 }</programlisting>
+
 <simpara>The WebSocket endpoint URI is calculated by using standard JavaScript
 variables and appending the URI specified in the <literal>ChatServer</literal> class.
 WebSocket is initialized by calling new <literal>WebSocket(...)</literal>. Event handlers are
@@ -1273,11 +1288,13 @@ logged in users as well.</simpara>
 <listitem>
 <simpara>Edit &#8216;WEB-INF/template.xhtml&#8217; and change:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:outputLink value="item2.xhtml"&gt;Item 2&lt;/h:outputLink&gt;</programlisting>
+
 <simpara>to</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:outputLink
     value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml"&gt;
     Chat Room
 &lt;/h:outputLink&gt;</programlisting>
+
 <simpara>The <literal>outputLink</literal> tag renders an HTML anchor tag with an <literal>href</literal> attribute.
 <literal>${facesContext.externalContext.requestContextPath}</literal> provides the request
 URI that identifies the web application context for this request. This
@@ -1350,6 +1367,7 @@ like as shown.</simpara>
 WebSocket traffic.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="batch">
 <title>Ticket Sales (Batch Applications for the Java Platform)</title>
@@ -1418,6 +1436,7 @@ specify the value as &#8216;org.javaee7.movieplex7.batch&#8217;, and click on
 specify the name as &#8216;SalesReader&#8217;. Make this class extend from
 &#8216;AbstractItemReader&#8217; by changing the class definition and add:</simpara>
 <programlisting language="java" linenumbering="unnumbered">extends AbstractItemReader</programlisting>
+
 <simpara><literal>AbstractItemReader</literal> is an abstract class that implements <literal>ItemReader</literal>
 interface. The <literal>ItemReader</literal> interface defines methods that read a stream
 of items for chunk processing. This reader implementation returns a
@@ -1439,6 +1458,7 @@ public void open(Serializable checkpoint) throws Exception {
             .getContextClassLoader()
             .getResourceAsStream("META-INF/sales.csv")));
 }</programlisting>
+
 <simpara>This method initializes a BufferedReader from &#8216;META-INF/sales.csv&#8217; that
 is bundled with the application.</simpara>
 <simpara>Sampling of the first few lines from &#8216;sales.csv&#8217; is shown below:</simpara>
@@ -1447,6 +1467,7 @@ is bundled with the application.</simpara>
 3,80.00
 4,470.00
 5,1100.x0</programlisting>
+
 <simpara>Each line has a show identifier comma separated by the total sales for
 that show. Note that the last line (5<superscript>th</superscript> record in the sample) has an
 intentional typo. In addition, 17<superscript>th</superscript> record also has an additional
@@ -1465,6 +1486,7 @@ public String readItem() {
     }
     return string;
 }</programlisting>
+
 <simpara>The <literal>readItem</literal> method returns the next item from the stream. It returns
 <literal>null</literal> to indicate end of stream. Note end of stream indicates end of chunk,
 so the current chunk will be committed and the step will end.</simpara>
@@ -1475,6 +1497,7 @@ so the current chunk will be committed and the step will end.</simpara>
 &#8216;New&#8217;, &#8216;Java Class&#8217;, specify the name as &#8216;SalesProcessor&#8217;. Change the
 class definition and add:</simpara>
 <programlisting language="java" linenumbering="unnumbered">implements ItemProcessor</programlisting>
+
 <simpara><literal>ItemProcessor</literal> is an interface that defines a method that is used to
 operate on an input item and produce an output item. This processor
 accepts a String input item from the reader, <literal>SalesReader</literal> in our case,
@@ -1495,6 +1518,7 @@ public Sales processItem(Object s) {
 
     return sales;
 }</programlisting>
+
 <simpara>This method takes a <literal>String</literal> parameter coming from the <literal>SalesReader</literal>, parses
 the value, populates them in the <literal>Sales</literal> instance, and returns it. This is
 then aggregated with the writer.</simpara>
@@ -1511,6 +1535,7 @@ particular record is skipped from aggregation as well (shown later).</simpara>
 &#8216;New&#8217;, &#8216;Java Class&#8217;, specify the name as &#8216;SalesWriter&#8217;. Change the
 class definition and add:</simpara>
 <programlisting language="java" linenumbering="unnumbered">extends AbstractItemWriter</programlisting>
+
 <simpara><literal>AbstractItemWriter</literal> is an abstract class that implements <literal>ItemWriter</literal>
 interface. The ItemWriter interface defines methods that write to a
 stream of items for chunk processing. This writer writes a list of <literal>Sales</literal>
@@ -1522,6 +1547,7 @@ the bean to be injected in Job XML.</simpara>
 <listitem>
 <simpara>Inject <literal>EntityManager</literal> as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@PersistenceContext EntityManager em;</programlisting>
+
 <simpara>Override <literal>writeItems</literal> method from the abstract class by adding the following code:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Override
 @Transactional
@@ -1530,6 +1556,7 @@ public void writeItems(List list) {
         em.persist(s);
     }
 }</programlisting>
+
 <simpara>Batch runtime aggregates the list of <literal>Sales</literal> instances returned from the
 <literal>SalesProessor</literal> and makes it available as List in this method. This method
 iterates over the list and persist each item in the database.</simpara>
@@ -1549,6 +1576,7 @@ using <literal>rollbackOn</literal> and <literal>dontRollbackOn</literal> attrib
 There is really no need for <literal>@Transactional</literal> on <literal>writeItems</literal> method but
 shows a usage for the annotation.</simpara>
 </note>
+
 <simpara>Resolve the imports.</simpara>
 </listitem>
 <listitem>
@@ -1561,7 +1589,7 @@ the name as &#8216;batch-jobs&#8217;, and click on &#8216;Finish&#8217;.</simpar
 click on &#8216;Next&#8217;, take the default, and click on &#8216;Finish&#8217;.</simpara>
 <simpara>Replace contents of the file with the following:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;job id="endOfDaySales"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee[http://xmlns.jcp.org/xml/ns/javaee]"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
     version="1.0"&gt;
     &lt;step id="populateSales"&gt;
         &lt;chunk item-count="3" skip-limit="5"&gt;
@@ -1574,6 +1602,7 @@ click on &#8216;Next&#8217;, take the default, and click on &#8216;Finish&#8217;
         &lt;/chunk&gt;
     &lt;/step&gt;
 &lt;/job&gt;</programlisting>
+
 <simpara>This code shows that the job has one step of chunk type. The <literal>&lt;reader&gt;</literal>,
 <literal>&lt;processor&gt;</literal>, and <literal>&lt;writer&gt;</literal> elements define the CDI bean name of the
 implementations of <literal>ItemReader</literal>, <literal>ItemProcessor</literal>, and <literal>ItemWriter</literal> interfaces.
@@ -1604,6 +1633,7 @@ button.</simpara>
         ex.printStackTrace();
     }
 }</programlisting>
+
 <simpara>This method uses <literal>BatchRuntime</literal> to get an instance of <literal>JobOperator</literal>, which
 is then used to start the job. <literal>JobOperator</literal> is the interface for
 operating on batch jobs. It can be used to start, stop, and restart
@@ -1626,6 +1656,7 @@ the bean to be injectable in an EL expression.</simpara>
 <listitem>
 <simpara>Inject <literal>EntityManagerFactory</literal> in the class as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@PersistenceUnit EntityManagerFactory emf;</programlisting>
+
 <simpara>and add the following method:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public List&lt;Sales&gt; getSalesData() {
     return emf.
@@ -1633,6 +1664,7 @@ the bean to be injectable in an EL expression.</simpara>
         createNamedQuery("Sales.findAll", Sales.class).
         getResultList();
 }</programlisting>
+
 <simpara>This method uses a pre-defined <literal>@NamedQuery</literal> to query the database and
 return all the rows from the table.</simpara>
 <simpara>Resolve the imports.</simpara>
@@ -1674,6 +1706,7 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
             action="sales" /&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>This code displays the show identifier and sales from that show in a
 table by invoking <literal>SalesBean.getSalesData()</literal>. First command button allows
 invoking the job that processes the CSV file and populates the database.
@@ -1687,6 +1720,7 @@ needs to be repeated for <literal>f:</literal> prefix.</simpara>
     value="${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml"&gt;
     Sales
     &lt;/h:outputLink&gt;</programlisting>
+
 </listitem>
 <listitem>
 <simpara>Run the project to see the output as shown.</simpara>
@@ -1737,6 +1771,7 @@ have correct numeric entries for the sales total. The Job XML for the
 application explicitly mentioned to skip such errors.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="jaxrs">
 <title>View and Delete Movie (Java API for RESTful Web Services)</title>
@@ -1784,6 +1819,7 @@ to be automatically activated and passivated with the request.</simpara>
 <warning>
 <simpara>Make sure to pick <literal>javax.enterprise.context.RequestScoped</literal> class.</simpara>
 </warning>
+
 <figure>
 <title>RequestScoped import</title>
   <mediaobject>
@@ -1820,6 +1856,7 @@ public void init() {
 public void destroy() {
     client.close();
 }</programlisting>
+
 <simpara><literal>ClientBuilder</literal> is the main entry point to the Client API. It uses a
 fluent builder API to invoke REST endpoints. A new <literal>Client</literal> instance is
 created using the default client builder implementation provided by the
@@ -1840,6 +1877,7 @@ added in CDI 1.1</simpara>
         .request()
         .get(Movie[].class);
 }</programlisting>
+
 <simpara>A request is prepared by calling the request method. HTTP GET method is
 invoked by calling get method. The response type is specified in the
 last method call and so return value is of the type <literal>Movie[]</literal>.</simpara>
@@ -1867,6 +1905,7 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
         &lt;h:commandButton value="Details" action="movie" /&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>This code fragment invokes <literal>getMovies</literal> method from <literal>MovieClientBean</literal>,
 iterates over the response in a for loop, and display the name of each
 movie with a radio button. The selected radio button value is bound to
@@ -1893,6 +1932,7 @@ and <literal>f:</literal> prefixes.</simpara>
 on &#8216;Finish&#8217;.</simpara>
 <simpara>Add the following field:</simpara>
 <programlisting language="java" linenumbering="unnumbered">int movieId;</programlisting>
+
 <simpara>Add getters/setters by right-clicking on the editor pane and selecting
 &#8216;Insert Code&#8217; (<keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo> shortcut on OSX). Select the field and click on
 &#8216;Generate&#8217;.</simpara>
@@ -1902,6 +1942,7 @@ on &#8216;Finish&#8217;.</simpara>
 <warning>
 <simpara>Make sure to import <literal>javax.enterprise.context.SessionScoped</literal>.</simpara>
 </warning>
+
 </listitem>
 <listitem>
 <simpara>In &#8216;template.xhtml&#8217;, add the following code along with other &lt;outputLink&gt;s:</simpara>
@@ -1909,6 +1950,7 @@ on &#8216;Finish&#8217;.</simpara>
         value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml"&gt;
         Movies
     &lt;/h:outputLink&gt;</programlisting>
+
 <simpara>Running the project (<keycombo><keycap>Fn</keycap><keycap>F6</keycap></keycombo> shortcut on OSX) and clicking on &#8216;Movies&#8217;
 in the left navigation bar shows the output as shown.</simpara>
 <figure>
@@ -1929,6 +1971,7 @@ displayed.</simpara>
 of selected movie from the page. Add the following code:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Inject
 MovieBackingBean bean;</programlisting>
+
 </listitem>
 <listitem>
 <simpara>In <literal>MovieClientBean</literal>, add the following method:</simpara>
@@ -1940,6 +1983,7 @@ MovieBackingBean bean;</programlisting>
         .get(Movie.class);
     return m;
 }</programlisting>
+
 <simpara>This code reuses the <literal>Client</literal> and <literal>WebTarget</literal> instances created in
 <literal>@PostConstruct</literal>. It also adds a variable part to the URI of the REST
 endpoint, defined using <literal>{movie}</literal>, and binds it to a concrete value using
@@ -1976,6 +2020,7 @@ click on &#8216;Select File&#8217;. Click on &#8216;Finish&#8217;.</simpara>
         &lt;h:commandButton value="Back" action="movies" /&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>Click on the yellow-bulb to resolve the namespace prefix-URI mapping for
 <literal>h:</literal>.</simpara>
 <simpara>The output values are displayed by calling the <literal>getMovie</literal> method and
@@ -2004,6 +2049,7 @@ following code with other &lt;commandButton&gt;.</simpara>
     value="Delete"
     action="movies"
     actionListener="#{movieClientBean.deleteMovie()}"/&gt;</programlisting>
+
 <simpara>This button displays a label &#8216;Delete&#8217;, invokes the method deleteMovie
 from &#8216;MovieClientBean&#8217;, and then renders &#8216;movies.xhtml&#8217;.</simpara>
 </listitem>
@@ -2016,6 +2062,7 @@ from &#8216;MovieClientBean&#8217;, and then renders &#8216;movies.xhtml&#8217;.
         .request()
         .delete();
 }</programlisting>
+
 <simpara>This code again reuses the <literal>Client</literal> and <literal>WebTarget</literal> instances created in
 <literal>@PostConstruct</literal>. It also adds a variable part to the URI of the REST
 endpoint, defined using <literal>{movieId}</literal>, and binds it to a concrete value
@@ -2038,6 +2085,7 @@ the database and refreshes list on the page. Note that a redeploy of the
 project will delete all the movies anyway and add them all back.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="json">
 <title>Add Movie (Java API for JSON Processing)</title>
@@ -2082,6 +2130,7 @@ specify the name as &#8216;MovieReader&#8217;, and click on &#8216;Finish&#8217;
 following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Provider
 @Consumes(MediaType.APPLICATION_JSON)</programlisting>
+
 <simpara><literal>@Provider</literal> allows this implementation to be discovered by the JAX-RS
 runtime during the provider scanning phase. <literal>@Consumes</literal> indicates that
 this implementation will consume a JSON representation of the resource.</simpara>
@@ -2115,6 +2164,7 @@ select &#8216;Implement all abstract methods&#8217;.</simpara>
 <listitem>
 <simpara>Change implementation of the <literal>isReadable</literal> method as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">return Movie.class.isAssignableFrom(type);</programlisting>
+
 <simpara>This method ascertains if the <literal>MessageBodyReader</literal> can produce an instance
 of a particular type.</simpara>
 </listitem>
@@ -2157,6 +2207,7 @@ public Movie readFrom(
     }
     return movie;
 }</programlisting>
+
 <simpara>This code reads a type from the input stream in. <literal>JsonParser</literal>, a streaming
 parser, is created from the input stream. Key values are read from the
 parser and a <literal>Movie</literal> instance is populated and returned.</simpara>
@@ -2168,6 +2219,7 @@ specify the name as &#8216;MovieWriter&#8217;, and click on &#8216;Finish&#8217;
 following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Provider
 @Produces(MediaType.APPLICATION_JSON)</programlisting>
+
 <simpara><literal>@Provider</literal> allows this implementation to be discovered by the JAX-RS
 runtime during the provider scanning phase. <literal>@Produces</literal> indicates that
 this implementation will produce a JSON representation of the resource.</simpara>
@@ -2186,6 +2238,7 @@ this implementation will produce a JSON representation of the resource.</simpara
 <listitem>
 <simpara>Make this class implement <literal>MessageBodyWriter</literal> interface by adding the following code:</simpara>
 <programlisting language="java" linenumbering="unnumbered">implements MessageBodyWriter&lt;Movie&gt;</programlisting>
+
 <simpara>Resolve the imports.</simpara>
 <simpara>The IDE provide a hint to implement abstract methods as:</simpara>
 <figure>
@@ -2204,12 +2257,14 @@ select &#8216;Implement all abstract methods&#8217;.</simpara>
 <listitem>
 <simpara>Change implementation of the <literal>isWritable</literal> method to:</simpara>
 <programlisting language="java" linenumbering="unnumbered">return Movie.class.isAssignableFrom(type);</programlisting>
+
 <simpara>This method ascertains if the <literal>MessageBodyWriter</literal> supports a particular
 type.</simpara>
 </listitem>
 <listitem>
 <simpara>Add implementation of the <literal>getSize</literal> method as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">return -1;</programlisting>
+
 <simpara>Originally, this method was called to ascertain the length in bytes of
 the serialized form of <literal>t</literal>. In JAX-RS 2.0, this method is deprecated and
 the value returned by the method is ignored by a JAX-RS runtime. All
@@ -2224,6 +2279,7 @@ gen.writeStartObject()
     .write("actors", t.getActors())
     .writeEnd();
     gen.flush();</programlisting>
+
 <simpara>This method writes a type to an HTTP message. <literal>JsonGenerator</literal> writes JSON
 data to an output stream in a streaming way. Overloaded write methods
 are used to write different data types to the stream.</simpara>
@@ -2263,6 +2319,7 @@ Click on &#8216;Finish&#8217;.</simpara>
         actionListener="#{movieClientBean.addMovie()}"/&gt;
 &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>This code creates a form to accept input of <literal>id</literal>, <literal>name</literal>, and <literal>actors</literal> of a
 movie. These values are bound to fields in <literal>MovieBackingBean</literal>. The click
 of command button invokes the addMovie method from <literal>MovieClientBean</literal> and
@@ -2284,12 +2341,14 @@ prefix/URI mapping as shown.</simpara>
 <simpara>Add <literal>movieName</literal> and <literal>actors</literal> field to <literal>MovieBackingBean</literal> as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">String movieName;
 String actors;</programlisting>
+
 <simpara>Generate getters and setters by clicking on the menu item &#8216;Source&#8217; and
 then &#8216;Insert Code&#8217;.</simpara>
 </listitem>
 <listitem>
 <simpara>Add the following code to &#8216;movies.xhtml&#8217;</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:commandButton value="New Movie" action="addmovie" /&gt;</programlisting>
+
 <simpara>along with rest of the &lt;commandButton&gt;s.</simpara>
 </listitem>
 <listitem>
@@ -2304,6 +2363,7 @@ then &#8216;Insert Code&#8217;.</simpara>
         .request()
         .post(Entity.entity(m, MediaType.APPLICATION_JSON));
 }</programlisting>
+
 <simpara>This method creates a new <literal>Movie</literal> instance, populates it with the values
 from the backing bean, and POSTs the bean to the REST endpoint. The
 register method registers a MovieWriter that provides conversion from
@@ -2364,6 +2424,7 @@ sequence; however this is not done in the application.</simpara>
 <simpara>Note that the newly added movie is now displayed.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="jms">
 <title>Movie Points (Java Message Service)</title>
@@ -2402,6 +2463,7 @@ and click on &#8216;Finish&#8217;.</simpara>
 <simpara>Add the following class-level annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Named
 @RequestScoped</programlisting>
+
 <simpara>This makes the bean to be EL-injectable and automatically activated and
 passivated with the request.</simpara>
 <simpara>Resolve the imports.</simpara>
@@ -2429,6 +2491,7 @@ explicit call to the bean from a JSF page.</simpara>
 @Pattern(regexp = "^\\d{2},\\d{2}",
          message = "Message format must be 2 digits, comma, 2 digits, e.g.12,12")
 private String message;</programlisting>
+
 <simpara>This field contains the message sent to the queue. This field’s value is
 bound to an inputText in a JSF page (created later). Constraints have
 been specified on this bean that enable validation of data on form
@@ -2454,6 +2517,7 @@ public void sendMessage() {
     System.out.println("Sending message: " + message);
     context.createProducer().send(pointsQueue, message);
 }</programlisting>
+
 <simpara>The Java EE Platform requires a pre-configured JMS connection factory
 under the JNDI name <literal>java:comp/DefaultJMSConnectionFactory</literal>. If no
 connection factory is specified then the pre-configured connection
@@ -2461,6 +2525,7 @@ factory is used. In a Java EE environment, where CDI is enabled by
 default anyway, a container-managed <literal>JMSContext</literal> can be injected as:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Inject
 JMSContext context;</programlisting>
+
 <simpara>This code uses the default factory to inject an instance of
 container-managed <literal>JMSContext</literal>.</simpara>
 <simpara><literal>JMSContext</literal> is a new interface introduced in JMS 2. This combines in a
@@ -2483,6 +2548,7 @@ message field.</simpara>
 <simpara>Make sure <literal>Queue</literal> class is imported from <literal>javax.jms.Queue</literal> instead of the
 default <literal>java.util.Queue</literal>.</simpara>
 </warning>
+
 <simpara>Click on &#8216;OK&#8217;.</simpara>
 </listitem>
 <listitem>
@@ -2493,6 +2559,7 @@ default <literal>java.util.Queue</literal>.</simpara>
 interfaceName = "javax.jms.Queue")
 @Named
 @RequestScoped</programlisting>
+
 <simpara>This allows the bean to refered from an EL expression. It also activates
 and passivates the bean with the request.</simpara>
 <simpara><literal>JMSDestinationDefinition</literal> is a new annotation introduced in JMS 2. It is
@@ -2516,6 +2583,7 @@ public String receiveMessage() {
         return message;
     }
 }</programlisting>
+
 <simpara>This code creates <literal>JMSConsumer</literal> in a try-with-resources block
 which is then used to synchronously receive a message. Note that <literal>JMSConsumer</literal>
 is created as an auto-managed resource and so is closed automatically after
@@ -2538,6 +2606,7 @@ using Message Driven Beans. However that is not covered in this lab.</simpara>
     }
     return count;
 }</programlisting>
+
 <simpara>This code creates a <literal>QueueBrowser</literal> to look at the messages on a queue
 without removing them. It calculates and returns the total number of
 messages in the queue.</simpara>
@@ -2574,6 +2643,7 @@ next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&
             actionListener="#{receivePointsBean.receiveMessage()}"/&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>Click on the yellow bulb to resolve namespace prefix/URI mapping for <literal>h:</literal>
 prefix.</simpara>
 <simpara>This page displays the number of messages in the current queue. It
@@ -2593,6 +2663,7 @@ message is displayed on the screen.</simpara>
         value="${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml"&gt;
         Points
     &lt;/h:outputLink&gt;</programlisting>
+
 </listitem>
 <listitem>
 <simpara>Run the project. The update page looks like as shown:</simpara>
@@ -2684,6 +2755,7 @@ queue has 0 messages.</simpara>
 remaining messages in the queue.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="jsf">
 <title>Show Booking (JavaServer Faces)</title>
@@ -2754,6 +2826,7 @@ attributes. These sections are inherited from the template.</simpara>
         &lt;h:commandButton id="shows" value="Pick a time" action="showtimes" /&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>The code builds an HTML form that displays the list of movies as radio
 button choices. The chosen movie is bound to <literal>#{booking.movieId}</literal> which
 will be defined as a flow-scoped bean. The value of action attribute on
@@ -2781,11 +2854,13 @@ Specify the class name as &#8216;Booking&#8217; and the package name as
 is automatically activated and passivated as the flow is entered or exited.</simpara>
 <simpara>Add the following field:</simpara>
 <programlisting language="java" linenumbering="unnumbered">int movieId;</programlisting>
+
 <simpara>and generate getters/setters by going to &#8216;Source&#8217;, &#8216;Insert Code&#8217;,
 selecting &#8216;Getter and Setter&#8217;, and select the field.</simpara>
 <simpara>Inject <literal>EntityManager</literal> in this class by adding the following code:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@PersistenceContext
 EntityManager em;</programlisting>
+
 <simpara>Add the following convenience method:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public String getMovieName() {
     try {
@@ -2797,6 +2872,7 @@ EntityManager em;</programlisting>
         return "";
     }
 }</programlisting>
+
 <simpara>This method will return the movie name based upon the selected movie.</simpara>
 <simpara>Alternatively, movie id and name may be passed from the selected radio
 button and parsed in the backing bean. This will reduce an extra trip to
@@ -2821,6 +2897,7 @@ attributes. These sections are inherited from the template.</simpara>
         &lt;h:commandButton id="back" value="Back" action="booking" immediate="true"/&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>This code builds an HTML form that displays the chosen movie name and
 all the show times. <literal>#{timeslotFacadeREST.all}</literal> returns the list of all
 the movies and iterates over them using a <literal>c:forEach</literal> loop. The id and
@@ -2840,6 +2917,7 @@ available for this movie; however this is not part of the application.</simpara>
 <simpara>Add the following fields to the <literal>Booking</literal> class:</simpara>
 <programlisting language="java" linenumbering="unnumbered">String startTime;
 int startTimeId;</programlisting>
+
 <simpara>And the following methods:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public String getStartTime() {
     return startTime;
@@ -2854,6 +2932,7 @@ public void setStartTime(String startTime) {
 public int getStartTimeId() {
     return startTimeId;
 }</programlisting>
+
 <simpara>These methods will parse the values received from the form. Also add the
 following method:</simpara>
 <programlisting language="java" linenumbering="unnumbered">public String getTheater() {
@@ -2880,6 +2959,7 @@ following method:</simpara>
         return "none";
     }
 }</programlisting>
+
 <simpara>This method will find the first theater available for the chosen movie
 and show the timing.</simpara>
 <simpara>Additionally a list of theaters offering that movie may be shown in a
@@ -2914,6 +2994,7 @@ attributes. These sections are inherited from the template.</simpara>
         &lt;/c:otherwise&gt;
     &lt;/c:choose&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>The code displays the selected movie, show timing, and theater if
 available. The reservation can proceed if all three are available.
 &#8216;print.xhtml&#8217; is the last page that shows the confirmed reservation
@@ -2939,6 +3020,7 @@ attributes. These sections are inherited from the template.</simpara>
         &lt;h:commandButton id="home" value="home" action="goHome" /&gt;&lt;p/&gt;
     &lt;/h:form&gt;
 &lt;/ui:define&gt;</programlisting>
+
 <simpara>This code displays the movie name, show timings, and the selected
 theater.</simpara>
 <simpara>Right-click on the yellow bulb to fix namespace prefix/URI mapping for ‘h:’.</simpara>
@@ -2952,6 +3034,7 @@ informed that the views in this directory are to be treated as view
 nodes in a flow. This can be done declaratively by adding &#8216;booking/booking-flow.xml&#8217;
 or programmatically by having a class with a method with the following annotations:</simpara>
 <programlisting language="java" linenumbering="unnumbered">@Produces @FlowDefinition</programlisting>
+
 <simpara>This lab takes the declarative approach.</simpara>
 <simpara>Right-click on &#8216;Web Pages/booking&#8217; folder, select &#8216;New&#8217;, &#8216;Other&#8217;, &#8216;XML&#8217;,
 &#8216;XML Document&#8217;, give the name as &#8216;booking-flow&#8217;, click on &#8216;Next&gt;&#8217;, take
@@ -2969,6 +3052,7 @@ the default of &#8216;Well-formed Document&#8217;, and click on &#8216;Finish&#8
         &lt;/flow-return&gt;
     &lt;/flow-definition&gt;
 &lt;/faces-config&gt;</programlisting>
+
 <simpara>This defines the flow graph. It uses the parent element used in
 a standard <literal>faces-config.xml</literal> but defines a <literal>&lt;flow-definition&gt;</literal> inside it.</simpara>
 <simpara><literal>&lt;flow-return&gt;</literal> defines a return node in a flow graph. <literal>&lt;from-outcome&gt;</literal>
@@ -2979,8 +3063,10 @@ return to. In this case, the navigation returns to the home page.</simpara>
 <simpara>Finally, invoke the flow by editing &#8216;WEB-INF/template.xhtml&#8217; and
 changing:</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:commandLink action="item1"&gt;Item 1&lt;/h:commandLink&gt;</programlisting>
+
 <simpara>to</simpara>
 <programlisting language="xml" linenumbering="unnumbered">&lt;h:commandLink action="booking"&gt;Book a movie&lt;/h:commandLink&gt;</programlisting>
+
 <simpara><literal>commandLink</literal> renders an HTML anchor tag that behaves like a form submit
 button. The action attribute points to the directory where all views for
 the flow are stored. This directory already contains &#8216;booking-flow.xml&#8217;
@@ -3049,6 +3135,7 @@ notice how the values in the bean are preserved.</simpara>
 <simpara>Click on &#8216;home&#8217; takes to the main application page.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="_conclusion">
 <title>Conclusion</title>
@@ -3068,6 +3155,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Default JMSConnectionFactory</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Java API for WebSocket 1.0</simpara>
@@ -3079,6 +3167,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>JavaScript client</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Batch Applications for the Java Platform 1.0</simpara>
@@ -3090,6 +3179,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Exception handling</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Java API for JSON Processing 1.0</simpara>
@@ -3101,6 +3191,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Streaming API for consuming JSON</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Java API for RESTful Web Services 2.0</simpara>
@@ -3112,6 +3203,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Custom Entity Providers</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Java Message Service 2.0</simpara>
@@ -3126,6 +3218,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Synchronous message send and receive</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Contexts and Dependency Injection 1.1</simpara>
@@ -3137,6 +3230,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Injection of beans</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>JavaServer Faces 2.2</simpara>
@@ -3145,6 +3239,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Faces Flow</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Bean Validation 1.1</simpara>
@@ -3153,6 +3248,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Integration with JavaServer Faces</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Java Transaction API 1.2</simpara>
@@ -3161,6 +3257,7 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>@Transactional</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Java Persistence API 2.1</simpara>
@@ -3169,8 +3266,10 @@ and demonstrated the following features of the platform:</simpara>
 <simpara>Schema generation properties</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 </orderedlist>
+
 <simpara>Hopefully this has raised your interest enough in trying out Java EE 7 applications using
 WildFly 8.</simpara>
 <simpara>Send us feedback or file issues at <ulink url="http://github.com/javaee-samples/javaee7-hol">http://github.com/javaee-samples/javaee7-hol</ulink>.</simpara>
@@ -3271,6 +3370,7 @@ node, and select
 <simpara>WebSocket Java Client</simpara>
 </listitem>
 </orderedlist>
+
 </listitem>
 <listitem>
 <simpara>Disable errors in persistence.xml</simpara>
@@ -3282,6 +3382,7 @@ node, and select
 <simpara>Change logging to use java.util.Logging.</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <chapter id="_revision_history">
 <title>Revision History</title>
@@ -3296,6 +3397,7 @@ node, and select
 <simpara>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</simpara>
 </listitem>
 </orderedlist>
+
 </chapter>
 <appendix id="_appendix">
 <title>Appendix</title>
@@ -3308,7 +3410,7 @@ node, and select
 <simpara>If you are using NetBeans development build then skip this section and go to <xref linkend="install-wildfly-plugin"/>. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</simpara>
 </listitem>
 <listitem>
-<simpara>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;<ulink url="http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;">http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;</ulink>.</simpara>
+<simpara>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.</simpara>
 <figure>
 <title>NetBeans Update Center</title>
   <mediaobject>
@@ -3322,6 +3424,7 @@ node, and select
 <simpara>and click on <guibutton>OK</guibutton>.</simpara>
 </listitem>
 </orderedlist>
+
 </section>
 <section id="install-wildfly-plugin">
 <title>Install WildFly plugin</title>
@@ -3344,6 +3447,7 @@ node, and select
 <simpara>Click the <guibutton>Install</guibutton> button, then <guibutton>Next &gt;</guibutton>, accept the license agreement by clicking on the checkbox, then click the <guibutton>Install</guibutton> button to install the plugin. Click the <guibutton>Finish</guibutton> button to restart the IDE and complete installation.</simpara>
 </listitem>
 </orderedlist>
+
 </section>
 <section id="_configure_wildfly_8">
 <title>Configure WildFly 8</title>
@@ -3406,6 +3510,7 @@ archive.</simpara>
 
 </listitem>
 </orderedlist>
+
 </section>
 </section>
 <section id="appendix-wildfly-idea">
@@ -3429,6 +3534,7 @@ archive.</simpara>
 <simpara><xref linkend="run-app-wildfly-idea"/></simpara>
 </listitem>
 </orderedlist>
+
 <section id="specify-jdk-wildfly-idea">
 <title>Specify the JDK</title>
 <simpara>First of all, you should specify the JDK that you are going to use. In IntelliJ IDEA, this is done in the <emphasis role="strong">Project Structure</emphasis> dialog:</simpara>
@@ -3514,6 +3620,7 @@ archive.</simpara>
 <simpara>Click <guibutton>OK</guibutton>.</simpara>
 </listitem>
 </orderedlist>
+
 </section>
 <section id="define-wildfly-idea">
 <title>Define WildFly</title>
@@ -3606,6 +3713,7 @@ archive.</simpara>
 
 </listitem>
 </orderedlist>
+
 </section>
 <section id="create-project-wildfly-idea">
 <title>Create a project</title>
@@ -3710,6 +3818,7 @@ archive.</simpara>
 
 </listitem>
 </orderedlist>
+
 </section>
 <section id="create-run-config-wildfly-idea">
 <title>Create a run/debug configuration</title>
@@ -3803,6 +3912,7 @@ archive.</simpara>
 
 </listitem>
 </orderedlist>
+
 <simpara>The <emphasis role="strong">Application Servers</emphasis> tool window opens in the lower part of the workspace. Shown in this window are the server run/debug configuration and the associated deployment artifact. Now you are ready to run the application.</simpara>
 </section>
 <section id="run-app-wildfly-idea">
