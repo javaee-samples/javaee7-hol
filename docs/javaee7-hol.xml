@@ -5,7 +5,7 @@
 <book xmlns="http://docbook.org/ns/docbook" lang="en">
 <bookinfo>
 <title>Java EE 7 Hands-on Lab</title>
-<date>Jan 28, 2014</date>
+<date>Jun 25, 2014</date>
 <author>
 <firstname>Arun</firstname>
 
@@ -16,8 +16,8 @@
 <authorinitials>AG</authorinitials>
 <revhistory>
 <revision>
-<revnumber>2.0</revnumber>
-<date>Jan 28, 2014</date>
+<revnumber>2.1</revnumber>
+<date>Jun 25, 2014</date>
 <authorinitials>AG</authorinitials>
 
 </revision>
@@ -86,7 +86,7 @@ using the following Java EE 7 technologies:</simpara>
 WildFly 8.</simpara>
 </listitem>
 <listitem>
-<simpara><emphasis role="strong">IDE</emphasis>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
+<simpara><emphasis role="strong">IDE</emphasis>: NetBeans 8.0+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
 NetBeans 8.</simpara>
 <simpara>Download &#8220;All&#8221; or &#8220;Java EE&#8221; version from
 <ulink url="http://netbeans.org/downloads/">http://netbeans.org/downloads/</ulink>. A
@@ -611,12 +611,6 @@ Web Profile Specification.</simpara>
 </note>
 
 <simpara>WildFly can be started in Full Platform or Web Profile.</simpara>
-<important>
-<simpara>This lab requires Full Platform download. All technologies used in this
-lab, except Java Message Service and Batch Applications for the Java
-Platform, can be deployed on Web Profile.</simpara>
-</important>
-
 </listitem>
 <listitem>
 <simpara><emphasis role="strong">Default Data Source</emphasis>: Expand &#8216;Other Sources&#8217;,
@@ -3355,7 +3349,7 @@ node, and select
 </chapter>
 <chapter id="_completed_solutions">
 <title>Completed Solutions</title>
-<simpara>The completed solution can be downloaded from <ulink url="https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip">javaee7-hol</ulink>.</simpara>
+<simpara>The completed solution for this lab can be downloaded from <ulink url="https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip">javaee7-hol</ulink>.</simpara>
 </chapter>
 <chapter id="_todo">
 <title>TODO</title>
@@ -3388,10 +3382,13 @@ node, and select
 <title>Revision History</title>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>Added IntelliJ IDEA specific instructions. (Jan 22, 2014)</simpara>
+<simpara>Cleaned up NetBeans instructions and some other typos from DevoxxUK (Jun 25, 2014)</simpara>
 </listitem>
 <listitem>
-<simpara>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros. (Jan 10, 2014)</simpara>
+<simpara>Added IntelliJ IDEA specific instructions (Jan 22, 2014)</simpara>
+</listitem>
+<listitem>
+<simpara>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros (Jan 10, 2014)</simpara>
 </listitem>
 <listitem>
 <simpara>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</simpara>
@@ -3403,29 +3400,6 @@ node, and select
 <title>Appendix</title>
 <section id="appendix-wildfly-netbeans">
 <title>Configure WildFly 8 in NetBeans</title>
-<section id="_configure_update_center">
-<title>Configure Update Center</title>
-<orderedlist numeration="arabic">
-<listitem>
-<simpara>If you are using NetBeans development build then skip this section and go to <xref linkend="install-wildfly-plugin"/>. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</simpara>
-</listitem>
-<listitem>
-<simpara>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.</simpara>
-<figure>
-<title>NetBeans Update Center</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="images/16-netbeans-add-dev-update-center.png"/>
-    </imageobject>
-    <textobject><phrase>16 netbeans add dev update center</phrase></textobject>
-  </mediaobject>
-</figure>
-
-<simpara>and click on <guibutton>OK</guibutton>.</simpara>
-</listitem>
-</orderedlist>
-
-</section>
 <section id="install-wildfly-plugin">
 <title>Install WildFly plugin</title>
 <orderedlist numeration="arabic">

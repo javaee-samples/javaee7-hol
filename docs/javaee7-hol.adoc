@@ -1,6 +1,6 @@
 = Java EE 7 Hands-on Lab
 Arun Gupta <https://twitter.com/arungupta[@arungupta]>
-v2.0, Jan 28, 2014
+v2.1, Jun 25, 2014
 :doctype: book
 :toc:
 :toclevels: 3

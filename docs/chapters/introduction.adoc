@@ -38,7 +38,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/index.html[http://www.or
 * *Application Server*: This lab can use WildFly 8 or GlassFish 4 as the application server. This document provides instructions for
 ifdef::server-wildfly[WildFly 8.]
 ifdef::server-glassfish[GlassFish.]
-* *IDE*: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
+* *IDE*: NetBeans 8.0+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
 ifdef::ide-netbeans[]
 NetBeans 8.
 +

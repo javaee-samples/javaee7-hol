@@ -55,16 +55,16 @@ Web Profile Specification.
 =================
 ifdef::server-glassfish[]
 GlassFish can be downloaded in two different flavors – Full Platform or Web Profile.
+
+IMPORTANT: This lab requires Full Platform download. All technologies used in this
+lab, except Java Message Service and Batch Applications for the Java
+Platform, can be deployed on Web Profile.
 endif::server-glassfish[]
 ifdef::server-wildfly[]
 WildFly can be started in Full Platform or Web Profile.
 endif::server-wildfly[]
 
-IMPORTANT: This lab requires Full Platform download. All technologies used in this
-lab, except Java Message Service and Batch Applications for the Java
-Platform, can be deployed on Web Profile.
 --
-
 . *Default Data Source*: Expand `Other Sources',
 `src/main/resources', `META-INF', and double-click on `persistence.xml'.
 By default, NetBeans opens the file in Design View. Click on `Source' tab

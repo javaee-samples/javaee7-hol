@@ -13,16 +13,6 @@ ifdef::server-wildfly[]
 [[appendix-wildfly-netbeans]]
 === Configure WildFly 8 in NetBeans
 
-==== Configure Update Center
-
-. If you are using NetBeans development build then skip this section and go to <<install-wildfly-plugin>>. Otherwise in NetBeans, click on `Tools', `Plugins', `Settings', and click on `Add'.
-+
-. Specify the name as ``Dev Update Center'' and the URL as ``http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz''.
-+
-image::16-netbeans-add-dev-update-center.png[title="NetBeans Update Center"]
-+
-and click on btn:[OK].
-
 [[install-wildfly-plugin]]
 ==== Install WildFly plugin
 

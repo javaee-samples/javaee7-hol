@@ -454,8 +454,8 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <h1>Java EE 7 Hands-on Lab</h1>
 <span id="author" class="author">Arun Gupta</span><br>
 <span id="email" class="email"><a href="https://twitter.com/arungupta">@arungupta</a></span><br>
-<span id="revnumber">version 2.0,</span>
-<span id="revdate">Jan 28, 2014</span>
+<span id="revnumber">version 2.1,</span>
+<span id="revdate">Jun 25, 2014</span>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -491,9 +491,8 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <li><a href="#appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</a></li>
 <li>
 <ul class="sectlevel3">
-<li><a href="#_configure_update_center">16.1.1. Configure Update Center</a></li>
-<li><a href="#install-wildfly-plugin">16.1.2. Install WildFly plugin</a></li>
-<li><a href="#_configure_wildfly_8">16.1.3. Configure WildFly 8</a></li>
+<li><a href="#install-wildfly-plugin">16.1.1. Install WildFly plugin</a></li>
+<li><a href="#_configure_wildfly_8">16.1.2. Configure WildFly 8</a></li>
 </ul>
 </li>
 <li><a href="#appendix-wildfly-idea">16.2. Prepare IntelliJ IDEA for working with WildFly 8</a></li>
@@ -585,7 +584,7 @@ using the following Java EE 7 technologies:</p>
 WildFly 8.</p>
 </li>
 <li>
-<p><strong>IDE</strong>: NetBeans 7.4+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
+<p><strong>IDE</strong>: NetBeans 8.0+, JBoss Developer Studio (Eclipse-based), or IntelliJ IDEA 13 can be used. This document provides instructions for
 NetBeans 8.</p>
 <div class="paragraph">
 <p>Download &#8220;All&#8221; or &#8220;Java EE&#8221; version from
@@ -1037,20 +1036,6 @@ Web Profile Specification.</p>
 </div>
 <div class="paragraph">
 <p>WildFly can be started in Full Platform or Web Profile.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-This lab requires Full Platform download. All technologies used in this
-lab, except Java Message Service and Batch Applications for the Java
-Platform, can be deployed on Web Profile.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -4330,7 +4315,7 @@ node, and select
 <h2 id="_completed_solutions">13. Completed Solutions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The completed solution can be downloaded from <a href="https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip">javaee7-hol</a>.</p>
+<p>The completed solution for this lab can be downloaded from <a href="https://github.com/javaee-samples/javaee7-hol/blob/master/solution/movieplex7-solution.zip">javaee7-hol</a>.</p>
 </div>
 </div>
 </div>
@@ -4371,10 +4356,13 @@ node, and select
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Added IntelliJ IDEA specific instructions. (Jan 22, 2014)</p>
+<p>Cleaned up NetBeans instructions and some other typos from DevoxxUK (Jun 25, 2014)</p>
 </li>
 <li>
-<p>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros. (Jan 10, 2014)</p>
+<p>Added IntelliJ IDEA specific instructions (Jan 22, 2014)</p>
+</li>
+<li>
+<p>Added macros to generate WildFly and GlassFish-server specific instructions. Also enabled IntelliJ and Eclipse specific macros (Jan 10, 2014)</p>
 </li>
 <li>
 <p>Moving the source document from Pages to AsciiDoc (Dec 3, 2013)</p>
@@ -4389,29 +4377,7 @@ node, and select
 <div class="sect2">
 <h3 id="appendix-wildfly-netbeans">16.1. Configure WildFly 8 in NetBeans</h3>
 <div class="sect3">
-<h4 id="_configure_update_center">16.1.1. Configure Update Center</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If you are using NetBeans development build then skip this section and go to <a href="#install-wildfly-plugin">Install WildFly plugin</a>. Otherwise in NetBeans, click on &#8216;Tools&#8217;, &#8216;Plugins&#8217;, &#8216;Settings&#8217;, and click on &#8216;Add&#8217;.</p>
-</li>
-<li>
-<p>Specify the name as &#8220;Dev Update Center&#8221; and the URL as &#8220;http://deadlock.netbeans.org/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz&#8221;.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/16-netbeans-add-dev-update-center.png" alt="16 netbeans add dev update center">
-</div>
-<div class="title">Figure 53. NetBeans Update Center</div>
-</div>
-<div class="paragraph">
-<p>and click on <b class="button">OK</b>.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="install-wildfly-plugin">16.1.2. Install WildFly plugin</h4>
+<h4 id="install-wildfly-plugin">16.1.1. Install WildFly plugin</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4420,7 +4386,7 @@ node, and select
 <div class="content">
 <img src="images/16-netbeans-available-plugins-wildfly.png" alt="16 netbeans available plugins wildfly">
 </div>
-<div class="title">Figure 54. Available Plugins in NetBeans</div>
+<div class="title">Figure 53. Available Plugins in NetBeans</div>
 </div>
 <div class="paragraph">
 <p>The exact plugin version and the date may be different.</p>
@@ -4433,7 +4399,7 @@ node, and select
 </div>
 </div>
 <div class="sect3">
-<h4 id="_configure_wildfly_8">16.1.3. Configure WildFly 8</h4>
+<h4 id="_configure_wildfly_8">16.1.2. Configure WildFly 8</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4445,7 +4411,7 @@ node, and select
 <div class="content">
 <img src="images/netbeans-addserver.png" alt="netbeans addserver">
 </div>
-<div class="title">Figure 55. Add Server in NetBeans</div>
+<div class="title">Figure 54. Add Server in NetBeans</div>
 </div>
 </li>
 <li>
@@ -4455,7 +4421,7 @@ name to &#8216;WildFly 8&#8217; and click <b class="button">Next &gt;</b>.</p>
 <div class="content">
 <img src="images/16-netbeans-add-instance-wildfly.png" alt="16 netbeans add instance wildfly">
 </div>
-<div class="title">Figure 56. Add WildFly instance to NetBeans</div>
+<div class="title">Figure 55. Add WildFly instance to NetBeans</div>
 </div>
 </li>
 <li>
@@ -4467,7 +4433,7 @@ archive.</p>
 <div class="content">
 <img src="images/16-netbeans-wildfly-full-platform.png" alt="16 netbeans wildfly full platform">
 </div>
-<div class="title">Figure 57. Configure WildFly full instance in NetBeans</div>
+<div class="title">Figure 56. Configure WildFly full instance in NetBeans</div>
 </div>
 <div class="paragraph">
 <p>Click on <b class="button">Next</b> and then <b class="button">Finish</b>. The &#8216;Services&#8217; should show the WildFly instance.</p>
@@ -4476,7 +4442,7 @@ archive.</p>
 <div class="content">
 <img src="images/16-netbeans-wildfly-server.png" alt="16 netbeans wildfly server">
 </div>
-<div class="title">Figure 58. WildFly instance in NetBeans Services tab</div>
+<div class="title">Figure 57. WildFly instance in NetBeans Services tab</div>
 </div>
 </li>
 </ol>
@@ -4526,7 +4492,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-welcome-configure.png" alt="i13 welcome configure">
 </div>
-<div class="title">Figure 59. Welcome to IntelliJ IDEA</div>
+<div class="title">Figure 58. Welcome to IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4538,7 +4504,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-plus-jdk.png" alt="i13 plus jdk">
 </div>
-<div class="title">Figure 60. Add JDK in IntelliJ IDEA</div>
+<div class="title">Figure 59. Add JDK in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4547,7 +4513,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jdk-home.png" alt="i13 jdk home">
 </div>
-<div class="title">Figure 61. JDK home in IntelliJ IDEA</div>
+<div class="title">Figure 60. JDK home in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4556,7 +4522,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jdk-defined.png" alt="i13 jdk defined">
 </div>
-<div class="title">Figure 62. JDK defined in IntelliJ IDEA</div>
+<div class="title">Figure 61. JDK defined in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>Now, let&#8217;s make the JDK that we have specified the default SDK.</p>
@@ -4568,7 +4534,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-project-sdk.png" alt="i13 project sdk">
 </div>
-<div class="title">Figure 63. Project SDK in IntelliJ IDEA</div>
+<div class="title">Figure 62. Project SDK in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4596,7 +4562,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-plus-jboss.png" alt="i13 plus jboss">
 </div>
-<div class="title">Figure 64. Add WildFly in IntelliJ IDEA</div>
+<div class="title">Figure 63. Add WildFly in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4605,7 +4571,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-server-dialog-initial.png" alt="i13 jboss server dialog initial">
 </div>
-<div class="title">Figure 65. WildFly server dialog in IntelliJ IDEA</div>
+<div class="title">Figure 64. WildFly server dialog in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4614,7 +4580,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-home-directory.png" alt="i13 jboss home directory">
 </div>
-<div class="title">Figure 66. WildFly home in IntelliJ IDEA</div>
+<div class="title">Figure 65. WildFly home in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4623,7 +4589,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-server-dialog-final.png" alt="i13 jboss server dialog final">
 </div>
-<div class="title">Figure 67. WildFly final dialog in IntelliJ IDEA</div>
+<div class="title">Figure 66. WildFly final dialog in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4632,7 +4598,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-defined.png" alt="i13 jboss defined">
 </div>
-<div class="title">Figure 68. WildFly defined in IntelliJ IDEA</div>
+<div class="title">Figure 67. WildFly defined in IntelliJ IDEA</div>
 </div>
 </li>
 </ol>
@@ -4654,7 +4620,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-open-project.png" alt="i13 open project">
 </div>
-<div class="title">Figure 69. Open project in IntelliJ IDEA</div>
+<div class="title">Figure 68. Open project in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4663,7 +4629,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-select-pom.png" alt="i13 select pom">
 </div>
-<div class="title">Figure 70. Select pom in IntelliJ IDEA</div>
+<div class="title">Figure 69. Select pom in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>Wait while IntelliJ IDEA is processing <code>pom.xml</code> and creating the project. When this process is complete, the following message is shown:</p>
@@ -4672,7 +4638,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jpa-detected.png" alt="i13 jpa detected">
 </div>
-<div class="title">Figure 71. Configure JPA in IntelliJ IDEA</div>
+<div class="title">Figure 70. Configure JPA in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4681,7 +4647,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jpa-detected-status-bar.png" alt="i13 jpa detected status bar">
 </div>
-<div class="title">Figure 72. JPA detected in status bar in IntelliJ IDEA</div>
+<div class="title">Figure 71. JPA detected in status bar in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>The <strong>Event Log</strong> tool window will open. Click <strong>Configure</strong> in this window.)</p>
@@ -4690,7 +4656,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jpa-detected-event-log.png" alt="i13 jpa detected event log">
 </div>
-<div class="title">Figure 73. JPA detected event log in IntelliJ IDEA</div>
+<div class="title">Figure 72. JPA detected event log in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4699,7 +4665,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-setup-frameworks-jpa.png" alt="i13 setup frameworks jpa">
 </div>
-<div class="title">Figure 74. Setup frameworks in IntelliJ IDEA</div>
+<div class="title">Figure 73. Setup frameworks in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>Now, as an intermediate check, make sure that the project structure looks something similar to this:</p>
@@ -4708,7 +4674,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-initial-project-structure.png" alt="i13 initial project structure">
 </div>
-<div class="title">Figure 75. Project structure in IntelliJ IDEA</div>
+<div class="title">Figure 74. Project structure in IntelliJ IDEA</div>
 </div>
 </li>
 </ol>
@@ -4727,7 +4693,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-run-edit-configurations.png" alt="i13 run edit configurations">
 </div>
-<div class="title">Figure 76. Edit configurations in IntelliJ IDEA</div>
+<div class="title">Figure 75. Edit configurations in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4736,7 +4702,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-run-configs-plus-jboss.png" alt="i13 run configs plus jboss">
 </div>
-<div class="title">Figure 77. WildFly configuration in IntelliJ IDEA</div>
+<div class="title">Figure 76. WildFly configuration in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>As a result, the run/debug configuration for the WildFly server is created and its settings are shown in the right-hand part of the dialog.</p>
@@ -4751,7 +4717,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-fix-deployment.png" alt="i13 jboss fix deployment">
 </div>
-<div class="title">Figure 78. Fixing deployment warning in IntelliJ IDEA</div>
+<div class="title">Figure 77. Fixing deployment warning in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4760,7 +4726,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-invalid-extension.png" alt="i13 jboss invalid extension">
 </div>
-<div class="title">Figure 79. Invalid extension error message in IntelliJ IDEA</div>
+<div class="title">Figure 78. Invalid extension error message in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4769,7 +4735,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-fix-extension.png" alt="i13 jboss fix extension">
 </div>
-<div class="title">Figure 80. Extension error fix in IntelliJ IDEA</div>
+<div class="title">Figure 79. Extension error fix in IntelliJ IDEA</div>
 </div>
 </li>
 <li>
@@ -4778,7 +4744,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-jboss-url-fixed.png" alt="i13 jboss url fixed">
 </div>
-<div class="title">Figure 81. Fixing application URL in IntelliJ IDEA</div>
+<div class="title">Figure 80. Fixing application URL in IntelliJ IDEA</div>
 </div>
 </li>
 </ol>
@@ -4796,7 +4762,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-run-wildfly.png" alt="i13 run wildfly">
 </div>
-<div class="title">Figure 82. Run WildFly in IntelliJ IDEA</div>
+<div class="title">Figure 81. Run WildFly in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>IntelliJ IDEA compiles the code, builds the artifact, starts WildFly and deploys the artifact to the server. You can monitor this process in the <strong>Run</strong> tool window that opens in the lower part of the workspace.</p>
@@ -4805,7 +4771,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-run-tool-window-wildfly.png" alt="i13 run tool window wildfly">
 </div>
-<div class="title">Figure 83. Run tool window in IntelliJ IDEA</div>
+<div class="title">Figure 82. Run tool window in IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>Finally, your default Web browser opens and the starting page of the application is shown.</p>
@@ -4814,7 +4780,7 @@ archive.</p>
 <div class="content">
 <img src="images/i13-starting-page-in-browser.png" alt="i13 starting page in browser">
 </div>
-<div class="title">Figure 84. Starting page in browser from IntelliJ IDEA</div>
+<div class="title">Figure 83. Starting page in browser from IntelliJ IDEA</div>
 </div>
 <div class="paragraph">
 <p>At this step IntelliJ IDEA is fully prepared for your development work, and you can continue with your exercises.</p>
@@ -4826,8 +4792,8 @@ archive.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.0<br>
-Last updated 2014-01-29 12:13:53 GMT
+Version 2.1<br>
+Last updated 2014-06-25 12:16:39 PDT
 </div>
 </div>
 </body>
