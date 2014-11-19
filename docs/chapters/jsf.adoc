@@ -51,22 +51,24 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <h2>Pick a movie</h2>
-    <h:form prependId="false">
-        <h:selectOneRadio 
-            value="#{booking.movieId}"
-            layout="pageDirection"
-            required="true">
-            <f:selectItems
-                value="#{movieFacadeREST.all}"
-                var="m"
-                itemValue="#{m.id}"
-                itemLabel="#{m.name}"/>
-        </h:selectOneRadio>
-        <h:commandButton id="shows" value="Pick a time" action="showtimes" />
-    </h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h2>Pick a movie</h2>
+        <h:form prependId="false">
+            <h:selectOneRadio 
+                value="#{booking.movieId}"
+                layout="pageDirection"
+                required="true">
+                <f:selectItems
+                    value="#{movieFacadeREST.all}"
+                    var="m"
+                    itemValue="#{m.id}"
+                    itemLabel="#{m.name}"/>
+            </h:selectOneRadio>
+            <h:commandButton id="shows" value="Pick a time" action="showtimes" />
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 The code builds an HTML form that displays the list of movies as radio
@@ -139,18 +141,20 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <h2>Show Timings for <font color="red">#{booking.movieName}</font></h2>
-    <h:form>
-        <h:selectOneRadio value="#{booking.startTime}" layout="pageDirection" required="true">
-            <c:forEach items="#{timeslotFacadeREST.all}" var="s">
-                <f:selectItem itemValue="#{s.id},#{s.startTime}" itemLabel="#{s.startTime}"/>
-            </c:forEach>
-        </h:selectOneRadio>
-        <h:commandButton value="Confirm" action="confirm" />
-        <h:commandButton id="back" value="Back" action="booking" immediate="true"/>
-    </h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h2>Show Timings for <font color="red">#{booking.movieName}</font></h2>
+        <h:form>
+            <h:selectOneRadio value="#{booking.startTime}" layout="pageDirection" required="true">
+                <c:forEach items="#{timeslotFacadeREST.all}" var="s">
+                    <f:selectItem itemValue="#{s.id},#{s.startTime}" itemLabel="#{s.startTime}"/>
+                </c:forEach>
+            </h:selectOneRadio>
+            <h:commandButton value="Confirm" action="confirm" />
+            <h:commandButton id="back" value="Back" action="booking" immediate="true"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 This code builds an HTML form that displays the chosen movie name and
@@ -246,28 +250,30 @@ Replace `<ui:define>' section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <c:choose>
-        <c:when test="#{booking.theater == 'none'}">
-            <h2>No theater found, choose a different time</h2>
-            <h:form>
-                Movie name: #{booking.movieName}<p/>
-                Starts at: #{booking.startTime}<p/>
-                <h:commandButton id="back" value="Back" action="showtimes"/>
-            </h:form>
-        </c:when>
-        <c:otherwise>
-            <h2>Confirm ?</h2>
-            <h:form>
-                Movie name: #{booking.movieName}<p/>
-                Starts at: #{booking.startTime}<p/>
-                Theater: #{booking.theater}<p/>
-                <h:commandButton id="next" value="Book" action="print"/>
-                <h:commandButton id="back" value="Back" action="showtimes"/>
-            </h:form>
-        </c:otherwise>
-    </c:choose>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{booking.theater == 'none'}">
+                <h2>No theater found, choose a different time</h2>
+                <h:form>
+                    Movie name: #{booking.movieName}<p/>
+                    Starts at: #{booking.startTime}<p/>
+                    <h:commandButton id="back" value="Back" action="showtimes"/>
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <h2>Confirm ?</h2>
+                <h:form>
+                    Movie name: #{booking.movieName}<p/>
+                    Starts at: #{booking.startTime}<p/>
+                    Theater: #{booking.theater}<p/>
+                    <h:commandButton id="next" value="Book" action="print"/>
+                    <h:commandButton id="back" value="Back" action="showtimes"/>
+                </h:form>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>
 ----
 +
 The code displays the selected movie, show timing, and theater if
@@ -292,15 +298,17 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <h2>Reservation Confirmed</h2>
-    <h:form>
-        Movie name: #{booking.movieName}<p/>
-        Starts at: #{booking.startTime}<p/>
-        Theater: #{booking.theater}<p/>
-        <h:commandButton id="home" value="home" action="goHome" /><p/>
-    </h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h2>Reservation Confirmed</h2>
+        <h:form>
+            Movie name: #{booking.movieName}<p/>
+            Starts at: #{booking.startTime}<p/>
+            Theater: #{booking.theater}<p/>
+            <h:commandButton id="home" value="home" action="goHome" /><p/>
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 This code displays the movie name, show timings, and the selected

@@ -346,32 +346,34 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <h1>Movie Sales</h1>
-    <h:form>
-        <h:dataTable value="#{salesBean.salesData}" var="s" border="1">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Show ID" />
-                </f:facet>
-                #{s.id}
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Sales" />
-                </f:facet>
-                #{s.amount}
-            </h:column>
-        </h:dataTable>
-        <h:commandButton
-            value="Run Job"
-            action="sales"
-            actionListener="#{salesBean.runJob()}"/>
-        <h:commandButton
-            value="Refresh"
-            action="sales" />
-    </h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h1>Movie Sales</h1>
+        <h:form>
+            <h:dataTable value="#{salesBean.salesData}" var="s" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Show ID" />
+                    </f:facet>
+                    #{s.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Sales" />
+                    </f:facet>
+                    #{s.amount}
+                </h:column>
+            </h:dataTable>
+            <h:commandButton
+                value="Run Job"
+                action="sales"
+                actionListener="#{salesBean.runJob()}"/>
+            <h:commandButton
+                value="Refresh"
+                action="sales" />
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 This code displays the show identifier and sales from that show in a
