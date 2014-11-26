@@ -88,8 +88,9 @@ Specify the class name as `Booking' and the package name as
 +
 Add `@Named` class-level annotation to make the class EL-injectable.
 +
-Add `@FlowScoped("booking")` to define the scope of bean as the flow. The bean
-is automatically activated and passivated as the flow is entered or exited.
+Add `@FlowScoped("booking")` to define the scope of bean as the flow. The bean is automatically activated and passivated as the flow is entered or exited.
++
+Add `implements Serializable` to the class as beans with `@FlowScoped` annotation need to be passivation capable, and thus serializable.
 +
 Add the following field:
 +
