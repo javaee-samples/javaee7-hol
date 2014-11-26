@@ -39,6 +39,7 @@
  */
 package org.javaee7.movieplex7.booking;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.StringTokenizer;
 import javax.faces.flow.FlowScoped;
@@ -54,7 +55,7 @@ import org.javaee7.movieplex7.entities.ShowTiming;
  */
 @Named
 @FlowScoped("booking")
-public class Booking {
+public class Booking implements Serializable {
 
     int movieId;
     String startTime;
