@@ -199,29 +199,31 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-<h1>Add a New Movie</h1>
-<h:form>
-    <table cellpadding="5" cellspacing="5">
-        <tr>
-            <th align="left">Movie Id:</th>
-            <td><h:inputText value="#{movieBackingBean.movieId}"/></td>
-        </tr>
-        <tr>
-            <th align="left">Movie Name:</th>
-            <td><h:inputText value="#{movieBackingBean.movieName}"/> </td>
-        </tr>
-        <tr>
-            <th align="left">Movie Actors:</th>
-            <td><h:inputText value="#{movieBackingBean.actors}"/></td>
-        </tr>
-    </table>
-    <h:commandButton
-        value="Add"
-        action="movies"
-        actionListener="#{movieClientBean.addMovie()}"/>
-</h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+    <h1>Add a New Movie</h1>
+    <h:form>
+        <table cellpadding="5" cellspacing="5">
+            <tr>
+                <th align="left">Movie Id:</th>
+                <td><h:inputText value="#{movieBackingBean.movieId}"/></td>
+            </tr>
+            <tr>
+                <th align="left">Movie Name:</th>
+                <td><h:inputText value="#{movieBackingBean.movieName}"/> </td>
+            </tr>
+            <tr>
+                <th align="left">Movie Actors:</th>
+                <td><h:inputText value="#{movieBackingBean.actors}"/></td>
+            </tr>
+        </table>
+        <h:commandButton
+            value="Add"
+            action="movies"
+            actionListener="#{movieClientBean.addMovie()}"/>
+    </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 This code creates a form to accept input of `id`, `name`, and `actors` of a
