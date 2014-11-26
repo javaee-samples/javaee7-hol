@@ -118,16 +118,18 @@ Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <h:form prependId="false">
-        <h:selectOneRadio value="#{movieBackingBean.movieId}" layout="pageDirection">
-            <c:forEach items="#{movieClientBean.movies}" var="m">
-                <f:selectItem itemValue="#{m.id}" itemLabel="#{m.name}"/>
-            </c:forEach>
-        </h:selectOneRadio>
-        <h:commandButton value="Details" action="movie" />
-    </h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h:form prependId="false">
+            <h:selectOneRadio value="#{movieBackingBean.movieId}" layout="pageDirection">
+                <c:forEach items="#{movieClientBean.movies}" var="m">
+                    <f:selectItem itemValue="#{m.id}" itemLabel="#{m.name}"/>
+                </c:forEach>
+            </h:selectOneRadio>
+            <h:commandButton value="Details" action="movie" />
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 This code fragment invokes `getMovies` method from `MovieClientBean`,

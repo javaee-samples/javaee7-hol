@@ -222,24 +222,26 @@ Replace the `<ui:define>` section with `content' name such that it looks like:
 +
 [source, xml]
 ----
-<ui:define name="content">
-    <h1>Points</h1>
-    <h:form>
-    Queue size:
-        <h:outputText value="#{receivePointsBean.queueSize}"/><p/>
-        <h:inputText value="#{sendPointsBean.message}"/>
-        <h:commandButton
-            value="Send Message"
-            action="points"
-            actionListener="#{sendPointsBean.sendMessage()}"/>
-    </h:form>
-    <h:form>
-        <h:commandButton
-            value="Receive Message"
-            action="points"
-            actionListener="#{receivePointsBean.receiveMessage()}"/>
-    </h:form>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h1>Points</h1>
+        <h:form>
+        Queue size:
+            <h:outputText value="#{receivePointsBean.queueSize}"/><p/>
+            <h:inputText value="#{sendPointsBean.message}"/>
+            <h:commandButton
+                value="Send Message"
+                action="points"
+                actionListener="#{sendPointsBean.sendMessage()}"/>
+        </h:form>
+        <h:form>
+            <h:commandButton
+                value="Receive Message"
+                action="points"
+                actionListener="#{receivePointsBean.receiveMessage()}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 Click on the yellow bulb to resolve namespace prefix/URI mapping for `h:`

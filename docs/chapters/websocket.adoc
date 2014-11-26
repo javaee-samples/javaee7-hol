@@ -105,33 +105,35 @@ In this file, remove <ui:define> sections where name attribute value is
 Replace `<ui:define>` section with `content' name such that it looks like:
 +
 [source,xml]
-<ui:define name="content">
-    <form action="">
-        <table>
-            <tr>
-                <td>
-                    Chat Log<br/>
-                    <textarea readonly="true" rows="6" cols="50" id="chatlog"></textarea>
-                </td>
-                <td>
-                    Users<br/>
-                    <textarea readonly="true" rows="6" cols="20" id="users"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input id="textField" name="name" value="Duke" type="text"/>
-                    <input onclick="join();" value="Join" type="button"/>
-                    <input onclick="send_message();" value="Send" type="button"/><p/>
-                    <input onclick="disconnect();" value="Disconnect" type="button"/>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <div id="output"></div>
-        <script language="javascript" type="text/javascript"
-            src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"></script>
-</ui:define>
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <form action="">
+            <table>
+                <tr>
+                    <td>
+                        Chat Log<br/>
+                        <textarea readonly="true" rows="6" cols="50" id="chatlog"></textarea>
+                    </td>
+                    <td>
+                        Users<br/>
+                        <textarea readonly="true" rows="6" cols="20" id="users"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="textField" name="name" value="Duke" type="text"/>
+                        <input onclick="join();" value="Join" type="button"/>
+                        <input onclick="send_message();" value="Send" type="button"/><p/>
+                        <input onclick="disconnect();" value="Disconnect" type="button"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="output"></div>
+            <script language="javascript" type="text/javascript"
+                src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"></script>
+    </ui:define>
+</ui:composition>
 +
 The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
