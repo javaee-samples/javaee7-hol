@@ -1531,33 +1531,35 @@ code.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;form</span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;table&gt;</span>
-            <span class="tag">&lt;tr&gt;</span>
-                <span class="tag">&lt;td&gt;</span>
-                    Chat Log<span class="tag">&lt;br</span><span class="tag">/&gt;</span>
-                    <span class="tag">&lt;textarea</span> <span class="attribute-name">readonly</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">rows</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cols</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">50</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">chatlog</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
-                <span class="tag">&lt;/td&gt;</span>
-                <span class="tag">&lt;td&gt;</span>
-                    Users<span class="tag">&lt;br</span><span class="tag">/&gt;</span>
-                    <span class="tag">&lt;textarea</span> <span class="attribute-name">readonly</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">rows</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cols</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">users</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
-                <span class="tag">&lt;/td&gt;</span>
-            <span class="tag">&lt;/tr&gt;</span>
-            <span class="tag">&lt;tr&gt;</span>
-                <span class="tag">&lt;td</span> <span class="attribute-name">colspan</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">textField</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Duke</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-                    <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>join();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Join</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-                    <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>send_message();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Send</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-                    <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>disconnect();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Disconnect</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-                <span class="tag">&lt;/td&gt;</span>
-            <span class="tag">&lt;/tr&gt;</span>
-        <span class="tag">&lt;/table&gt;</span>
-    <span class="tag">&lt;/form&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">output</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;script</span> <span class="attribute-name">language</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javascript</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/javascript</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/chat/websocket.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;form</span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;table&gt;</span>
+                <span class="tag">&lt;tr&gt;</span>
+                    <span class="tag">&lt;td&gt;</span>
+                        Chat Log<span class="tag">&lt;br</span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;textarea</span> <span class="attribute-name">readonly</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">rows</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cols</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">50</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">chatlog</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+                    <span class="tag">&lt;/td&gt;</span>
+                    <span class="tag">&lt;td&gt;</span>
+                        Users<span class="tag">&lt;br</span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;textarea</span> <span class="attribute-name">readonly</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">rows</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cols</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">users</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+                    <span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;/tr&gt;</span>
+                <span class="tag">&lt;tr&gt;</span>
+                    <span class="tag">&lt;td</span> <span class="attribute-name">colspan</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">textField</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Duke</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>join();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Join</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>send_message();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Send</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;input</span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>disconnect();<span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Disconnect</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;/tr&gt;</span>
+            <span class="tag">&lt;/table&gt;</span>
+        <span class="tag">&lt;/form&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">output</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;script</span> <span class="attribute-name">language</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javascript</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/javascript</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${facesContext.externalContext.requestContextPath}/chat/websocket.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2240,32 +2242,34 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h1&gt;</span>Movie Sales<span class="tag">&lt;/h1&gt;</span>
-    <span class="tag">&lt;h:form&gt;</span>
-        <span class="tag">&lt;h:dataTable</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{salesBean.salesData}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">border</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;h:column&gt;</span>
-                <span class="tag">&lt;f:facet</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">header</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Show ID</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-                <span class="tag">&lt;/f:facet&gt;</span>
-                #{s.id}
-            <span class="tag">&lt;/h:column&gt;</span>
-            <span class="tag">&lt;h:column&gt;</span>
-                <span class="tag">&lt;f:facet</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">header</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Sales</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-                <span class="tag">&lt;/f:facet&gt;</span>
-                #{s.amount}
-            <span class="tag">&lt;/h:column&gt;</span>
-        <span class="tag">&lt;/h:dataTable&gt;</span>
-        <span class="tag">&lt;h:commandButton</span>
-            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Run Job</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sales</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{salesBean.runJob()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;h:commandButton</span>
-            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Refresh</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sales</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Movie Sales<span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;h:form&gt;</span>
+            <span class="tag">&lt;h:dataTable</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{salesBean.salesData}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">border</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;h:column&gt;</span>
+                    <span class="tag">&lt;f:facet</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">header</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Show ID</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+                    <span class="tag">&lt;/f:facet&gt;</span>
+                    #{s.id}
+                <span class="tag">&lt;/h:column&gt;</span>
+                <span class="tag">&lt;h:column&gt;</span>
+                    <span class="tag">&lt;f:facet</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">header</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Sales</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+                    <span class="tag">&lt;/f:facet&gt;</span>
+                    #{s.amount}
+                <span class="tag">&lt;/h:column&gt;</span>
+            <span class="tag">&lt;/h:dataTable&gt;</span>
+            <span class="tag">&lt;h:commandButton</span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Run Job</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sales</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{salesBean.runJob()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;h:commandButton</span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Refresh</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sales</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2499,16 +2503,18 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h:form</span> <span class="attribute-name">prependId</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;h:selectOneRadio</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieId}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;c:forEach</span> <span class="attribute-name">items</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.movies}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                <span class="tag">&lt;f:selectItem</span> <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.id}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.name}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-            <span class="tag">&lt;/c:forEach&gt;</span>
-        <span class="tag">&lt;/h:selectOneRadio&gt;</span>
-        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Details</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movie</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h:form</span> <span class="attribute-name">prependId</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h:selectOneRadio</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieId}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;c:forEach</span> <span class="attribute-name">items</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.movies}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;f:selectItem</span> <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.id}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.name}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;/c:forEach&gt;</span>
+            <span class="tag">&lt;/h:selectOneRadio&gt;</span>
+            <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Details</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movie</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3010,29 +3016,31 @@ Click on &#8216;Finish&#8217;.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;h1&gt;</span>Add a New Movie<span class="tag">&lt;/h1&gt;</span>
-<span class="tag">&lt;h:form&gt;</span>
-    <span class="tag">&lt;table</span> <span class="attribute-name">cellpadding</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cellspacing</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;tr&gt;</span>
-            <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Id:<span class="tag">&lt;/th&gt;</span>
-            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieId}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/td&gt;</span>
-        <span class="tag">&lt;/tr&gt;</span>
-        <span class="tag">&lt;tr&gt;</span>
-            <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Name:<span class="tag">&lt;/th&gt;</span>
-            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieName}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> <span class="tag">&lt;/td&gt;</span>
-        <span class="tag">&lt;/tr&gt;</span>
-        <span class="tag">&lt;tr&gt;</span>
-            <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Actors:<span class="tag">&lt;/th&gt;</span>
-            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.actors}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/td&gt;</span>
-        <span class="tag">&lt;/tr&gt;</span>
-    <span class="tag">&lt;/table&gt;</span>
-    <span class="tag">&lt;h:commandButton</span>
-        <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Add</span><span class="delimiter">&quot;</span></span>
-        <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movies</span><span class="delimiter">&quot;</span></span>
-        <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.addMovie()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Add a New Movie<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;h:form&gt;</span>
+        <span class="tag">&lt;table</span> <span class="attribute-name">cellpadding</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">cellspacing</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Id:<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieId}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Name:<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.movieName}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> <span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+            <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th</span> <span class="attribute-name">align</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Movie Actors:<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;td&gt;</span><span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieBackingBean.actors}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;/table&gt;</span>
+        <span class="tag">&lt;h:commandButton</span>
+            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Add</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">movies</span><span class="delimiter">&quot;</span></span>
+            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieClientBean.addMovie()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3436,24 +3444,26 @@ next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h1&gt;</span>Points<span class="tag">&lt;/h1&gt;</span>
-    <span class="tag">&lt;h:form&gt;</span>
-    Queue size:
-        <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{receivePointsBean.queueSize}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{sendPointsBean.message}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;h:commandButton</span>
-            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Send Message</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">points</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{sendPointsBean.sendMessage()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-    <span class="tag">&lt;h:form&gt;</span>
-        <span class="tag">&lt;h:commandButton</span>
-            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Receive Message</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">points</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{receivePointsBean.receiveMessage()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Points<span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;h:form&gt;</span>
+        Queue size:
+            <span class="tag">&lt;h:outputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{receivePointsBean.queueSize}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;h:inputText</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{sendPointsBean.message}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;h:commandButton</span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Send Message</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">points</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{sendPointsBean.sendMessage()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+        <span class="tag">&lt;h:form&gt;</span>
+            <span class="tag">&lt;h:commandButton</span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Receive Message</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">points</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">actionListener</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{receivePointsBean.receiveMessage()}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3643,22 +3653,24 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h2&gt;</span>Pick a movie<span class="tag">&lt;/h2&gt;</span>
-    <span class="tag">&lt;h:form</span> <span class="attribute-name">prependId</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;h:selectOneRadio</span>
-            <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.movieId}</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span>
-            <span class="attribute-name">required</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;f:selectItems</span>
-                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieFacadeREST.all}</span><span class="delimiter">&quot;</span></span>
-                <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span>
-                <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.id}</span><span class="delimiter">&quot;</span></span>
-                <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.name}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;/h:selectOneRadio&gt;</span>
-        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">shows</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Pick a time</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Pick a movie<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;h:form</span> <span class="attribute-name">prependId</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h:selectOneRadio</span>
+                <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.movieId}</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span>
+                <span class="attribute-name">required</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;f:selectItems</span>
+                    <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{movieFacadeREST.all}</span><span class="delimiter">&quot;</span></span>
+                    <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span>
+                    <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.id}</span><span class="delimiter">&quot;</span></span>
+                    <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{m.name}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;/h:selectOneRadio&gt;</span>
+            <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">shows</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Pick a time</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3687,8 +3699,10 @@ Specify the class name as &#8216;Booking&#8217; and the package name as
 <p>Add <code>@Named</code> class-level annotation to make the class EL-injectable.</p>
 </div>
 <div class="paragraph">
-<p>Add <code>@FlowScoped("booking")</code> to define the scope of bean as the flow. The bean
-is automatically activated and passivated as the flow is entered or exited.</p>
+<p>Add <code>@FlowScoped("booking")</code> to define the scope of bean as the flow. The bean is automatically activated and passivated as the flow is entered or exited.</p>
+</div>
+<div class="paragraph">
+<p>Add <code>implements Serializable</code> to the class as beans with <code>@FlowScoped</code> annotation need to be passivation capable, and thus serializable.</p>
 </div>
 <div class="paragraph">
 <p>Add the following field:</p>
@@ -3752,18 +3766,20 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h2&gt;</span>Show Timings for <span class="tag">&lt;font</span> <span class="attribute-name">color</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">red</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#{booking.movieName}<span class="tag">&lt;/font&gt;</span><span class="tag">&lt;/h2&gt;</span>
-    <span class="tag">&lt;h:form&gt;</span>
-        <span class="tag">&lt;h:selectOneRadio</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.startTime}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">required</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;c:forEach</span> <span class="attribute-name">items</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{timeslotFacadeREST.all}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                <span class="tag">&lt;f:selectItem</span> <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{s.id},#{s.startTime}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{s.startTime}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-            <span class="tag">&lt;/c:forEach&gt;</span>
-        <span class="tag">&lt;/h:selectOneRadio&gt;</span>
-        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Confirm</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">confirm</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">booking</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">immediate</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Show Timings for <span class="tag">&lt;font</span> <span class="attribute-name">color</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">red</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#{booking.movieName}<span class="tag">&lt;/font&gt;</span><span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;h:form&gt;</span>
+            <span class="tag">&lt;h:selectOneRadio</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.startTime}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">pageDirection</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">required</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;c:forEach</span> <span class="attribute-name">items</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{timeslotFacadeREST.all}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">var</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;f:selectItem</span> <span class="attribute-name">itemValue</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{s.id},#{s.startTime}</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">itemLabel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{s.startTime}</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;/c:forEach&gt;</span>
+            <span class="tag">&lt;/h:selectOneRadio&gt;</span>
+            <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Confirm</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">confirm</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+            <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">booking</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">immediate</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3871,28 +3887,30 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;c:choose&gt;</span>
-        <span class="tag">&lt;c:when</span> <span class="attribute-name">test</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.theater == 'none'}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;h2&gt;</span>No theater found, choose a different time<span class="tag">&lt;/h2&gt;</span>
-            <span class="tag">&lt;h:form&gt;</span>
-                Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-                Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-                <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-            <span class="tag">&lt;/h:form&gt;</span>
-        <span class="tag">&lt;/c:when&gt;</span>
-        <span class="tag">&lt;c:otherwise&gt;</span>
-            <span class="tag">&lt;h2&gt;</span>Confirm ?<span class="tag">&lt;/h2&gt;</span>
-            <span class="tag">&lt;h:form&gt;</span>
-                Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-                Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-                Theater: #{booking.theater}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-                <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">next</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Book</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">print</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-                <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-            <span class="tag">&lt;/h:form&gt;</span>
-        <span class="tag">&lt;/c:otherwise&gt;</span>
-    <span class="tag">&lt;/c:choose&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;c:choose&gt;</span>
+            <span class="tag">&lt;c:when</span> <span class="attribute-name">test</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#{booking.theater == 'none'}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;h2&gt;</span>No theater found, choose a different time<span class="tag">&lt;/h2&gt;</span>
+                <span class="tag">&lt;h:form&gt;</span>
+                    Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                    Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;/h:form&gt;</span>
+            <span class="tag">&lt;/c:when&gt;</span>
+            <span class="tag">&lt;c:otherwise&gt;</span>
+                <span class="tag">&lt;h2&gt;</span>Confirm ?<span class="tag">&lt;/h2&gt;</span>
+                <span class="tag">&lt;h:form&gt;</span>
+                    Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                    Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                    Theater: #{booking.theater}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">next</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Book</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">print</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Back</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">showtimes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;/h:form&gt;</span>
+            <span class="tag">&lt;/c:otherwise&gt;</span>
+        <span class="tag">&lt;/c:choose&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3923,15 +3941,17 @@ attributes. These sections are inherited from the template.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h2&gt;</span>Reservation Confirmed<span class="tag">&lt;/h2&gt;</span>
-    <span class="tag">&lt;h:form&gt;</span>
-        Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-        Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-        Theater: #{booking.theater}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">home</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">home</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">goHome</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/h:form&gt;</span>
-<span class="tag">&lt;/ui:define&gt;</span></code></pre>
+<pre class="CodeRay"><code class="xml language-xml"><span class="tag">&lt;ui:composition</span> <span class="attribute-name">template</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">../WEB-INF/template.xhtml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ui:define</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Reservation Confirmed<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;h:form&gt;</span>
+            Movie name: #{booking.movieName}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+            Starts at: #{booking.startTime}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+            Theater: #{booking.theater}<span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;h:commandButton</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">home</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">home</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">goHome</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span><span class="tag">&lt;p</span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/h:form&gt;</span>
+    <span class="tag">&lt;/ui:define&gt;</span>
+<span class="tag">&lt;/ui:composition&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">

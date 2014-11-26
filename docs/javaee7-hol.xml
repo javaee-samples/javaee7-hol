@@ -1096,33 +1096,35 @@ code.</simpara>
 <simpara>In this file, remove &lt;ui:define&gt; sections where name attribute value is
 &#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;form action=""&gt;
-        &lt;table&gt;
-            &lt;tr&gt;
-                &lt;td&gt;
-                    Chat Log&lt;br/&gt;
-                    &lt;textarea readonly="true" rows="6" cols="50" id="chatlog"&gt;&lt;/textarea&gt;
-                &lt;/td&gt;
-                &lt;td&gt;
-                    Users&lt;br/&gt;
-                    &lt;textarea readonly="true" rows="6" cols="20" id="users"&gt;&lt;/textarea&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td colspan="2"&gt;
-                    &lt;input id="textField" name="name" value="Duke" type="text"/&gt;
-                    &lt;input onclick="join();" value="Join" type="button"/&gt;
-                    &lt;input onclick="send_message();" value="Send" type="button"/&gt;&lt;p/&gt;
-                    &lt;input onclick="disconnect();" value="Disconnect" type="button"/&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/form&gt;
-    &lt;div id="output"&gt;&lt;/div&gt;
-        &lt;script language="javascript" type="text/javascript"
-            src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"&gt;&lt;/script&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;form action=""&gt;
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        Chat Log&lt;br/&gt;
+                        &lt;textarea readonly="true" rows="6" cols="50" id="chatlog"&gt;&lt;/textarea&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        Users&lt;br/&gt;
+                        &lt;textarea readonly="true" rows="6" cols="20" id="users"&gt;&lt;/textarea&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td colspan="2"&gt;
+                        &lt;input id="textField" name="name" value="Duke" type="text"/&gt;
+                        &lt;input onclick="join();" value="Join" type="button"/&gt;
+                        &lt;input onclick="send_message();" value="Send" type="button"/&gt;&lt;p/&gt;
+                        &lt;input onclick="disconnect();" value="Disconnect" type="button"/&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/form&gt;
+        &lt;div id="output"&gt;&lt;/div&gt;
+            &lt;script language="javascript" type="text/javascript"
+                src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"&gt;&lt;/script&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>The code builds an HTML form that has two textareas – one to display the
 chat log and the other to display the list of users currently logged. A
@@ -1674,32 +1676,34 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
 &#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;h1&gt;Movie Sales&lt;/h1&gt;
-    &lt;h:form&gt;
-        &lt;h:dataTable value="#{salesBean.salesData}" var="s" border="1"&gt;
-            &lt;h:column&gt;
-                &lt;f:facet name="header"&gt;
-                    &lt;h:outputText value="Show ID" /&gt;
-                &lt;/f:facet&gt;
-                #{s.id}
-            &lt;/h:column&gt;
-            &lt;h:column&gt;
-                &lt;f:facet name="header"&gt;
-                    &lt;h:outputText value="Sales" /&gt;
-                &lt;/f:facet&gt;
-                #{s.amount}
-            &lt;/h:column&gt;
-        &lt;/h:dataTable&gt;
-        &lt;h:commandButton
-            value="Run Job"
-            action="sales"
-            actionListener="#{salesBean.runJob()}"/&gt;
-        &lt;h:commandButton
-            value="Refresh"
-            action="sales" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;h1&gt;Movie Sales&lt;/h1&gt;
+        &lt;h:form&gt;
+            &lt;h:dataTable value="#{salesBean.salesData}" var="s" border="1"&gt;
+                &lt;h:column&gt;
+                    &lt;f:facet name="header"&gt;
+                        &lt;h:outputText value="Show ID" /&gt;
+                    &lt;/f:facet&gt;
+                    #{s.id}
+                &lt;/h:column&gt;
+                &lt;h:column&gt;
+                    &lt;f:facet name="header"&gt;
+                        &lt;h:outputText value="Sales" /&gt;
+                    &lt;/f:facet&gt;
+                    #{s.amount}
+                &lt;/h:column&gt;
+            &lt;/h:dataTable&gt;
+            &lt;h:commandButton
+                value="Run Job"
+                action="sales"
+                actionListener="#{salesBean.runJob()}"/&gt;
+            &lt;h:commandButton
+                value="Refresh"
+                action="sales" /&gt;
+        &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>This code displays the show identifier and sales from that show in a
 table by invoking <literal>SalesBean.getSalesData()</literal>. First command button allows
@@ -1889,16 +1893,18 @@ expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&#8217;, select &#8216;template.xh
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
 &#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;h:form prependId="false"&gt;
-        &lt;h:selectOneRadio value="#{movieBackingBean.movieId}" layout="pageDirection"&gt;
-            &lt;c:forEach items="#{movieClientBean.movies}" var="m"&gt;
-                &lt;f:selectItem itemValue="#{m.id}" itemLabel="#{m.name}"/&gt;
-            &lt;/c:forEach&gt;
-        &lt;/h:selectOneRadio&gt;
-        &lt;h:commandButton value="Details" action="movie" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;h:form prependId="false"&gt;
+            &lt;h:selectOneRadio value="#{movieBackingBean.movieId}" layout="pageDirection"&gt;
+                &lt;c:forEach items="#{movieClientBean.movies}" var="m"&gt;
+                    &lt;f:selectItem itemValue="#{m.id}" itemLabel="#{m.name}"/&gt;
+                &lt;/c:forEach&gt;
+            &lt;/h:selectOneRadio&gt;
+            &lt;h:commandButton value="Details" action="movie" /&gt;
+        &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>This code fragment invokes <literal>getMovies</literal> method from <literal>MovieClientBean</literal>,
 iterates over the response in a for loop, and display the name of each
@@ -2290,29 +2296,31 @@ Click on &#8216;Finish&#8217;.</simpara>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
 &#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-&lt;h1&gt;Add a New Movie&lt;/h1&gt;
-&lt;h:form&gt;
-    &lt;table cellpadding="5" cellspacing="5"&gt;
-        &lt;tr&gt;
-            &lt;th align="left"&gt;Movie Id:&lt;/th&gt;
-            &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.movieId}"/&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;th align="left"&gt;Movie Name:&lt;/th&gt;
-            &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.movieName}"/&gt; &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;th align="left"&gt;Movie Actors:&lt;/th&gt;
-            &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.actors}"/&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;h:commandButton
-        value="Add"
-        action="movies"
-        actionListener="#{movieClientBean.addMovie()}"/&gt;
-&lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+    &lt;h1&gt;Add a New Movie&lt;/h1&gt;
+    &lt;h:form&gt;
+        &lt;table cellpadding="5" cellspacing="5"&gt;
+            &lt;tr&gt;
+                &lt;th align="left"&gt;Movie Id:&lt;/th&gt;
+                &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.movieId}"/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th align="left"&gt;Movie Name:&lt;/th&gt;
+                &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.movieName}"/&gt; &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th align="left"&gt;Movie Actors:&lt;/th&gt;
+                &lt;td&gt;&lt;h:inputText value="#{movieBackingBean.actors}"/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;h:commandButton
+            value="Add"
+            action="movies"
+            actionListener="#{movieClientBean.addMovie()}"/&gt;
+    &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>This code creates a form to accept input of <literal>id</literal>, <literal>name</literal>, and <literal>actors</literal> of a
 movie. These values are bound to fields in <literal>MovieBackingBean</literal>. The click
@@ -2619,24 +2627,26 @@ next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections where name attribute value is
 &#8216;top&#8217; and &#8216;left&#8217;. These sections are inherited from the template.</simpara>
 <simpara>Replace the <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;h1&gt;Points&lt;/h1&gt;
-    &lt;h:form&gt;
-    Queue size:
-        &lt;h:outputText value="#{receivePointsBean.queueSize}"/&gt;&lt;p/&gt;
-        &lt;h:inputText value="#{sendPointsBean.message}"/&gt;
-        &lt;h:commandButton
-            value="Send Message"
-            action="points"
-            actionListener="#{sendPointsBean.sendMessage()}"/&gt;
-    &lt;/h:form&gt;
-    &lt;h:form&gt;
-        &lt;h:commandButton
-            value="Receive Message"
-            action="points"
-            actionListener="#{receivePointsBean.receiveMessage()}"/&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;h1&gt;Points&lt;/h1&gt;
+        &lt;h:form&gt;
+        Queue size:
+            &lt;h:outputText value="#{receivePointsBean.queueSize}"/&gt;&lt;p/&gt;
+            &lt;h:inputText value="#{sendPointsBean.message}"/&gt;
+            &lt;h:commandButton
+                value="Send Message"
+                action="points"
+                actionListener="#{sendPointsBean.sendMessage()}"/&gt;
+        &lt;/h:form&gt;
+        &lt;h:form&gt;
+            &lt;h:commandButton
+                value="Receive Message"
+                action="points"
+                actionListener="#{receivePointsBean.receiveMessage()}"/&gt;
+        &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>Click on the yellow bulb to resolve namespace prefix/URI mapping for <literal>h:</literal>
 prefix.</simpara>
@@ -2804,22 +2814,24 @@ next to &#8216;Template:&#8217;, expand &#8216;Web Pages&#8217;, &#8216;WEB-INF&
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections with &#8216;top&#8217; and &#8216;left&#8217; name
 attributes. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;h2&gt;Pick a movie&lt;/h2&gt;
-    &lt;h:form prependId="false"&gt;
-        &lt;h:selectOneRadio
-            value="#{booking.movieId}"
-            layout="pageDirection"
-            required="true"&gt;
-            &lt;f:selectItems
-                value="#{movieFacadeREST.all}"
-                var="m"
-                itemValue="#{m.id}"
-                itemLabel="#{m.name}"/&gt;
-        &lt;/h:selectOneRadio&gt;
-        &lt;h:commandButton id="shows" value="Pick a time" action="showtimes" /&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;h2&gt;Pick a movie&lt;/h2&gt;
+        &lt;h:form prependId="false"&gt;
+            &lt;h:selectOneRadio
+                value="#{booking.movieId}"
+                layout="pageDirection"
+                required="true"&gt;
+                &lt;f:selectItems
+                    value="#{movieFacadeREST.all}"
+                    var="m"
+                    itemValue="#{m.id}"
+                    itemLabel="#{m.name}"/&gt;
+            &lt;/h:selectOneRadio&gt;
+            &lt;h:commandButton id="shows" value="Pick a time" action="showtimes" /&gt;
+        &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>The code builds an HTML form that displays the list of movies as radio
 button choices. The chosen movie is bound to <literal>#{booking.movieId}</literal> which
@@ -2844,8 +2856,8 @@ add namespace prefix/URI mapping for <literal>h:</literal>. Repeat the same for 
 Specify the class name as &#8216;Booking&#8217; and the package name as
 &#8216;org.javaee7.movieplex7.booking&#8217;.</simpara>
 <simpara>Add <literal>@Named</literal> class-level annotation to make the class EL-injectable.</simpara>
-<simpara>Add <literal>@FlowScoped("booking")</literal> to define the scope of bean as the flow. The bean
-is automatically activated and passivated as the flow is entered or exited.</simpara>
+<simpara>Add <literal>@FlowScoped("booking")</literal> to define the scope of bean as the flow. The bean is automatically activated and passivated as the flow is entered or exited.</simpara>
+<simpara>Add <literal>implements Serializable</literal> to the class as beans with <literal>@FlowScoped</literal> annotation need to be passivation capable, and thus serializable.</simpara>
 <simpara>Add the following field:</simpara>
 <programlisting language="java" linenumbering="unnumbered">int movieId;</programlisting>
 
@@ -2879,18 +2891,20 @@ steps used to create &#8216;booking.xhtml&#8217;.</simpara>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections with &#8216;top&#8217; and &#8216;left&#8217; name
 attributes. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;h2&gt;Show Timings for &lt;font color="red"&gt;#{booking.movieName}&lt;/font&gt;&lt;/h2&gt;
-    &lt;h:form&gt;
-        &lt;h:selectOneRadio value="#{booking.startTime}" layout="pageDirection" required="true"&gt;
-            &lt;c:forEach items="#{timeslotFacadeREST.all}" var="s"&gt;
-                &lt;f:selectItem itemValue="#{s.id},#{s.startTime}" itemLabel="#{s.startTime}"/&gt;
-            &lt;/c:forEach&gt;
-        &lt;/h:selectOneRadio&gt;
-        &lt;h:commandButton value="Confirm" action="confirm" /&gt;
-        &lt;h:commandButton id="back" value="Back" action="booking" immediate="true"/&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;h2&gt;Show Timings for &lt;font color="red"&gt;#{booking.movieName}&lt;/font&gt;&lt;/h2&gt;
+        &lt;h:form&gt;
+            &lt;h:selectOneRadio value="#{booking.startTime}" layout="pageDirection" required="true"&gt;
+                &lt;c:forEach items="#{timeslotFacadeREST.all}" var="s"&gt;
+                    &lt;f:selectItem itemValue="#{s.id},#{s.startTime}" itemLabel="#{s.startTime}"/&gt;
+                &lt;/c:forEach&gt;
+            &lt;/h:selectOneRadio&gt;
+            &lt;h:commandButton value="Confirm" action="confirm" /&gt;
+            &lt;h:commandButton id="back" value="Back" action="booking" immediate="true"/&gt;
+        &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>This code builds an HTML form that displays the chosen movie name and
 all the show times. <literal>#{timeslotFacadeREST.all}</literal> returns the list of all
@@ -2966,28 +2980,30 @@ the steps used to create ‘booking.xhtml’.</simpara>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections wht &#8216;top&#8217; and &#8216;left&#8217; name
 attributes. These sections are inherited from the template.</simpara>
 <simpara>Replace &#8216;&lt;ui:define&gt;&#8217; section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;c:choose&gt;
-        &lt;c:when test="#{booking.theater == 'none'}"&gt;
-            &lt;h2&gt;No theater found, choose a different time&lt;/h2&gt;
-            &lt;h:form&gt;
-                Movie name: #{booking.movieName}&lt;p/&gt;
-                Starts at: #{booking.startTime}&lt;p/&gt;
-                &lt;h:commandButton id="back" value="Back" action="showtimes"/&gt;
-            &lt;/h:form&gt;
-        &lt;/c:when&gt;
-        &lt;c:otherwise&gt;
-            &lt;h2&gt;Confirm ?&lt;/h2&gt;
-            &lt;h:form&gt;
-                Movie name: #{booking.movieName}&lt;p/&gt;
-                Starts at: #{booking.startTime}&lt;p/&gt;
-                Theater: #{booking.theater}&lt;p/&gt;
-                &lt;h:commandButton id="next" value="Book" action="print"/&gt;
-                &lt;h:commandButton id="back" value="Back" action="showtimes"/&gt;
-            &lt;/h:form&gt;
-        &lt;/c:otherwise&gt;
-    &lt;/c:choose&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;c:choose&gt;
+            &lt;c:when test="#{booking.theater == 'none'}"&gt;
+                &lt;h2&gt;No theater found, choose a different time&lt;/h2&gt;
+                &lt;h:form&gt;
+                    Movie name: #{booking.movieName}&lt;p/&gt;
+                    Starts at: #{booking.startTime}&lt;p/&gt;
+                    &lt;h:commandButton id="back" value="Back" action="showtimes"/&gt;
+                &lt;/h:form&gt;
+            &lt;/c:when&gt;
+            &lt;c:otherwise&gt;
+                &lt;h2&gt;Confirm ?&lt;/h2&gt;
+                &lt;h:form&gt;
+                    Movie name: #{booking.movieName}&lt;p/&gt;
+                    Starts at: #{booking.startTime}&lt;p/&gt;
+                    Theater: #{booking.theater}&lt;p/&gt;
+                    &lt;h:commandButton id="next" value="Book" action="print"/&gt;
+                    &lt;h:commandButton id="back" value="Back" action="showtimes"/&gt;
+                &lt;/h:form&gt;
+            &lt;/c:otherwise&gt;
+        &lt;/c:choose&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>The code displays the selected movie, show timing, and theater if
 available. The reservation can proceed if all three are available.
@@ -3005,15 +3021,17 @@ steps used to create ‘booking.xhtml’.</simpara>
 <simpara>In this file, remove <literal>&lt;ui:define&gt;</literal> sections wht &#8216;top&#8217; and &#8216;left&#8217; name
 attributes. These sections are inherited from the template.</simpara>
 <simpara>Replace <literal>&lt;ui:define&gt;</literal> section with &#8216;content&#8217; name such that it looks like:</simpara>
-<programlisting language="xml" linenumbering="unnumbered">&lt;ui:define name="content"&gt;
-    &lt;h2&gt;Reservation Confirmed&lt;/h2&gt;
-    &lt;h:form&gt;
-        Movie name: #{booking.movieName}&lt;p/&gt;
-        Starts at: #{booking.startTime}&lt;p/&gt;
-        Theater: #{booking.theater}&lt;p/&gt;
-        &lt;h:commandButton id="home" value="home" action="goHome" /&gt;&lt;p/&gt;
-    &lt;/h:form&gt;
-&lt;/ui:define&gt;</programlisting>
+<programlisting language="xml" linenumbering="unnumbered">&lt;ui:composition template="../WEB-INF/template.xhtml"&gt;
+    &lt;ui:define name="content"&gt;
+        &lt;h2&gt;Reservation Confirmed&lt;/h2&gt;
+        &lt;h:form&gt;
+            Movie name: #{booking.movieName}&lt;p/&gt;
+            Starts at: #{booking.startTime}&lt;p/&gt;
+            Theater: #{booking.theater}&lt;p/&gt;
+            &lt;h:commandButton id="home" value="home" action="goHome" /&gt;&lt;p/&gt;
+        &lt;/h:form&gt;
+    &lt;/ui:define&gt;
+&lt;/ui:composition&gt;</programlisting>
 
 <simpara>This code displays the movie name, show timings, and the selected
 theater.</simpara>
