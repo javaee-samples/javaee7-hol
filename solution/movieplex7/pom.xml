@@ -8,13 +8,44 @@
     <packaging>war</packaging>
 
     <name>Java EE 7 Hands-on Lab Solution</name>
+    
+    <properties>
+        <org.jboss.arquillian.version>1.1.1.Final</org.jboss.arquillian.version>
+        <org.wildfly>8.2.0.Final</org.wildfly>
+    </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${org.jboss.arquillian.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <scope>test</scope>
+            <version>1.1.5.Final</version>
         </dependency>
     </dependencies>
 
@@ -44,6 +75,56 @@
             </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+        <profile>
+            <id>wildfly-remote-arquillian</id>
+            <dependencies>
+                <dependency>
+                    <groupId>io.undertow</groupId>
+                    <artifactId>undertow-websockets-jsr</artifactId>
+                    <version>1.0.0.Beta33</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-client</artifactId>
+                    <version>3.0.10.Final</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-jaxb-provider</artifactId>
+                    <version>3.0.10.Final</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-json-p-provider</artifactId>
+                    <version>3.0.10.Final</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-arquillian-container-remote</artifactId>
+                    <version>${org.wildfly}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                    <testResource>
+                        <directory>src/test/resources-wildfly-remote</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                </testResources>
+            </build>
+        </profile>    
+    </profiles>
 
 </project>
 
