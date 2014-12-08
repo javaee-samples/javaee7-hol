@@ -1,5 +1,6 @@
 package org.javaee7.movieplex7.rest;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
@@ -24,11 +25,24 @@ import org.junit.runner.RunWith;
 public class MovieFacadeRESTTest {
     
     private WebTarget target;
+    private static final String WEBAPP_SRC = "src/main/webapp";
+    private static final String RESOURCE_SRC = "src/main/resources";
 
     @Deployment(testable = false)
     public static WebArchive createDeployment() {
-        return ShrinkWrap.create(WebArchive.class)
+        WebArchive war = ShrinkWrap.create(WebArchive.class)
                 .addPackages(true, "org.javaee7.movieplex7");
+        
+        for (File file : new File(WEBAPP_SRC + "/WEB-INF").listFiles()) {
+            war.addAsWebInfResource(file);
+        }
+        
+        for (File file : new File(RESOURCE_SRC).listFiles()) {
+            war.addAsResource(file);
+        }
+        
+        System.out.println(war.toString(true));
+        return war;
     }
     
     @ArquillianResource
