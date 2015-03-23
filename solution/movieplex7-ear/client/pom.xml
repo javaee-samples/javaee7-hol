@@ -8,7 +8,8 @@
     </parent>
     <groupId>org.javaee7.movieplex7</groupId>
     <artifactId>client</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
+    
     <dependencies>
         <dependency>
             <groupId>org.javaee7.movieplex7</groupId>
@@ -19,4 +20,13 @@
             <artifactId>json</artifactId>
         </dependency>
     </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.javaee7.movieplex7</groupId>
     <artifactId>rest</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     
     <dependencies>
         <dependency>
@@ -16,4 +16,14 @@
             <artifactId>entities</artifactId>
         </dependency>
     </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>
