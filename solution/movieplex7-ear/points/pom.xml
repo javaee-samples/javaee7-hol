@@ -3,13 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.javaee7</groupId>
-        <artifactId>movieplex7</artifactId>
+        <artifactId>movieplex7-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>org.javaee7.movieplex7</groupId>
     <artifactId>points</artifactId>
     <packaging>jar</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 </project>

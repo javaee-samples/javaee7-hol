@@ -3,23 +3,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.javaee7</groupId>
-        <artifactId>movieplex7</artifactId>
+        <artifactId>movieplex7-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-        <groupId>org.javaee7.movieplex7</groupId>
-        <artifactId>booking</artifactId>
+    <groupId>org.javaee7.movieplex7</groupId>
+    <artifactId>booking</artifactId>
     <packaging>jar</packaging>
     
     <dependencies>
         <dependency>
             <groupId>org.javaee7.movieplex7</groupId>
             <artifactId>entities</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.javaee7.movieplex7</groupId>
             <artifactId>json</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
