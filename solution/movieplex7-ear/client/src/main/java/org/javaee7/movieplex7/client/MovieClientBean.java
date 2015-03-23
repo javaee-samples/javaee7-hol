@@ -76,9 +76,10 @@ public class MovieClientBean {
                 httpServletRequest.getLocalName() +
                 ":" +
                 httpServletRequest.getLocalPort() +
-                "/" +
-                httpServletRequest.getContextPath() +
+                "/rest" +
+//                httpServletRequest.getContextPath() +
                 "/webresources/movie/");
+        System.out.println("MovieClientBean.PostConstruct");
     }
 
     @PreDestroy
