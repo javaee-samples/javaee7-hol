@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.javaee7</groupId>
-    <artifactId>movieplex7</artifactId>
+    <artifactId>movieplex7-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     
@@ -21,6 +21,20 @@
     </modules>
 
     <name>Java EE 7 Hands-on Lab Solution - MSA</name>
+    
+    <properties>
+        <glassfish.home>/Users/arungupta/tools/glassfish4/glassfish</glassfish.home>
+        <glassfish.domain>domain1</glassfish.domain>
+        <glassfish.password.file>${glassfish.home}/domains/${glassfish.domain}/config/domain-passwords</glassfish.password.file>
+    </properties>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.java.net</id>
+            <name>Java.net Maven2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
@@ -57,6 +71,30 @@
                 <version>1.0.2.Final</version>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <skip>true</skip>
+                    <user>admin</user>
+                    <passwordFile>${glassfish.password.file}</passwordFile>
+                    <domain>
+                        <name>domain1</name>
+                        <httpPort>8080</httpPort>
+                        <adminPort>4848</adminPort>
+                    </domain>
+                    <components>
+                        <component>
+                            <name>${project.artifactId}</name>
+                            <artifact>ear/target/movieplex7-ear-1.0-SNAPSHOT.ear</artifact>
+                        </component>
+                    </components>
+                    <debug>true</debug>
+                    <terse>false</terse>
+                    <echo>true</echo>
                 </configuration>
             </plugin>
         </plugins>

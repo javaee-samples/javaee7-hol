@@ -2,16 +2,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>movieplex7</artifactId>
         <groupId>org.javaee7</groupId>
+        <artifactId>movieplex7</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>org.javaee7.movieplex7</groupId>
-    <artifactId>ear</artifactId>
+    <artifactId>movieplex7-ear</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>ear</packaging>
     
+    <properties>
+        <glassfish.home>/Users/arungupta/tools/glassfish4/glassfish</glassfish.home>
+        <glassfish.domain>domain1</glassfish.domain>
+        <glassfish.password.file>${glassfish.home}/domains/${glassfish.domain}/config/domain-passwords</glassfish.password.file>
+    </properties>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.java.net</id>
+            <name>Java.net Maven2 Repository</name>
+            <url>https://maven.java.net/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
     <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.javaee7.movieplex7</groupId>
             <artifactId>web</artifactId>
@@ -124,6 +144,30 @@
                 <version>1.0.2.Final</version>
                 <configuration>
                     <skip>false</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <skip>false</skip>
+                    <user>admin</user>
+                    <passwordFile>${glassfish.password.file}</passwordFile>
+                    <domain>
+                        <name>domain1</name>
+                        <httpPort>8080</httpPort>
+                        <adminPort>4848</adminPort>
+                    </domain>
+                    <components>
+                        <component>
+                            <name>${project.artifactId}</name>
+                            <artifact>target/${project.build.finalName}.ear</artifact>
+                        </component>
+                    </components>
+                    <debug>true</debug>
+                    <terse>false</terse>
+                    <echo>true</echo>
                 </configuration>
             </plugin>
         </plugins>
