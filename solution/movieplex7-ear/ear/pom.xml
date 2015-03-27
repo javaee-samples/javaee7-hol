@@ -126,6 +126,7 @@
                         <jarModule>
                             <groupId>org.javaee7.movieplex7</groupId>
                             <artifactId>contracts</artifactId>
+                            <bundleDir>lib</bundleDir>                        
                         </jarModule>
                         <webModule>
                             <groupId>org.javaee7.movieplex7</groupId>
