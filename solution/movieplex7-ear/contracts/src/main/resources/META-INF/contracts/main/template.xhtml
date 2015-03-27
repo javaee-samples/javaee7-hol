@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?> 
 <!-- 
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
@@ -44,39 +44,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <body>
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+        <link href="css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <title>Movieplex 7</title>
+    </h:head>
 
-        <ui:composition template="./../WEB-INF/template.xhtml">
+    <h:body>
 
-            <ui:define name="content">
-                <c:choose>
-                    <c:when test="#{booking.theater == 'none'}">
-                        <h2>No theater found, choose a different time</h2>
-                        <h:form>
-                            Movie name: #{booking.movieName}<p/>
-                            Starts at: #{booking.startTime}<p/>
-                                <h:commandButton id="back" value="Back" action="showtimes" /><p/>
-                        </h:form>
+
+        <div id="top" class="top">
+            <ui:insert name="top">
+                <h:form>
+                    <h1><h:commandLink value="Movie Plex 7" action="/index"/></h1>
+                </h:form>
+<!--                <c:choose>
+                    <c:when test="#{null != facesContext.application.flowHandler.currentFlow}">
+                        Inside a flow
                     </c:when>
                     <c:otherwise>
-                        <h2>Confirm ?</h2>
-                        <h:form>
-                            <!-- TODO: Convert this to composite component ? Also used in print.xhtml. -->
-                            Movie name: #{booking.movieName}<p/>
-                            Starts at: #{booking.startTime}<p/>
-                            Theater: #{booking.theater}<p/>
-                            <p><h:commandButton id="next" value="Book" action="print" />
-                                <h:commandButton id="back" value="Back" action="showtimes" /></p>
-                        </h:form>
+                        Outside a flow
                     </c:otherwise>
-                </c:choose>
-                
-            </ui:define>
+                </c:choose>-->
+            </ui:insert>
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">
+                    <h:form>
+                        <h:commandLink action="booking">Book a movie</h:commandLink>
+                        <p/><h:outputLink value="http://localhost:8080/chat/faces/chat/chatroom.xhtml">Chat Room</h:outputLink>
+                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml">Movies</h:outputLink>
+                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml">Sales</h:outputLink>
+                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml">Points</h:outputLink>
+                    </h:form>
+                </ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+    </h:body>
 
-        </ui:composition>
-
-    </body>
 </html>

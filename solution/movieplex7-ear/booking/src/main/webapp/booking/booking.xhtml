@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?> 
+<?xml version='1.0' encoding='UTF-8' ?>
 <!-- 
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
@@ -44,49 +44,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="${facesContext.externalContext.requestContextPath}/resources/css/default.css" rel="stylesheet" type="text/css" />
-        <link href="${facesContext.externalContext.requestContextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
-        <title>Movieplex 7</title>
-    </h:head>
+    <body>
 
-    <h:body>
+        <f:view contracts="main">
+            <ui:composition template="/template.xhtml">
 
+                <ui:define name="content">
+                    <h2>Pick a movie</h2>
+                    <h:form prependId="false">
 
-        <div id="top" class="top">
-            <ui:insert name="top">
-                <h:form>
-                    <h1><h:commandLink value="Movie Plex 7" action="/index"/></h1>
-                </h:form>
-<!--                <c:choose>
-                    <c:when test="#{null != facesContext.application.flowHandler.currentFlow}">
-                        Inside a flow
-                    </c:when>
-                    <c:otherwise>
-                        Outside a flow
-                    </c:otherwise>
-                </c:choose>-->
-            </ui:insert>
-        </div>
-        <div>
-            <div id="left">
-                <ui:insert name="left">
-                    <h:form>
-                        <h:commandLink action="booking">Book a movie</h:commandLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/chat/chatroom.xhtml">Chat Room</h:outputLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml">Movies</h:outputLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml">Sales</h:outputLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml">Points</h:outputLink>
+                        <h:selectOneRadio value="#{booking.movieId}" layout="pageDirection" required="true">
+                            <f:selectItems value="#{movieFacadeREST.all}" var="m" itemValue="#{m.id}" itemLabel="#{m.name}"/>
+                        </h:selectOneRadio>
+
+                        <h:commandButton id="shows" value="Pick a time" action="showtimes" />
+
                     </h:form>
-                </ui:insert>
-            </div>
-            <div id="content" class="left_content">
-                <ui:insert name="content">Content</ui:insert>
-            </div>
-        </div>
-    </h:body>
 
+                </ui:define>
+
+            </ui:composition>
+        </f:view>
+
+    </body>
 </html>

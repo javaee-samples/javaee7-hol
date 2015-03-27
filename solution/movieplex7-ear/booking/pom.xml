@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.javaee7.movieplex7</groupId>
     <artifactId>booking</artifactId>
-    <!--<packaging>war</packaging>-->
+    <packaging>war</packaging>
     
     <dependencies>
         <dependency>
@@ -18,16 +18,19 @@
         <dependency>
             <groupId>org.javaee7.movieplex7</groupId>
             <artifactId>json</artifactId>
-            <!--<type>war</type>-->
+        </dependency>
+        <dependency>
+            <groupId>org.javaee7.movieplex7</groupId>
+            <artifactId>contracts</artifactId>
         </dependency>
     </dependencies>
     
-<!--    <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
 </project>

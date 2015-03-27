@@ -49,23 +49,23 @@
 
     <body>
 
-        <ui:composition template="./../WEB-INF/template.xhtml">
+        <f:view contracts="main">
+            <ui:composition template="/template.xhtml">
 
-            <ui:define name="content">
-                <h2>Pick a movie</h2>
-                <h:form prependId="false">
+                <ui:define name="content">
+                    <h2>Reservation Confirmed</h2>
 
-                    <h:selectOneRadio value="#{booking.movieId}" layout="pageDirection" required="true">
-                        <f:selectItems value="#{movieFacadeREST.all}" var="m" itemValue="#{m.id}" itemLabel="#{m.name}"/>
-                    </h:selectOneRadio>
-                    
-                    <h:commandButton id="shows" value="Pick a time" action="showtimes" />
+                    <h:form>
+                        Movie name: #{booking.movieName}<p/>
+                        Starts at: #{booking.startTime}<p/>
+                        Theater: #{booking.theater}<p/>
 
-                </h:form>
+                        <p><h:commandButton id="home" value="home" action="goHome" /></p>
+                    </h:form>
+                </ui:define>
 
-            </ui:define>
-
-        </ui:composition>
+            </ui:composition>
+        </f:view>
 
     </body>
 </html>

@@ -18,6 +18,7 @@
         <module>client</module>
         <module>web</module>
         <module>ear</module>
+        <module>contracts</module>
     </modules>
 
     <name>Java EE 7 Hands-on Lab Solution - MSA</name>
@@ -54,30 +55,35 @@
                 <groupId>org.javaee7.movieplex7</groupId>
                 <artifactId>entities</artifactId>
                 <version>1.0-SNAPSHOT</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.javaee7.movieplex7</groupId>
                 <artifactId>batch</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>war</type>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.javaee7.movieplex7</groupId>
                 <artifactId>booking</artifactId>
                 <version>1.0-SNAPSHOT</version>
-                <!--<type>war</type>-->
+                <type>war</type>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.javaee7.movieplex7</groupId>
                 <artifactId>chat</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>war</type>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.javaee7.movieplex7</groupId>
                 <artifactId>client</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>war</type>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.javaee7.movieplex7</groupId>
@@ -89,12 +95,20 @@
                 <artifactId>points</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>war</type>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.javaee7.movieplex7</groupId>
                 <artifactId>rest</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>war</type>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.javaee7.movieplex7</groupId>
+                <artifactId>contracts</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
