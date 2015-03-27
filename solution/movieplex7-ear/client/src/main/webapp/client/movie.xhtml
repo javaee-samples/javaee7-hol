@@ -43,35 +43,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
-        <ui:composition template="./../WEB-INF/template.xhtml">
+        <f:view contracts="main">
+            <ui:composition template="/template.xhtml">
 
-            <ui:define name="content">
-                <h1>Movie Details</h1>
-                <h:form>
-                    <table cellpadding="5" cellspacing="5">
-                        <tr>
-                            <th align="left">Movie Id:</th>
-                            <td>#{movieClientBean.movie.id}</td>
-                        </tr>
-                        <tr>
-                            <th align="left">Movie Name:</th>
-                            <td>#{movieClientBean.movie.name}</td>
-                        </tr>
-                        <tr>
-                            <th align="left">Movie Actors:</th>
-                            <td>#{movieClientBean.movie.actors}</td>
-                        </tr>
-                        
-                    </table>
-                    <h:commandButton value="Back" action="movies" />
-                </h:form>
-            </ui:define>
+                <ui:define name="content">
+                    <h1>Movie Details</h1>
+                    <h:form>
+                        <table cellpadding="5" cellspacing="5">
+                            <tr>
+                                <th align="left">Movie Id:</th>
+                                <td>#{movieClientBean.movie.id}</td>
+                            </tr>
+                            <tr>
+                                <th align="left">Movie Name:</th>
+                                <td>#{movieClientBean.movie.name}</td>
+                            </tr>
+                            <tr>
+                                <th align="left">Movie Actors:</th>
+                                <td>#{movieClientBean.movie.actors}</td>
+                            </tr>
 
-        </ui:composition>
+                        </table>
+                        <h:commandButton value="Back" action="movies" />
+                    </h:form>
+                </ui:define>
+
+            </ui:composition>
+        </f:view>
 
     </body>
 </html>

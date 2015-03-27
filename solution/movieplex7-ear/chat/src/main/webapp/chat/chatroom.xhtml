@@ -42,43 +42,46 @@
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
-        <ui:composition template="./../WEB-INF/template.xhtml">
+        <f:view contracts="main">
+            <ui:composition template="/template.xhtml">
 
-            <ui:define name="content">
-                <form action=""> 
+                <ui:define name="content">
+                    <form action=""> 
 
-                    <table>
-                        <tr>
-                            <td>
-                                Chat Log<br/>
-                                <textarea readonly="true" rows="6" cols="50" id="chatlog"></textarea> 
-                            </td>
-                            <td>
-                                Users<br/>
-                                <textarea readonly="true" rows="6" cols="20" id="users"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input id="textField" name="name" value="Duke" type="text"/>
-                                <input onclick="join();" value="Join" type="button"/>
-                                <input onclick="send_message();" value="Send" type="button"/><p/>
-                                <input onclick="disconnect();" value="Disconnect" type="button"/>
-                            </td>
-                        </tr>
-                    </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    Chat Log<br/>
+                                    <textarea readonly="true" rows="6" cols="50" id="chatlog"></textarea> 
+                                </td>
+                                <td>
+                                    Users<br/>
+                                    <textarea readonly="true" rows="6" cols="20" id="users"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input id="textField" name="name" value="Duke" type="text"/>
+                                    <input onclick="join();" value="Join" type="button"/>
+                                    <input onclick="send_message();" value="Send" type="button"/><p/>
+                                    <input onclick="disconnect();" value="Disconnect" type="button"/>
+                                </td>
+                            </tr>
+                        </table>
 
-                </form>
-                <div id="output"></div>
-                <script language="javascript" type="text/javascript" src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"></script>
+                    </form>
+                    <div id="output"></div>
+                    <script language="javascript" type="text/javascript" src="${facesContext.externalContext.requestContextPath}/chat/websocket.js"></script>
 
-            </ui:define>
+                </ui:define>
 
-        </ui:composition>
+            </ui:composition>
+        </f:view>
 
 
     </body>
