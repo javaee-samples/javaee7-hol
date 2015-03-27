@@ -4,8 +4,10 @@ Deploy as:
 
 [source, txt]
 ----
-mvn -o wildfly:deploy
-mvn -o glassfish:deploy
+mvn wildfly:deploy
+mvn glassfish:deploy
 ----
+
+Subsequent redeploys are `mvn glassfish:redeploy`.
 
 Application is accessible at http://localhost:8080/movieplex7-web/faces/index.xhtml
