@@ -11,9 +11,8 @@
     <artifactId>movieplex7-web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
+    
     <build>
-        <finalName>movieplex7</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
