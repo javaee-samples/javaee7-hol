@@ -6,7 +6,7 @@
     <artifactId>movieplex7-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    
+
     <modules>
         <module>booking</module>
         <module>batch</module>
@@ -22,13 +22,13 @@
     </modules>
 
     <name>Java EE 7 Hands-on Lab Solution - MSA</name>
-    
+
     <properties>
         <glassfish.home>/Users/arungupta/tools/glassfish4/glassfish</glassfish.home>
         <glassfish.domain>domain1</glassfish.domain>
         <glassfish.password.file>${glassfish.home}/domains/${glassfish.domain}/config/domain-passwords</glassfish.password.file>
     </properties>
-    
+
     <pluginRepositories>
         <pluginRepository>
             <id>maven.java.net</id>
