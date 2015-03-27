@@ -59,16 +59,8 @@
         <div id="top" class="top">
             <ui:insert name="top">
                 <h:form>
-                    <h1><h:commandLink value="Movie Plex 7" action="/index"/></h1>
+                    <h1><h:commandLink value="Movieplex 7" action="/index"/></h1>
                 </h:form>
-<!--                <c:choose>
-                    <c:when test="#{null != facesContext.application.flowHandler.currentFlow}">
-                        Inside a flow
-                    </c:when>
-                    <c:otherwise>
-                        Outside a flow
-                    </c:otherwise>
-                </c:choose>-->
             </ui:insert>
         </div>
         <div>
@@ -76,10 +68,10 @@
                 <ui:insert name="left">
                     <h:form>
                         <h:commandLink action="booking">Book a movie</h:commandLink>
-                        <p/><h:outputLink value="http://localhost:8080/chat/faces/chat/chatroom.xhtml">Chat Room</h:outputLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/client/movies.xhtml">Movies</h:outputLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/batch/sales.xhtml">Sales</h:outputLink>
-                        <p/><h:outputLink value="${facesContext.externalContext.requestContextPath}/faces/points/points.xhtml">Points</h:outputLink>
+                        <p/><h:outputLink value="/chat/faces/chat/chatroom.xhtml">Chat Room</h:outputLink>
+                        <p/><h:outputLink value="/client/faces/client/movies.xhtml">Movies</h:outputLink>
+                        <p/><h:outputLink value="/batch/faces/batch/sales.xhtml">Sales</h:outputLink>
+                        <p/><h:outputLink value="/points/faces/points/points.xhtml">Points</h:outputLink>
                     </h:form>
                 </ui:insert>
             </div>
