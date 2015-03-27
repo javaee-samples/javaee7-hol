@@ -48,32 +48,34 @@
 
     <body>
 
-        <ui:composition template="./../WEB-INF/template.xhtml">
+        <f:view contracts="main">
+            <ui:composition template="/template.xhtml">
 
-            <ui:define name="content">
-                <h1>Movie Sales</h1>
-                <h:form>
-                    <h:dataTable value="#{salesBean.salesData}" var="s" border="1">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="Show ID" />
-                            </f:facet>
-                            #{s.id}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="Sales" />
-                            </f:facet>
-                            #{s.amount}
-                        </h:column>
-                    </h:dataTable>
+                <ui:define name="content">
+                    <h1>Movie Sales</h1>
+                    <h:form>
+                        <h:dataTable value="#{salesBean.salesData}" var="s" border="1">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Show ID" />
+                                </f:facet>
+                                #{s.id}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Sales" />
+                                </f:facet>
+                                #{s.amount}
+                            </h:column>
+                        </h:dataTable>
 
-                    <h:commandButton value="Run Job" action="sales" actionListener="#{salesBean.runJob()}"/>
-                    <h:commandButton value="Refresh" action="sales" />
-                </h:form>
-            </ui:define>
+                        <h:commandButton value="Run Job" action="sales" actionListener="#{salesBean.runJob()}"/>
+                        <h:commandButton value="Refresh" action="sales" />
+                    </h:form>
+                </ui:define>
 
-        </ui:composition>
+            </ui:composition>
+        </f:view>
 
     </body>
 </html>
