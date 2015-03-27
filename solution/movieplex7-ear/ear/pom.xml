@@ -34,7 +34,7 @@
         </dependency>
         <dependency>
             <groupId>org.javaee7.movieplex7</groupId>
-            <artifactId>web</artifactId>
+            <artifactId>movieplex7-web</artifactId>
             <type>war</type>
         </dependency>
         <dependency>
@@ -95,7 +95,7 @@
                     <modules>
                         <webModule>
                             <groupId>org.javaee7.movieplex7</groupId>
-                            <artifactId>web</artifactId>
+                            <artifactId>movieplex7-web</artifactId>
                         </webModule>
                         <jarModule>
                             <groupId>org.javaee7.movieplex7</groupId>
