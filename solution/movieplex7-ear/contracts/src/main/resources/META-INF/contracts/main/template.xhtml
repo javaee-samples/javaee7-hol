@@ -59,7 +59,7 @@
         <div id="top" class="top">
             <ui:insert name="top">
                 <h:form>
-                    <h1><h:commandLink value="Movieplex 7" action="/index"/></h1>
+                    <h1><h:outputLink value="/movieplex7-web/faces/index.xhtml">Movieplex 7</h:outputLink></h1>
                 </h:form>
             </ui:insert>
         </div>
@@ -67,7 +67,7 @@
             <div id="left">
                 <ui:insert name="left">
                     <h:form>
-                        <h:commandLink action="booking">Book a movie</h:commandLink>
+                        <h:outputLink value="/booking/faces/booking/booking.xhtml">Book a movie</h:outputLink>
                         <p/><h:outputLink value="/chat/faces/chat/chatroom.xhtml">Chat Room</h:outputLink>
                         <p/><h:outputLink value="/client/faces/client/movies.xhtml">Movies</h:outputLink>
                         <p/><h:outputLink value="/batch/faces/batch/sales.xhtml">Sales</h:outputLink>
